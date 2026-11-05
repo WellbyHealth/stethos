@@ -179,3 +179,5 @@ code{font-size:.92em;background:var(--stone);border:1px solid var(--line-soft);b
   .cx-art{overflow:hidden;aspect-ratio:1/.86;margin-bottom:4px}
   .cx-art img{width:100%;height:100%;aspect-ratio:auto;transform:scale(1.2);transform-origin:50% 22%}
 }
+
+.logo .mark{width:36px;height:36px;object-fit:contain;filter:drop-shadow(0 2px 3px rgba(11,27,51,.18))}

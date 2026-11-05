@@ -97,5 +97,5 @@ for root, _, files in os.walk(OUT):
     for fn in files:
         if fn.endswith(".html"):
             fp = os.path.join(root, fn); s = open(fp, encoding="utf-8").read()
-            s2 = _re.sub(r'((?:href|src)=")(/[\w./-]+\.(?:css|js))"', _ver, s)
+            s2 = _re.sub(r'((?:href|src)=")(/[\w./-]+\.(?:css|js|png|webp|ico|jpg))"', _ver, s)
             if s2 != s: open(fp, "w", encoding="utf-8").write(s2)
