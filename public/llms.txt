@@ -1,16 +1,19 @@
 # Stethos
 
-> Real-time data API for US healthcare providers and organizations, built for AI agents. Search clinicians and organizations, enrich a record from an NPI, and subscribe to change events by webhook or MCP. Provider data only, no patient data.
+> Self-serve MCP server (and REST API) for US healthcare provider and organization data, built for AI agents and priced per tool call. Tools: search_providers, enrich_provider, enrich_org, watch_providers, recent_changes. Provider data only, no patient data.
+
+MCP endpoint: https://mcp.stethos.health/v1 (preview)
 
 ## Pages
-- [Home](https://stethos-one.vercel.app/): what Stethos does and who it's for
-- [Use cases](https://stethos-one.vercel.app/use-cases): medtech and pharma sales, provider directories, clinical staffing, investors, digital health
+- [Home]({SITE}/): what Stethos does and who it's for
+- [Use cases]({SITE}/use-cases): medtech and pharma sales, provider directories, clinical staffing, investors, digital health
 - [Medtech and pharma sales](https://stethos-one.vercel.app/use-cases/medtech-pharma): Find surgeons and physicians by specialty, procedure focus, affiliation and license, and get alerts when targets move. A provider data API for sales agents.
 - [Provider directories and networks](https://stethos-one.vercel.app/use-cases/provider-directories): Check provider directory listings against current sources. Flag stale locations, lapsed licenses and network mismatches with a real-time provider data API.
 - [Clinical staffing and recruiting](https://stethos-one.vercel.app/use-cases/clinical-staffing): Source licensed clinicians by state and specialty, and spot health systems that are hiring. A real-time clinician data API for staffing platforms.
 - [Healthcare investors](https://stethos-one.vercel.app/use-cases/investors): Track practice roll-ups, clinician headcount and new locations as they happen. Real-time healthcare organization data for investors and corporate development.
 - [Digital health and AI apps](https://stethos-one.vercel.app/use-cases/digital-health): Power provider search, referrals and scheduling in your app with one NPI-keyed API, and let AI agents look up any clinician over MCP.
 - [Docs](https://stethos-one.vercel.app/docs): quickstart for search, enrich, organizations, watchers and MCP (preview)
+- [Healthcare MCP server](https://stethos-one.vercel.app/healthcare-mcp-server): A self-serve MCP server for US healthcare provider data. Add it to Claude or Cursor in five minutes: search, enrich, organizations and change alerts.
 - [NPI lookup API](https://stethos-one.vercel.app/npi-lookup-api): Look up any NPI and get more than the registry: licenses, affiliations, payer networks and practice contacts, each with a source and verified date.
 - [Physician data API](https://stethos-one.vercel.app/physician-data-api): A physician data API with specialties, affiliations, state licenses and practice contacts for every US physician, plus webhooks when physicians move.
 - [License data API](https://stethos-one.vercel.app/license-verification-api): Check physician and nurse license status across states in one API call, and get a webhook when a license is issued, expires or is restricted.

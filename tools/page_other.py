@@ -54,7 +54,7 @@ def use_cases():
     <div class="sp-layout"><div class="sp-tabs" role="tablist" aria-orientation="vertical" aria-label="Use cases">{tabs}</div><div class="sp-panels">{panels}</div></div>
   </div>
 </section>
-{cta_band("Free credits", "Building something else?", "Tell us what you need to know.", "Get a key, try every endpoint on your own use case, and pay only for the data you use.", "Stethos%20use%20case")}
+{cta_band("Self-serve", "Building something else?", "Tell us what you need to know.", "Add Stethos to your agent, try every tool on your own use case, and pay only for what you use.", "Stethos%20use%20case")}
 </main>
 '''
     return h + body + tail(("nav", "sp"))
@@ -72,23 +72,24 @@ def pp_card(pid, title, art, tint, who, amt_m, amt_y, per, bill_m, bill_y, trial
 
 
 COSTS = [
-    ("Search result", "Name, NPI, specialty, city and primary organization", "0.05"),
-    ("Provider record", "The base enriched record", "1"),
-    ("+ Licenses", "Every state license with status", "+1"),
-    ("+ Practice contact", "Phone, fax and practice address with sources", "+1"),
-    ("+ Networks", "Payer network listings across directories", "+2"),
-    ("+ Industry payments", "Open Payments summary", "+1"),
-    ("Organization record", "Locations, children, leadership and open roles", "2"),
-    ("Watcher event", "Each change event delivered to your webhook", "0.5"),
-    ("Change history", "Every past event for one record", "1"),
+    ("<code>search_providers</code>", "Name, NPI, specialty, city and primary organization, per result", "0.05"),
+    ("<code>enrich_provider</code>", "The base provider record", "1"),
+    ("&nbsp;&nbsp;+ licenses", "Every state license with status", "+1"),
+    ("&nbsp;&nbsp;+ practice_contact", "Phone, fax and practice address with sources", "+1"),
+    ("&nbsp;&nbsp;+ networks", "Payer network listings across directories", "+2"),
+    ("&nbsp;&nbsp;+ industry_payments", "Open Payments summary", "+1"),
+    ("<code>enrich_org</code>", "Locations, children, leadership and open roles", "2"),
+    ("<code>watch_providers</code>", "Each change event delivered to your agent or webhook", "0.5"),
+    ("<code>recent_changes</code>", "Every past event for one record", "1"),
 ]
 
 PR_FAQ = [
-    ("What is a credit?", "The unit every call is priced in. Searches cost a fraction of a credit per result, a full provider record costs one, and optional fields add to it. Every response includes a header showing the credits that call used."),
+    ("What is a credit?", "The unit every tool call is priced in. Searches cost a fraction of a credit per result, a full provider record costs one, and optional fields add to it. Every tool result shows the credits that call used."),
+    ("Do I need to talk to sales?", "No. Sign up, add the MCP server to your client and start calling tools. Plans and top-ups are self-serve. Enterprise is there if you later want flat files, volume pricing or an SLA."),
     ("When are credits used?", "Only when data comes back. A search with no matches, or an enrich on an NPI we don't have, costs nothing."),
     ("Do unused credits roll over?", "On Build, unused monthly credits roll over for one month. Top-up credits last 12 months."),
     ("What happens if I run out?", "Calls return a clear error, never a surprise bill. You can top up any time, or turn on auto top-up with a monthly cap."),
-    ("Is there a free plan?", "Every account starts with 1,000 free credits, no card needed, so you can try every endpoint on your own use case."),
+    ("Is there a free plan?", "Every account starts with 1,000 free credits, no card needed, so you can try every tool on your own use case."),
     ("Do you offer flat files?", "Yes, on Enterprise. We deliver the full dataset, or the slice you need, to your warehouse on a schedule."),
     ("Do I need a BAA?", "No. Stethos only holds data about healthcare professionals and organizations, not patients."),
 ]
@@ -100,19 +101,19 @@ def pricing():
     prod = {"@type": "SoftwareApplication", "name": BRAND, "applicationCategory": "DeveloperApplication", "operatingSystem": "Web", "url": SITE + "/",
             "offers": [{"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "1,000 credits, once"},
                        {"@type": "Offer", "name": "Build", "price": "149", "priceCurrency": "USD", "description": "20,000 credits a month"}]}
-    h = head("Pricing: Healthcare Provider Data API | Stethos",
-             "Start with 1,000 free credits. Build is $149 a month for 20,000 credits, webhooks and MCP. Enterprise adds flat files and volume pricing.",
+    h = head("Pricing: Pay Per Tool Call | Stethos MCP Server",
+             "Self-serve pricing per MCP tool call. Start with 1,000 free credits, no card. Build is $149 a month for 20,000 credits. Enterprise adds flat files.",
              "/pricing", css=("styles", "v2", "site", "pricing"), image="/og/pricing.jpg", crumbs=[("Pricing", "/pricing")], schema=[faqld, prod])
     cards = (pp_card("free", "Free", "g-cl-ic-pin-cut.webp", "#e4f0fd", "To try every endpoint on your own use case.",
-                     "$0", None, "1,000 credits, once", "No card needed", None, "No sales call", "Get an API key", f"{APP}/signup?plan=free",
-                     ["Every endpoint: search, enrich, organizations", "Source and verified date on every field", "Up to 2 watchers", "API keys for 1 project"],
+                     "$0", None, "1,000 credits, once", "No card needed", None, "Live in five minutes", "Add to Claude", CONNECT,
+                     ["Every tool: search, enrich, organizations, watch", "Source and verified date on every field", "Up to 2 watchers", "Works in Claude, Cursor and any MCP client"],
                      ["Docs and community support"])
              + pp_card("build", "Build", "g-cl-stk-agents-cut.webp", "#eff5d6", "For teams shipping a product or an agent.",
-                       "$149", "$124", "per month · 20,000 credits", "Billed monthly", "Billed $1,490 yearly", "Starts with 1,000 free credits", "Start building", f"{APP}/signup?plan=build",
-                       ["20,000 credits a month, unused credits roll over a month", "Unlimited watchers and webhooks", "MCP server for your agents", "Top-ups at $8 per 1,000 credits", "Up to 10 API keys and projects"],
+                       "$149", "$124", "per month · 20,000 credits", "Billed monthly", "Billed $1,490 yearly", "Starts with 1,000 free credits", "Start self-serve", f"{APP}/signup?plan=build",
+                       ["20,000 credits a month, unused credits roll over a month", "Unlimited watchers, plus webhooks for your backend", "REST API alongside the MCP server", "Top-ups at $8 per 1,000 credits", "Up to 10 projects and keys"],
                        ["Email support, next business day"], pop=True)
              + pp_card("enterprise", "Enterprise", "g-cl-stk-orgs-cut.webp", "#fdf5d2", "For data and product teams at scale.",
-                       "Custom", None, "volume pricing", "Annual agreement", None, "Starts with a short call", "Talk to us", f"mailto:{EMAIL}?subject=Stethos%20Enterprise",
+                       "Custom", None, "volume pricing", "Annual agreement", None, "Optional, once you scale", "Talk to us", f"mailto:{EMAIL}?subject=Stethos%20Enterprise",
                        ["Everything in Build", "Flat files delivered to your warehouse", "Volume credit pricing", "Uptime and freshness SLAs", "Custom fields and sources", "Data agreement and security review"],
                        ["Shared Slack channel", "Named contact"]))
     rows = "".join(f'<tr><th scope="row">{a}</th><td>{b}</td><td class="n">{c}</td></tr>' for a, b, c in COSTS)
@@ -123,8 +124,8 @@ def pricing():
   <div class="wrap">
     <div class="pp-head">
       <div class="pp-head-t">
-        <h1 id="pr-title">Pay for data, <span class="pop">not seats.</span></h1>
-        <p class="pp-lede">Every account starts with free credits. Credits are only used when data comes back.</p>
+        <h1 id="pr-title">Pay per tool call. <span class="pop">No sales call.</span></h1>
+        <p class="pp-lede">Self-serve from the first call. Every account starts with 1,000 free credits, and credits are only used when a tool returns data.</p>
       </div>
       <div class="pp-toggle" role="group" aria-label="Billing period">
         <button type="button" data-int="m" aria-pressed="true">Monthly</button>
@@ -135,17 +136,17 @@ def pricing():
       {cards}
     </div>
     <div class="pp-strip">
-      <p class="pp-zero"><b>Free:</b> 1,000 credits<span aria-hidden="true">·</span>No card<span aria-hidden="true">·</span>No sales call</p>
+      <p class="pp-zero"><b>Self-serve:</b> 1,000 free credits<span aria-hidden="true">·</span>No card<span aria-hidden="true">·</span>No sales call<span aria-hidden="true">·</span>Live in five minutes</p>
       <ul class="pp-marks" aria-label="Payment methods"><li>Visa</li><li>Mastercard</li><li>Amex</li><li>Invoicing on Enterprise</li></ul>
       <p class="pp-remind">You'll get an email at 80% of your monthly credits.</p>
     </div>
     <div class="cost-wrap">
-      <h2 id="cost-title">What each call costs</h2>
+      <h2 id="cost-title">What each tool call costs</h2>
       <div class="cmp-wrap" tabindex="0" role="region" aria-labelledby="cost-title"><table class="cmp-table cost-table">
-        <thead><tr><th scope="col">Data returned</th><th scope="col">What you get</th><th scope="col" class="n">Credits</th></tr></thead>
+        <thead><tr><th scope="col">Tool</th><th scope="col">What you get</th><th scope="col" class="n">Credits</th></tr></thead>
         <tbody>{rows}</tbody>
       </table></div>
-      <p class="pp-example">An agent that searches 2,000 surgeons, enriches 300 with licenses and contacts, and watches them all month uses about <b>1,000 credits</b>.</p>
+      <p class="pp-example">An agent that searches 2,000 surgeons, enriches 300 with licenses and contacts, and watches them all month uses about <b>1,000 credits</b>, which fits inside the free tier.</p>
     </div>
   </div>
 </section>
@@ -155,7 +156,7 @@ def pricing():
     <div class="qs">{faq}</div>
   </div>
 </section>
-{cta_band("Free credits", "Make your first call", "in five minutes.", "Get a key, try every endpoint, and see exactly what each call costs in the response headers.", "Stethos%20pricing")}
+{cta_band("Self-serve", "Make your first tool call", "in five minutes.", "Add Stethos to Claude or any MCP client, sign in, and see exactly what each call costs in the result.", "Stethos%20pricing")}
 </main>
 '''
     return h + body + tail(("nav", "pricing"))
@@ -178,7 +179,7 @@ def compare(slug, them, title_a, title_b, lede, them_list, rows, both_h, both_p,
     </div>
     <div class="cmp-pick">
       <div class="cmp-card them"><p class="sp-k">With {them}, you typically</p><ul>{"".join(f"<li>{x}</li>" for x in them_list)}</ul></div>
-      <div class="cmp-card us"><p class="sp-k">With Stethos, you're built to</p><ul><li>Start today on free credits, no sales call</li><li>Pay per call and per field, not per seat</li><li>Get change events by webhook as they happen</li><li>See the source and verified date on every field</li><li>Let agents call it directly over MCP</li></ul></div>
+      <div class="cmp-card us"><p class="sp-k">With Stethos, you're built to</p><ul><li>Add it to Claude in five minutes, no sales call</li><li>Pay per tool call and per field, not per seat</li><li>Get change events as they happen</li><li>See the source and verified date on every field</li><li>Use REST and webhooks for the rest of your stack</li></ul></div>
     </div>
     <figure class="art-wide cmp-art">{art("compare", "Illustration: a dusty stack of sealed boxes and reports on one side, and the clay data machine sending out a stream of alerts on the other.", w=1600, h=893, lazy=False)}</figure>
   </div>
@@ -199,7 +200,7 @@ def compare(slug, them, title_a, title_b, lede, them_list, rows, both_h, both_p,
     </div>
   </div>
 </section>
-{cta_band("Free credits", "Try it on your", "own use case.", "Get a key and compare the records side by side. Pay only for the data you use.", "Stethos%20vs%20" + them.replace(" ", "%20"))}
+{cta_band("Self-serve", "Try it on your", "own use case.", "Add Stethos to your agent and compare the records side by side. Pay only for the tool calls you make.", "Stethos%20vs%20" + them.replace(" ", "%20"))}
 </main>
 '''
     return h + body + tail()
@@ -211,8 +212,8 @@ def compare_definitive():
         "Definitive Healthcare is one of the largest healthcare commercial intelligence platforms, with deep data on hospitals, physicians and claims, sold mostly to enterprise teams. Stethos is built for developers and the agents they ship.",
         ["Buy an annual platform subscription through sales", "Search and filter in the web platform", "Pay extra to pipe data into your CRM or warehouse", "Work from periodic refreshes and exports", "Get deep claims and market analytics"],
         [("Who it's for", "Health systems, life sciences, medtech and other enterprise commercial teams.", "Developers and data teams building agents, apps and directories."),
-         ("How you access it", "A web platform, with API access and bulk export typically sold as add-ons.", "REST API, webhooks and an MCP server from day one. Flat files on Enterprise."),
-         ("How you pay", "Annual contracts priced by modules and seats, quoted by sales.", "Free credits to start, then pay per call and per field."),
+         ("How you access it", "A web platform, with API access and bulk export typically sold as add-ons.", "An MCP server your agents call directly, plus REST and webhooks. Flat files on Enterprise."),
+         ("How you pay", "Annual contracts priced by modules and seats, quoted by sales.", "Self-serve: free credits to start, then pay per tool call and per field."),
          ("Freshness", "Periodically refreshed datasets.", "Sources re-checked on a rolling basis, with every change recorded as an event."),
          ("Knowing what changed", "Compare exports or check the platform.", "Subscribe to change events and get a webhook."),
          ("Claims and market analytics", "A core strength.", "Not offered. Stethos focuses on who practices where, and what changed."),
@@ -230,9 +231,9 @@ def compare_onekey():
         "IQVIA OneKey is a long-established reference dataset of healthcare professionals and organizations, delivered through APIs, portals and data services and connected to IQVIA's other datasets. Stethos is built for developers who want to start small and pay per call.",
         ["Sign a multi-year agreement through sales", "Use OneKey as the master data behind your CRM", "Connect it to other IQVIA datasets", "Request data corrections through validation workflows", "Budget for an enterprise contract"],
         [("Who it's for", "Life sciences commercial, compliance and regulatory teams.", "Developers and data teams building agents, apps and directories."),
-         ("How you access it", "APIs, portals and integrated data services.", "REST API, webhooks and an MCP server. Flat files on Enterprise."),
-         ("How you pay", "Enterprise agreements; one third-party review puts IQVIA spend at $50k to $500k+ a year across modules.", "Free credits to start, then pay per call and per field."),
-         ("Getting started", "A sales process and implementation.", "An API key in minutes, no sales call."),
+         ("How you access it", "APIs, portals and integrated data services.", "An MCP server your agents call directly, plus REST and webhooks. Flat files on Enterprise."),
+         ("How you pay", "Enterprise agreements; one third-party review puts IQVIA spend at $50k to $500k+ a year across modules.", "Self-serve: free credits to start, then pay per tool call and per field."),
+         ("Getting started", "A sales process and implementation.", "Paste one URL into your MCP client. Live in five minutes, no sales call."),
          ("Knowing what changed", "Refreshed reference data and validation requests.", "Subscribe to change events and get a webhook."),
          ("Connected datasets", "A strength: unique IDs link to IQVIA's wider data.", "NPI-keyed, so it joins to your own claims, CRM and EHR data."),
          ("Patient data", "Separate IQVIA products.", "None. Provider and organization data only.")],
@@ -248,36 +249,60 @@ def compare_onekey():
 def docs():
     tech = {"@type": "TechArticle", "headline": "Stethos API quickstart", "about": "Healthcare provider data API", "dateModified": "2026-11-05",
             "author": {"@type": "Organization", "name": BRAND}, "mainEntityOfPage": SITE + "/docs"}
-    h = head("Provider Data API Docs: NPI Search and Enrich | Stethos", "Quickstart for the Stethos API: authenticate, search providers, enrich a record from an NPI, watch for changes by webhook and connect the MCP server.",
+    h = head("Docs: Connect the Stethos MCP Server | Stethos", "Add the Stethos healthcare MCP server to Claude, Cursor or any MCP client in five minutes. Tools, credits, REST API and webhooks.",
              "/docs", crumbs=[("Docs", "/docs")], schema=[tech])
     body = f'''{HEADER}
 <main id="main" class="wrap doc">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Docs</nav>
-  <h1>Quickstart</h1>
-  <p class="doc-meta">API preview · endpoints and prices may change before launch</p>
-  <ul class="doc-toc"><li><a href="#auth">Authenticate</a></li><li><a href="#search">Search</a></li><li><a href="#enrich">Enrich</a></li><li><a href="#orgs">Organizations</a></li><li><a href="#watch">Watchers</a></li><li><a href="#mcp">MCP</a></li><li><a href="#credits">Credits</a></li><li><a href="#errors">Errors</a></li></ul>
-  <p class="note">Stethos is in development. This page shows the API we're building so you can plan against it. <a href="{APP}/signup">Join early access</a> to get a key when it opens.</p>
+  <h1>Quickstart: connect Stethos to your agent</h1>
+  <p class="doc-meta">Preview · tools and prices may change before launch</p>
+  <ul class="doc-toc"><li><a href="#connect">Connect</a></li><li><a href="#tools">Tools</a></li><li><a href="#credits">Credits</a></li><li><a href="#rest">REST API</a></li><li><a href="#watch">Webhooks</a></li><li><a href="#errors">Errors</a></li></ul>
+  <p class="note">Stethos is in development. This page shows the MCP server and API we're building so you can plan against it. <a href="{APP}/signup">Join early access</a> to get access when it opens.</p>
 
-  <h2 id="auth">Authenticate</h2>
-  <p>Every request takes your API key as a bearer token. Keys are created per project in the dashboard.</p>
+  <h2 id="connect">Connect in five minutes</h2>
+  <p>Stethos is a remote MCP server. One URL gives your agent every tool:</p>
+<pre><code>{MCP_URL}</code></pre>
+  <h3>Claude</h3>
+  <ol><li>Open Settings, then Connectors, and choose to add a custom connector.</li><li>Paste the server URL above and save.</li><li>Sign in to Stethos when prompted. The tools appear in your next chat.</li></ol>
+  <h3>Cursor, Claude Code and other MCP clients</h3>
+  <p>Add Stethos to your client's MCP config:</p>
+<pre><code>{{
+  "mcpServers": {{
+    "stethos": {{ "url": "{MCP_URL}" }}
+  }}
+}}</code></pre>
+  <p>For agents that can't sign in through a browser, create a key in the dashboard and send it as <code>Authorization: Bearer $STETHOS_KEY</code>.</p>
+
+  <h2 id="tools">Tools</h2>
+  <table><thead><tr><th>Tool</th><th>What it does</th><th>Credits</th></tr></thead><tbody>
+    <tr><td><code>search_providers</code></td><td>Find clinicians and organizations by specialty, location, license state, affiliation or network</td><td>0.05 per result</td></tr>
+    <tr><td><code>enrich_provider</code></td><td>Full record for an NPI, with optional licenses, practice contact, networks and payments</td><td>1 + fields</td></tr>
+    <tr><td><code>enrich_org</code></td><td>Health system, hospital, group or clinic with locations, clinicians, leadership and open roles</td><td>2</td></tr>
+    <tr><td><code>watch_providers</code></td><td>Follow NPIs or organizations and get told when they change</td><td>0.5 per event</td></tr>
+    <tr><td><code>recent_changes</code></td><td>Change history for a record or a filter, such as new licenses in Texas this week</td><td>1</td></tr>
+  </tbody></table>
+  <p>Every result carries a <code>source</code> and <code>verified</code> date on each field. When sources disagree, the result includes <code>alternatives</code> so the agent can choose.</p>
+
+  <h2 id="rest">REST API</h2>
+  <p>The same data is available over REST for the parts of your stack that aren't agents. Authenticate with your key:</p>
 <pre><code>export STETHOS_KEY="sk_live_..."
 curl https://api.stethos.health/v1/account \\
   -H "Authorization: Bearer $STETHOS_KEY"</code></pre>
 
-  <h2 id="search">Search providers</h2>
+  <h3 id="search">Search providers</h3>
   <p>Search returns lightweight matches at 0.05 credits per result. Filter by <code>specialty</code>, <code>state</code>, <code>city</code>, <code>license_state</code>, <code>affiliation_type</code>, <code>org_id</code> or <code>network</code>.</p>
 <pre><code>curl https://api.stethos.health/v1/providers/search \\
   -H "Authorization: Bearer $STETHOS_KEY" \\
   -d '{{"specialty": "orthopedic surgery", "state": "AZ", "limit": 50}}'</code></pre>
 
-  <h2 id="enrich">Enrich a provider</h2>
+  <h3 id="enrich">Enrich a provider</h3>
   <p>Pass an <code>npi</code>, or a name plus city and state. The base record costs 1 credit; each extra field group adds to it, so ask only for what you need.</p>
 <pre><code>curl https://api.stethos.health/v1/providers/enrich \\
   -H "Authorization: Bearer $STETHOS_KEY" \\
   -d '{{"npi": "1234567890", "fields": ["licenses", "practice_contact"]}}'</code></pre>
   <p>Every field comes back with a <code>source</code> and a <code>verified</code> date. When sources disagree, the response includes <code>alternatives</code> so you can choose.</p>
 
-  <h2 id="orgs">Organizations</h2>
+  <h3 id="orgs">Organizations</h3>
   <p>Look up health systems, hospitals, groups and clinics by name, <code>org_id</code> or NPI. Records include locations, child organizations, rostered clinicians, leadership and open clinical roles.</p>
 <pre><code>curl https://api.stethos.health/v1/orgs/enrich \\
   -H "Authorization: Bearer $STETHOS_KEY" \\
@@ -299,16 +324,13 @@ curl https://api.stethos.health/v1/account \\
        "webhook_url": "https://your-app.example/hooks/stethos"}}'</code></pre>
   <p>Webhooks are signed with your project secret in the <code>Stethos-Signature</code> header. Failed deliveries retry with backoff for 24 hours.</p>
 
-  <h2 id="mcp">MCP server</h2>
-  <p>Agents in Claude and other MCP clients can use Stethos as tools: <code>search_providers</code>, <code>enrich_provider</code>, <code>enrich_org</code> and <code>recent_changes</code>. Add the server URL and your key in your client's connector settings.</p>
-<pre><code>https://mcp.stethos.health/v1   # Authorization: Bearer $STETHOS_KEY</code></pre>
-
+  <span id="mcp"></span>
   <h2 id="credits">Credits</h2>
-  <p>Every response includes an <code>X-Credits-Used</code> header, and <code>GET /v1/account/credits</code> returns your balance for free. See <a href="/pricing">pricing</a> for the cost of each call.</p>
+  <p>Every tool result shows the credits it used (REST responses carry an <code>X-Credits-Used</code> header), and checking your balance is free. See <a href="/pricing">pricing</a> for the cost of each tool.</p>
 
   <h2 id="errors">Errors and limits</h2>
   <table><thead><tr><th>Status</th><th>Meaning</th></tr></thead><tbody>
-    <tr><td>401</td><td>Missing or invalid API key</td></tr>
+    <tr><td>401</td><td>Not signed in, or missing or invalid key</td></tr>
     <tr><td>402</td><td>Out of credits. Nothing was charged.</td></tr>
     <tr><td>404</td><td>No record found. Nothing was charged.</td></tr>
     <tr><td>429</td><td>Rate limit: 600 requests a minute on Build. Retry after the <code>Retry-After</code> header.</td></tr>

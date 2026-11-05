@@ -4,21 +4,21 @@
 <meta charset="utf-8">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Provider Data API Docs: NPI Search and Enrich | Stethos</title>
-<meta name="description" content="Quickstart for the Stethos API: authenticate, search providers, enrich a record from an NPI, watch for changes by webhook and connect the MCP server.">
+<title>Docs: Connect the Stethos MCP Server | Stethos</title>
+<meta name="description" content="Add the Stethos healthcare MCP server to Claude, Cursor or any MCP client in five minutes. Tools, credits, REST API and webhooks.">
 <meta name="theme-color" content="#D0D2F9">
 <link rel="canonical" href="https://stethos-one.vercel.app/docs">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Stethos">
-<meta property="og:title" content="Provider Data API Docs: NPI Search and Enrich | Stethos">
-<meta property="og:description" content="Quickstart for the Stethos API: authenticate, search providers, enrich a record from an NPI, watch for changes by webhook and connect the MCP server.">
+<meta property="og:title" content="Docs: Connect the Stethos MCP Server | Stethos">
+<meta property="og:description" content="Add the Stethos healthcare MCP server to Claude, Cursor or any MCP client in five minutes. Tools, credits, REST API and webhooks.">
 <meta property="og:url" content="https://stethos-one.vercel.app/docs">
 <meta property="og:image" content="https://stethos-one.vercel.app/og.jpg">
 <meta property="og:image:alt" content="Illustration: a clay data machine with a glass dome over a map of pins, taking in records from hospitals, doctors' offices, government and insurance buildings and sending alerts to small clay robots at laptops.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Provider Data API Docs: NPI Search and Enrich | Stethos">
-<meta name="twitter:description" content="Quickstart for the Stethos API: authenticate, search providers, enrich a record from an NPI, watch for changes by webhook and connect the MCP server.">
+<meta name="twitter:title" content="Docs: Connect the Stethos MCP Server | Stethos">
+<meta name="twitter:description" content="Add the Stethos healthcare MCP server to Claude, Cursor or any MCP client in five minutes. Tools, credits, REST API and webhooks.">
 <meta name="twitter:image" content="https://stethos-one.vercel.app/og.jpg">
 <meta name="twitter:image:alt" content="Illustration: a clay data machine with a glass dome over a map of pins, taking in records from hospitals, doctors' offices, government and insurance buildings and sending alerts to small clay robots at laptops.">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
@@ -43,7 +43,7 @@
       <div class="dd">
         <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-solutions">Product<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="dd-panel" id="dd-solutions">
-          <div class="dd-col"><p class="dd-h">The API</p><ul class="dd-goals"><li><a href="/physician-data-api"><i class="dd-ic" style="--t:#ddf2ee"><img src="/img/g-cl-stk-search-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Provider search</b><span>Every clinician and organization in the US, filtered your way.</span></span></a></li><li><a href="/npi-lookup-api"><i class="dd-ic" style="--t:#e4f0fd"><img src="/img/g-cl-stk-enrich-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>NPI lookup and enrich</b><span>Licenses, affiliations, networks and contact info from an NPI.</span></span></a></li><li><a href="/health-system-data-api"><i class="dd-ic" style="--t:#fdf5d2"><img src="/img/g-cl-stk-orgs-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Health system data</b><span>Health systems, groups and clinics, with who works where.</span></span></a></li><li><a href="/license-verification-api"><i class="dd-ic" style="--t:#fcecf6"><img src="/img/g-cl-stk-watch-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>License data and alerts</b><span>License status across states, with a webhook when one changes.</span></span></a></li><li><a href="/docs#mcp"><i class="dd-ic" style="--t:#eff5d6"><img src="/img/g-cl-stk-agents-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>MCP server</b><span>Let your agents call Stethos directly.</span></span></a></li></ul></div>
+          <div class="dd-col"><p class="dd-h">The API</p><ul class="dd-goals"><li><a href="/physician-data-api"><i class="dd-ic" style="--t:#ddf2ee"><img src="/img/g-cl-stk-search-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Provider search</b><span>Every clinician and organization in the US, filtered your way.</span></span></a></li><li><a href="/npi-lookup-api"><i class="dd-ic" style="--t:#e4f0fd"><img src="/img/g-cl-stk-enrich-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>NPI lookup and enrich</b><span>Licenses, affiliations, networks and contact info from an NPI.</span></span></a></li><li><a href="/health-system-data-api"><i class="dd-ic" style="--t:#fdf5d2"><img src="/img/g-cl-stk-orgs-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Health system data</b><span>Health systems, groups and clinics, with who works where.</span></span></a></li><li><a href="/license-verification-api"><i class="dd-ic" style="--t:#fcecf6"><img src="/img/g-cl-stk-watch-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>License data and alerts</b><span>License status across states, with a webhook when one changes.</span></span></a></li><li><a href="/healthcare-mcp-server"><i class="dd-ic" style="--t:#eff5d6"><img src="/img/g-cl-stk-agents-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>MCP server</b><span>Add Stethos to Claude or any MCP client in five minutes.</span></span></a></li></ul></div>
           <div class="dd-col dd-side"><p class="dd-h">By use case</p><ul class="dd-spec"><li><a href="/use-cases/medtech-pharma"><img src="/img/g-cl-stk-search-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async">Medtech and pharma sales</a></li><li><a href="/use-cases/provider-directories"><img src="/img/g-cl-ic-payer-96.webp" width="96" height="96" alt="" loading="lazy" decoding="async">Provider directories</a></li><li><a href="/use-cases/clinical-staffing"><img src="/img/g-cl-ic-license-96.webp" width="96" height="96" alt="" loading="lazy" decoding="async">Clinical staffing</a></li><li><a href="/use-cases/investors"><img src="/img/g-cl-stk-orgs-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async">Healthcare investors</a></li><li><a href="/use-cases/digital-health"><img src="/img/g-cl-ic-code-96.webp" width="96" height="96" alt="" loading="lazy" decoding="async">Digital health and AI apps</a></li></ul><a class="dd-all" href="/use-cases">All use cases <span aria-hidden="true">→</span></a><img class="dd-art" src="/img/g-cl-stk-search-cut.webp" width="480" height="480" alt="" loading="lazy" decoding="async"></div>
         </div>
       </div>
@@ -51,37 +51,61 @@
       <a href="/docs">Docs</a>
       <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
     </nav>
-    <div class="hdr-act"><a class="btn-2" href="https://app.stethos.health/login">Sign in</a><a class="btn-1" href="https://app.stethos.health/signup">Get an API key</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/#platform">Product</a><a href="/#playground">Try the API</a><a href="/use-cases">Use cases</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="https://app.stethos.health/login">Sign in</a></div>
+    <div class="hdr-act"><a class="btn-2" href="https://app.stethos.health/login">Sign in</a><a class="btn-1" href="/docs#connect">Add to Claude</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/#platform">Product</a><a href="/#connect">Connect in 5 minutes</a><a href="/use-cases">Use cases</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="https://app.stethos.health/login">Sign in</a></div>
   </div>
 </header>
 
 <main id="main" class="wrap doc">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Docs</nav>
-  <h1>Quickstart</h1>
-  <p class="doc-meta">API preview · endpoints and prices may change before launch</p>
-  <ul class="doc-toc"><li><a href="#auth">Authenticate</a></li><li><a href="#search">Search</a></li><li><a href="#enrich">Enrich</a></li><li><a href="#orgs">Organizations</a></li><li><a href="#watch">Watchers</a></li><li><a href="#mcp">MCP</a></li><li><a href="#credits">Credits</a></li><li><a href="#errors">Errors</a></li></ul>
-  <p class="note">Stethos is in development. This page shows the API we're building so you can plan against it. <a href="https://app.stethos.health/signup">Join early access</a> to get a key when it opens.</p>
+  <h1>Quickstart: connect Stethos to your agent</h1>
+  <p class="doc-meta">Preview · tools and prices may change before launch</p>
+  <ul class="doc-toc"><li><a href="#connect">Connect</a></li><li><a href="#tools">Tools</a></li><li><a href="#credits">Credits</a></li><li><a href="#rest">REST API</a></li><li><a href="#watch">Webhooks</a></li><li><a href="#errors">Errors</a></li></ul>
+  <p class="note">Stethos is in development. This page shows the MCP server and API we're building so you can plan against it. <a href="https://app.stethos.health/signup">Join early access</a> to get access when it opens.</p>
 
-  <h2 id="auth">Authenticate</h2>
-  <p>Every request takes your API key as a bearer token. Keys are created per project in the dashboard.</p>
+  <h2 id="connect">Connect in five minutes</h2>
+  <p>Stethos is a remote MCP server. One URL gives your agent every tool:</p>
+<pre><code>https://mcp.stethos.health/v1</code></pre>
+  <h3>Claude</h3>
+  <ol><li>Open Settings, then Connectors, and choose to add a custom connector.</li><li>Paste the server URL above and save.</li><li>Sign in to Stethos when prompted. The tools appear in your next chat.</li></ol>
+  <h3>Cursor, Claude Code and other MCP clients</h3>
+  <p>Add Stethos to your client's MCP config:</p>
+<pre><code>{
+  "mcpServers": {
+    "stethos": { "url": "https://mcp.stethos.health/v1" }
+  }
+}</code></pre>
+  <p>For agents that can't sign in through a browser, create a key in the dashboard and send it as <code>Authorization: Bearer $STETHOS_KEY</code>.</p>
+
+  <h2 id="tools">Tools</h2>
+  <table><thead><tr><th>Tool</th><th>What it does</th><th>Credits</th></tr></thead><tbody>
+    <tr><td><code>search_providers</code></td><td>Find clinicians and organizations by specialty, location, license state, affiliation or network</td><td>0.05 per result</td></tr>
+    <tr><td><code>enrich_provider</code></td><td>Full record for an NPI, with optional licenses, practice contact, networks and payments</td><td>1 + fields</td></tr>
+    <tr><td><code>enrich_org</code></td><td>Health system, hospital, group or clinic with locations, clinicians, leadership and open roles</td><td>2</td></tr>
+    <tr><td><code>watch_providers</code></td><td>Follow NPIs or organizations and get told when they change</td><td>0.5 per event</td></tr>
+    <tr><td><code>recent_changes</code></td><td>Change history for a record or a filter, such as new licenses in Texas this week</td><td>1</td></tr>
+  </tbody></table>
+  <p>Every result carries a <code>source</code> and <code>verified</code> date on each field. When sources disagree, the result includes <code>alternatives</code> so the agent can choose.</p>
+
+  <h2 id="rest">REST API</h2>
+  <p>The same data is available over REST for the parts of your stack that aren't agents. Authenticate with your key:</p>
 <pre><code>export STETHOS_KEY="sk_live_..."
 curl https://api.stethos.health/v1/account \
   -H "Authorization: Bearer $STETHOS_KEY"</code></pre>
 
-  <h2 id="search">Search providers</h2>
+  <h3 id="search">Search providers</h3>
   <p>Search returns lightweight matches at 0.05 credits per result. Filter by <code>specialty</code>, <code>state</code>, <code>city</code>, <code>license_state</code>, <code>affiliation_type</code>, <code>org_id</code> or <code>network</code>.</p>
 <pre><code>curl https://api.stethos.health/v1/providers/search \
   -H "Authorization: Bearer $STETHOS_KEY" \
   -d '{"specialty": "orthopedic surgery", "state": "AZ", "limit": 50}'</code></pre>
 
-  <h2 id="enrich">Enrich a provider</h2>
+  <h3 id="enrich">Enrich a provider</h3>
   <p>Pass an <code>npi</code>, or a name plus city and state. The base record costs 1 credit; each extra field group adds to it, so ask only for what you need.</p>
 <pre><code>curl https://api.stethos.health/v1/providers/enrich \
   -H "Authorization: Bearer $STETHOS_KEY" \
   -d '{"npi": "1234567890", "fields": ["licenses", "practice_contact"]}'</code></pre>
   <p>Every field comes back with a <code>source</code> and a <code>verified</code> date. When sources disagree, the response includes <code>alternatives</code> so you can choose.</p>
 
-  <h2 id="orgs">Organizations</h2>
+  <h3 id="orgs">Organizations</h3>
   <p>Look up health systems, hospitals, groups and clinics by name, <code>org_id</code> or NPI. Records include locations, child organizations, rostered clinicians, leadership and open clinical roles.</p>
 <pre><code>curl https://api.stethos.health/v1/orgs/enrich \
   -H "Authorization: Bearer $STETHOS_KEY" \
@@ -103,16 +127,13 @@ curl https://api.stethos.health/v1/account \
        "webhook_url": "https://your-app.example/hooks/stethos"}'</code></pre>
   <p>Webhooks are signed with your project secret in the <code>Stethos-Signature</code> header. Failed deliveries retry with backoff for 24 hours.</p>
 
-  <h2 id="mcp">MCP server</h2>
-  <p>Agents in Claude and other MCP clients can use Stethos as tools: <code>search_providers</code>, <code>enrich_provider</code>, <code>enrich_org</code> and <code>recent_changes</code>. Add the server URL and your key in your client's connector settings.</p>
-<pre><code>https://mcp.stethos.health/v1   # Authorization: Bearer $STETHOS_KEY</code></pre>
-
+  <span id="mcp"></span>
   <h2 id="credits">Credits</h2>
-  <p>Every response includes an <code>X-Credits-Used</code> header, and <code>GET /v1/account/credits</code> returns your balance for free. See <a href="/pricing">pricing</a> for the cost of each call.</p>
+  <p>Every tool result shows the credits it used (REST responses carry an <code>X-Credits-Used</code> header), and checking your balance is free. See <a href="/pricing">pricing</a> for the cost of each tool.</p>
 
   <h2 id="errors">Errors and limits</h2>
   <table><thead><tr><th>Status</th><th>Meaning</th></tr></thead><tbody>
-    <tr><td>401</td><td>Missing or invalid API key</td></tr>
+    <tr><td>401</td><td>Not signed in, or missing or invalid key</td></tr>
     <tr><td>402</td><td>Out of credits. Nothing was charged.</td></tr>
     <tr><td>404</td><td>No record found. Nothing was charged.</td></tr>
     <tr><td>429</td><td>Rate limit: 600 requests a minute on Build. Retry after the <code>Retry-After</code> header.</td></tr>
@@ -124,13 +145,14 @@ curl https://api.stethos.health/v1/account \
   <div class="wrap foot-grid">
     <div class="foot-brand">
       <a class="logo" href="/"><img class="mark" src="/img/g-cl-logo-96.webp" width="30" height="30" alt=""><span>Stethos</span></a>
-      <p>Real-time healthcare provider data for AI agents. Product views and API responses on this site use illustrative sample data.</p>
+      <p>Healthcare provider data for AI agents, as an MCP server. Product views and tool results on this site use illustrative sample data.</p>
     </div>
     <nav class="foot-links" aria-label="Footer">
       <a href="/#platform">Product</a>
       <a href="/use-cases">Use cases</a>
       <a href="/docs">Docs</a>
       <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
+      <a href="/healthcare-mcp-server">Healthcare MCP server</a>
       <a href="/npi-lookup-api">NPI lookup API</a>
       <a href="/physician-data-api">Physician data API</a>
       <a href="/license-verification-api">License data API</a>

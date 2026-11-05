@@ -4,6 +4,19 @@ import json
 # Landing pages aimed at specific searches. Each: slug, art, tint class, seo title, meta description,
 # H1 (two parts), intro, two lists, example request, FAQs, related links.
 SEO_PAGES = [
+    dict(slug="healthcare-mcp-server", art="uc-digital", color="sp-blue", name="Healthcare MCP server",
+         title="Healthcare MCP Server for Provider Data | Stethos",
+         desc="A self-serve MCP server for US healthcare provider data. Add it to Claude or Cursor in five minutes: search, enrich, organizations and change alerts.",
+         h1a="A healthcare MCP server", h1b="your agents can use today.",
+         intro="Stethos gives AI agents a set of tools for US healthcare provider data: search clinicians and organizations, enrich any NPI, map health systems and watch for changes. It's a remote MCP server, so there's nothing to install. Paste one URL into your client, sign in, and pay per tool call.",
+         k1="Works with", l1=["Claude, as a custom connector", "Cursor and Claude Code", "Your own agent, via any MCP SDK", "REST and webhooks for everything else"],
+         k2="Tools", l2=["search_providers", "enrich_provider", "enrich_org", "watch_providers", "recent_changes"],
+         ep="providers/search", req={"specialty": "dermatology", "city": "Austin", "state": "TX", "limit": 10},
+         faq=[("How is this different from free NPI MCP servers?", "Free servers wrap the public NPI registry. Stethos starts from the same NPI and adds state licenses, current affiliations, payer networks and organization data, with a source on every field and alerts when a record changes."),
+              ("Do I need to talk to sales?", "No. It's self-serve: 1,000 free credits, no card, and plans and top-ups you can manage yourself."),
+              ("Does it handle patient data?", "No. Stethos only holds data about clinicians and organizations, so there's no PHI and no business associate agreement needed."),
+              ("What does it cost?", "Each tool call costs credits: a search result is 0.05, a provider record is 1 plus optional fields. Build is $149 a month for 20,000 credits.")],
+         related=[("Docs: connect in five minutes", "/docs#connect"), ("NPI lookup API", "/npi-lookup-api"), ("Pricing", "/pricing")]),
     dict(slug="npi-lookup-api", art="uc-payer", color="sp-lime", name="NPI lookup API",
          title="NPI Lookup API: Search and Enrich Any NPI | Stethos",
          desc="Look up any NPI and get more than the registry: licenses, affiliations, payer networks and practice contacts, each with a source and verified date.",
@@ -72,7 +85,7 @@ def seo_page(m):
     <div class="head ph">
       <h1 id="kw-title">{m["h1a"]} <span class="pop">{m["h1b"]}</span></h1>
       <p class="sp-lede">{m["intro"]}</p>
-      <div class="kw-ctas"><a class="btn-1" href="{APP}/signup">Get an API key</a><a class="btn-2" href="/docs">Read the docs</a></div>
+      <div class="kw-ctas"><a class="btn-1" href="{CONNECT}">Add to Claude</a><a class="btn-2" href="/docs">Read the docs</a></div>
     </div>
     <div class="sp-panels uc-one"><div class="sp-panel {m["color"]}"><div class="sp-p-main">
       <figure class="sp-scene"><img fetchpriority="high" src="/img/g-art-{m["art"]}-900.webp" srcset="/img/g-art-{m["art"]}-900.webp 900w, /img/g-art-{m["art"]}-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 560px" width="1600" height="1195" alt="Illustration for {m["name"]}" decoding="async"></figure>
@@ -83,7 +96,7 @@ def seo_page(m):
 <section class="sec" aria-labelledby="kw-call-title">
   <div class="wrap uc-call">
     <div><p class="eyebrow"><span>Example call</span></p><h2 id="kw-call-title">One request, <span class="pop">sourced answers.</span></h2>
-    <p class="uc-call-p">Every response carries the source and last-verified date on each field, and an <code>X-Credits-Used</code> header. See the <a href="/docs">quickstart</a> and <a href="/pricing">pricing</a>.</p></div>
+    <p class="uc-call-p">Your agent can make the same call as an MCP tool. Every result carries the source and last-verified date on each field and the credits it used. See the <a href="/docs">quickstart</a> and <a href="/pricing">pricing</a>.</p></div>
 <pre class="uc-code" tabindex="0" aria-label="Example request"><code>curl https://api.stethos.health/v1/{m["ep"]} \\
   -H "Authorization: Bearer $STETHOS_KEY" \\
   -d '{json.dumps(m["req"], indent=2)}'</code></pre>
@@ -95,7 +108,7 @@ def seo_page(m):
     <div class="qs">{faq}</div>
   </div>
 </section>
-{cta_band("Free credits", "Make your first call", "in five minutes.", "1,000 free credits, no card. Pay only for the data you use.", "Stethos%20" + m["slug"])}
+{cta_band("Self-serve", "Make your first tool call", "in five minutes.", "1,000 free credits, no card, no sales call. Pay only for the tool calls you make.", "Stethos%20" + m["slug"])}
 </main>
 '''
     return h + body + tail()

@@ -7,20 +7,26 @@
   const cost = document.getElementById('pl-cost');
   const note = document.getElementById('pl-note');
   const status = document.getElementById('pl-status');
+  const ask = document.getElementById('pl-ask');
 
   const EP = {
     search: {
+      ask: '“Find independent orthopedic surgeons in Arizona.”',
       cost: '0.05 credits per result',
-      note: 'Search returns lightweight matches. Enrich only the ones you keep.',
-      status: '200 OK',
-      req: `curl https://api.stethos.health/v1/providers/search \\
-  -H "Authorization: Bearer $STETHOS_KEY" \\
-  -d '{
-    "specialty": "orthopedic surgery",
-    "state": "AZ",
-    "affiliation_type": "independent_group",
-    "limit": 3
-  }'`,
+      note: 'The agent searches wide, then calls enrich_provider only on the matches it keeps.',
+      status: 'ok',
+      req: `{
+  "method": "tools/call",
+  "params": {
+    "name": "search_providers",
+    "arguments": {
+      "specialty": "orthopedic surgery",
+      "state": "AZ",
+      "affiliation_type": "independent_group",
+      "limit": 3
+    }
+  }
+}`,
       res: {
         total: 412, credits_used: 0.15,
         results: [
@@ -31,15 +37,20 @@
       }
     },
     enrich: {
+      ask: '“What licenses and affiliations does Dr. Jane Example have?”',
       cost: '1 credit + optional fields',
       note: 'Ask for contact or network fields only when you need them. Each one adds a credit.',
-      status: '200 OK',
-      req: `curl https://api.stethos.health/v1/providers/enrich \\
-  -H "Authorization: Bearer $STETHOS_KEY" \\
-  -d '{
-    "npi": "1234567890",
-    "fields": ["licenses", "affiliations", "practice_contact"]
-  }'`,
+      status: 'ok',
+      req: `{
+  "method": "tools/call",
+  "params": {
+    "name": "enrich_provider",
+    "arguments": {
+      "npi": "1234567890",
+      "fields": ["licenses", "affiliations", "practice_contact"]
+    }
+  }
+}`,
       res: {
         npi: '1234567890', name: 'Dr. Jane Example, MD', specialty: 'Orthopedic Surgery',
         licenses: [
@@ -55,12 +66,17 @@
       }
     },
     org: {
+      ask: '“Who leads Example Health System, and are they hiring?”',
       cost: '2 credits',
       note: 'Organizations come with locations, rostered clinicians, leadership and open roles.',
-      status: '200 OK',
-      req: `curl https://api.stethos.health/v1/orgs/enrich \\
-  -H "Authorization: Bearer $STETHOS_KEY" \\
-  -d '{ "name": "Example Health System", "state": "AZ" }'`,
+      status: 'ok',
+      req: `{
+  "method": "tools/call",
+  "params": {
+    "name": "enrich_org",
+    "arguments": { "name": "Example Health System", "state": "AZ" }
+  }
+}`,
       res: {
         org_id: 'org_7f3a', name: 'Example Health System', type: 'health_system',
         locations: 14, rostered_clinicians: 1180,
@@ -72,16 +88,20 @@
       }
     },
     watch: {
+      ask: '“Tell me if any of these surgeons change groups.”',
       cost: '0.5 credits per event delivered',
-      note: 'Create a watcher once. Events arrive at your webhook, or your agent can ask over MCP.',
-      status: '201 Created',
-      req: `curl https://api.stethos.health/v1/watchers \\
-  -H "Authorization: Bearer $STETHOS_KEY" \\
-  -d '{
-    "npis": ["1234567890", "1234567891"],
-    "events": ["affiliation.changed", "license.issued"],
-    "webhook_url": "https://your-agent.example/hooks/stethos"
-  }'`,
+      note: 'Your agent creates the watch once. Changes arrive as notifications, or by webhook to your backend.',
+      status: 'ok',
+      req: `{
+  "method": "tools/call",
+  "params": {
+    "name": "watch_providers",
+    "arguments": {
+      "npis": ["1234567890", "1234567891"],
+      "events": ["affiliation.changed", "license.issued"]
+    }
+  }
+}`,
       res: {
         watcher_id: 'wch_21b9', status: 'active', watching: 2,
         sample_event: {
@@ -107,6 +127,7 @@
     cost.textContent = e.cost;
     note.textContent = e.note;
     status.textContent = e.status;
+    if (ask) ask.textContent = e.ask;
   };
   btns.forEach(b => b.addEventListener('click', () => set(b.dataset.ep)));
   set('search');

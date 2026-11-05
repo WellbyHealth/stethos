@@ -8,6 +8,8 @@ SITE = "https://" + _os.environ.get("VERCEL_PROJECT_PRODUCTION_URL", "stethos-on
 APP = "https://app.stethos.health"       # placeholder app URL
 EMAIL = "team@stethos.health"            # placeholder contact
 BRAND = "Stethos"
+MCP_URL = "https://mcp.stethos.health/v1"   # placeholder MCP endpoint
+CONNECT = "/docs#connect"
 
 ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 CHECK = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.4l2.6 2.6L12 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
@@ -88,7 +90,7 @@ HEADER = f'''
   }{dd_goal("/npi-lookup-api", "g-cl-stk-enrich-160.webp", "#e4f0fd", "NPI lookup and enrich", "Licenses, affiliations, networks and contact info from an NPI.")
   }{dd_goal("/health-system-data-api", "g-cl-stk-orgs-160.webp", "#fdf5d2", "Health system data", "Health systems, groups and clinics, with who works where.")
   }{dd_goal("/license-verification-api", "g-cl-stk-watch-160.webp", "#fcecf6", "License data and alerts", "License status across states, with a webhook when one changes.")
-  }{dd_goal("/docs#mcp", "g-cl-stk-agents-160.webp", "#eff5d6", "MCP server", "Let your agents call Stethos directly.")}</ul></div>
+  }{dd_goal("/healthcare-mcp-server", "g-cl-stk-agents-160.webp", "#eff5d6", "MCP server", "Add Stethos to Claude or any MCP client in five minutes.")}</ul></div>
           <div class="dd-col dd-side"><p class="dd-h">By use case</p><ul class="dd-spec">{
     dd_spec("/use-cases/medtech-pharma", "g-cl-stk-search-160.webp", "Medtech and pharma sales")
   }{dd_spec("/use-cases/provider-directories", "g-cl-ic-payer-96.webp", "Provider directories")
@@ -101,7 +103,7 @@ HEADER = f'''
       <a href="/docs">Docs</a>
       <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
     </nav>
-    <div class="hdr-act"><a class="btn-2" href="{APP}/login">Sign in</a><a class="btn-1" href="{APP}/signup">Get an API key</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/#platform">Product</a><a href="/#playground">Try the API</a><a href="/use-cases">Use cases</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="{APP}/login">Sign in</a></div>
+    <div class="hdr-act"><a class="btn-2" href="{APP}/login">Sign in</a><a class="btn-1" href="{CONNECT}">Add to Claude</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/#platform">Product</a><a href="/#connect">Connect in 5 minutes</a><a href="/use-cases">Use cases</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="{APP}/login">Sign in</a></div>
   </div>
 </header>
 '''
@@ -111,13 +113,14 @@ FOOTER = f'''
   <div class="wrap foot-grid">
     <div class="foot-brand">
       <a class="logo" href="/"><img class="mark" src="/img/g-cl-logo-96.webp" width="30" height="30" alt=""><span>{BRAND}</span></a>
-      <p>Real-time healthcare provider data for AI agents. Product views and API responses on this site use illustrative sample data.</p>
+      <p>Healthcare provider data for AI agents, as an MCP server. Product views and tool results on this site use illustrative sample data.</p>
     </div>
     <nav class="foot-links" aria-label="Footer">
       <a href="/#platform">Product</a>
       <a href="/use-cases">Use cases</a>
       <a href="/docs">Docs</a>
       <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
+      <a href="/healthcare-mcp-server">Healthcare MCP server</a>
       <a href="/npi-lookup-api">NPI lookup API</a>
       <a href="/physician-data-api">Physician data API</a>
       <a href="/license-verification-api">License data API</a>
@@ -144,7 +147,7 @@ def cta_band(eyebrow, h2a, h2b, lede, subject):
     <p class="eyebrow on-dark"><span>{eyebrow}</span></p>
     <h2>{h2a} <span class="pop">{h2b}</span></h2>
     <p>{lede}</p>
-    <div class="sp-cta-row"><a class="btn-cta" href="{APP}/signup">Get an API key</a><a class="sp-cta-alt" href="mailto:{EMAIL}?subject={subject}">Questions? Email our team</a></div>
+    <div class="sp-cta-row"><a class="btn-cta" href="{CONNECT}">Add to Claude</a><a class="sp-cta-alt" href="mailto:{EMAIL}?subject={subject}">Questions? Email our team</a></div>
   </div>
 </section>
 '''

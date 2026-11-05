@@ -2,7 +2,7 @@
 # Run:  python3 tools/build.py
 import os, sys
 sys.path.insert(0, os.path.dirname(__file__))
-from parts import SITE, BRAND, EMAIL
+from parts import SITE, BRAND, EMAIL, MCP_URL
 import page_home, page_other, page_blog, page_uc, page_seo
 
 OUT = os.path.join(os.path.dirname(__file__), "..", "public")
@@ -70,7 +70,7 @@ w("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://
 w("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
 w("llms.txt", f"""# {BRAND}
 
-> Real-time data API for US healthcare providers and organizations, built for AI agents. Search clinicians and organizations, enrich a record from an NPI, and subscribe to change events by webhook or MCP. Provider data only, no patient data.
+> Self-serve MCP server (and REST API) for US healthcare provider and organization data, built for AI agents and priced per tool call. Tools: search_providers, enrich_provider, enrich_org, watch_providers, recent_changes. Provider data only, no patient data.\n\nMCP endpoint: """ + MCP_URL + """ (preview)
 
 ## Pages
 - [Home]({SITE}/): what Stethos does and who it's for
