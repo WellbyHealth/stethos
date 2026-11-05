@@ -83,3 +83,19 @@ w("llms.txt", f"""# {BRAND}
 ## Guides
 """ + "".join(f"- [{p['title']}]({SITE}/blog/{p['slug']}): {p['desc']}\n" for p in page_blog.POSTS) + f"\nContact: {EMAIL}\n")
 print("built", len(urls) + 1, "pages")
+
+# Cache-bust CSS/JS: append ?v=<content hash> so returning visitors never mix new HTML with stale assets.
+import hashlib, re as _re
+_h = {}
+def _ver(m):
+    f = m.group(2)
+    p = os.path.join(OUT, f.lstrip("/"))
+    if not os.path.isfile(p): return m.group(0)
+    if f not in _h: _h[f] = hashlib.md5(open(p, "rb").read()).hexdigest()[:8]
+    return f'{m.group(1)}{f}?v={_h[f]}"'
+for root, _, files in os.walk(OUT):
+    for fn in files:
+        if fn.endswith(".html"):
+            fp = os.path.join(root, fn); s = open(fp, encoding="utf-8").read()
+            s2 = _re.sub(r'((?:href|src)=")(/[\w./-]+\.(?:css|js))"', _ver, s)
+            if s2 != s: open(fp, "w", encoding="utf-8").write(s2)
