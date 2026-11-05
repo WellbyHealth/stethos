@@ -63,8 +63,10 @@ for p in page_blog.ALL_POSTS: og(f"g-art-{p['art']}-1600.webp", p["slug"])
 for m in page_seo.SEO_PAGES: og(f"g-art-{m['art']}-1600.webp", m["slug"])
 
 urls = ["/"] + [f"/{m['slug']}" for m in page_seo.SEO_PAGES] + ["/use-cases"] + [f"/use-cases/{u[0]}" for u in page_other.UC] + ["/pricing", "/docs", "/compare/definitive-healthcare", "/compare/iqvia-onekey", "/blog", "/privacy"] + [f"/blog/{p['slug']}" for p in page_blog.POSTS]
+LASTMOD = {f"/blog/{p['slug']}": p["date"] for p in page_blog.POSTS}
+if page_blog.POSTS: LASTMOD["/blog"] = page_blog.POSTS[0]["date"]
 w("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-  + "".join(f"  <url><loc>{SITE}{u}</loc><lastmod>2026-11-05</lastmod></url>\n" for u in urls) + "</urlset>\n")
+  + "".join(f"  <url><loc>{SITE}{u}</loc><lastmod>{LASTMOD.get(u, '2026-11-05')}</lastmod></url>\n" for u in urls) + "</urlset>\n")
 w("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
 w("llms.txt", f"""# {BRAND}
 

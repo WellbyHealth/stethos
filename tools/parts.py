@@ -4,7 +4,7 @@
 OG_ALT = "Illustration: a clay data machine with a glass dome over a map of pins, taking in records from hospitals, doctors' offices, government and insurance buildings and sending alerts to small clay robots at laptops."
 import os as _os
 # Production URL: Vercel sets VERCEL_PROJECT_PRODUCTION_URL at build time (custom domain once one is added).
-SITE = "https://" + _os.environ.get("VERCEL_PROJECT_PRODUCTION_URL", "stethos.vercel.app")
+SITE = "https://" + _os.environ.get("VERCEL_PROJECT_PRODUCTION_URL", "stethos-one.vercel.app")
 APP = "https://app.stethos.health"       # placeholder app URL
 EMAIL = "team@stethos.health"            # placeholder contact
 BRAND = "Stethos"
