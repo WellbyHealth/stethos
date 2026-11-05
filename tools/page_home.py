@@ -46,13 +46,13 @@ def page():
   <div class="wrap cx-copy">
     <h1 id="hero-title">Healthcare data for your&nbsp;AI&nbsp;agents</h1>
     <p class="cx-sub">An MCP server for every US clinician, practice and health system, kept current. Live in five minutes, priced per tool call, with a source on every answer.</p>
-    <div class="cx-ctas"><a class="cx-btn dark" href="{CONNECT}">Add to Claude</a><a class="cx-btn light" href="/docs">Read the docs</a></div>
+    <div class="cx-ctas"><a class="cx-btn dark" href="{CONNECT}">Add to Claude<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="cx-btn light" href="/docs">Read the docs<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     <div class="cx-paste">
       <span class="cx-paste-k">Paste in your coding agent</span>
       <code class="cx-paste-v">Add the Stethos MCP server: {MCP_URL}</code>
       <button class="cx-copybtn copy-mcp" type="button" data-copy="Add the Stethos MCP server: {MCP_URL}">Copy</button>
     </div>
-    <div class="cx-meta"><span class="cx-or">Works with</span><ul class="cx-clients" aria-label="Works with"><li>Claude</li><li>Cursor</li><li>ChatGPT</li><li>Any MCP client</li></ul><span class="cx-fine">1,000 free credits · no card · no sales call</span></div>
+    <div class="cx-meta"><span class="cx-or">or install directly with</span><ul class="cx-clients" aria-label="Works with"><li>Claude</li><li>Cursor</li><li>ChatGPT</li><li class="cx-any">Any MCP client</li></ul><span class="cx-fine">1,000 free credits · no card · no sales call</span></div>
   </div>
   <picture class="cx-art">
     <source media="(max-width: 760px)" srcset="/img/g-hero-m-800.webp 800w, /img/g-hero-m-1200.webp 1200w" sizes="100vw">

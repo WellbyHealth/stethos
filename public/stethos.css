@@ -181,3 +181,16 @@ code{font-size:.92em;background:var(--stone);border:1px solid var(--line-soft);b
 }
 
 .logo .mark{width:36px;height:36px;object-fit:contain;filter:drop-shadow(0 2px 3px rgba(11,27,51,.18))}
+/* Clay-style buttons with arrows; compact install row on phones */
+.cx-btn{gap:10px}
+.cx-btn svg{width:18px;height:18px;flex:none;transition:transform .2s var(--ease)}
+.cx-btn:hover svg{transform:translateX(3px)}
+@media(max-width:760px){
+  .cx-btn{justify-content:space-between;padding:0 18px;border-radius:16px;font-size:16.5px}
+  .cx-paste{display:none}
+  .cx-meta{margin-top:18px;gap:8px}
+  .cx-meta .cx-or{width:auto;font-size:15px;color:#2b3040}
+  .cx-meta .cx-clients li{padding:5px 11px;font-size:13.5px}
+  .cx-any{display:none}
+  .cx-meta .cx-fine{width:100%;margin-top:6px}
+}
