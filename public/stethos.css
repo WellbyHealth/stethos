@@ -1,0 +1,74 @@
+/* Stethos additions on top of the shared Inroad/Aria system (styles, v2, site, home). Keep this small. */
+
+/* hero: match the new clay art (lavender sky, pale meadow) */
+.hero2{background:linear-gradient(#D0D2F9 0,#D0D2F9 96px,#D0DDB1 96px)}
+
+/* mono */
+.code,.mono,code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+code{font-size:.92em;background:var(--stone);border:1px solid var(--line-soft);border-radius:6px;padding:1px 6px}
+
+/* playground */
+.play-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;margin-top:8px}
+.play-card{display:flex;flex-direction:column;min-width:0}
+.play-card .code{margin:14px 0 0;flex:1;background:#0B1B33;color:#DCE6F5;border-radius:16px;padding:18px 20px;font-size:13.5px;line-height:1.65;white-space:pre;overflow:auto;min-height:300px;max-height:440px}
+.play-card .code .k{color:#9FD8CF}
+.play-card .code .s{color:#F6C99A}
+.play-card .code .n{color:#C9B8F7}
+.play-note{margin:12px 2px 0;font-size:14.5px;color:var(--muted)}
+.play-ok{font-weight:650;color:var(--pos)}
+@media (max-width:900px){.play-grid{grid-template-columns:minmax(0,1fr)}.play-card .code{min-height:0}}
+
+/* provenance record */
+.src-list{margin:16px 0 0;display:grid;gap:8px}
+.src-list div{display:grid;grid-template-columns:minmax(0,9em) minmax(0,1fr);gap:2px 14px;background:#fbfbf9;border:1px solid var(--line-soft);border-radius:12px;padding:10px 12px}
+.src-list dt{font-size:13px;color:var(--muted)}
+.src-list dd{margin:0;font-size:15.5px;font-weight:600;color:#000}
+.src-list .src{grid-column:2;font-size:12.5px;color:#4A6B66}
+.src-list .src-conflict{background:var(--warn-soft);border-color:#F3D7B0}
+.src-list .src-conflict .src{color:var(--warn)}
+@media (max-width:560px){.src-list div{grid-template-columns:minmax(0,1fr)}.src-list .src{grid-column:1}}
+
+/* kpi labels are event names */
+.kpis h3{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:15px;letter-spacing:0}
+
+/* credit cost table on pricing */
+.cost-wrap{margin-top:clamp(40px,6vw,72px)}
+.cost-wrap h2{font-size:clamp(26px,3vw,36px);margin-bottom:18px}
+.cost-table td.n,.cost-table th.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* docs */
+.doc pre{background:#0B1B33;color:#DCE6F5;border-radius:16px;padding:18px 20px;font-size:13.5px;line-height:1.65;overflow:auto;margin:14px 0 22px}
+.doc pre code{background:none;border:0;padding:0;color:inherit}
+.doc .note{background:var(--sky-soft);border-radius:14px;padding:14px 16px;margin:18px 0;font-size:15.5px}
+.doc table{width:100%;border-collapse:collapse;margin:12px 0 24px;font-size:15px}
+.doc th,.doc td{text-align:left;border-bottom:1px solid var(--line);padding:9px 8px;vertical-align:top}
+.doc-toc{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px;padding:0;list-style:none}
+.doc-toc a{display:inline-block;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px}
+.doc-toc a:hover{background:var(--stone)}
+.more-posts{margin-top:56px}
+.more-posts h2{margin-bottom:18px}
+.more-posts .blog-grid{padding:0}
+
+/* use-case landing pages */
+.uc-crumbs{font-size:14px;color:var(--muted);margin-bottom:14px}
+.uc-crumbs a{color:inherit}
+.uc-one .sp-panel{display:grid!important}
+.uc-read{margin-top:14px;font-size:15px;font-weight:600}
+.uc-read a{color:var(--sp-ink,#000)}
+.uc-call{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,4vw,56px);align-items:center}
+.uc-call h2{font-size:clamp(30px,3.6vw,46px);margin-top:12px}
+.uc-call-p{margin-top:14px;color:var(--body)}
+.uc-code{margin:0;background:#0B1B33;color:#DCE6F5;border-radius:20px;padding:22px 24px;font-size:14px;line-height:1.65;overflow:auto}
+.uc-code code{background:none;border:0;padding:0;color:inherit}
+.uc-more-h{font-size:clamp(26px,3vw,36px);margin-bottom:18px}
+.uc-more{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.uc-more a{display:flex;align-items:center;gap:12px;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px 14px;font-weight:600;color:var(--ink);min-height:72px}
+.uc-more a:hover{background:var(--stone)}
+.uc-more img{width:44px;height:44px;object-fit:contain;flex:none}
+.role-link{color:inherit;text-decoration:none}
+.role-link:hover{text-decoration:underline}
+@media (max-width:900px){.uc-call{grid-template-columns:minmax(0,1fr)}.uc-more{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.uc-more{grid-template-columns:minmax(0,1fr)}}
+
+/* footer: more links than Inroad, keep the brand column readable */
+@media (min-width:901px){.foot-grid{grid-template-columns:minmax(240px,1fr) minmax(0,600px) auto}.foot-links{gap:10px 22px}}

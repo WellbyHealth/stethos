@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pricing: Healthcare Provider Data API | Stethos</title>
+<meta name="description" content="Start with 1,000 free credits. Build is $149 a month for 20,000 credits, webhooks and MCP. Enterprise adds flat files and volume pricing.">
+<meta name="theme-color" content="#D0D2F9">
+<link rel="canonical" href="https://stethos.vercel.app/pricing">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Stethos">
+<meta property="og:title" content="Pricing: Healthcare Provider Data API | Stethos">
+<meta property="og:description" content="Start with 1,000 free credits. Build is $149 a month for 20,000 credits, webhooks and MCP. Enterprise adds flat files and volume pricing.">
+<meta property="og:url" content="https://stethos.vercel.app/pricing">
+<meta property="og:image" content="https://stethos.vercel.app/og/pricing.jpg">
+<meta property="og:image:alt" content="Illustration: a clay data machine with a glass dome over a map of pins, taking in records from hospitals, doctors' offices, government and insurance buildings and sending alerts to small clay robots at laptops.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pricing: Healthcare Provider Data API | Stethos">
+<meta name="twitter:description" content="Start with 1,000 free credits. Build is $149 a month for 20,000 credits, webhooks and MCP. Enterprise adds flat files and volume pricing.">
+<meta name="twitter:image" content="https://stethos.vercel.app/og/pricing.jpg">
+<meta name="twitter:image:alt" content="Illustration: a clay data machine with a glass dome over a map of pins, taking in records from hospitals, doctors' offices, government and insurance buildings and sending alerts to small clay robots at laptops.">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/v2.css">
+<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/pricing.css">
+<link rel="stylesheet" href="/stethos.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a credit?", "acceptedAnswer": {"@type": "Answer", "text": "The unit every call is priced in. Searches cost a fraction of a credit per result, a full provider record costs one, and optional fields add to it. Every response includes a header showing the credits that call used."}}, {"@type": "Question", "name": "When are credits used?", "acceptedAnswer": {"@type": "Answer", "text": "Only when data comes back. A search with no matches, or an enrich on an NPI we don't have, costs nothing."}}, {"@type": "Question", "name": "Do unused credits roll over?", "acceptedAnswer": {"@type": "Answer", "text": "On Build, unused monthly credits roll over for one month. Top-up credits last 12 months."}}, {"@type": "Question", "name": "What happens if I run out?", "acceptedAnswer": {"@type": "Answer", "text": "Calls return a clear error, never a surprise bill. You can top up any time, or turn on auto top-up with a monthly cap."}}, {"@type": "Question", "name": "Is there a free plan?", "acceptedAnswer": {"@type": "Answer", "text": "Every account starts with 1,000 free credits, no card needed, so you can try every endpoint on your own use case."}}, {"@type": "Question", "name": "Do you offer flat files?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, on Enterprise. We deliver the full dataset, or the slice you need, to your warehouse on a schedule."}}, {"@type": "Question", "name": "Do I need a BAA?", "acceptedAnswer": {"@type": "Answer", "text": "No. Stethos only holds data about healthcare professionals and organizations, not patients."}}]}, {"@type": "SoftwareApplication", "name": "Stethos", "applicationCategory": "DeveloperApplication", "operatingSystem": "Web", "url": "https://stethos.vercel.app/", "offers": [{"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "1,000 credits, once"}, {"@type": "Offer", "name": "Build", "price": "149", "priceCurrency": "USD", "description": "20,000 credits a month"}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://stethos.vercel.app/pricing"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr">
+  <div class="bar">
+    <a class="logo" href="/" aria-label="Stethos home">
+      <img class="mark" src="/img/g-cl-logo-96.webp" width="30" height="30" alt="">
+      <span>Stethos</span>
+    </a>
+    <nav aria-label="Primary">
+      <div class="dd">
+        <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-solutions">Product<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dd-panel" id="dd-solutions">
+          <div class="dd-col"><p class="dd-h">The API</p><ul class="dd-goals"><li><a href="/physician-data-api"><i class="dd-ic" style="--t:#ddf2ee"><img src="/img/g-cl-stk-search-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Provider search</b><span>Every clinician and organization in the US, filtered your way.</span></span></a></li><li><a href="/npi-lookup-api"><i class="dd-ic" style="--t:#e4f0fd"><img src="/img/g-cl-stk-enrich-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>NPI lookup and enrich</b><span>Licenses, affiliations, networks and contact info from an NPI.</span></span></a></li><li><a href="/health-system-data-api"><i class="dd-ic" style="--t:#fdf5d2"><img src="/img/g-cl-stk-orgs-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Health system data</b><span>Health systems, groups and clinics, with who works where.</span></span></a></li><li><a href="/license-verification-api"><i class="dd-ic" style="--t:#fcecf6"><img src="/img/g-cl-stk-watch-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>License data and alerts</b><span>License status across states, with a webhook when one changes.</span></span></a></li><li><a href="/docs#mcp"><i class="dd-ic" style="--t:#eff5d6"><img src="/img/g-cl-stk-agents-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>MCP server</b><span>Let your agents call Stethos directly.</span></span></a></li></ul></div>
+          <div class="dd-col dd-side"><p class="dd-h">By use case</p><ul class="dd-spec"><li><a href="/use-cases/medtech-pharma"><img src="/img/g-cl-stk-search-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async">Medtech and pharma sales</a></li><li><a href="/use-cases/provider-directories"><img src="/img/g-cl-ic-payer-96.webp" width="96" height="96" alt="" loading="lazy" decoding="async">Provider directories</a></li><li><a href="/use-cases/clinical-staffing"><img src="/img/g-cl-ic-license-96.webp" width="96" height="96" alt="" loading="lazy" decoding="async">Clinical staffing</a></li><li><a href="/use-cases/investors"><img src="/img/g-cl-stk-orgs-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async">Healthcare investors</a></li><li><a href="/use-cases/digital-health"><img src="/img/g-cl-ic-code-96.webp" width="96" height="96" alt="" loading="lazy" decoding="async">Digital health and AI apps</a></li></ul><a class="dd-all" href="/use-cases">All use cases <span aria-hidden="true">→</span></a><img class="dd-art" src="/img/g-cl-stk-search-cut.webp" width="480" height="480" alt="" loading="lazy" decoding="async"></div>
+        </div>
+      </div>
+      <a href="/use-cases">Use cases</a>
+      <a href="/docs">Docs</a>
+      <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
+    </nav>
+    <div class="hdr-act"><a class="btn-2" href="https://app.stethos.health/login">Sign in</a><a class="btn-1" href="https://app.stethos.health/signup">Get an API key</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/#platform">Product</a><a href="/#playground">Try the API</a><a href="/use-cases">Use cases</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="https://app.stethos.health/login">Sign in</a></div>
+  </div>
+</header>
+
+<main id="main">
+<section class="sec pp-hero" aria-labelledby="pr-title">
+  <div class="wrap">
+    <div class="pp-head">
+      <div class="pp-head-t">
+        <h1 id="pr-title">Pay for data, <span class="pop">not seats.</span></h1>
+        <p class="pp-lede">Every account starts with free credits. Credits are only used when data comes back.</p>
+      </div>
+      <div class="pp-toggle" role="group" aria-label="Billing period">
+        <button type="button" data-int="m" aria-pressed="true">Monthly</button>
+        <button type="button" data-int="y" aria-pressed="false">Annual <span class="pp-save">2 months free</span></button>
+      </div>
+    </div>
+    <div class="pp-grid">
+      <article class="pp-card" aria-labelledby="pp-free"><div class="pp-top"><img class="pp-art" src="/img/g-cl-ic-pin-cut.webp" width="320" height="320" alt="" decoding="async" style="--t:#e4f0fd"><h2 id="pp-free">Free</h2></div><p class="pp-who">To try every endpoint on your own use case.</p><p class="pp-price"><span class="pp-amt">$0</span><span class="pp-per">1,000 credits, once</span></p><p class="pp-bill">No card needed</p><p class="pp-trial">No sales call</p><a class="pp-cta" href="https://app.stethos.health/signup?plan=free" data-base="https://app.stethos.health/signup?plan=free">Get an API key <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="pp-feat"><p class="pp-gh">Includes</p><ul class="pp-list"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.4l2.6 2.6L12 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Every endpoint: search, enrich, organizations</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.4l2.6 2.6L12 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Source and verified date on every field</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.4l2.6 2.6L12 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Up to 2 watchers</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.4l2.6 2.6L12 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>API keys for 1 project</span></li></ul><p class="pp-gh">Support</p><ul class="pp-list"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.4l2.6 2.6L12 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Docs and community support</span></li></ul></div></article><article class="pp-card pop" aria-labelledby="pp-build"><span class="pp-badge">Most popular</span><div class="pp-top"><img class="pp-art" src="/img/g-cl-stk-agents-cut.webp" width="320" height="320" alt="" decoding="async" style="--t:#eff5d6"><h2 id="pp-build">Build</h2></div><p class="pp-who">For teams shipping a product or an agent.</p><p class="pp-price"><span class="pp-amt" data-m="$149" data-y="$124">$149</span><span class="pp-per">per month · 20,000 credits</span></p><p class="pp-bill" data-m="Billed monthly" data-y="Billed $1,490 yearly">Billed monthly</p><p class="pp-trial">Starts with 1,000 free credits</p><a class="pp-cta" href="https://app.stethos.health/signup?plan=build" data-base="https://app.stethos.health/signup?plan=build">Start building <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="pp-feat"><p class="pp-gh">Includes</p><ul class="pp-list"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.4l2.6 2.6L12 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>20,000 credits a month, unused credits roll over a month</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.4l2.6 2.6L12 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Unlimited watchers and webhooks</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.4l2.6 2.6L12 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>MCP server for your agents</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.4l2.6 2.6L12 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Top-ups at $8 per 1,000 credits</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.4l2.6 2.6L12 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Up to 10 API keys and projects</span></li></ul><p class="pp-gh">Support</p><ul class="pp-list"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.4l2.6 2.6L12 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Email support, next business day</span></li></ul></div></article><article class="pp-card" aria-labelledby="pp-enterprise"><div class="pp-top"><img class="pp-art" src="/img/g-cl-stk-orgs-cut.webp" width="320" height="320" alt="" decoding="async" style="--t:#fdf5d2"><h2 id="pp-enterprise">Enterprise</h2></div><p class="pp-who">For data and product teams at scale.</p><p class="pp-price"><span class="pp-amt">Custom</span><span class="pp-per">volume pricing</span></p><p class="pp-bill">Annual agreement</p><p class="pp-trial">Starts with a short call</p><a class="pp-cta" href="mailto:team@stethos.health?subject=Stethos%20Enterprise" data-base="mailto:team@stethos.health?subject=Stethos%20Enterprise">Talk to us <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="pp-feat"><p class="pp-gh">Includes</p><ul class="pp-list"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.4l2.6 2.6L12 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Everything in Build</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.4l2.6 2.6L12 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Flat files delivered to your warehouse</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.4l2.6 2.6L12 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Volume credit pricing</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.4l2.6 2.6L12 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Uptime and freshness SLAs</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.4l2.6 2.6L12 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Custom fields and sources</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.4l2.6 2.6L12 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Data agreement and security review</span></li></ul><p class="pp-gh">Support</p><ul class="pp-list"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.4l2.6 2.6L12 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Shared Slack channel</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.4l2.6 2.6L12 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Named contact</span></li></ul></div></article>
+    </div>
+    <div class="pp-strip">
+      <p class="pp-zero"><b>Free:</b> 1,000 credits<span aria-hidden="true">·</span>No card<span aria-hidden="true">·</span>No sales call</p>
+      <ul class="pp-marks" aria-label="Payment methods"><li>Visa</li><li>Mastercard</li><li>Amex</li><li>Invoicing on Enterprise</li></ul>
+      <p class="pp-remind">You'll get an email at 80% of your monthly credits.</p>
+    </div>
+    <div class="cost-wrap">
+      <h2 id="cost-title">What each call costs</h2>
+      <div class="cmp-wrap" tabindex="0" role="region" aria-labelledby="cost-title"><table class="cmp-table cost-table">
+        <thead><tr><th scope="col">Data returned</th><th scope="col">What you get</th><th scope="col" class="n">Credits</th></tr></thead>
+        <tbody><tr><th scope="row">Search result</th><td>Name, NPI, specialty, city and primary organization</td><td class="n">0.05</td></tr><tr><th scope="row">Provider record</th><td>The base enriched record</td><td class="n">1</td></tr><tr><th scope="row">+ Licenses</th><td>Every state license with status</td><td class="n">+1</td></tr><tr><th scope="row">+ Practice contact</th><td>Phone, fax and practice address with sources</td><td class="n">+1</td></tr><tr><th scope="row">+ Networks</th><td>Payer network listings across directories</td><td class="n">+2</td></tr><tr><th scope="row">+ Industry payments</th><td>Open Payments summary</td><td class="n">+1</td></tr><tr><th scope="row">Organization record</th><td>Locations, children, leadership and open roles</td><td class="n">2</td></tr><tr><th scope="row">Watcher event</th><td>Each change event delivered to your webhook</td><td class="n">0.5</td></tr><tr><th scope="row">Change history</th><td>Every past event for one record</td><td class="n">1</td></tr></tbody>
+      </table></div>
+      <p class="pp-example">An agent that searches 2,000 surgeons, enriches 300 with licenses and contacts, and watches them all month uses about <b>1,000 credits</b>.</p>
+    </div>
+  </div>
+</section>
+<section class="sec" aria-labelledby="pr-faq-title">
+  <div class="wrap faq-grid">
+    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="pr-faq-title">Pricing questions</h2><figure class="faq-art"><img src="/img/g-art-pricing-900.webp" srcset="/img/g-art-pricing-900.webp 900w, /img/g-art-pricing-1600.webp 1600w" sizes="(max-width: 820px) 100vw, 480px" width="1600" height="1195" alt="Illustration: a glass jar of clay credit tokens beside a small meter dial." loading="lazy" decoding="async"></figure><p class="faq-more">Something else? <a href="mailto:team@stethos.health?subject=Stethos%20pricing">Email our team</a>.</p></div>
+    <div class="qs"><details><summary>What is a credit?</summary><p>The unit every call is priced in. Searches cost a fraction of a credit per result, a full provider record costs one, and optional fields add to it. Every response includes a header showing the credits that call used.</p></details><details><summary>When are credits used?</summary><p>Only when data comes back. A search with no matches, or an enrich on an NPI we don't have, costs nothing.</p></details><details><summary>Do unused credits roll over?</summary><p>On Build, unused monthly credits roll over for one month. Top-up credits last 12 months.</p></details><details><summary>What happens if I run out?</summary><p>Calls return a clear error, never a surprise bill. You can top up any time, or turn on auto top-up with a monthly cap.</p></details><details><summary>Is there a free plan?</summary><p>Every account starts with 1,000 free credits, no card needed, so you can try every endpoint on your own use case.</p></details><details><summary>Do you offer flat files?</summary><p>Yes, on Enterprise. We deliver the full dataset, or the slice you need, to your warehouse on a schedule.</p></details><details><summary>Do I need a BAA?</summary><p>No. Stethos only holds data about healthcare professionals and organizations, not patients.</p></details></div>
+  </div>
+</section>
+<section class="sec">
+  <div class="panel navy wrap-panel sp-cta">
+    <img class="cta-art l" src="/img/g-cl-stk-agents-cut.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><img class="cta-art r" src="/img/g-cl-ic-pin-cut.webp" width="360" height="360" alt="" loading="lazy" decoding="async">
+    <p class="eyebrow on-dark"><span>Free credits</span></p>
+    <h2>Make your first call <span class="pop">in five minutes.</span></h2>
+    <p>Get a key, try every endpoint, and see exactly what each call costs in the response headers.</p>
+    <div class="sp-cta-row"><a class="btn-cta" href="https://app.stethos.health/signup">Get an API key</a><a class="sp-cta-alt" href="mailto:team@stethos.health?subject=Stethos%20pricing">Questions? Email our team</a></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="logo" href="/"><img class="mark" src="/img/g-cl-logo-96.webp" width="30" height="30" alt=""><span>Stethos</span></a>
+      <p>Real-time healthcare provider data for AI agents. Product views and API responses on this site use illustrative sample data.</p>
+    </div>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="/#platform">Product</a>
+      <a href="/use-cases">Use cases</a>
+      <a href="/docs">Docs</a>
+      <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
+      <a href="/npi-lookup-api">NPI lookup API</a>
+      <a href="/physician-data-api">Physician data API</a>
+      <a href="/license-verification-api">License data API</a>
+      <a href="/health-system-data-api">Health system data API</a>
+      <a href="/use-cases/medtech-pharma">Medtech and pharma</a>
+      <a href="/use-cases/provider-directories">Provider directories</a>
+      <a href="/use-cases/clinical-staffing">Clinical staffing</a>
+      <a href="/compare/definitive-healthcare">vs Definitive</a>
+      <a href="/compare/iqvia-onekey">vs IQVIA OneKey</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/privacy">Privacy</a>
+      <a href="mailto:team@stethos.health?subject=Stethos">Contact</a>
+    </nav>
+    <p class="foot-copy">© 2026 Stethos</p>
+  </div>
+</footer>
+<script src="/nav.js" defer></script>
+<script src="/pricing.js" defer></script>
+</body>
+</html>

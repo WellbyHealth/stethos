@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Giving an AI Agent Healthcare Data: A Checklist | Stethos</title>
+<meta name="description" content="Before an AI agent acts on healthcare provider data, check freshness, provenance, identifiers, cost controls and patient privacy. A short checklist.">
+<meta name="theme-color" content="#D0D2F9">
+<link rel="canonical" href="https://stethos.vercel.app/blog/giving-an-ai-agent-healthcare-data-checklist">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Stethos">
+<meta property="og:title" content="Giving an AI Agent Healthcare Data: A Checklist | Stethos">
+<meta property="og:description" content="Before an AI agent acts on healthcare provider data, check freshness, provenance, identifiers, cost controls and patient privacy. A short checklist.">
+<meta property="og:url" content="https://stethos.vercel.app/blog/giving-an-ai-agent-healthcare-data-checklist">
+<meta property="og:image" content="https://stethos.vercel.app/og/giving-an-ai-agent-healthcare-data-checklist.jpg">
+<meta property="og:image:alt" content="Illustration: a clay smartphone showing a map of doctor pins, with a small clay robot leaning on it.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Giving an AI Agent Healthcare Data: A Checklist | Stethos">
+<meta name="twitter:description" content="Before an AI agent acts on healthcare provider data, check freshness, provenance, identifiers, cost controls and patient privacy. A short checklist.">
+<meta name="twitter:image" content="https://stethos.vercel.app/og/giving-an-ai-agent-healthcare-data-checklist.jpg">
+<meta name="twitter:image:alt" content="Illustration: a clay smartphone showing a map of doctor pins, with a small clay robot leaning on it.">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="article:published_time" content="2026-11-03">
+<meta property="article:section" content="Agents">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/v2.css">
+<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/stethos.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Giving an AI agent healthcare data: a checklist", "description": "Before an AI agent acts on healthcare provider data, check freshness, provenance, identifiers, cost controls and patient privacy. A short checklist.", "datePublished": "2026-11-03", "dateModified": "2026-11-03", "keywords": "AI agents, healthcare data, provider data API", "author": {"@type": "Organization", "name": "Stethos"}, "publisher": {"@type": "Organization", "name": "Stethos", "logo": {"@type": "ImageObject", "url": "https://stethos.vercel.app/icon-512.png"}}, "image": "https://stethos.vercel.app/og/giving-an-ai-agent-healthcare-data-checklist.jpg", "mainEntityOfPage": "https://stethos.vercel.app/blog/giving-an-ai-agent-healthcare-data-checklist"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://stethos.vercel.app/blog"}, {"@type": "ListItem", "position": 3, "name": "Giving an AI agent healthcare data: a checklist", "item": "https://stethos.vercel.app/blog/giving-an-ai-agent-healthcare-data-checklist"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr">
+  <div class="bar">
+    <a class="logo" href="/" aria-label="Stethos home">
+      <img class="mark" src="/img/g-cl-logo-96.webp" width="30" height="30" alt="">
+      <span>Stethos</span>
+    </a>
+    <nav aria-label="Primary">
+      <div class="dd">
+        <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-solutions">Product<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dd-panel" id="dd-solutions">
+          <div class="dd-col"><p class="dd-h">The API</p><ul class="dd-goals"><li><a href="/physician-data-api"><i class="dd-ic" style="--t:#ddf2ee"><img src="/img/g-cl-stk-search-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Provider search</b><span>Every clinician and organization in the US, filtered your way.</span></span></a></li><li><a href="/npi-lookup-api"><i class="dd-ic" style="--t:#e4f0fd"><img src="/img/g-cl-stk-enrich-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>NPI lookup and enrich</b><span>Licenses, affiliations, networks and contact info from an NPI.</span></span></a></li><li><a href="/health-system-data-api"><i class="dd-ic" style="--t:#fdf5d2"><img src="/img/g-cl-stk-orgs-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Health system data</b><span>Health systems, groups and clinics, with who works where.</span></span></a></li><li><a href="/license-verification-api"><i class="dd-ic" style="--t:#fcecf6"><img src="/img/g-cl-stk-watch-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>License data and alerts</b><span>License status across states, with a webhook when one changes.</span></span></a></li><li><a href="/docs#mcp"><i class="dd-ic" style="--t:#eff5d6"><img src="/img/g-cl-stk-agents-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>MCP server</b><span>Let your agents call Stethos directly.</span></span></a></li></ul></div>
+          <div class="dd-col dd-side"><p class="dd-h">By use case</p><ul class="dd-spec"><li><a href="/use-cases/medtech-pharma"><img src="/img/g-cl-stk-search-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async">Medtech and pharma sales</a></li><li><a href="/use-cases/provider-directories"><img src="/img/g-cl-ic-payer-96.webp" width="96" height="96" alt="" loading="lazy" decoding="async">Provider directories</a></li><li><a href="/use-cases/clinical-staffing"><img src="/img/g-cl-ic-license-96.webp" width="96" height="96" alt="" loading="lazy" decoding="async">Clinical staffing</a></li><li><a href="/use-cases/investors"><img src="/img/g-cl-stk-orgs-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async">Healthcare investors</a></li><li><a href="/use-cases/digital-health"><img src="/img/g-cl-ic-code-96.webp" width="96" height="96" alt="" loading="lazy" decoding="async">Digital health and AI apps</a></li></ul><a class="dd-all" href="/use-cases">All use cases <span aria-hidden="true">→</span></a><img class="dd-art" src="/img/g-cl-stk-search-cut.webp" width="480" height="480" alt="" loading="lazy" decoding="async"></div>
+        </div>
+      </div>
+      <a href="/use-cases">Use cases</a>
+      <a href="/docs">Docs</a>
+      <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
+    </nav>
+    <div class="hdr-act"><a class="btn-2" href="https://app.stethos.health/login">Sign in</a><a class="btn-1" href="https://app.stethos.health/signup">Get an API key</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/#platform">Product</a><a href="/#playground">Try the API</a><a href="/use-cases">Use cases</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="https://app.stethos.health/login">Sign in</a></div>
+  </div>
+</header>
+
+<main id="main" class="wrap doc">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/blog">Blog</a></nav>
+  <p class="art-tag">Agents</p>
+  <h1>Giving an AI agent healthcare data: a checklist</h1>
+  <p class="doc-meta">By the Stethos team · <time datetime="2026-11-03">November 3, 2026</time> · 4 min read</p>
+  <figure class="art-cover"><img src="/img/g-art-uc-digital-1600.webp" srcset="/img/g-art-uc-digital-900.webp 900w, /img/g-art-uc-digital-1600.webp 1600w" sizes="(max-width: 800px) 100vw, 760px" width="1600" height="1195" alt="Illustration: a clay smartphone showing a map of doctor pins, with a small clay robot leaning on it." fetchpriority="high"></figure>
+  <aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul><li>Agents act on whatever data they're given, so stale data becomes wrong actions.</li><li>Give agents provenance and dates so they can judge trust themselves.</li><li>Keep patient data out of the loop unless you have the agreements to handle it.</li></ul></aside>
+  <article>
+<p>An AI agent that books meetings, routes referrals or updates a directory will act on whatever provider data you hand it, confidently and at scale. That makes data quality a product decision, not a back-office one. Here's a short checklist to run before you connect the two.</p>
+<h2>1. Is it fresh enough for the action?</h2>
+<p>Looking someone up for a research summary can tolerate older data. Emailing a surgeon about a new device can't. Decide how recent each field needs to be for each action, and make sure the data carries a last-verified date the agent can read.</p>
+<h2>2. Does every field say where it came from?</h2>
+<p>An agent can't phone a colleague to ask whether an address looks right. Give it the source for each field and let it prefer stronger sources, or flag weak ones for a person to check.</p>
+<h2>3. Is everything keyed on the NPI?</h2>
+<p>Names collide and addresses change. The NPI is the one identifier shared across claims, CRMs and directories, so make it the key for every lookup and every write.</p>
+<h2>4. Will it hear about changes?</h2>
+<p>A list that was right when you pulled it starts going wrong the next day. Agents work best when they're told about changes, such as a move or a new license, instead of discovering them from a bounced email.</p>
+<h2>5. Are costs bounded?</h2>
+<p>Agents can make thousands of calls without anyone noticing. Use cheap searches to narrow the field before expensive enrichment, set budgets per task, and watch the credits each call reports.</p>
+<h2>6. Is patient data out of the loop?</h2>
+<p>Provider data, meaning who a clinician is and where they practice, is different from patient data. Keep the two separate unless you have the agreements and controls to handle protected health information, and make sure your agent's tools can't pull one into the other by accident.</p>
+<p>Stethos is built around this checklist: NPI-keyed records with a source on every field, change events by webhook, per-call <a href="/pricing">credit pricing</a> and an <a href="/docs#mcp">MCP server</a> for agents, with no patient data.</p>
+  </article>
+  <section class="more-posts" aria-labelledby="more-title"><h2 id="more-title">More guides</h2><ul class="blog-grid"><li class="post-card"><a href="/blog/what-the-npi-registry-can-and-cant-tell-you"><img src="/img/g-art-uc-payer-900.webp" srcset="/img/g-art-uc-payer-900.webp 900w, /img/g-art-uc-payer-1600.webp 1600w" sizes="(max-width: 700px) 100vw, 400px" width="1600" height="1195" alt="" loading="lazy" decoding="async"><span class="pc-b"><span class="pc-tag">Public data</span><h3>What the NPI registry can and can't tell you</h3><span class="pc-p">The NPPES NPI Registry is the backbone of US provider data. Here's what it reliably tells you, where it falls short, and what to pair it with.</span><span class="pc-meta">November 5, 2026 · 5 min read</span></span></a></li><li class="post-card"><a href="/blog/why-provider-directories-go-stale"><img src="/img/g-art-problem-900.webp" srcset="/img/g-art-problem-900.webp 900w, /img/g-art-problem-1600.webp 1600w" sizes="(max-width: 700px) 100vw, 400px" width="1600" height="1195" alt="" loading="lazy" decoding="async"><span class="pc-b"><span class="pc-tag">Data quality</span><h3>Why provider directories go stale, and what keeps them current</h3><span class="pc-p">Provider directories drift out of date because clinicians move faster than the systems that track them. Here's where the errors come from and what helps.</span><span class="pc-meta">November 4, 2026 · 4 min read</span></span></a></li></ul></section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="logo" href="/"><img class="mark" src="/img/g-cl-logo-96.webp" width="30" height="30" alt=""><span>Stethos</span></a>
+      <p>Real-time healthcare provider data for AI agents. Product views and API responses on this site use illustrative sample data.</p>
+    </div>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="/#platform">Product</a>
+      <a href="/use-cases">Use cases</a>
+      <a href="/docs">Docs</a>
+      <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
+      <a href="/npi-lookup-api">NPI lookup API</a>
+      <a href="/physician-data-api">Physician data API</a>
+      <a href="/license-verification-api">License data API</a>
+      <a href="/health-system-data-api">Health system data API</a>
+      <a href="/use-cases/medtech-pharma">Medtech and pharma</a>
+      <a href="/use-cases/provider-directories">Provider directories</a>
+      <a href="/use-cases/clinical-staffing">Clinical staffing</a>
+      <a href="/compare/definitive-healthcare">vs Definitive</a>
+      <a href="/compare/iqvia-onekey">vs IQVIA OneKey</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/privacy">Privacy</a>
+      <a href="mailto:team@stethos.health?subject=Stethos">Contact</a>
+    </nav>
+    <p class="foot-copy">© 2026 Stethos</p>
+  </div>
+</footer>
+<script src="/nav.js" defer></script>
+</body>
+</html>

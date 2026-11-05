@@ -1,0 +1,15 @@
+preview/
+raw/
+shots/
+art/
+*.zip
+__pycache__/
+files.json
+shot.py
+audit.py
+sheet.jpg
+herom_prev.jpg
+bots*.jpg
+shots/
+audit.py
+shot.py

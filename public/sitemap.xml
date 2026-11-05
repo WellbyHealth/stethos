@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://stethos.vercel.app/</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://stethos.vercel.app/npi-lookup-api</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://stethos.vercel.app/physician-data-api</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://stethos.vercel.app/license-verification-api</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://stethos.vercel.app/health-system-data-api</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://stethos.vercel.app/use-cases</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://stethos.vercel.app/use-cases/medtech-pharma</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://stethos.vercel.app/use-cases/provider-directories</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://stethos.vercel.app/use-cases/clinical-staffing</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://stethos.vercel.app/use-cases/investors</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://stethos.vercel.app/use-cases/digital-health</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://stethos.vercel.app/pricing</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://stethos.vercel.app/docs</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://stethos.vercel.app/compare/definitive-healthcare</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://stethos.vercel.app/compare/iqvia-onekey</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://stethos.vercel.app/blog</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://stethos.vercel.app/privacy</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://stethos.vercel.app/blog/what-the-npi-registry-can-and-cant-tell-you</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://stethos.vercel.app/blog/why-provider-directories-go-stale</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://stethos.vercel.app/blog/giving-an-ai-agent-healthcare-data-checklist</loc><lastmod>2026-11-05</lastmod></url>
+</urlset>

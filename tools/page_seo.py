@@ -1,0 +1,101 @@
+from parts import *
+import json
+
+# Landing pages aimed at specific searches. Each: slug, art, tint class, seo title, meta description,
+# H1 (two parts), intro, two lists, example request, FAQs, related links.
+SEO_PAGES = [
+    dict(slug="npi-lookup-api", art="uc-payer", color="sp-lime", name="NPI lookup API",
+         title="NPI Lookup API: Search and Enrich Any NPI | Stethos",
+         desc="Look up any NPI and get more than the registry: licenses, affiliations, payer networks and practice contacts, each with a source and verified date.",
+         h1a="An NPI lookup API that tells you", h1b="more than the registry.",
+         intro="The NPPES NPI Registry tells you who an NPI belongs to and what they reported to CMS. Stethos is built to take that same NPI and return the rest of the picture: where the clinician practices now, which licenses are active, which groups and hospitals they're affiliated with, and which payer networks list them.",
+         k1="Look up by", l1=["NPI, Type 1 (individual) or Type 2 (organization)", "Name plus city and state", "Organization name or ID", "Batches of NPIs in one call"],
+         k2="What comes back", l2=["Registry identity, taxonomy and addresses", "State licenses with status", "Current group and hospital affiliations", "Payer network listings and practice contacts", "A source and verified date on every field"],
+         ep="providers/enrich", req={"npi": "1234567890", "fields": ["licenses", "affiliations", "networks"]},
+         faq=[("Isn't there a free NPI registry API?", "Yes. CMS runs a free public NPI Registry API for NPPES data, and it's a good fit when you only need what providers reported to the registry. Stethos starts from the same NPI and adds licenses, affiliations, networks and change events from other sources."),
+              ("Can I look up an NPI by name?", "Yes. Search by name with a city and state, or by specialty and location, then enrich the NPI you pick."),
+              ("How current is the data?", "Every field carries its source and the date it was last verified, and watchers send a webhook when a record changes."),
+              ("Does it cover organizations?", "Yes. Type 2 NPIs for hospitals, groups, pharmacies and agencies are supported, along with organization records that link locations and rostered clinicians.")],
+         related=[("Docs: enrich a provider", "/docs#enrich"), ("What the NPI registry can and can't tell you", "/blog/what-the-npi-registry-can-and-cant-tell-you"), ("Physician data API", "/physician-data-api")]),
+    dict(slug="physician-data-api", art="uc-medtech", color="sp-blue", name="Physician data API",
+         title="Physician Data API for Sales and Product Teams | Stethos",
+         desc="A physician data API with specialties, affiliations, state licenses and practice contacts for every US physician, plus webhooks when physicians move.",
+         h1a="A physician data API that", h1b="keeps up with physicians.",
+         intro="Physicians change groups, add locations, pick up licenses and join networks all year. Stethos is built to keep one current record per physician, keyed on the NPI, and to tell your product or sales agent when that record changes.",
+         k1="Filter physicians by", l1=["Specialty and sub-specialty", "State, city or radius", "Hospital or group affiliation", "License state", "Payer network"],
+         k2="Record includes", l2=["Practice locations and contact details", "Affiliations with start dates", "State licenses and status", "Open Payments summary", "Change history"],
+         ep="providers/search", req={"specialty": "cardiology", "state": "TX", "affiliation_type": "independent_group", "limit": 25},
+         faq=[("How many physicians does it cover?", "Stethos is built to cover every US physician with an NPI, from the NPPES registry, with other sources layered on top. Coverage of each field will be published at launch."),
+              ("Can I get contact details?", "Practice contact details, such as phone, fax and practice address, are an optional field with their sources. Stethos does not sell personal home addresses or personal phone numbers."),
+              ("Can I sync it to a CRM?", "Yes. Enrich records on demand and subscribe to watchers so your CRM is updated when a physician moves, instead of re-importing lists.")],
+         related=[("Medtech and pharma sales", "/use-cases/medtech-pharma"), ("NPI lookup API", "/npi-lookup-api"), ("Pricing", "/pricing")]),
+    dict(slug="license-verification-api", art="uc-staffing", color="sp-butter", name="License data API",
+         title="Medical License Lookup API by State | Stethos",
+         desc="Check physician and nurse license status across states in one API call, and get a webhook when a license is issued, expires or is restricted.",
+         h1a="Medical license lookups", h1b="across every state, in one call.",
+         intro="Every state runs its own licensing boards, each with its own website and format. Stethos is built to gather license records from state boards into one NPI-keyed record, show each license's status and source, and alert you when one changes.",
+         k1="Look up", l1=["All licenses for an NPI", "Clinicians licensed in a given state", "Recent license events by state and profession"],
+         k2="For each license", l2=["State, profession and license number", "Status: active, expired, restricted", "Issue and expiration dates where published", "Source board and verified date"],
+         ep="providers/enrich", req={"npi": "1234567890", "fields": ["licenses"]},
+         faq=[("Is this primary source verification?", "No. Stethos is not a credentials verification organization. It's built for sourcing, prospecting, directory checks and monitoring. For credentialing, verify with the state board or your verification vendor."),
+              ("Which professions are covered?", "Physicians first, then nurses and other licensed clinicians. Coverage will be published by state and profession at launch."),
+              ("Can I be told when a license lapses?", "Yes. Watchers fire license.lapsed and license.issued events for the clinicians you follow.")],
+         related=[("Clinical staffing and recruiting", "/use-cases/clinical-staffing"), ("Docs: watchers", "/docs#watch"), ("Physician data API", "/physician-data-api")]),
+    dict(slug="health-system-data-api", art="uc-investors", color="sp-pink", name="Health system data API",
+         title="Health System and Hospital Data API | Stethos",
+         desc="Health systems, hospitals, groups and clinics in one API: locations, rostered clinicians, leadership, open roles and ownership, with change alerts.",
+         h1a="Health system and hospital data,", h1b="with the people inside.",
+         intro="Selling to, partnering with or investing in health systems means knowing their structure: which hospitals and groups they own, who leads them, who practices there and where they're hiring. Stethos is built to keep that map current and send an event when it moves.",
+         k1="Organization types", l1=["Health systems and hospitals", "Physician groups and clinics", "Ambulatory surgery centers", "Home health and post-acute providers"],
+         k2="Record includes", l2=["Locations and child organizations", "Rostered clinicians", "Leadership with start dates", "Open clinical roles", "Executive hire and hiring spike events"],
+         ep="orgs/enrich", req={"name": "Example Health System", "state": "AZ", "fields": ["children", "leadership", "open_roles"]},
+         faq=[("Where does organization data come from?", "CMS provider and facility data, organization NPIs, health system websites and job posts, and press releases for leadership changes. Every field shows its source."),
+              ("Can I see who works at a hospital?", "Organization records include rostered clinicians drawn from affiliation data, and the list updates as clinicians join or leave."),
+              ("Can I track leadership changes?", "Yes. The org.exec_hire event fires when an organization names a new executive or service line leader.")],
+         related=[("Healthcare investors", "/use-cases/investors"), ("Docs: organizations", "/docs#orgs"), ("Pricing", "/pricing")]),
+]
+
+
+def seo_page(m):
+    path = "/" + m["slug"]
+    faqld = {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in m["faq"]]}
+    h = head(m["title"], m["desc"], path, image=f"/og/{m['slug']}.jpg", image_alt=f"Illustration for {m['name']}",
+             crumbs=[(m["name"], path)], schema=[faqld])
+    li = lambda xs: "".join(f"<li>{x}</li>" for x in xs)
+    faq = "".join(f'<details><summary>{q}</summary><p>{a}</p></details>' for q, a in m["faq"])
+    rel = " · ".join(f'<a href="{u}">{t}</a>' for t, u in m["related"])
+    body = f'''{HEADER}
+<main id="main">
+<section class="sec sp-top ph-top" aria-labelledby="kw-title">
+  <div class="wrap">
+    <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / {m["name"]}</nav>
+    <div class="head ph">
+      <h1 id="kw-title">{m["h1a"]} <span class="pop">{m["h1b"]}</span></h1>
+      <p class="sp-lede">{m["intro"]}</p>
+      <div class="kw-ctas"><a class="btn-1" href="{APP}/signup">Get an API key</a><a class="btn-2" href="/docs">Read the docs</a></div>
+    </div>
+    <div class="sp-panels uc-one"><div class="sp-panel {m["color"]}"><div class="sp-p-main">
+      <figure class="sp-scene"><img fetchpriority="high" src="/img/g-art-{m["art"]}-900.webp" srcset="/img/g-art-{m["art"]}-900.webp 900w, /img/g-art-{m["art"]}-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 560px" width="1600" height="1195" alt="Illustration for {m["name"]}" decoding="async"></figure>
+      <h2>{m["name"]}</h2><p class="sp-k">{m["k1"]}</p><ul class="sp-src">{li(m["l1"])}</ul></div>
+      <div class="sp-p-side"><p class="sp-k">{m["k2"]}</p><ul class="sp-see">{li(m["l2"])}</ul></div></div></div>
+  </div>
+</section>
+<section class="sec" aria-labelledby="kw-call-title">
+  <div class="wrap uc-call">
+    <div><p class="eyebrow"><span>Example call</span></p><h2 id="kw-call-title">One request, <span class="pop">sourced answers.</span></h2>
+    <p class="uc-call-p">Every response carries the source and last-verified date on each field, and an <code>X-Credits-Used</code> header. See the <a href="/docs">quickstart</a> and <a href="/pricing">pricing</a>.</p></div>
+<pre class="uc-code" tabindex="0" aria-label="Example request"><code>curl https://api.stethos.health/v1/{m["ep"]} \\
+  -H "Authorization: Bearer $STETHOS_KEY" \\
+  -d '{json.dumps(m["req"], indent=2)}'</code></pre>
+  </div>
+</section>
+<section class="sec" aria-labelledby="kw-faq-title">
+  <div class="wrap faq-grid">
+    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">{m["name"]}: common questions</h2><p class="faq-more">Related: {rel}</p></div>
+    <div class="qs">{faq}</div>
+  </div>
+</section>
+{cta_band("Free credits", "Make your first call", "in five minutes.", "1,000 free credits, no card. Pay only for the data you use.", "Stethos%20" + m["slug"])}
+</main>
+'''
+    return h + body + tail()

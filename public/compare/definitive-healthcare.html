@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stethos vs Definitive Healthcare | Provider Data Compared</title>
+<meta name="description" content="How Stethos compares with Definitive Healthcare for healthcare provider data: API access, pricing model, data freshness and who each is built for.">
+<meta name="theme-color" content="#D0D2F9">
+<link rel="canonical" href="https://stethos.vercel.app/compare/definitive-healthcare">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Stethos">
+<meta property="og:title" content="Stethos vs Definitive Healthcare | Provider Data Compared">
+<meta property="og:description" content="How Stethos compares with Definitive Healthcare for healthcare provider data: API access, pricing model, data freshness and who each is built for.">
+<meta property="og:url" content="https://stethos.vercel.app/compare/definitive-healthcare">
+<meta property="og:image" content="https://stethos.vercel.app/og/compare.jpg">
+<meta property="og:image:alt" content="Illustration: a clay data machine with a glass dome over a map of pins, taking in records from hospitals, doctors' offices, government and insurance buildings and sending alerts to small clay robots at laptops.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stethos vs Definitive Healthcare | Provider Data Compared">
+<meta name="twitter:description" content="How Stethos compares with Definitive Healthcare for healthcare provider data: API access, pricing model, data freshness and who each is built for.">
+<meta name="twitter:image" content="https://stethos.vercel.app/og/compare.jpg">
+<meta name="twitter:image:alt" content="Illustration: a clay data machine with a glass dome over a map of pins, taking in records from hospitals, doctors' offices, government and insurance buildings and sending alerts to small clay robots at laptops.">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/v2.css">
+<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/stethos.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Stethos vs Definitive Healthcare", "item": "https://stethos.vercel.app/compare/definitive-healthcare"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr">
+  <div class="bar">
+    <a class="logo" href="/" aria-label="Stethos home">
+      <img class="mark" src="/img/g-cl-logo-96.webp" width="30" height="30" alt="">
+      <span>Stethos</span>
+    </a>
+    <nav aria-label="Primary">
+      <div class="dd">
+        <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-solutions">Product<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dd-panel" id="dd-solutions">
+          <div class="dd-col"><p class="dd-h">The API</p><ul class="dd-goals"><li><a href="/physician-data-api"><i class="dd-ic" style="--t:#ddf2ee"><img src="/img/g-cl-stk-search-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Provider search</b><span>Every clinician and organization in the US, filtered your way.</span></span></a></li><li><a href="/npi-lookup-api"><i class="dd-ic" style="--t:#e4f0fd"><img src="/img/g-cl-stk-enrich-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>NPI lookup and enrich</b><span>Licenses, affiliations, networks and contact info from an NPI.</span></span></a></li><li><a href="/health-system-data-api"><i class="dd-ic" style="--t:#fdf5d2"><img src="/img/g-cl-stk-orgs-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Health system data</b><span>Health systems, groups and clinics, with who works where.</span></span></a></li><li><a href="/license-verification-api"><i class="dd-ic" style="--t:#fcecf6"><img src="/img/g-cl-stk-watch-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>License data and alerts</b><span>License status across states, with a webhook when one changes.</span></span></a></li><li><a href="/docs#mcp"><i class="dd-ic" style="--t:#eff5d6"><img src="/img/g-cl-stk-agents-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>MCP server</b><span>Let your agents call Stethos directly.</span></span></a></li></ul></div>
+          <div class="dd-col dd-side"><p class="dd-h">By use case</p><ul class="dd-spec"><li><a href="/use-cases/medtech-pharma"><img src="/img/g-cl-stk-search-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async">Medtech and pharma sales</a></li><li><a href="/use-cases/provider-directories"><img src="/img/g-cl-ic-payer-96.webp" width="96" height="96" alt="" loading="lazy" decoding="async">Provider directories</a></li><li><a href="/use-cases/clinical-staffing"><img src="/img/g-cl-ic-license-96.webp" width="96" height="96" alt="" loading="lazy" decoding="async">Clinical staffing</a></li><li><a href="/use-cases/investors"><img src="/img/g-cl-stk-orgs-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async">Healthcare investors</a></li><li><a href="/use-cases/digital-health"><img src="/img/g-cl-ic-code-96.webp" width="96" height="96" alt="" loading="lazy" decoding="async">Digital health and AI apps</a></li></ul><a class="dd-all" href="/use-cases">All use cases <span aria-hidden="true">→</span></a><img class="dd-art" src="/img/g-cl-stk-search-cut.webp" width="480" height="480" alt="" loading="lazy" decoding="async"></div>
+        </div>
+      </div>
+      <a href="/use-cases">Use cases</a>
+      <a href="/docs">Docs</a>
+      <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
+    </nav>
+    <div class="hdr-act"><a class="btn-2" href="https://app.stethos.health/login">Sign in</a><a class="btn-1" href="https://app.stethos.health/signup">Get an API key</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/#platform">Product</a><a href="/#playground">Try the API</a><a href="/use-cases">Use cases</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="https://app.stethos.health/login">Sign in</a></div>
+  </div>
+</header>
+
+<main id="main">
+<section class="sec sp-top ph-top cmp-top" aria-labelledby="cmp-title">
+  <div class="wrap">
+    <div class="head ph">
+      <h1 id="cmp-title">Definitive is a platform for analysts. <span class="pop">Stethos is an API for agents.</span></h1>
+      <p class="sp-lede">Definitive Healthcare is one of the largest healthcare commercial intelligence platforms, with deep data on hospitals, physicians and claims, sold mostly to enterprise teams. Stethos is built for developers and the agents they ship.</p>
+    </div>
+    <div class="cmp-pick">
+      <div class="cmp-card them"><p class="sp-k">With Definitive Healthcare, you typically</p><ul><li>Buy an annual platform subscription through sales</li><li>Search and filter in the web platform</li><li>Pay extra to pipe data into your CRM or warehouse</li><li>Work from periodic refreshes and exports</li><li>Get deep claims and market analytics</li></ul></div>
+      <div class="cmp-card us"><p class="sp-k">With Stethos, you're built to</p><ul><li>Start today on free credits, no sales call</li><li>Pay per call and per field, not per seat</li><li>Get change events by webhook as they happen</li><li>See the source and verified date on every field</li><li>Let agents call it directly over MCP</li></ul></div>
+    </div>
+    <figure class="art-wide cmp-art"><img class="" src="/img/g-art-compare-900.webp" srcset="/img/g-art-compare-900.webp 900w, /img/g-art-compare-1600.webp 1600w" sizes="(max-width: 820px) 100vw, 1100px" width="1600" height="893" alt="Illustration: a dusty stack of sealed boxes and reports on one side, and the clay data machine sending out a stream of alerts on the other." decoding="async"></figure>
+  </div>
+</section>
+<section class="sec cmp-sec" aria-labelledby="cmp-table-title">
+  <div class="wrap">
+    <h2 id="cmp-table-title" class="cmp-h">Stethos vs Definitive Healthcare, side by side</h2>
+    <div class="cmp-wrap" tabindex="0" role="region" aria-label="Comparison table"><table class="cmp-table">
+      <thead><tr><th scope="col"><span class="sr">Area</span></th><th scope="col">Definitive Healthcare<span class="cmp-sub">Based on public materials</span></th><th scope="col" class="us">Stethos<span class="cmp-sub">Built for agents</span></th></tr></thead>
+      <tbody><tr><th scope="row">Who it's for</th><td>Health systems, life sciences, medtech and other enterprise commercial teams.</td><td>Developers and data teams building agents, apps and directories.</td></tr><tr><th scope="row">How you access it</th><td>A web platform, with API access and bulk export typically sold as add-ons.</td><td>REST API, webhooks and an MCP server from day one. Flat files on Enterprise.</td></tr><tr><th scope="row">How you pay</th><td>Annual contracts priced by modules and seats, quoted by sales.</td><td>Free credits to start, then pay per call and per field.</td></tr><tr><th scope="row">Freshness</th><td>Periodically refreshed datasets.</td><td>Sources re-checked on a rolling basis, with every change recorded as an event.</td></tr><tr><th scope="row">Knowing what changed</th><td>Compare exports or check the platform.</td><td>Subscribe to change events and get a webhook.</td></tr><tr><th scope="row">Claims and market analytics</th><td>A core strength.</td><td>Not offered. Stethos focuses on who practices where, and what changed.</td></tr><tr><th scope="row">Patient data</th><td>Claims-based analytics products.</td><td>None. Provider and organization data only.</td></tr></tbody>
+    </table></div>
+    <div class="cmp-both"><h3>Already using Definitive?</h3><p>Keep it for claims and market analytics. Stethos is built for the real-time lookups and change alerts your product and agents need, priced so you can call it from code.</p></div>
+    <div class="cmp-src">
+      <p class="sp-k">Sources</p>
+      <ul><li><a href="https://www.definitivehc.com" rel="noopener" target="_blank">Definitive Healthcare: Home</a></li><li><a href="https://www.ampliz.com/resources/definitive-healthcare-pricing" rel="noopener" target="_blank">Ampliz: Definitive Healthcare pricing and alternatives (2026, third-party)</a></li><li><a href="https://sultanofsaas-com.pages.dev/tools/definitive-healthcare/" rel="noopener" target="_blank">Sultan of SaaS: Definitive Healthcare review (2026, third-party)</a></li></ul>
+      <p class="cmp-note">Definitive Healthcare details are based on its public website and third-party reviews as of November 2026; pricing and packaging may differ by contract. Definitive Healthcare is a trademark of its owner; Stethos is not affiliated with it. Stethos is in development, and its column describes what it is built to do.</p>
+      <p class="cmp-other"><a href="/compare/iqvia-onekey">See Stethos vs IQVIA OneKey <span aria-hidden="true">→</span></a></p>
+    </div>
+  </div>
+</section>
+<section class="sec">
+  <div class="panel navy wrap-panel sp-cta">
+    <img class="cta-art l" src="/img/g-cl-stk-agents-cut.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><img class="cta-art r" src="/img/g-cl-ic-pin-cut.webp" width="360" height="360" alt="" loading="lazy" decoding="async">
+    <p class="eyebrow on-dark"><span>Free credits</span></p>
+    <h2>Try it on your <span class="pop">own use case.</span></h2>
+    <p>Get a key and compare the records side by side. Pay only for the data you use.</p>
+    <div class="sp-cta-row"><a class="btn-cta" href="https://app.stethos.health/signup">Get an API key</a><a class="sp-cta-alt" href="mailto:team@stethos.health?subject=Stethos%20vs%20Definitive%20Healthcare">Questions? Email our team</a></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="logo" href="/"><img class="mark" src="/img/g-cl-logo-96.webp" width="30" height="30" alt=""><span>Stethos</span></a>
+      <p>Real-time healthcare provider data for AI agents. Product views and API responses on this site use illustrative sample data.</p>
+    </div>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="/#platform">Product</a>
+      <a href="/use-cases">Use cases</a>
+      <a href="/docs">Docs</a>
+      <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
+      <a href="/npi-lookup-api">NPI lookup API</a>
+      <a href="/physician-data-api">Physician data API</a>
+      <a href="/license-verification-api">License data API</a>
+      <a href="/health-system-data-api">Health system data API</a>
+      <a href="/use-cases/medtech-pharma">Medtech and pharma</a>
+      <a href="/use-cases/provider-directories">Provider directories</a>
+      <a href="/use-cases/clinical-staffing">Clinical staffing</a>
+      <a href="/compare/definitive-healthcare">vs Definitive</a>
+      <a href="/compare/iqvia-onekey">vs IQVIA OneKey</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/privacy">Privacy</a>
+      <a href="mailto:team@stethos.health?subject=Stethos">Contact</a>
+    </nav>
+    <p class="foot-copy">© 2026 Stethos</p>
+  </div>
+</footer>
+<script src="/nav.js" defer></script>
+</body>
+</html>
