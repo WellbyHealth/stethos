@@ -47,14 +47,12 @@ def page():
     <h1 id="hero-title">Healthcare data for your&nbsp;AI&nbsp;agents</h1>
     <p class="cx-sub">An MCP server for every US clinician, practice and health system, kept current. Live in five minutes, priced per tool call, with a source on every answer.</p>
     <div class="cx-ctas"><a class="cx-btn dark" href="{CONNECT}">Add to Claude</a><a class="cx-btn light" href="/docs">Read the docs</a></div>
-    <p class="cx-or">or install directly with</p>
-    <ul class="cx-clients" aria-label="Works with"><li>Claude</li><li>Cursor</li><li>ChatGPT</li><li>Any MCP client</li></ul>
     <div class="cx-paste">
       <span class="cx-paste-k">Paste in your coding agent</span>
       <code class="cx-paste-v">Add the Stethos MCP server: {MCP_URL}</code>
       <button class="cx-copybtn copy-mcp" type="button" data-copy="Add the Stethos MCP server: {MCP_URL}">Copy</button>
     </div>
-    <p class="cx-fine">1,000 free credits · no card · no sales call</p>
+    <div class="cx-meta"><span class="cx-or">Works with</span><ul class="cx-clients" aria-label="Works with"><li>Claude</li><li>Cursor</li><li>ChatGPT</li><li>Any MCP client</li></ul><span class="cx-fine">1,000 free credits · no card · no sales call</span></div>
   </div>
   <picture class="cx-art">
     <source media="(max-width: 760px)" srcset="/img/g-hero-m-800.webp 800w, /img/g-hero-m-1200.webp 1200w" sizes="100vw">
