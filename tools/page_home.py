@@ -1,5 +1,14 @@
 from parts import *
+import os as _os
+def _clients():
+    d = _os.path.join(_os.path.dirname(__file__), "..", "public", "img", "clients")
+    out = []
+    for key, name in [("claude", "Claude"), ("cursor", "Cursor"), ("chatgpt", "ChatGPT")]:
+        f = next((f"{key}.{e}" for e in ("svg", "png", "webp") if _os.path.isfile(_os.path.join(d, f"{key}.{e}"))), None)
+        out.append(f'<li class="has-ic" title="{name}"><img src="/img/clients/{f}" width="20" height="20" alt="{name}"></li>' if f else f"<li>{name}</li>")
+    return '<ul class="cx-clients" aria-label="Works with">' + "".join(out) + '<li class="cx-any">Any MCP client</li></ul>'
 import json
+CLIENTS = _clients()
 
 FAQ = [
     ("What is Stethos?", "An MCP server, and API, for US healthcare provider data. It's built to keep one clean, current record for every clinician, practice, hospital and health system, stitched together from public registries and licensed sources, and to tell your software the moment one of those records changes."),
@@ -46,13 +55,13 @@ def page():
   <div class="wrap cx-copy">
     <h1 id="hero-title">Healthcare data for your&nbsp;AI&nbsp;agents</h1>
     <p class="cx-sub">An MCP server for every US clinician, practice and health system, kept current. Live in five minutes, priced per tool call, with a source on every answer.</p>
-    <div class="cx-ctas"><a class="cx-btn dark" href="{CONNECT}">Add to Claude<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="cx-btn light" href="/docs">Read the docs<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    <div class="cx-ctas"><a class="cx-btn dark" href="{CONNECT}">Start free trial<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="cx-btn light" href="/docs">Read the docs<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     <div class="cx-paste">
       <span class="cx-paste-k">Paste in your coding agent</span>
       <code class="cx-paste-v">Add the Stethos MCP server: {MCP_URL}</code>
       <button class="cx-copybtn copy-mcp" type="button" data-copy="Add the Stethos MCP server: {MCP_URL}">Copy</button>
     </div>
-    <div class="cx-meta"><span class="cx-or">or install directly with</span><ul class="cx-clients" aria-label="Works with"><li>Claude</li><li>Cursor</li><li>ChatGPT</li><li class="cx-any">Any MCP client</li></ul><span class="cx-fine">1,000 free credits · no card · no sales call</span></div>
+    <div class="cx-meta"><span class="cx-or">or install directly with</span>{CLIENTS}<span class="cx-fine">1,000 free credits · no card · no sales call</span></div>
   </div>
   <picture class="cx-art">
     <source media="(max-width: 760px)" srcset="/img/g-hero-m-800.webp 800w, /img/g-hero-m-1200.webp 1200w" sizes="100vw">
@@ -273,7 +282,7 @@ def page():
       <li class="hp-card pop"><span class="hp-badge">Most popular</span><h3>Build</h3><p class="hp-amt">$149<span>/mo</span></p><p>20,000 credits a month for your agents, plus watchers and webhooks. Top up any time.</p></li>
       <li class="hp-card"><h3>Enterprise</h3><p class="hp-amt">Custom</p><p>Volume pricing, flat files delivered to your warehouse, SLAs and a data agreement.</p></li>
     </ul>
-    <div class="hp-ctas"><a class="h2-btn y" href="/pricing">See the cost of each tool {ARROW}</a><a class="h2-btn w hp-trial" href="{CONNECT}">Add to Claude {ARROW}</a></div>
+    <div class="hp-ctas"><a class="h2-btn y" href="/pricing">See the cost of each tool {ARROW}</a><a class="h2-btn w hp-trial" href="{CONNECT}">Start free trial {ARROW}</a></div>
     <p class="hp-fine">Annual billing includes 2 months free. Unused monthly credits roll over for one month.</p>
   </div>
 </section>
@@ -307,7 +316,7 @@ def page():
       <h2 id="join-title">Give your agent <span class="pop">the healthcare map.</span></h2>
       <p>Paste one URL into Claude or your MCP client, sign in, and ask. Pay only for the tool calls you make.</p>
       <ul class="perks"><li>1,000 free credits, no card</li><li>Live in five minutes, no sales call</li><li>Provider data only, no PHI</li></ul>
-      <div class="join-ctas"><a class="btn-cta" href="{CONNECT}">Add to Claude</a><a class="join-signin" href="{APP}/login">Already have an account? Sign in</a></div>
+      <div class="join-ctas"><a class="btn-cta" href="{CONNECT}">Start free trial</a><a class="join-signin" href="{APP}/login">Already have an account? Sign in</a></div>
       <p class="join-alt">Questions first? <a href="mailto:{EMAIL}?subject=Stethos">Email our team</a></p>
     </div>
     <figure class="join-art">{art("cta", "Illustration: a shelf of small clay healthcare buildings, each with a glowing teal map pin, and a clay robot holding a laptop.")}</figure>

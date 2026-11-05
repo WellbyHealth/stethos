@@ -85,7 +85,7 @@ def seo_page(m):
     <div class="head ph">
       <h1 id="kw-title">{m["h1a"]} <span class="pop">{m["h1b"]}</span></h1>
       <p class="sp-lede">{m["intro"]}</p>
-      <div class="kw-ctas"><a class="btn-1" href="{CONNECT}">Add to Claude</a><a class="btn-2" href="/docs">Read the docs</a></div>
+      <div class="kw-ctas"><a class="btn-1" href="{CONNECT}">Start free trial</a><a class="btn-2" href="/docs">Read the docs</a></div>
     </div>
     <div class="sp-panels uc-one"><div class="sp-panel {m["color"]}"><div class="sp-p-main">
       <figure class="sp-scene"><img fetchpriority="high" src="/img/g-art-{m["art"]}-900.webp" srcset="/img/g-art-{m["art"]}-900.webp 900w, /img/g-art-{m["art"]}-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 560px" width="1600" height="1195" alt="Illustration for {m["name"]}" decoding="async"></figure>

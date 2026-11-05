@@ -194,3 +194,8 @@ code{font-size:.92em;background:var(--stone);border:1px solid var(--line-soft);b
   .cx-any{display:none}
   .cx-meta .cx-fine{width:100%;margin-top:6px}
 }
+.cx-clients li.has-ic{display:grid;place-items:center;width:38px;height:38px;padding:0;border-radius:50%}
+.cx-clients li.has-ic img{width:20px;height:20px;object-fit:contain}
+.cx-btn{white-space:nowrap}
+@media(max-width:400px){.cx-btn{padding:0 14px;font-size:15.5px;gap:6px}.cx-btn svg{width:16px;height:16px}}
+@media(max-width:340px){.cx-btn{padding:0 11px;font-size:14.5px}.cx-btn svg{display:none}}
