@@ -172,7 +172,7 @@ def page():
         <p>Enrich accounts and contacts through the API, and let webhooks update the record and alert its owner when a provider moves, a license lapses or a network changes.</p>
       </div>
     </div>
-    <p class="plug-ex"><b>Example:</b> a rep asks Claude for independent spine surgeons in Arizona. Stethos returns them with sources, the agent creates the contacts in Salesforce, and when one changes groups next month the record updates and the rep gets a task.</p>
+    <p class="plug-ex"><b>Example:</b> a rep asks Claude for independent spine surgeons in Arizona. Stethos returns them with sources, the agent creates the contacts in Salesforce, and when one changes groups next month the record updates and the rep gets a task. <a href="/examples">See nine more examples</a>.</p>
   </div>
 </section>
 
@@ -288,7 +288,7 @@ def page():
       <li><figure class="role-art" style="--bg:#e3f1e7">{art("uc-payer", "Illustration: a clay clipboard directory of doctors' offices with check marks, beside an insurance shield and a magnifying glass.")}</figure><h3><a class="role-link" href="/use-cases/provider-directories">Provider directory and network teams</a></h3><p>Flag stale locations, lapsed licenses and network mismatches before a member calls a number that doesn't work.</p></li>
       <li><figure class="role-art" style="--bg:#f5efdf">{art("uc-staffing", "Illustration: clay scrubs on a hanger rack, a stethoscope, a calendar and a small state map with glowing pins.")}</figure><h3><a class="role-link" href="/use-cases/clinical-staffing">Clinical staffing and recruiting</a></h3><p>Source licensed clinicians by state and specialty, and spot the health systems that are hiring hardest.</p></li>
     </ul>
-    <p class="sp-more"><a href="/use-cases/medtech-pharma">Medtech and pharma</a> · <a href="/use-cases/provider-directories">Provider directories</a> · <a href="/use-cases/clinical-staffing">Clinical staffing</a> · <a href="/use-cases">All use cases <span aria-hidden="true">→</span></a></p>
+    <p class="sp-more"><a href="/use-cases/medtech-pharma">Medtech and pharma</a> · <a href="/use-cases/provider-directories">Provider directories</a> · <a href="/use-cases/clinical-staffing">Clinical staffing</a> · <a href="/use-cases">All use cases <span aria-hidden="true">→</span></a> · <a href="/examples">Example workflows <span aria-hidden="true">→</span></a></p>
   </div>
 </section>
 

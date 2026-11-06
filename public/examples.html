@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Examples: What AI Agents Do With Stethos | Stethos</title>
+<meta name="description" content="Nine example workflows: medtech targeting, KOL mapping, directory accuracy, license watch, staffing, diligence, network mapping, in-network lookup, EHR lists.">
+<meta name="theme-color" content="#D0D2F9">
+<link rel="canonical" href="https://stethos-one.vercel.app/examples">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Stethos">
+<meta property="og:title" content="Examples: What AI Agents Do With Stethos | Stethos">
+<meta property="og:description" content="Nine example workflows: medtech targeting, KOL mapping, directory accuracy, license watch, staffing, diligence, network mapping, in-network lookup, EHR lists.">
+<meta property="og:url" content="https://stethos-one.vercel.app/examples">
+<meta property="og:image" content="https://stethos-one.vercel.app/og-home.jpg?v=3">
+<meta property="og:image:secure_url" content="https://stethos-one.vercel.app/og-home.jpg?v=3">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Clay illustration of a data machine under a glass dome, taking in records from hospitals and clinics and sending updates to small robots at laptops, next to the line: Healthcare data for your AI agents.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Examples: What AI Agents Do With Stethos | Stethos">
+<meta name="twitter:description" content="Nine example workflows: medtech targeting, KOL mapping, directory accuracy, license watch, staffing, diligence, network mapping, in-network lookup, EHR lists.">
+<meta name="twitter:image" content="https://stethos-one.vercel.app/og-home.jpg?v=3">
+<meta name="twitter:image:alt" content="Clay illustration of a data machine under a glass dome, taking in records from hospitals and clinics and sending updates to small robots at laptops, next to the line: Healthcare data for your AI agents.">
+<link rel="icon" href="/favicon-32.png?v=cf8c8908" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=d0d2cf04">
+<link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css?v=6c88d771">
+<link rel="stylesheet" href="/v2.css?v=978b51f1">
+<link rel="stylesheet" href="/site.css?v=6703b12a">
+<link rel="stylesheet" href="/stethos.css?v=12cd0254">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ItemList", "name": "Stethos example workflows", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Who should I call this week?", "url": "https://stethos-one.vercel.app/examples#medtech-targeting"}, {"@type": "ListItem", "position": 2, "name": "Map the key opinion leaders for a launch", "url": "https://stethos-one.vercel.app/examples#kol-mapping"}, {"@type": "ListItem", "position": 3, "name": "Keep the provider directory accurate", "url": "https://stethos-one.vercel.app/examples#directory-accuracy"}, {"@type": "ListItem", "position": 4, "name": "Catch license problems before a shift", "url": "https://stethos-one.vercel.app/examples#license-watch"}, {"@type": "ListItem", "position": 5, "name": "Fill an urgent role with licensed candidates", "url": "https://stethos-one.vercel.app/examples#staffing-sourcing"}, {"@type": "ListItem", "position": 6, "name": "Market diligence in an afternoon", "url": "https://stethos-one.vercel.app/examples#deal-diligence"}, {"@type": "ListItem", "position": 7, "name": "See where your network is thin", "url": "https://stethos-one.vercel.app/examples#network-mapping"}, {"@type": "ListItem", "position": 8, "name": "Find a doctor who can actually see the patient", "url": "https://stethos-one.vercel.app/examples#in-network-lookup"}, {"@type": "ListItem", "position": 9, "name": "Find every hospital on a given EHR", "url": "https://stethos-one.vercel.app/examples#ehr-campaign"}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos-one.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Examples", "item": "https://stethos-one.vercel.app/examples"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr">
+  <div class="bar">
+    <a class="logo" href="/" aria-label="Stethos home">
+      <img class="mark" src="/img/g-cl-logo-96.webp?v=a9b0c3f6" width="30" height="30" alt="">
+      <span>Stethos</span>
+    </a>
+    <nav aria-label="Primary">
+      <div class="dd">
+        <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-solutions">Product<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dd-panel" id="dd-solutions">
+          <div class="dd-col"><p class="dd-h">The API</p><ul class="dd-goals"><li><a href="/physician-data-api"><i class="dd-ic" style="--t:#ddf2ee"><img src="/img/g-cl-stk-search-160.webp?v=0f948a37" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Provider search</b><span>Every clinician and organization in the US, filtered your way.</span></span></a></li><li><a href="/npi-lookup-api"><i class="dd-ic" style="--t:#e4f0fd"><img src="/img/g-cl-stk-enrich-160.webp?v=a160c1b7" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>NPI lookup and enrich</b><span>Licenses, affiliations, networks and contact info from an NPI.</span></span></a></li><li><a href="/health-system-data-api"><i class="dd-ic" style="--t:#fdf5d2"><img src="/img/g-cl-stk-orgs-160.webp?v=6843bd5a" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Health system data</b><span>Health systems, groups and clinics, with who works where.</span></span></a></li><li><a href="/license-verification-api"><i class="dd-ic" style="--t:#fcecf6"><img src="/img/g-cl-stk-watch-160.webp?v=b44cee5a" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>License data and alerts</b><span>License status across states, with a webhook when one changes.</span></span></a></li><li><a href="/healthcare-mcp-server"><i class="dd-ic" style="--t:#eff5d6"><img src="/img/g-cl-stk-agents-160.webp?v=a082bcf3" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>MCP server</b><span>Add Stethos to Claude or any MCP client in five minutes.</span></span></a></li></ul></div>
+          <div class="dd-col dd-side"><p class="dd-h">By use case</p><ul class="dd-spec"><li><a href="/use-cases/medtech-pharma"><img src="/img/g-cl-stk-search-160.webp?v=0f948a37" width="96" height="96" alt="" loading="lazy" decoding="async">Medtech and pharma sales</a></li><li><a href="/use-cases/provider-directories"><img src="/img/g-cl-ic-payer-96.webp?v=bc686779" width="96" height="96" alt="" loading="lazy" decoding="async">Provider directories</a></li><li><a href="/use-cases/clinical-staffing"><img src="/img/g-cl-ic-license-96.webp?v=5ad39758" width="96" height="96" alt="" loading="lazy" decoding="async">Clinical staffing</a></li><li><a href="/use-cases/investors"><img src="/img/g-cl-stk-orgs-160.webp?v=6843bd5a" width="96" height="96" alt="" loading="lazy" decoding="async">Healthcare investors</a></li><li><a href="/use-cases/digital-health"><img src="/img/g-cl-ic-code-96.webp?v=9a682610" width="96" height="96" alt="" loading="lazy" decoding="async">Digital health and AI apps</a></li></ul><a class="dd-all" href="/use-cases">All use cases <span aria-hidden="true">→</span></a><img class="dd-art" src="/img/g-cl-stk-search-cut.webp?v=98a13010" width="480" height="480" alt="" loading="lazy" decoding="async"></div>
+        </div>
+      </div>
+      <a href="/use-cases">Use cases</a>
+      <a href="/examples">Examples</a>
+      <a href="/docs">Docs</a>
+      <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
+    </nav>
+    <div class="hdr-act"><a class="btn-2" href="/signup#signin">Sign in</a><a class="btn-1" href="/signup">Start free trial</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/#platform">Product</a><a href="/#connect">Connect in 5 minutes</a><a href="/use-cases">Use cases</a><a href="/examples">Examples</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="/signup#signin">Sign in</a></div>
+  </div>
+</header>
+
+<main id="main">
+<section class="sec sp-top ex" aria-labelledby="ex-title">
+  <div class="wrap">
+    <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Examples</nav>
+    <div class="head center">
+      <p class="eyebrow"><span>Examples</span></p>
+      <h1 id="ex-title">What agents do <span class="pop">with Stethos.</span></h1>
+      <p class="kpi-lede">Nine workflows your team could run from the AI assistant and CRM it already uses. Each one shows the question, what the agent does, the data behind it and where the result lands. Names and numbers are examples.</p>
+    </div>
+    <ul class="ex-jump" aria-label="Jump to an example"><li><a href="#medtech-targeting">Medtech sales</a></li><li><a href="#kol-mapping">Pharma</a></li><li><a href="#directory-accuracy">Health plans</a></li><li><a href="#license-watch">Telehealth</a></li><li><a href="#staffing-sourcing">Clinical staffing</a></li><li><a href="#deal-diligence">Investors</a></li><li><a href="#network-mapping">Health systems</a></li><li><a href="#in-network-lookup">Digital health</a></li><li><a href="#ehr-campaign">Health IT vendors</a></li></ul>
+    <div class="ex-list">
+    <article class="ex-card" id="medtech-targeting" style="--t:#e4f0fd">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-stk-search-160.webp?v=0f948a37" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">01 · Medtech sales</p><h2>Who should I call this week?</h2></div></div>
+      <p class="ex-trigger"><b>When</b> Every Monday, or whenever a rep asks.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Find independent spine surgeons in my territory doing 50+ fusions a year, and tell me who changed anything recently.”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Searches surgeons by specialty, territory and Medicare procedure volume</li><li>Ranks them by recent changes: a new group, a new surgery center, new hires</li><li>Creates or updates the contacts in Salesforce with a one-line talking point</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Medicare procedure volumes</li><li>Affiliations</li><li>Change events</li><li>Practice contacts</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">Salesforce or HubSpot, plus a weekly list in Claude</p></div>
+      </div>
+    </article>
+<article class="ex-card" id="kol-mapping" style="--t:#e8f3d2">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-stk-enrich-160.webp?v=a160c1b7" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">02 · Pharma</p><h2>Map the key opinion leaders for a launch</h2></div></div>
+      <p class="ex-trigger"><b>When</b> A new launch or an upcoming congress.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Who are the most active clinicians in this drug class in the Northeast: publishing, running trials and prescribing?”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Finds clinicians by prescribing volume in the class</li><li>Adds their publications, trials and grants</li><li>Flags industry relationships so medical affairs can review them first</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Part D prescribers</li><li>Publications and trials</li><li>NIH grants</li><li>Open Payments</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">Your CRM or a medical affairs spreadsheet</p></div>
+      </div>
+    </article>
+<article class="ex-card" id="directory-accuracy" style="--t:#fbe3ee">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-ic-payer-96.webp?v=bc686779" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">03 · Health plans</p><h2>Keep the provider directory accurate</h2></div></div>
+      <p class="ex-trigger"><b>When</b> Quarterly attestation, or a member complaint.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Check our cardiology listings in Ohio and tell me which ones are wrong.”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Compares each listing with current licenses, locations and affiliations</li><li>Has Stethos agents call the practice to confirm the phone line and whether it's taking new patients</li><li>Opens a ticket for every mismatch, with the evidence attached</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Payer directories</li><li>NPI Registry and CMS directory</li><li>Licenses</li><li>Agent verification</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">Your ticketing system or data warehouse</p></div>
+      </div>
+    </article>
+<article class="ex-card" id="license-watch" style="--t:#f5efdf">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-ic-license-96.webp?v=5ad39758" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">04 · Telehealth</p><h2>Catch license problems before a shift</h2></div></div>
+      <p class="ex-trigger"><b>When</b> A clinician joins, then continuous monitoring.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Watch licenses for all 140 of our clinicians and warn me before anyone sees a patient in a state where they can't.”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Confirms every state license and nurse compact privilege at onboarding</li><li>Watches for lapses, discipline and exclusions</li><li>Alerts operations by webhook before the next shift is booked</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>State licensing boards</li><li>Compact privileges</li><li>Exclusion lists</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">Your scheduling system or Slack</p></div>
+      </div>
+    </article>
+<article class="ex-card" id="staffing-sourcing" style="--t:#ece6fb">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-stk-orgs-160.webp?v=6843bd5a" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">05 · Clinical staffing</p><h2>Fill an urgent role with licensed candidates</h2></div></div>
+      <p class="ex-trigger"><b>When</b> A hospital posts an urgent travel nurse or locum role.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Find ICU nurses licensed in Arizona within 50 miles of Tucson, and which nearby systems are hiring hardest.”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Lists clinicians with the right license, specialty and location</li><li>Ranks nearby health systems by recent hiring</li><li>Adds candidates and sales targets to your applicant system and CRM</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Licenses</li><li>Affiliations</li><li>Health system job posts</li><li>Contacts</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">Your applicant system and CRM</p></div>
+      </div>
+    </article>
+<article class="ex-card" id="deal-diligence" style="--t:#e4f0fd">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-stk-orgs-160.webp?v=6843bd5a" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">06 · Investors</p><h2>Market diligence in an afternoon</h2></div></div>
+      <p class="ex-trigger"><b>When</b> A deal comes in for a regional orthopedic or GI group.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Map every orthopedic group in metro Phoenix: size, ownership, hospital ties, volume, quality and payer mix.”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Maps every group, its clinicians and its parent organization</li><li>Adds Medicare volume, quality scores and Medicare Advantage share by county</li><li>Writes a short memo with a spreadsheet of the underlying records and sources</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Organizations</li><li>Affiliations</li><li>Medicare utilization</li><li>Cost reports</li><li>MA enrollment</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">A memo in Claude and a spreadsheet for the deal team</p></div>
+      </div>
+    </article>
+<article class="ex-card" id="network-mapping" style="--t:#e8f3d2">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-ic-gov-cut.webp?v=7fd56fe8" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">07 · Health systems</p><h2>See where your network is thin</h2></div></div>
+      <p class="ex-trigger"><b>When</b> Strategy asks why a service line's volume is down.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Which independent primary care doctors near our hospitals aren't affiliated with us, and who recently joined a competing group?”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Finds primary care clinicians near each hospital</li><li>Separates those affiliated with you, with competitors, or independent</li><li>Flags recent moves so physician liaisons can reach out first</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Affiliations</li><li>ACO participation</li><li>Change events</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">Your physician relations CRM</p></div>
+      </div>
+    </article>
+<article class="ex-card" id="in-network-lookup" style="--t:#fbe3ee">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-ic-code-96.webp?v=9a682610" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">08 · Digital health</p><h2>Find a doctor who can actually see the patient</h2></div></div>
+      <p class="ex-trigger"><b>When</b> A patient asks your app's assistant for a dermatologist.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Find dermatologists within 10 miles who take this patient's plan and are accepting new patients.”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Searches by specialty, location and the patient's plan</li><li>Checks licenses and uses agent-verified availability</li><li>Returns the practice's EHR so your app knows how to book</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Payer directories</li><li>Licenses</li><li>Agent verification</li><li>EHR in use (ONC data)</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">Your app, through the API</p></div>
+      </div>
+    </article>
+<article class="ex-card" id="ehr-campaign" style="--t:#f5efdf">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-stk-agents-160.webp?v=a082bcf3" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">09 · Health IT vendors</p><h2>Find every hospital on a given EHR</h2></div></div>
+      <p class="ex-trigger"><b>When</b> You launch an integration for a specific EHR.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“List every hospital and large group running Oracle Health, with their IT leaders, and load them into HubSpot.”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Finds organizations by the certified EHR they report using</li><li>Adds the organization's leadership and locations</li><li>Creates a HubSpot list for the campaign</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>ONC certified health IT data</li><li>EHR vendors' published customer lists</li><li>Organizations</li><li>Contacts</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">HubSpot or Salesforce</p></div>
+      </div>
+    </article>
+
+    </div>
+    <p class="cov-note ex-more">Have a workflow in mind? <a href="mailto:team@stethos.health?subject=Stethos%20workflow">Tell us about it</a>, or see the <a href="/use-cases">use cases</a> and <a href="/docs">docs</a>.</p>
+  </div>
+</section>
+<section class="sec">
+  <div class="panel navy wrap-panel sp-cta">
+    <img class="cta-art l" src="/img/g-cl-stk-agents-cut.webp?v=ddc6d49d" width="320" height="320" alt="" loading="lazy" decoding="async"><img class="cta-art r" src="/img/g-cl-ic-pin-cut.webp?v=dc8aa564" width="360" height="360" alt="" loading="lazy" decoding="async">
+    <p class="eyebrow on-dark"><span>Self-serve</span></p>
+    <h2>Run your first workflow <span class="pop">in five minutes.</span></h2>
+    <p>1,000 free credits, no card, no sales call. Pay only for the tool calls you make.</p>
+    <div class="sp-cta-row"><a class="btn-cta" href="/signup">Start free trial</a><a class="sp-cta-alt" href="mailto:team@stethos.health?subject=examples">Questions? Email our team</a></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="logo" href="/"><img class="mark" src="/img/g-cl-logo-96.webp?v=a9b0c3f6" width="30" height="30" alt=""><span>Stethos</span></a>
+      <p>Current, sourced healthcare data for AI agents, as an MCP server. Product views and tool results on this site use illustrative sample data.</p>
+    </div>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="/#platform">Product</a>
+      <a href="/use-cases">Use cases</a>
+      <a href="/examples">Examples</a>
+      <a href="/docs">Docs</a>
+      <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
+      <a href="/healthcare-mcp-server">Healthcare MCP server</a>
+      <a href="/npi-lookup-api">NPI lookup API</a>
+      <a href="/physician-data-api">Physician data API</a>
+      <a href="/license-verification-api">License data API</a>
+      <a href="/health-system-data-api">Health system data API</a>
+      <a href="/medicare-utilization-data-api">Medicare utilization data</a>
+      <a href="/home-health-hospice-data-api">Home health and hospice data</a>
+      <a href="/physician-referral-data">Physician referral data</a>
+      <a href="/use-cases/medtech-pharma">Medtech and pharma</a>
+      <a href="/use-cases/provider-directories">Provider directories</a>
+      <a href="/use-cases/clinical-staffing">Clinical staffing</a>
+      <a href="/compare/definitive-healthcare">vs Definitive</a>
+      <a href="/compare/iqvia-onekey">vs IQVIA OneKey</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/privacy">Privacy</a>
+      <a href="mailto:team@stethos.health?subject=Stethos">Contact</a>
+    </nav>
+    <p class="foot-copy">© 2026 Stethos</p>
+  </div>
+</footer>
+<script src="/nav.js?v=462bebb5" defer></script>
+</body>
+</html>
