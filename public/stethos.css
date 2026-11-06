@@ -432,3 +432,19 @@ html:not(.mo-js) .rot:before{content:none}
 .now-list b{display:block;font-size:1.2rem;letter-spacing:-.02em;color:#000}
 .now-list p{margin:8px 0 0;font-size:15.5px;line-height:1.5;color:#3b4250}
 @media(max-width:860px){.now-list{grid-template-columns:minmax(0,1fr)}}
+/* Works where you work */
+.plug-grid{display:grid;grid-template-columns:minmax(0,1fr) 70px minmax(0,1fr);align-items:stretch;margin-top:26px}
+.plug-card{background:#fff;border:1px solid var(--line,#e5e3dc);border-radius:26px;padding:26px 28px;box-shadow:0 24px 50px -40px rgba(11,27,51,.45)}
+.plug-k{margin:0 0 8px;font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#4A4FB0}
+.plug-card h3{font-size:1.5rem;letter-spacing:-.025em;margin:0 0 14px}
+.plug-chips{list-style:none;margin:0 0 16px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.plug-chips li{background:#f3f3fd;border:1px solid #dfe0fa;border-radius:999px;padding:6px 13px;font-size:14px;font-weight:600;color:#1f2550}
+.plug-card>p:last-child{margin:0;font-size:15.5px;line-height:1.5;color:#3b4250}
+.plug-flow{display:flex;align-items:center;justify-content:center;gap:4px;color:#4A4FB0}
+.plug-flow span{width:14px;height:2px;background:#c9cbf7;border-radius:2px}
+.plug-flow i{font-style:normal;font-size:26px;font-weight:700}
+.mo-js .plug-flow i{animation:plug-nudge 1.8s ease-in-out infinite}
+@keyframes plug-nudge{50%{transform:translateX(5px)}}
+.plug-ex{max-width:52em;margin:22px auto 0;text-align:center;font-size:15.5px;line-height:1.55;color:#3b4250}
+@media(max-width:860px){.plug-grid{grid-template-columns:minmax(0,1fr);gap:0}.plug-flow{height:44px;transform:rotate(90deg)}.plug-ex{text-align:left}}
+@media(prefers-reduced-motion:reduce){.plug-flow i{animation:none}}

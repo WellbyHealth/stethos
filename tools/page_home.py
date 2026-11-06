@@ -13,6 +13,7 @@ CLIENTS = _clients()
 FAQ = [
     ("What is Stethos?", "Current, sourced healthcare data for AI agents, delivered as an MCP server and API. Stethos resolves government, payer and web sources into one record for every US clinician, practice, health system and payer network, puts a source and a checked date on every field, keeps records current with verification agents, and tells your agent when something changes"),
     ("Can't my agent just ask a general AI assistant?", "General AI assistants can find some provider data, but they answer from whatever web page or registry copy they come across, often months or years old, with no source and no date. Provider data changes constantly: clinicians move groups, licenses lapse, networks change. Stethos re-checks its sources, shows where every field came from and when it was last checked, and tells your agent when a record changes."),
+    ("Does it work with our CRM and AI tools?", "Yes, that's the point. Stethos runs as an MCP server inside Claude, ChatGPT, Microsoft Copilot Studio, Cursor or your own agent, and its REST API and webhooks keep records current in Salesforce, HubSpot, Attio or any CRM or data warehouse. There's no separate dashboard to adopt."),
     ("Who is it for?", "Teams building agents and products on healthcare data: AI sales agents for medtech and pharma, provider directory and network teams at payers and digital front doors, clinical staffing and recruiting platforms, healthcare investors, and digital health apps that need to know who practices where."),
     ("Where does the data come from?", "Government files first: the NPPES NPI Registry, CMS's Medicare utilization files for clinicians, prescribers, hospitals, home health, hospice and nursing facilities, Care Compare ratings and affiliations, ACO participation, cost reports and Open Payments, plus state licensing boards. Payer directories, price transparency files, practice websites and health system job posts are layered on top. Every field carries its source and the date it was last checked. See the full list in the docs."),
     ("Does Stethos handle patient data?", "No. Stethos indexes healthcare professionals and organizations, not patients. There is no PHI in the API, so you don't need a business associate agreement to use it."),
@@ -57,7 +58,7 @@ def page():
 <section class="hero cx" aria-labelledby="hero-title">
   <div class="wrap cx-copy">
     <h1 id="hero-title">Turn your agent into a world&#8209;class <span class="rot" data-rot data-words="recruiter|network analyst|deal team|care navigator"><span class="rot-w on">medtech rep</span></span></h1>
-    <p class="cx-sub">Current, sourced healthcare data on every US clinician, practice, health system and payer network, as tools your agents can call. Live in five minutes, priced per tool call.</p>
+    <p class="cx-sub">Current, sourced healthcare data on every US clinician, practice, health system and payer network, as tools your agents can call, inside the CRM and AI assistants your team already uses. Live in five minutes, priced per tool call.</p>
     <div class="cx-ctas"><a class="cx-btn dark" href="{TRIAL}">Start free trial<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="cx-btn light" href="/docs">Read the docs<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     <div class="cx-paste">
       <span class="cx-paste-k">Paste in your coding agent</span>
@@ -146,6 +147,32 @@ def page():
 {stk(4, "stk-grow", "MCP first", "Built to plug straight into your agents", "as an MCP server, in five minutes.", "REST and webhooks are there too, for the parts of your stack that aren't agents.", "stk-agents")}
 </ul>
     <p class="sp-more">Explore: <a href="/healthcare-mcp-server">Healthcare MCP server</a> · <a href="/npi-lookup-api">NPI lookup API</a> · <a href="/physician-data-api">Physician data API</a> · <a href="/license-verification-api">License data API</a> · <a href="/health-system-data-api">Health system data API</a> · <a href="/medicare-utilization-data-api">Medicare utilization data</a> · <a href="/home-health-hospice-data-api">Home health and hospice data</a> · <a href="/physician-referral-data">Physician referral data</a></p>
+  </div>
+</section>
+
+<section class="sec plugs" id="integrations" aria-labelledby="plug-title">
+  <div class="wrap">
+    <div class="head center">
+      <p class="eyebrow"><span>Works where you work</span></p>
+      <h2 id="plug-title">No new dashboard. <span class="pop">It plugs into what you use today.</span></h2>
+      <p class="kpi-lede">Stethos isn't another tool to log into. Your team asks for healthcare data in the AI assistant they already use, and the answers land in the CRM they already live in, with sources attached.</p>
+    </div>
+    <div class="plug-grid">
+      <div class="plug-card">
+        <p class="plug-k">AI assistants and agents</p>
+        <h3>Ask in plain words</h3>
+        <ul class="plug-chips"><li>Claude</li><li>ChatGPT</li><li>Microsoft Copilot Studio</li><li>Cursor</li><li>Your own agent</li></ul>
+        <p>Add Stethos as an MCP server and its tools show up in the assistant. Search, enrich, map organizations and watch for changes without leaving the chat.</p>
+      </div>
+      <div class="plug-flow" aria-hidden="true"><span></span><i>→</i><span></span></div>
+      <div class="plug-card">
+        <p class="plug-k">CRMs and systems of record</p>
+        <h3>Records stay current</h3>
+        <ul class="plug-chips"><li>Salesforce</li><li>HubSpot</li><li>Attio</li><li>Lightfield</li><li>Your data warehouse</li></ul>
+        <p>Enrich accounts and contacts through the API, and let webhooks update the record and alert its owner when a provider moves, a license lapses or a network changes.</p>
+      </div>
+    </div>
+    <p class="plug-ex"><b>Example:</b> a rep asks Claude for independent spine surgeons in Arizona. Stethos returns them with sources, the agent creates the contacts in Salesforce, and when one changes groups next month the record updates and the rep gets a task.</p>
   </div>
 </section>
 
@@ -289,7 +316,7 @@ def page():
       </div>
       <div class="col us">
         <h3>Stethos: built for agents</h3>
-        <ul><li>One matched record per provider and organization</li><li>A source and checked date on every field</li><li>Verified by agents when sources disagree</li><li>Changes pushed to your agent</li><li>Live in five minutes, priced per call</li><li>Built for agents and developers</li></ul>
+        <ul><li>One matched record per provider and organization</li><li>A source and checked date on every field</li><li>Verified by agents when sources disagree</li><li>Changes pushed to your agent</li><li>Plugs into your CRM and AI assistant</li><li>Live in five minutes, priced per call</li></ul>
       </div>
     </div>
   </div>
@@ -318,7 +345,7 @@ def page():
     <ul class="pillars">
       <li style="--t:#e4f0fd"><img src="/img/g-cl-stk-watch-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><h3>Fresh</h3><p>Sources are re-checked continuously, and Stethos agents call practices and check websites to confirm what files can't. Changes arrive as events, not quarterly exports.</p></li>
       <li style="--t:#e8f3d2"><img src="/img/g-cl-tr-read-cut.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><h3>Trustworthy</h3><p>Every field shows where it came from and when it was last checked, matched to the right person or practice. Consistent answers, not a confident guess.</p></li>
-      <li style="--t:#f5efdf"><img src="/img/g-cl-stk-agents-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><h3>Built for agents</h3><p>MCP first, with REST and webhooks too. Self-serve and priced per tool call: no annual contract, no seats, no sales call.</p></li>
+      <li style="--t:#f5efdf"><img src="/img/g-cl-stk-agents-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><h3>Built for agents</h3><p>Plugs into the AI assistants and CRM you already use: MCP for agents, REST and webhooks for everything else. Self-serve and priced per call.</p></li>
     </ul>
     <ul class="trust-line"><li>No patient data: no PHI, no BAA</li><li>A source and a checked date on every field</li><li>Government registries first, licensed sources on top</li></ul>
   </div>
