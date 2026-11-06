@@ -75,10 +75,6 @@ def page():
   </picture>
 </section>
 
-<section class="srcs" aria-labelledby="srcs-title">
-  <p class="srcs-k" id="srcs-title">Resolved from the sources healthcare runs on</p>
-  <div class="mq"><ul class="mq-row"><li>NPPES NPI Registry</li><li>CMS National Provider Directory</li><li>Medicare utilization by clinician</li><li>Medicare Part D prescribers</li><li>Medicare hospital inpatient and outpatient</li><li>Home health, hospice and SNF files</li><li>Care Compare ratings and affiliations</li><li>Provider of Services file</li><li>ACO participation</li><li>Hospital and SNF cost reports</li><li>Medicare Advantage enrollment</li><li>Open Payments</li><li>ONC certified health IT data</li><li>State licensing boards</li><li>Payer directories</li><li>Price transparency files</li><li>Practice websites</li><li>Health system job posts</li></ul><ul class="mq-row" aria-hidden="true"><li>NPPES NPI Registry</li><li>CMS National Provider Directory</li><li>Medicare utilization by clinician</li><li>Medicare Part D prescribers</li><li>Medicare hospital inpatient and outpatient</li><li>Home health, hospice and SNF files</li><li>Care Compare ratings and affiliations</li><li>Provider of Services file</li><li>ACO participation</li><li>Hospital and SNF cost reports</li><li>Medicare Advantage enrollment</li><li>Open Payments</li><li>ONC certified health IT data</li><li>State licensing boards</li><li>Payer directories</li><li>Price transparency files</li><li>Practice websites</li><li>Health system job posts</li></ul></div>
-</section>
 
 <section class="sec ex home-ex" id="examples" aria-labelledby="hx-title">
   <div class="wrap">

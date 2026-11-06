@@ -20,7 +20,7 @@ def head(title, desc, path, css=("styles", "v2", "site"), extra="", ld="", og_ty
          image=None, image_alt=None, crumbs=None, schema=None, share_title=None, share_desc=None):
     """crumbs: [(name, path), ...] after Home. schema: list of extra JSON-LD objects."""
     import json as _j
-    img = SITE + (image or "/og-home.jpg?v=3")
+    img = SITE + ((image + "?v=4") if image else "/og-home.jpg?v=3")
     st = share_title or title
     sd = share_desc or desc
     img_alt = image_alt or OG_ALT
