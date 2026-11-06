@@ -13,3 +13,4 @@ bots*.jpg
 shots/
 audit.py
 shot.py
+node_modules

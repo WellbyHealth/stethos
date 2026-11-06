@@ -10,6 +10,7 @@ EMAIL = "team@stethos.health"            # placeholder contact
 BRAND = "Stethos"
 MCP_URL = "https://mcp.stethos.health/v1"   # placeholder MCP endpoint
 CONNECT = "/docs#connect"
+TRIAL = "/signup"
 
 ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 CHECK = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.4l2.6 2.6L12 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
@@ -103,7 +104,7 @@ HEADER = f'''
       <a href="/docs">Docs</a>
       <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
     </nav>
-    <div class="hdr-act"><a class="btn-2" href="{APP}/login">Sign in</a><a class="btn-1" href="{CONNECT}">Start free trial</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/#platform">Product</a><a href="/#connect">Connect in 5 minutes</a><a href="/use-cases">Use cases</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="{APP}/login">Sign in</a></div>
+    <div class="hdr-act"><a class="btn-2" href="{TRIAL}#signin">Sign in</a><a class="btn-1" href="{TRIAL}">Start free trial</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/#platform">Product</a><a href="/#connect">Connect in 5 minutes</a><a href="/use-cases">Use cases</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="{TRIAL}#signin">Sign in</a></div>
   </div>
 </header>
 '''
@@ -147,7 +148,7 @@ def cta_band(eyebrow, h2a, h2b, lede, subject):
     <p class="eyebrow on-dark"><span>{eyebrow}</span></p>
     <h2>{h2a} <span class="pop">{h2b}</span></h2>
     <p>{lede}</p>
-    <div class="sp-cta-row"><a class="btn-cta" href="{CONNECT}">Start free trial</a><a class="sp-cta-alt" href="mailto:{EMAIL}?subject={subject}">Questions? Email our team</a></div>
+    <div class="sp-cta-row"><a class="btn-cta" href="{TRIAL}">Start free trial</a><a class="sp-cta-alt" href="mailto:{EMAIL}?subject={subject}">Questions? Email our team</a></div>
   </div>
 </section>
 '''

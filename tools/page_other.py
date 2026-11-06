@@ -105,11 +105,11 @@ def pricing():
              "Self-serve pricing per MCP tool call. Start with 1,000 free credits, no card. Build is $149 a month for 20,000 credits. Enterprise adds flat files.",
              "/pricing", css=("styles", "v2", "site", "pricing"), image="/og/pricing.jpg", crumbs=[("Pricing", "/pricing")], schema=[faqld, prod])
     cards = (pp_card("free", "Free", "g-cl-ic-pin-cut.webp", "#e4f0fd", "To try every endpoint on your own use case.",
-                     "$0", None, "1,000 credits, once", "No card needed", None, "Live in five minutes", "Add to Claude", CONNECT,
+                     "$0", None, "1,000 credits, once", "No card needed", None, "Live in five minutes", "Start free trial", TRIAL,
                      ["Every tool: search, enrich, organizations, watch", "Source and verified date on every field", "Up to 2 watchers", "Works in Claude, Cursor and any MCP client"],
                      ["Docs and community support"])
              + pp_card("build", "Build", "g-cl-stk-agents-cut.webp", "#eff5d6", "For teams shipping a product or an agent.",
-                       "$149", "$124", "per month · 20,000 credits", "Billed monthly", "Billed $1,490 yearly", "Starts with 1,000 free credits", "Start self-serve", f"{APP}/signup?plan=build",
+                       "$149", "$124", "per month · 20,000 credits", "Billed monthly", "Billed $1,490 yearly", "Starts with 1,000 free credits", "Start self-serve", f"{TRIAL}?plan=build",
                        ["20,000 credits a month, unused credits roll over a month", "Unlimited watchers, plus webhooks for your backend", "REST API alongside the MCP server", "Top-ups at $8 per 1,000 credits", "Up to 10 projects and keys"],
                        ["Email support, next business day"], pop=True)
              + pp_card("enterprise", "Enterprise", "g-cl-stk-orgs-cut.webp", "#fdf5d2", "For data and product teams at scale.",
@@ -257,7 +257,7 @@ def docs():
   <h1>Quickstart: connect Stethos to your agent</h1>
   <p class="doc-meta">Preview · tools and prices may change before launch</p>
   <ul class="doc-toc"><li><a href="#connect">Connect</a></li><li><a href="#tools">Tools</a></li><li><a href="#credits">Credits</a></li><li><a href="#rest">REST API</a></li><li><a href="#watch">Webhooks</a></li><li><a href="#errors">Errors</a></li></ul>
-  <p class="note">Stethos is in development. This page shows the MCP server and API we're building so you can plan against it. <a href="{APP}/signup">Join early access</a> to get access when it opens.</p>
+  <p class="note">Stethos is in development. This page shows the MCP server and API we're building so you can plan against it. <a href="{TRIAL}">Join early access</a> to get access when it opens.</p>
 
   <h2 id="connect">Connect in five minutes</h2>
   <p>Stethos is a remote MCP server. One URL gives your agent every tool:</p>
@@ -382,3 +382,53 @@ def notfound():
 </main>
 '''
     return h.replace('content="index,follow,max-image-preview:large"', 'content="noindex"') + body + tail()
+
+
+def signup():
+    h = head("Start your free trial | Stethos",
+             "Get 1,000 free credits for the Stethos healthcare provider data MCP server. No card, no sales call. Works with Claude, Cursor and ChatGPT.",
+             "/signup", crumbs=[("Free trial", "/signup")])
+    opts = lambda pairs: "".join(f'<option value="{v}">{t}</option>' for v, t in pairs)
+    body = f'''{HEADER}
+<main id="main">
+<section class="sec sp-top su" aria-labelledby="su-title">
+  <div class="wrap su-grid">
+    <div class="su-copy">
+      <p class="eyebrow"><span>Free trial</span></p>
+      <h1 id="su-title">Start your <span class="pop">free trial.</span></h1>
+      <p class="sp-lede">1,000 free credits for the Stethos MCP server and API. No card, no sales call.</p>
+      <ul class="su-list">
+        <li><b>Search and enrich</b> every US clinician, practice and health system</li>
+        <li><b>A source and a checked date</b> on every field your agent gets back</li>
+        <li><b>Watchers</b> that tell your agent when a provider moves or changes groups</li>
+        <li><b>Works with</b> Claude, Cursor, ChatGPT or any MCP client, plus REST</li>
+      </ul>
+      <p class="su-note" id="signin">Stethos is in preview, and we're opening access in small batches. We'll email your key and setup link, usually within one business day. Already signed up? Your access link is in that email.</p>
+    </div>
+    <div class="su-card">
+      <form id="su-form" novalidate>
+        <label>Your name<input name="name" autocomplete="name" required></label>
+        <label>Work email<input name="email" type="email" autocomplete="email" inputmode="email" required></label>
+        <label>Company<input name="company" autocomplete="organization"></label>
+        <label>What are you building?<select name="use_case">{opts([("medtech-pharma","Sales and targeting for medtech or pharma"),("provider-directory","A provider directory or network tool"),("staffing","Clinical staffing or recruiting"),("investing","Healthcare investing or diligence"),("digital-health","A digital health product"),("other","Something else")])}</select></label>
+        <label>Where will you use it?<select name="client">{opts([("claude","Claude"),("cursor","Cursor"),("chatgpt","ChatGPT"),("other-mcp","Another MCP client"),("rest-api","REST API from my own code")])}</select></label>
+        <label><span>Anything we should know? <span class="opt">Optional</span></span><textarea name="note" rows="3"></textarea></label>
+        <input type="hidden" name="source">
+        <div class="su-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+        <button class="su-btn" type="submit">Start free trial {ARROW}</button>
+        <p class="su-err" role="alert" hidden></p>
+        <p class="su-fine">By signing up you agree to our <a href="/privacy">privacy policy</a>. We'll only email you about your account.</p>
+      </form>
+      <div class="su-done" hidden tabindex="-1">
+        <img src="/img/g-cl-logo-cut.webp" width="120" height="120" alt="">
+        <h2>You're on the list.</h2>
+        <p>We'll send your key and setup link to <b class="su-mail"></b>, usually within one business day.</p>
+        <p>While you wait, see how to connect Stethos and what each tool returns.</p>
+        <a class="su-btn" href="/docs#connect">Read the docs {ARROW}</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+'''
+    return h + body + tail(("nav", "signup"))

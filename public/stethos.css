@@ -199,3 +199,36 @@ code{font-size:.92em;background:var(--stone);border:1px solid var(--line-soft);b
 .cx-btn{white-space:nowrap}
 @media(max-width:400px){.cx-btn{padding:0 14px;font-size:15.5px;gap:6px}.cx-btn svg{width:16px;height:16px}}
 @media(max-width:340px){.cx-btn{padding:0 11px;font-size:14.5px}.cx-btn svg{display:none}}
+/* Signup */
+.su{background:linear-gradient(#D0D2F9,#eef0fd 60%,#f7f7f4)}
+.su-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.su h1{font-size:clamp(2.4rem,4.6vw,3.8rem);line-height:1.02;letter-spacing:-.04em;margin:10px 0 14px}
+.su-list{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:12px;font-size:16.5px;line-height:1.45;color:#2e2d29}
+.su-list li{padding-left:30px;position:relative}
+.su-list li:before{content:"";position:absolute;left:0;top:3px;width:20px;height:20px;border-radius:7px;background:#0b1b33 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.3l2.2 2.2 4.8-5' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat}
+.su-list b{color:#000;font-weight:650}
+.su-note{margin-top:24px;font-size:14.5px;line-height:1.5;color:#5b5f6b;max-width:34em;scroll-margin-top:110px}
+.su-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:28px;padding:clamp(22px,3vw,34px);box-shadow:0 30px 60px -40px rgba(11,27,51,.45)}
+#su-form{display:grid;gap:14px}
+#su-form label{display:grid;gap:6px;font-size:14px;font-weight:600;color:#1f2430}
+#su-form .opt{font-weight:500;color:#8a8d99}
+#su-form input,#su-form select,#su-form textarea{font:inherit;font-size:16px;font-weight:400;color:#111;background:#f7f7f4;border:1px solid #e2e1da;border-radius:12px;padding:12px 14px;width:100%;min-width:0;transition:border-color .15s,box-shadow .15s}
+#su-form textarea{resize:vertical;min-height:80px}
+#su-form input:focus,#su-form select:focus,#su-form textarea:focus{outline:none;border-color:#0b1b33;box-shadow:0 0 0 3px rgba(11,27,51,.12);background:#fff}
+.su-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.su-btn{display:inline-flex;align-items:center;justify-content:space-between;gap:10px;min-height:54px;padding:0 20px;border:0;border-radius:16px;background:#000;color:#fff;font:inherit;font-size:17px;font-weight:600;text-decoration:none;cursor:pointer;transition:transform .16s,background .15s}
+.su-btn:hover{background:#1d1d1f;transform:translateY(-1px)}
+.su-btn:disabled{opacity:.7;cursor:progress;transform:none}
+.su-btn svg{width:17px;height:17px}
+.su-err{margin:0;padding:10px 14px;border-radius:12px;background:#fdecea;color:#8a1c12;font-size:14.5px}
+.su-fine{margin:0;font-size:13px;color:#6b6a64}
+.su-fine a{color:inherit}
+.su-done{text-align:center;padding:12px 4px;outline:none}
+.su-done img{width:110px;height:110px;object-fit:contain;margin:0 auto 6px}
+.su-done h2{font-size:1.8rem;letter-spacing:-.03em;margin:0 0 8px}
+.su-done p{color:#3b4250;margin:0 0 10px}
+.su-done .su-btn{margin-top:10px}
+@media(max-width:860px){.su-grid{grid-template-columns:minmax(0,1fr)}.su-list{margin-top:18px}.su-note{margin-top:16px}}
+@media(max-width:860px){.su-copy{order:0}}
+#su-form[hidden],.su-done[hidden]{display:none}
+.su .sp-lede{text-align:left;margin-left:0;margin-right:0;max-width:30em}
