@@ -180,7 +180,10 @@ def examples():
       <p class="kpi-lede">Workflows for medtech, pharma, health IT, post-acute, investment, startup and staffing teams, run from the AI assistant and CRM you already use. Pick one to see how it works.</p>
     </div>
     <div class="ex-split">
-      <ul class="ex-nav" role="tablist" aria-label="Example workflows">{jump}</ul>
+      <div class="ex-navwrap">
+        <ul class="ex-nav" role="tablist" aria-label="Example workflows">{jump}</ul>
+        <button class="ex-morebtn" type="button" tabindex="-1" aria-hidden="true">More workflows <span aria-hidden="true">↓</span></button>
+      </div>
       <div class="ex-stage">
       {cards}
       </div>

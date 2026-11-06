@@ -22,3 +22,18 @@
   var h=location.hash.slice(1); if(h) show(h,false,false);
   window.addEventListener('hashchange',function(){show(location.hash.slice(1),false,true)});
 })();
+(function(){
+  var wrap=document.querySelector('.ex-navwrap'); if(!wrap) return;
+  var nav=wrap.querySelector('.ex-nav'), btn=wrap.querySelector('.ex-morebtn');
+  function upd(){
+    var v=nav.scrollHeight>nav.clientHeight+4, h=nav.scrollWidth>nav.clientWidth+4;
+    var top=nav.scrollTop>4, bot=nav.scrollTop+nav.clientHeight<nav.scrollHeight-4;
+    var lft=nav.scrollLeft>4, rgt=nav.scrollLeft+nav.clientWidth<nav.scrollWidth-4;
+    nav.classList.toggle('ex-ft',v&&top); nav.classList.toggle('ex-fb',v&&bot);
+    nav.classList.toggle('ex-fl',h&&lft); nav.classList.toggle('ex-fr',h&&rgt);
+    wrap.classList.toggle('ex-hasmore',v&&bot);
+  }
+  nav.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd);
+  if(btn) btn.addEventListener('click',function(){nav.scrollBy({top:nav.clientHeight*0.7,behavior:'smooth'})});
+  upd(); setTimeout(upd,300);
+})();
