@@ -12,7 +12,7 @@ code{font-size:.92em;background:var(--stone);border:1px solid var(--line-soft);b
 .play-card{display:flex;flex-direction:column;min-width:0}
 .play-card .code{margin:14px 0 0;flex:1;background:#0B1B33;color:#DCE6F5;border-radius:16px;padding:18px 20px;font-size:13.5px;line-height:1.65;white-space:pre;overflow:auto;min-height:300px;max-height:440px}
 .play-card .code .k{color:#9FD8CF}
-.play-card .code .s{color:#F6C99A}
+.play-card .code .s{color:#9FA3F1}
 .play-card .code .n{color:#C9B8F7}
 .play-note{margin:12px 2px 0;font-size:14.5px;color:var(--muted)}
 .play-ok{font-weight:650;color:var(--pos)}
@@ -24,7 +24,7 @@ code{font-size:.92em;background:var(--stone);border:1px solid var(--line-soft);b
 .src-list dt{font-size:13px;color:var(--muted)}
 .src-list dd{margin:0;font-size:15.5px;font-weight:600;color:#000}
 .src-list .src{grid-column:2;font-size:12.5px;color:#4A6B66}
-.src-list .src-conflict{background:var(--warn-soft);border-color:#F3D7B0}
+.src-list .src-conflict{background:var(--warn-soft);border-color:#B0B3F3}
 .src-list .src-conflict .src{color:var(--warn)}
 @media (max-width:560px){.src-list div{grid-template-columns:minmax(0,1fr)}.src-list .src{grid-column:1}}
 
@@ -338,7 +338,7 @@ html:not(.mo-js) .rot-w:not(.on){display:none}
 .split-card.biz{background:#fff;border:1px solid var(--line,#e5e3dc);color:var(--ink,#111)}
 .split-card.dev{background:#0b1b33;color:#fff}
 .split-k{margin:0 0 10px;font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange-ink)}
-.split-card.dev .split-k{color:var(--peach-2,#F0C8AE)}
+.split-card.dev .split-k{color:var(--peach-2,#AEB1F0)}
 .split-card h3{font-size:clamp(1.7rem,2.8vw,2.3rem);letter-spacing:-.03em;margin:0 0 10px}
 .split-card>p{margin:0;font-size:16.5px;line-height:1.5;color:inherit;opacity:.85}
 .split-card .perks{margin:18px 0 24px}
@@ -361,7 +361,7 @@ html:not(.mo-js) .rot-w:not(.on){display:none}
 :root{--orange-ink:#4A4FB0;--orange:#A9ADEE;--peach-2:#C9CBF7;--peach:#ECEDFC}
 .btn-cta:hover,.capture button:hover,.btn-hero.o:hover{background:#9599e6}
 .hp-card.pop,.pp-card.pop{background:linear-gradient(180deg,#EEEFFD 0,#fff 55%)}
-.acct-real{background:#f5efdf}
+.acct-real{background:#DFE0F5}
 .play-card .code .s{color:#C9CBF7}
 .stk-art i:nth-of-type(1){--c:#9599e6}
 @keyframes hq-flash{0%{background:#eeeefc;transform:translateY(3px)}to{background:#f6f6f3;transform:none}}

@@ -12,7 +12,7 @@
 
 .pp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:22px;align-items:stretch}
 .pp-card{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:24px;padding:22px 22px 20px}
-.pp-card.pop{border:2px solid #000;box-shadow:0 30px 60px -36px rgba(13,39,71,.45);background:linear-gradient(180deg,#FFF6EE 0,#fff 46%)}
+.pp-card.pop{border:2px solid #000;box-shadow:0 30px 60px -36px rgba(13,39,71,.45);background:linear-gradient(180deg,#F0F1FD 0,#fff 46%)}
 .pp-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#000;color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:7px 14px;border-radius:999px;white-space:nowrap}
 .pp-top{display:flex;align-items:center;gap:12px}
 .pp-art{width:40px;height:40px;border-radius:12px;background:var(--t);object-fit:contain;padding:4px;flex:none}
