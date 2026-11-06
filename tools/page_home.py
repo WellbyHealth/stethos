@@ -59,7 +59,7 @@ def page():
 <section class="hero cx" aria-labelledby="hero-title">
   <div class="wrap cx-copy">
     <h1 id="hero-title">Turn your agent into a world&#8209;class <span class="rot" data-rot data-words="pharma rep|SDR|deal team|marketing team|founder"><span class="rot-w on">medtech rep</span></span></h1>
-    <p class="cx-sub">Current, sourced data on every US clinician, practice and health system you sell to, for healthcare sales, marketing and investment teams. Build target lists, size markets and act the week a target changes jobs, all inside the CRM and AI assistants your team already uses. Live in five minutes, priced per tool call.</p>
+    <p class="cx-sub">Current, sourced data on every US clinician, practice and health system, inside the CRM and AI tools your team already uses.</p>
     <div class="cx-ctas"><a class="cx-btn dark" href="{TRIAL}">Start free trial<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="cx-btn light" href="/docs">Read the docs<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     <div class="cx-paste">
       <span class="cx-paste-k">Paste in your coding agent</span>
