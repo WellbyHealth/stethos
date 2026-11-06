@@ -107,12 +107,15 @@ def examples():
              "Twelve workflows for sales, marketing, investment and startup teams: medtech targeting, executive triggers, EHR lists, ABM, diligence, territories and more.",
              "/examples", crumbs=[("Examples", "/examples")],
              schema=[{"@type": "ItemList", "name": "Stethos example workflows", "itemListElement": items}])
-    jump = "".join(f'<li><a href="#{e[0]}">{e[1]}</a></li>' for e in EXAMPLES)
+    jump = "".join(
+        f'<li><a class="ex-tab" href="#{e[0]}" role="tab" id="tab-{e[0]}" aria-controls="{e[0]}" aria-selected="{"true" if n == 0 else "false"}" style="--t:{e[9]}">'
+        f'<span class="ex-tab-ic"><img src="/img/{e[8]}" width="40" height="40" alt="" loading="lazy" decoding="async"></span>'
+        f'<span class="ex-tab-t"><b>{e[1]}</b>{e[2]}</span></a></li>' for n, e in enumerate(EXAMPLES))
     cards = ""
     for i, (slug, team, title, trigger, ask, steps, data, lands, ic, tint) in enumerate(EXAMPLES, 1):
         st = "".join(f"<li>{x}</li>" for x in steps)
         dt = "".join(f"<li>{x}</li>" for x in data)
-        cards += f'''<article class="ex-card" id="{slug}" style="--t:{tint}">
+        cards += f'''<article class="ex-card{" ex-on" if i == 1 else ""}" id="{slug}" role="tabpanel" aria-labelledby="tab-{slug}" tabindex="-1" style="--t:{tint}">
       <div class="ex-head"><span class="ex-ic"><img src="/img/{ic}" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">{i:02d} · {team}</p><h2>{title}</h2></div></div>
       <p class="ex-trigger"><b>When</b> {trigger}</p>
       <p class="ex-ask"><span class="ex-ask-k">Ask</span>“{ask}”</p>
@@ -130,11 +133,13 @@ def examples():
     <div class="head center">
       <p class="eyebrow"><span>Examples</span></p>
       <h1 id="ex-title">What agents <span class="pop">do with Stethos.</span></h1>
-      <p class="kpi-lede">Twelve workflows for sales, marketing, investment and startup teams, each run from the AI assistant and CRM your team already uses. Each one shows the question, what the agent does, the data behind it and where the result lands. Names and numbers are examples.</p>
+      <p class="kpi-lede">Twelve workflows for sales, marketing, investment and startup teams, run from the AI assistant and CRM you already use. Pick one to see how it works.</p>
     </div>
-    <ul class="ex-jump" aria-label="Jump to an example">{jump}</ul>
-    <div class="ex-list">
-    {cards}
+    <div class="ex-split">
+      <ul class="ex-nav" role="tablist" aria-label="Example workflows">{jump}</ul>
+      <div class="ex-stage">
+      {cards}
+      </div>
     </div>
     <p class="cov-note ex-more">Have a workflow in mind? <a href="mailto:{EMAIL}?subject=Stethos%20workflow">Tell us about it</a>, or see the <a href="/use-cases">use cases</a> and <a href="/docs">docs</a>.</p>
   </div>
@@ -142,4 +147,4 @@ def examples():
 {cta_band("Self-serve", "Run your first workflow", "in five minutes.", "1,000 free credits, no card, no sales call. Pay only for the tool calls you make.", "examples")}
 </main>
 '''
-    return h + body + tail()
+    return h + body + tail(("nav", "examples"))
