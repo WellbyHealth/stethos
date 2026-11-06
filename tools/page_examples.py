@@ -206,3 +206,19 @@ def examples():
 </main>
 '''
     return h + body + tail(("nav", "examples"))
+
+
+HOME_PICKS = ["medtech-targeting", "kol-mapping", "exec-trigger", "deal-diligence", "referral-partners"]
+
+
+def home_split():
+    picks = [_by[x] for x in HOME_PICKS]
+    tabs = "".join(
+        f'<li role="presentation"><a class="ex-tab" href="#{e[0]}" role="tab" id="tab-{e[0]}" aria-controls="{e[0]}" aria-selected="{"true" if n == 0 else "false"}" style="--t:{e[9]}">'
+        f'<span class="ex-tab-ic"><img src="/img/{e[8]}" width="40" height="40" alt="" loading="lazy" decoding="async"></span>'
+        f'<span class="ex-tab-t"><b>{SEG_OF[e[0]][0]}</b>{e[2]}</span></a></li>' for n, e in enumerate(picks))
+    cards = "".join(card(e, tab=(n == 0)) for n, e in enumerate(picks))
+    return f'''<div class="ex-split">
+      <div class="ex-navwrap"><ul class="ex-nav" role="tablist" aria-label="Example use cases">{tabs}</ul></div>
+      <div class="ex-stage">{cards}</div>
+    </div>'''

@@ -1,4 +1,5 @@
 from parts import *
+import page_examples as PX
 import os as _os
 def _clients():
     d = _os.path.join(_os.path.dirname(__file__), "..", "public", "img", "clients")
@@ -79,6 +80,43 @@ def page():
   <div class="mq"><ul class="mq-row"><li>NPPES NPI Registry</li><li>CMS National Provider Directory</li><li>Medicare utilization by clinician</li><li>Medicare Part D prescribers</li><li>Medicare hospital inpatient and outpatient</li><li>Home health, hospice and SNF files</li><li>Care Compare ratings and affiliations</li><li>Provider of Services file</li><li>ACO participation</li><li>Hospital and SNF cost reports</li><li>Medicare Advantage enrollment</li><li>Open Payments</li><li>ONC certified health IT data</li><li>State licensing boards</li><li>Payer directories</li><li>Price transparency files</li><li>Practice websites</li><li>Health system job posts</li></ul><ul class="mq-row" aria-hidden="true"><li>NPPES NPI Registry</li><li>CMS National Provider Directory</li><li>Medicare utilization by clinician</li><li>Medicare Part D prescribers</li><li>Medicare hospital inpatient and outpatient</li><li>Home health, hospice and SNF files</li><li>Care Compare ratings and affiliations</li><li>Provider of Services file</li><li>ACO participation</li><li>Hospital and SNF cost reports</li><li>Medicare Advantage enrollment</li><li>Open Payments</li><li>ONC certified health IT data</li><li>State licensing boards</li><li>Payer directories</li><li>Price transparency files</li><li>Practice websites</li><li>Health system job posts</li></ul></div>
 </section>
 
+<section class="sec ex home-ex" id="examples" aria-labelledby="hx-title">
+  <div class="wrap">
+    <div class="head center">
+      <p class="eyebrow"><span>Use cases</span></p>
+      <h2 id="hx-title">What teams <span class="pop">do with Stethos.</span></h2>
+    </div>
+    {{HOME_EX}}
+    <p class="sp-more"><a href="/use-cases">See every use case <span aria-hidden="true">→</span></a></p>
+  </div>
+</section>
+
+<section class="sec plugs" id="integrations" aria-labelledby="plug-title">
+  <div class="wrap">
+    <div class="head center">
+      <p class="eyebrow"><span>Works where you work</span></p>
+      <h2 id="plug-title">No new dashboard. <span class="pop">It plugs into what you use today.</span></h2>
+      <p class="kpi-lede">Stethos isn't another tool to log into. Your team asks for healthcare data in the AI assistant they already use, and the answers land in the CRM they already live in, with sources attached.</p>
+    </div>
+    <div class="plug-grid">
+      <div class="plug-card">
+        <p class="plug-k">AI assistants and agents</p>
+        <h3>Ask in plain words</h3>
+        <ul class="plug-chips"><li>Claude</li><li>ChatGPT</li><li>Microsoft Copilot Studio</li><li>Cursor</li><li>Your own agent</li></ul>
+        <p>Add Stethos as an MCP server and its tools show up in the assistant. Search, enrich, map organizations and watch for changes without leaving the chat.</p>
+      </div>
+      <div class="plug-flow" aria-hidden="true"><span></span><i>→</i><span></span></div>
+      <div class="plug-card">
+        <p class="plug-k">CRMs and systems of record</p>
+        <h3>Records stay current</h3>
+        <ul class="plug-chips"><li>Salesforce</li><li>HubSpot</li><li>Attio</li><li>Lightfield</li><li>Your data warehouse</li></ul>
+        <p>Enrich accounts and contacts through the API, and let webhooks update the record and alert its owner when a provider moves, a license lapses or a network changes.</p>
+      </div>
+    </div>
+    <p class="plug-ex"><b>Example:</b> a rep asks Claude for independent spine surgeons in Arizona. Stethos returns them with sources, the agent creates the contacts in Salesforce, and when one changes groups next month the record updates and the rep gets a task. <a href="/use-cases">See nine more examples</a>.</p>
+  </div>
+</section>
+
 <section class="h2-panel" id="team-day" aria-labelledby="day-title">
   <span id="how" class="anchor" aria-hidden="true"></span>
   <div class="h2-panel-in">
@@ -148,32 +186,6 @@ def page():
 {stk(4, "stk-grow", "MCP first", "Built to plug straight into your agents", "as an MCP server, in five minutes.", "REST and webhooks are there too, for the parts of your stack that aren't agents.", "stk-agents")}
 </ul>
     <p class="sp-more">Explore: <a href="/healthcare-mcp-server">Healthcare MCP server</a> · <a href="/npi-lookup-api">NPI lookup API</a> · <a href="/physician-data-api">Physician data API</a> · <a href="/license-verification-api">License data API</a> · <a href="/health-system-data-api">Health system data API</a> · <a href="/medicare-utilization-data-api">Medicare utilization data</a> · <a href="/home-health-hospice-data-api">Home health and hospice data</a> · <a href="/physician-referral-data">Physician referral data</a></p>
-  </div>
-</section>
-
-<section class="sec plugs" id="integrations" aria-labelledby="plug-title">
-  <div class="wrap">
-    <div class="head center">
-      <p class="eyebrow"><span>Works where you work</span></p>
-      <h2 id="plug-title">No new dashboard. <span class="pop">It plugs into what you use today.</span></h2>
-      <p class="kpi-lede">Stethos isn't another tool to log into. Your team asks for healthcare data in the AI assistant they already use, and the answers land in the CRM they already live in, with sources attached.</p>
-    </div>
-    <div class="plug-grid">
-      <div class="plug-card">
-        <p class="plug-k">AI assistants and agents</p>
-        <h3>Ask in plain words</h3>
-        <ul class="plug-chips"><li>Claude</li><li>ChatGPT</li><li>Microsoft Copilot Studio</li><li>Cursor</li><li>Your own agent</li></ul>
-        <p>Add Stethos as an MCP server and its tools show up in the assistant. Search, enrich, map organizations and watch for changes without leaving the chat.</p>
-      </div>
-      <div class="plug-flow" aria-hidden="true"><span></span><i>→</i><span></span></div>
-      <div class="plug-card">
-        <p class="plug-k">CRMs and systems of record</p>
-        <h3>Records stay current</h3>
-        <ul class="plug-chips"><li>Salesforce</li><li>HubSpot</li><li>Attio</li><li>Lightfield</li><li>Your data warehouse</li></ul>
-        <p>Enrich accounts and contacts through the API, and let webhooks update the record and alert its owner when a provider moves, a license lapses or a network changes.</p>
-      </div>
-    </div>
-    <p class="plug-ex"><b>Example:</b> a rep asks Claude for independent spine surgeons in Arizona. Stethos returns them with sources, the agent creates the contacts in Salesforce, and when one changes groups next month the record updates and the rep gets a task. <a href="/use-cases">See nine more examples</a>.</p>
   </div>
 </section>
 
@@ -416,4 +428,5 @@ def page():
 </section>
 </main>
 '''
-    return h + body + tail(("nav", "teamday", "play", "copy", "motion"))
+    body = body.replace("{HOME_EX}", PX.home_split())
+    return h + body + tail(("nav", "teamday", "play", "copy", "motion", "examples"))
