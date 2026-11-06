@@ -31,6 +31,15 @@ UC_PAGES = {
         faq=[("Can I build an ABM account list?", "Yes. Search organizations by type, size, location and service lines, then pull the clinicians and leaders at each account, with who works where."),
              ("How do I keep lists up to date?", "Set a watcher on a list. When a contact changes employer or a practice closes or moves, Stethos sends a webhook so your CRM or marketing tool can update the record."),
              ("Is this patient data?", "No. Stethos only covers clinicians and organizations in their professional capacity, never patients.")]),
+    "post-acute": dict(
+        title="Referral Source Data for Post-Acute Care and Agencies | Stethos",
+        desc="Find hospitals, physicians and practices that refer to home health, hospice and skilled nursing, with Medicare data and alerts when a referral source changes.",
+        h1a="Find referral partners for", h1b="post-acute care and agencies.",
+        intro="Home health, hospice and skilled nursing grow through referrals, and referral sources change constantly: a hospitalist group turns over, a physician joins a new practice, a new clinic opens across town. Stethos is built to give your liaisons and their agents a current map of who refers in your market, from CMS post-acute and utilization files, Care Compare and practice records, and to tell them when a source moves or a new one opens.",
+        req={"specialty": ["internal medicine", "family medicine", "cardiology"], "county": "Maricopa, AZ", "fields": ["affiliations", "practice_contact", "post_acute_referrals"]},
+        faq=[("Where does referral data come from?", "From CMS public files, such as Medicare home health, hospice and skilled nursing data, and physician utilization files that show which clinicians order or certify post-acute care. Each value shows its source and date, and no patient-level data is included."),
+             ("Can liaisons see competitors?", "Yes. Care Compare ratings, service areas and Medicare volume are public for home health agencies, hospices and nursing facilities, so you can see who else serves a market and how they score."),
+             ("Does it work with our referral CRM?", "Your agent can write referral sources and next steps into Salesforce, HubSpot or a post-acute CRM, and watchers send a webhook when a source changes so the list stays current.")]),
     "provider-directories": dict(
         title="Provider Directory Data API for Payers | Stethos",
         desc="Check provider directory listings against current sources. Flag stale locations, lapsed licenses and network mismatches with a real-time provider data API.",
@@ -87,6 +96,7 @@ def uc_page(n):
            "uc-investors": "Illustration: a clay piggy bank beside a rising bar chart with tiny clinics on top of each bar.",
            "uc-digital": "Illustration: a clay smartphone showing a map of doctor pins, with a small clay robot leaning on it.",
            "compare": "Illustration: clay stacks of boxes and binders on a table beside a small machine sending out envelopes and pins.",
+           "notfound": "Illustration: a clay folded map with a dotted path leading to a map pin, beside a magnifying glass.",
            "cta": "Illustration: a clay shelf of hospitals, clinics and houses with glowing map pins above them, and a small clay robot."}[art_key]
     body = f'''{HEADER}
 <main id="main">

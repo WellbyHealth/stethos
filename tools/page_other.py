@@ -22,6 +22,10 @@ UC = [
      "Find your first customers and design partners, size your market, and power provider search in your product, all from one API and MCP server.",
      ["Provider search by specialty, location and network", "Organization and location records", "NPI-keyed records that join to your data"],
      ["A provider in your app changes location", "A practice joins a network your users have", "A record your app shows is re-verified"]),
+    ("post-acute", "sp-lime", "g-cl-ic-pin-cut.webp", "notfound", "Post-acute care and agencies",
+     "Find the hospitals, physicians and practices that send patients to care like yours, and hear when a referral source moves, opens or changes hands.",
+     ["Hospitals and skilled nursing facilities by market, with discharge volume", "Physicians who refer to home health and hospice, from Medicare data", "Care Compare ratings for you and your competitors", "Practice and liaison contact details"],
+     ["A referring physician joins a new group", "A hospital or practice opens nearby", "A competing agency's rating changes"]),
     ("clinical-staffing", "sp-butter", "g-cl-ic-license-cut.webp", "uc-staffing", "Clinical staffing and recruiting",
      "Source licensed clinicians by state and specialty for your recruiters and agents, and find the health systems hiring hardest right now.",
      ["Clinicians by specialty and license state", "Current employer and affiliation history", "Organizations with open clinical roles"],
@@ -35,7 +39,7 @@ UC = [
 
 def use_cases():
     h = head("Use Cases: Healthcare Sales and Marketing Data | Stethos",
-             "How medtech, pharma, health IT, startup and investment teams use Stethos to find, size and track healthcare markets, accounts and clinicians.",
+             "How medtech, pharma, health IT, post-acute, startup and investment teams use Stethos to find, size and track healthcare markets, accounts and clinicians.",
              "/use-cases", image="/og/use-cases.jpg", crumbs=[("Use cases", "/use-cases")],
              schema=[{"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": u[4], "url": SITE + "/use-cases/" + u[0]} for i, u in enumerate(UC)]}])
     tabs = "".join(
@@ -427,7 +431,7 @@ def signup():
         <label>Your name<input name="name" autocomplete="name" required></label>
         <label>Work email<input name="email" type="email" autocomplete="email" inputmode="email" required></label>
         <label>Company<input name="company" autocomplete="organization"></label>
-        <label>What are you building?<select name="use_case">{opts([("medtech-pharma","Sales and targeting for medtech or pharma"),("health-it-sales","Sales for health IT or services"),("marketing","Healthcare marketing"),("provider-directory","A provider directory or network tool"),("staffing","Clinical staffing or recruiting"),("investing","Healthcare investing or diligence"),("digital-health","A healthcare startup or digital health product"),("other","Something else")])}</select></label>
+        <label>What are you building?<select name="use_case">{opts([("medtech-pharma","Sales and targeting for medtech or pharma"),("health-it-sales","Sales for health IT or services"),("marketing","Healthcare marketing"),("provider-directory","A provider directory or network tool"),("post-acute","Post-acute care or an agency"),("staffing","Clinical staffing or recruiting"),("investing","Healthcare investing or diligence"),("digital-health","A healthcare startup or digital health product"),("other","Something else")])}</select></label>
         <label>Where will you use it?<select name="client">{opts([("claude","Claude"),("cursor","Cursor"),("chatgpt","ChatGPT"),("other-mcp","Another MCP client"),("rest-api","REST API from my own code")])}</select></label>
         <label><span>Anything we should know? <span class="opt">Optional</span></span><textarea name="note" rows="3"></textarea></label>
         <input type="hidden" name="source">

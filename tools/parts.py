@@ -104,6 +104,7 @@ HEADER = f'''
   }{dd_spec("/use-cases/healthcare-marketing", "g-cl-ic-pin-96.webp", "Healthcare marketing")
   }{dd_spec("/use-cases/investors", "g-cl-stk-orgs-160.webp", "Investors and deal teams")
   }{dd_spec("/use-cases/digital-health", "g-cl-stk-agents-160.webp", "Healthcare startups")
+  }{dd_spec("/use-cases/post-acute", "g-cl-ic-pin-96.webp", "Post-acute care and agencies")
   }{dd_spec("/use-cases/clinical-staffing", "g-cl-ic-license-96.webp", "Clinical staffing")}</ul><a class="dd-all" href="/use-cases">All use cases <span aria-hidden="true">→</span></a><a class="dd-all" href="/examples">Sales and marketing workflows <span aria-hidden="true">→</span></a><img class="dd-art" src="/img/g-cl-stk-search-cut.webp" width="480" height="480" alt="" loading="lazy" decoding="async"></div>
         </div>
       </div>

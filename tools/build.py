@@ -76,9 +76,9 @@ w("llms.txt", f"""# {BRAND}
 
 ## Pages
 - [Home]({SITE}/): what Stethos does and who it's for
-- [Use cases]({SITE}/use-cases): medtech and pharma, health IT and services sales, healthcare marketing, investors, startups, clinical staffing and provider directories
+- [Use cases]({SITE}/use-cases): medtech and pharma, health IT and services sales, healthcare marketing, investors, startups, post-acute care and agencies, clinical staffing and provider directories
 """ + "".join(f"- [{u[4]}]({SITE}/use-cases/{u[0]}): {page_uc.UC_PAGES[u[0]]['desc']}\n" for u in page_other.UC) + f"""- [Docs]({SITE}/docs): quickstart for search, enrich, organizations, watchers and MCP (preview)
-""" + "".join(f"- [{m['name']}]({SITE}/{m['slug']}): {m['desc']}\n" for m in page_seo.SEO_PAGES) + f"""- [Examples]({SITE}/examples): agent workflows by segment (medtech, pharma, health IT, investors, startups, staffing, health systems): medtech targeting, new-executive triggers, EHR campaign lists, ABM lists, KOL mapping, market diligence, portfolio monitoring, startup design partners, territory planning, event invites, CRM hygiene, staffing sales and physician liaison outreach
+""" + "".join(f"- [{m['name']}]({SITE}/{m['slug']}): {m['desc']}\n" for m in page_seo.SEO_PAGES) + f"""- [Examples]({SITE}/examples): agent workflows by segment (medtech, pharma, health IT, investors, startups, staffing, post-acute care, health systems): medtech targeting, new-executive triggers, EHR campaign lists, ABM lists, KOL mapping, market diligence, portfolio monitoring, startup design partners, territory planning, event invites, CRM hygiene, staffing sales, post-acute referral development and physician liaison outreach
 - [Data sources]({SITE}/docs#sources): NPPES, CMS Medicare utilization, Part D, post-acute and hospice files, Care Compare, Provider of Services, ACO participation, cost reports, MA enrollment, Open Payments, state licensing boards, payer directories
 - [Pricing]({SITE}/pricing): per-tool-call credits; Free (1,000 credits), Build ($149/month) and Enterprise
 - [Stethos vs Definitive Healthcare]({SITE}/compare/definitive-healthcare)

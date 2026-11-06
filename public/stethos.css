@@ -519,3 +519,4 @@ html:not(.mo-js) .rot:before{content:none}
   .ex-grp:first-child{padding:0 0 0 8px}
   .ex-tab-t b{color:#1f2430}
 }
+@media(min-width:901px){.ex-nav{position:sticky;top:96px;max-height:calc(100vh - 120px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}.ex-stage{position:sticky;top:96px}}

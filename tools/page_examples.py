@@ -98,6 +98,22 @@ EXAMPLES = [
       "Creates the accounts and next steps in your CRM"],
      ["Health system job posts", "Organizations", "Leaders", "Change events"],
      "Your CRM, plus a weekly list in Claude", "g-cl-ic-license-96.webp", "#ece6fb"),
+    ("referral-partners", "Referral development", "Find the doctors who should be referring to you",
+     "A home health or hospice agency enters a new county, or referrals dip.",
+     "Which physicians in Maricopa County order the most home health for Medicare patients, and which of them don't refer to us yet?",
+     ["Ranks physicians by home health and hospice orders from Medicare data",
+      "Adds their practice, hospital ties and contact details",
+      "Builds a call plan for each liaison and logs visits in the CRM"],
+     ["Medicare post-acute utilization", "Affiliations", "Practice contacts", "Your CRM"],
+     "Your referral CRM, plus a weekly list in Claude", "g-cl-ic-pin-96.webp", "#e8f3d2"),
+    ("discharge-sources", "Hospital partnerships", "Get on the discharge planner's short list",
+     "A skilled nursing facility or agency wants more hospital referrals.",
+     "Which hospitals within 20 miles discharge the most patients to skilled nursing, who leads case management there, and how do we compare with nearby facilities?",
+     ["Lists nearby hospitals by Medicare discharge volume to post-acute care",
+      "Adds case management and population health leaders at each",
+      "Compares your Care Compare ratings with nearby competitors for the pitch"],
+     ["Hospitals", "Medicare post-acute files", "Care Compare ratings", "Leaders"],
+     "A partnership plan in Claude and accounts in the CRM", "g-cl-ic-gov-cut.webp", "#f5efdf"),
     ("physician-liaison", "Physician relations", "Grow referrals where your network is thin",
      "A service line's referrals are down.",
      "Which independent primary care doctors near our hospitals aren't affiliated with us, and who recently joined a competing group?",
@@ -116,6 +132,7 @@ SEGMENTS = [
     ("Investors", ["deal-diligence", "portfolio-watch"]),
     ("Startups", ["startup-first-customers"]),
     ("Clinical staffing", ["staffing-sales"]),
+    ("Post-acute care and agencies", ["referral-partners", "discharge-sources"]),
     ("Health systems", ["physician-liaison"]),
 ]
 _by = {e[0]: e for e in EXAMPLES}
@@ -126,7 +143,7 @@ assert len(EXAMPLES) == len(_by)
 def examples():
     items = [{"@type": "ListItem", "position": i + 1, "name": e[2], "url": f"{SITE}/examples#{e[0]}"} for i, e in enumerate(EXAMPLES)]
     h = head("Examples: Healthcare Sales, Marketing and Deal Workflows",
-             "Agent workflows by segment: medtech, pharma, health IT, investors, startups, staffing and health systems. Targeting, triggers, ABM, diligence and more.",
+             "Agent workflows by segment: medtech, pharma, health IT, investors, startups, staffing, post-acute and health systems. Targeting, referrals, ABM and more.",
              "/examples", crumbs=[("Examples", "/examples")],
              schema=[{"@type": "ItemList", "name": "Stethos example workflows", "itemListElement": items}])
     jump, n = "", 0
@@ -160,7 +177,7 @@ def examples():
     <div class="head center">
       <p class="eyebrow"><span>Examples</span></p>
       <h1 id="ex-title">What agents <span class="pop">do with Stethos.</span></h1>
-      <p class="kpi-lede">Workflows for medtech, pharma, health IT, investment, startup and staffing teams, run from the AI assistant and CRM you already use. Pick one to see how it works.</p>
+      <p class="kpi-lede">Workflows for medtech, pharma, health IT, post-acute, investment, startup and staffing teams, run from the AI assistant and CRM you already use. Pick one to see how it works.</p>
     </div>
     <div class="ex-split">
       <ul class="ex-nav" role="tablist" aria-label="Example workflows">{jump}</ul>
