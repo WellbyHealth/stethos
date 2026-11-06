@@ -387,7 +387,9 @@ def notfound():
 def signup():
     h = head("Start your free trial | Stethos",
              "Get 1,000 free credits for the Stethos healthcare provider data MCP server. No card, no sales call. Works with Claude, Cursor and ChatGPT.",
-             "/signup", crumbs=[("Free trial", "/signup")])
+             "/signup", crumbs=[("Free trial", "/signup")],
+             share_title="Start your free Stethos trial",
+             share_desc="1,000 free credits for US healthcare provider data in Claude, Cursor or ChatGPT. No card, no sales call.")
     opts = lambda pairs: "".join(f'<option value="{v}">{t}</option>' for v, t in pairs)
     body = f'''{HEADER}
 <main id="main">

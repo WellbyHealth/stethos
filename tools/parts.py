@@ -1,7 +1,7 @@
 # Shared pieces for every Stethos page: head, header, footer, CTA band.
 # Same structure as the Wellby Inroads site; edit here, then run tools/build.py.
 
-OG_ALT = "Illustration: a clay data machine with a glass dome over a map of pins, taking in records from hospitals, doctors' offices, government and insurance buildings and sending alerts to small clay robots at laptops."
+OG_ALT = "Stethos: Healthcare data for your AI agents. Illustration: a clay data machine with a glass dome over a map of pins, taking in records from hospitals, doctors' offices, government and insurance buildings and sending alerts to small clay robots at laptops."
 import os as _os
 # Production URL: Vercel sets VERCEL_PROJECT_PRODUCTION_URL at build time (custom domain once one is added).
 SITE = "https://" + _os.environ.get("VERCEL_PROJECT_PRODUCTION_URL", "stethos-one.vercel.app")
@@ -17,10 +17,12 @@ CHECK = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.4l2.6 2.6L12 
 
 
 def head(title, desc, path, css=("styles", "v2", "site"), extra="", ld="", og_type="website",
-         image=None, image_alt=None, crumbs=None, schema=None):
+         image=None, image_alt=None, crumbs=None, schema=None, share_title=None, share_desc=None):
     """crumbs: [(name, path), ...] after Home. schema: list of extra JSON-LD objects."""
     import json as _j
-    img = SITE + (image or "/og.jpg")
+    img = SITE + (image or "/og-home.jpg")
+    st = share_title or title
+    sd = share_desc or desc
     img_alt = image_alt or OG_ALT
     graph = list(schema or [])
     if crumbs:
@@ -45,14 +47,18 @@ def head(title, desc, path, css=("styles", "v2", "site"), extra="", ld="", og_ty
 <meta property="og:type" content="{og_type}">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="{BRAND}">
-<meta property="og:title" content="{title}">
-<meta property="og:description" content="{desc}">
+<meta property="og:title" content="{st}">
+<meta property="og:description" content="{sd}">
 <meta property="og:url" content="{url}">
 <meta property="og:image" content="{img}">
+<meta property="og:image:secure_url" content="{img}">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="{img_alt}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{title}">
-<meta name="twitter:description" content="{desc}">
+<meta name="twitter:title" content="{st}">
+<meta name="twitter:description" content="{sd}">
 <meta name="twitter:image" content="{img}">
 <meta name="twitter:image:alt" content="{img_alt}">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
