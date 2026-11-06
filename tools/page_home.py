@@ -12,6 +12,7 @@ CLIENTS = _clients()
 
 FAQ = [
     ("What is Stethos?", "An MCP server, and API, for US healthcare provider data. It's built to keep one clean, current record for every clinician, practice, hospital and health system, stitched together from public registries and licensed sources, and to tell your software the moment one of those records changes."),
+    ("Can't my agent just ask a general AI assistant?", "General AI assistants can find some provider data, but they answer from whatever web page or registry copy they come across, often months or years old, with no source and no date. Provider data changes constantly: clinicians move groups, licenses lapse, networks change. Stethos re-checks its sources, shows where every field came from and when it was last checked, and tells your agent when a record changes."),
     ("Who is it for?", "Teams building products on top of healthcare provider data: AI sales agents for medtech and pharma, provider directory and network teams at payers and digital front doors, clinical staffing and recruiting platforms, healthcare investors, and digital health apps that need to know who practices where."),
     ("Where does the data come from?", "Government files first: the NPPES NPI Registry, CMS's Medicare utilization files for clinicians, prescribers, hospitals, home health, hospice and nursing facilities, Care Compare ratings and affiliations, ACO participation, cost reports and Open Payments, plus state licensing boards. Payer directories, price transparency files, practice websites and health system job posts are layered on top. Every field carries its source and the date it was last checked. See the full list in the docs."),
     ("Does Stethos handle patient data?", "No. Stethos indexes healthcare professionals and organizations, not patients. There is no PHI in the API, so you don't need a business associate agreement to use it."),
@@ -269,14 +270,18 @@ def page():
     <figure class="art-wide yours-art">{art("compare", "Illustration: a dusty stack of sealed boxes and reports on one side, and the clay data machine sending out a stream of alerts on the other.", w=1600, h=893)}</figure>
     <div>
       <p class="eyebrow"><span>Why Stethos</span></p>
-      <h2 id="yours-title">Others sell snapshots. <span class="pop">Stethos streams changes.</span></h2>
-      <p class="yours-lede">Established healthcare data vendors are deep and trusted, and they're built for big commercial teams: annual contracts, seats, dashboards and periodic exports. Stethos is built for software that acts: an MCP server you can add to your agent today, priced per tool call, with change events your agents can subscribe to.</p>
+      <h2 id="yours-title">Others sell snapshots or guess. <span class="pop">Stethos streams changes.</span></h2>
+      <p class="yours-lede">Established healthcare data vendors are deep and trusted, and they're built for big commercial teams: annual contracts, seats, dashboards and periodic exports. Stethos is built for software that acts: an MCP server you can add to your agent today, priced per tool call, with change events your agents can subscribe to. General AI assistants can find some of this, but from stale pages with no source or date, and provider data changes too often for that.</p>
       <p class="cmp-links"><a href="/compare/definitive-healthcare">Stethos vs Definitive Healthcare <span aria-hidden="true">→</span></a><a href="/compare/iqvia-onekey">Stethos vs IQVIA OneKey <span aria-hidden="true">→</span></a></p>
     </div>
     <div class="compare">
       <div class="col them">
         <h3>Traditional data platforms</h3>
         <ul><li>Annual contracts, sold by sales</li><li>Priced per seat or module</li><li>Dashboards first, API often extra</li><li>Periodic refreshes and exports</li><li>You find out what changed later</li><li>Built for analysts</li></ul>
+      </div>
+      <div class="col them ai">
+        <h3>General AI assistants</h3>
+        <ul><li>Answer from whatever page they find</li><li>Sources often months or years old</li><li>No source or date on the answer</li><li>Can't tell you when something changes</li><li>Answers vary from one ask to the next</li><li>Fine for a rough first look</li></ul>
       </div>
       <div class="col us">
         <h3>Stethos: built for agents</h3>

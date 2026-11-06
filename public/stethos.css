@@ -415,3 +415,8 @@ html:not(.mo-js) .rot:before{content:none}
 .cov-wrap{position:relative}
 .cov-card.agent{background:#eef6ee;border-color:#cfe5cf}
 .cov-card.agent .cov-st{background:#1f7a4d;color:#fff}
+/* Why Stethos: three-way comparison */
+.yours-grid .compare{grid-template-columns:repeat(3,minmax(0,1fr))}
+.compare .col.ai{background:#f3f3fd;border:1px dashed #c9cbf7}
+@media(max-width:900px){.yours-grid .compare{grid-template-columns:minmax(0,1fr)}}
+.yours-grid .compare{grid-column:1/-1}
