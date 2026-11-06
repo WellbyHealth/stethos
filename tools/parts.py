@@ -105,15 +105,14 @@ HEADER = f'''
   }{dd_spec("/use-cases/investors", "g-cl-stk-orgs-160.webp", "Investors and deal teams")
   }{dd_spec("/use-cases/digital-health", "g-cl-stk-agents-160.webp", "Healthcare startups")
   }{dd_spec("/use-cases/post-acute", "g-cl-ic-pin-96.webp", "Post-acute care and agencies")
-  }{dd_spec("/use-cases/clinical-staffing", "g-cl-ic-license-96.webp", "Clinical staffing")}</ul><a class="dd-all" href="/use-cases">All use cases <span aria-hidden="true">→</span></a><a class="dd-all" href="/examples">Sales and marketing workflows <span aria-hidden="true">→</span></a><img class="dd-art" src="/img/g-cl-stk-search-cut.webp" width="480" height="480" alt="" loading="lazy" decoding="async"></div>
+  }{dd_spec("/use-cases/clinical-staffing", "g-cl-ic-license-96.webp", "Clinical staffing")}</ul><a class="dd-all" href="/use-cases">All use cases <span aria-hidden="true">→</span></a><img class="dd-art" src="/img/g-cl-stk-search-cut.webp" width="480" height="480" alt="" loading="lazy" decoding="async"></div>
         </div>
       </div>
       <a href="/use-cases">Use cases</a>
-      <a href="/examples">Examples</a>
       <a href="/docs">Docs</a>
       <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
     </nav>
-    <div class="hdr-act"><a class="btn-2" href="{TRIAL}#signin">Sign in</a><a class="btn-1" href="{TRIAL}">Start free trial</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/#platform">Product</a><a href="/#connect">Connect in 5 minutes</a><a href="/use-cases">Use cases</a><a href="/examples">Examples</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="{TRIAL}#signin">Sign in</a></div>
+    <div class="hdr-act"><a class="btn-2" href="{TRIAL}#signin">Sign in</a><a class="btn-1" href="{TRIAL}">Start free trial</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/#platform">Product</a><a href="/#connect">Connect in 5 minutes</a><a href="/use-cases">Use cases</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="{TRIAL}#signin">Sign in</a></div>
   </div>
 </header>
 '''
@@ -128,7 +127,7 @@ FOOTER = f'''
     <nav class="foot-links" aria-label="Footer">
       <a href="/#platform">Product</a>
       <a href="/use-cases">Use cases</a>
-      <a href="/examples">Examples</a>
+      
       <a href="/docs">Docs</a>
       <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
       <a href="/healthcare-mcp-server">Healthcare MCP server</a>

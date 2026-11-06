@@ -1,5 +1,6 @@
 from parts import *
 from page_other import UC
+import page_examples as PX
 import json
 
 # Extra copy for one landing page per use case: (seo title, meta description, H1 a, H1 b, intro, example request, FAQs)
@@ -98,6 +99,15 @@ def uc_page(n):
            "compare": "Illustration: clay stacks of boxes and binders on a table beside a small machine sending out envelopes and pins.",
            "notfound": "Illustration: a clay folded map with a dotted path leading to a map pin, beside a magnifying glass.",
            "cta": "Illustration: a clay shelf of hospitals, clinics and houses with glowing map pins above them, and a small clay robot."}[art_key]
+    wfs = PX.for_page(slug) or [PX._by[x] for x in {"healthcare-marketing": ["abm-list", "ehr-campaign", "event-invites"]}.get(slug, [])]
+    wf = (f'''<section class="sec" aria-labelledby="uc-wf-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Workflows</span></p><h2 id="uc-wf-title">What teams <span class="pop">do with it.</span></h2></div>
+    <div class="ex-list">{"".join(PX.card(e, tab=None, link=False) for e in wfs)}</div>
+    <p class="cov-note ex-more"><a href="/use-cases">See workflows for every segment <span aria-hidden="true">→</span></a></p>
+  </div>
+</section>
+''' if wfs else "")
     body = f'''{HEADER}
 <main id="main">
 <section class="sec sp-top ph-top" aria-labelledby="uc-title">
@@ -114,7 +124,7 @@ def uc_page(n):
       <p class="sp-k">Signals you'd watch</p><ul class="sp-see">{"".join(f"<li>{x}</li>" for x in watch)}</ul></div></div></div>
   </div>
 </section>
-<section class="sec" aria-labelledby="uc-call-title">
+{wf}<section class="sec" aria-labelledby="uc-call-title">
   <div class="wrap uc-call">
     <div><p class="eyebrow"><span>Example call</span></p><h2 id="uc-call-title">What it looks like <span class="pop">in code.</span></h2>
     <p class="uc-call-p">One request against the Stethos API. Responses carry the source and last-verified date on every field. See the <a href="/docs">quickstart</a> for authentication, watchers and the MCP server, and <a href="/pricing">pricing</a> for what each call costs.</p></div>

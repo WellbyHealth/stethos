@@ -173,7 +173,7 @@ def page():
         <p>Enrich accounts and contacts through the API, and let webhooks update the record and alert its owner when a provider moves, a license lapses or a network changes.</p>
       </div>
     </div>
-    <p class="plug-ex"><b>Example:</b> a rep asks Claude for independent spine surgeons in Arizona. Stethos returns them with sources, the agent creates the contacts in Salesforce, and when one changes groups next month the record updates and the rep gets a task. <a href="/examples">See nine more examples</a>.</p>
+    <p class="plug-ex"><b>Example:</b> a rep asks Claude for independent spine surgeons in Arizona. Stethos returns them with sources, the agent creates the contacts in Salesforce, and when one changes groups next month the record updates and the rep gets a task. <a href="/use-cases">See nine more examples</a>.</p>
   </div>
 </section>
 
@@ -292,7 +292,7 @@ def page():
       <li><figure class="role-art" style="--bg:#f5e9b8">{art("uc-digital", "Illustration: a clay phone showing a map with pins, beside a small friendly robot.")}</figure><h3><a class="role-link" href="/use-cases/digital-health">Healthcare startups</a></h3><p>Find first customers and design partners, size your market, and power provider search in your product.</p></li>
       <li><figure class="role-art" style="--bg:#f5efdf">{art("uc-staffing", "Illustration: clay scrubs on a hanger rack, a stethoscope, a calendar and a small state map with glowing pins.")}</figure><h3><a class="role-link" href="/use-cases/clinical-staffing">Clinical staffing</a></h3><p>Find the systems hiring hardest and the licensed clinicians to place there.</p></li>
     </ul>
-    <p class="sp-more"><a href="/use-cases">All use cases <span aria-hidden="true">→</span></a> · <a href="/examples">Example workflows <span aria-hidden="true">→</span></a></p>
+    <p class="sp-more"><a href="/use-cases">All use cases <span aria-hidden="true">→</span></a></p>
   </div>
 </section>
 

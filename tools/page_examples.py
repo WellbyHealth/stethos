@@ -126,28 +126,52 @@ EXAMPLES = [
 
 
 SEGMENTS = [
-    ("Medtech", ["medtech-targeting", "territory-planning", "abm-list"]),
-    ("Pharma", ["kol-mapping", "event-invites"]),
-    ("Health IT and services", ["exec-trigger", "ehr-campaign", "crm-hygiene"]),
-    ("Investors", ["deal-diligence", "portfolio-watch"]),
-    ("Startups", ["startup-first-customers"]),
-    ("Clinical staffing", ["staffing-sales"]),
-    ("Post-acute care and agencies", ["referral-partners", "discharge-sources"]),
-    ("Health systems", ["physician-liaison"]),
+    ("Medtech", "medtech-pharma", ["medtech-targeting", "territory-planning", "abm-list"]),
+    ("Pharma", "medtech-pharma", ["kol-mapping", "event-invites"]),
+    ("Health IT and services", "health-it-sales", ["exec-trigger", "ehr-campaign", "crm-hygiene"]),
+    ("Investors", "investors", ["deal-diligence", "portfolio-watch"]),
+    ("Startups", "digital-health", ["startup-first-customers"]),
+    ("Clinical staffing", "clinical-staffing", ["staffing-sales"]),
+    ("Post-acute care and agencies", "post-acute", ["referral-partners", "discharge-sources"]),
+    ("Health systems", None, ["physician-liaison"]),
 ]
 _by = {e[0]: e for e in EXAMPLES}
-SEG_OF = {slug: name for name, slugs in SEGMENTS for slug in slugs}
-EXAMPLES = [_by[slug] for _, slugs in SEGMENTS for slug in slugs]
+SEG_OF = {slug: (name, page) for name, page, slugs in SEGMENTS for slug in slugs}
+EXAMPLES = [_by[slug] for _, _, slugs in SEGMENTS for slug in slugs]
+
+
+def for_page(page):
+    return [e for e in EXAMPLES if SEG_OF[e[0]][1] == page]
 assert len(EXAMPLES) == len(_by)
 
+
+def card(e, tab=False, link=True):
+    slug, team, title, trigger, ask, steps, data, lands, ic, tint = e
+    seg, page = SEG_OF[slug]
+    st = "".join(f"<li>{x}</li>" for x in steps)
+    dt = "".join(f"<li>{x}</li>" for x in data)
+    attrs = f' role="tabpanel" aria-labelledby="tab-{slug}" tabindex="-1"' if tab is not None else ""
+    more = f'<p class="ex-foot"><a href="/use-cases/{page}">More for {seg.lower() if seg != "Startups" else "startups"} <span aria-hidden="true">→</span></a></p>' if (link and page) else ""
+    return f'''<article class="ex-card{" ex-on" if tab else ""}" id="{slug}"{attrs} style="--t:{tint}">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/{ic}" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">{seg} · {team}</p><h2>{title}</h2></div></div>
+      <p class="ex-trigger"><b>When</b> {trigger}</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“{ask}”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps">{st}</ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data">{dt}</ul><p class="ex-k">Where the result lands</p><p class="ex-lands">{lands}</p></div>
+      </div>{more}
+    </article>
+'''
+
+
 def examples():
-    items = [{"@type": "ListItem", "position": i + 1, "name": e[2], "url": f"{SITE}/examples#{e[0]}"} for i, e in enumerate(EXAMPLES)]
-    h = head("Examples: Healthcare Sales, Marketing and Deal Workflows",
+    items = [{"@type": "ListItem", "position": i + 1, "name": e[2], "url": f"{SITE}/use-cases#{e[0]}"} for i, e in enumerate(EXAMPLES)]
+    h = head("Use Cases: Healthcare Sales, Marketing and Deal Workflows",
              "Agent workflows by segment: medtech, pharma, health IT, investors, startups, staffing, post-acute and health systems. Targeting, referrals, ABM and more.",
-             "/examples", crumbs=[("Examples", "/examples")],
-             schema=[{"@type": "ItemList", "name": "Stethos example workflows", "itemListElement": items}])
+             "/use-cases", image="/og/use-cases.jpg", crumbs=[("Use cases", "/use-cases")],
+             schema=[{"@type": "ItemList", "name": "Stethos use cases", "itemListElement": items}])
     jump, n = "", 0
-    for name, slugs in SEGMENTS:
+    for name, page, slugs in SEGMENTS:
         jump += f'<li class="ex-grp" role="presentation">{name}</li>'
         for slug in slugs:
             e = _by[slug]
@@ -155,29 +179,16 @@ def examples():
                      f'<span class="ex-tab-ic"><img src="/img/{e[8]}" width="40" height="40" alt="" loading="lazy" decoding="async"></span>'
                      f'<span class="ex-tab-t"><b>{e[1]}</b>{e[2]}</span></a></li>')
             n += 1
-    cards = ""
-    for i, (slug, team, title, trigger, ask, steps, data, lands, ic, tint) in enumerate(EXAMPLES, 1):
-        st = "".join(f"<li>{x}</li>" for x in steps)
-        dt = "".join(f"<li>{x}</li>" for x in data)
-        cards += f'''<article class="ex-card{" ex-on" if i == 1 else ""}" id="{slug}" role="tabpanel" aria-labelledby="tab-{slug}" tabindex="-1" style="--t:{tint}">
-      <div class="ex-head"><span class="ex-ic"><img src="/img/{ic}" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">{SEG_OF[slug]} · {team}</p><h2>{title}</h2></div></div>
-      <p class="ex-trigger"><b>When</b> {trigger}</p>
-      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“{ask}”</p>
-      <div class="ex-cols">
-        <div><p class="ex-k">What the agent does</p><ol class="ex-steps">{st}</ol></div>
-        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data">{dt}</ul><p class="ex-k">Where the result lands</p><p class="ex-lands">{lands}</p></div>
-      </div>
-    </article>
-'''
+    cards = "".join(card(e, tab=(n == 0)) for n, e in enumerate(EXAMPLES))
     body = f'''{HEADER}
 <main id="main">
 <section class="sec sp-top ex" aria-labelledby="ex-title">
   <div class="wrap">
-    <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Examples</nav>
+    <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Use cases</nav>
     <div class="head center">
-      <p class="eyebrow"><span>Examples</span></p>
-      <h1 id="ex-title">What agents <span class="pop">do with Stethos.</span></h1>
-      <p class="kpi-lede">Workflows for medtech, pharma, health IT, post-acute, investment, startup and staffing teams, run from the AI assistant and CRM you already use. Pick one to see how it works.</p>
+      <p class="eyebrow"><span>Use cases</span></p>
+      <h1 id="ex-title">What teams <span class="pop">do with Stethos.</span></h1>
+      <p class="kpi-lede">Real workflows by segment, run from the AI assistant and CRM you already use. Pick one to see how it works, or open a segment for the data behind it.</p>
     </div>
     <div class="ex-split">
       <div class="ex-navwrap">
@@ -188,10 +199,10 @@ def examples():
       {cards}
       </div>
     </div>
-    <p class="cov-note ex-more">Have a workflow in mind? <a href="mailto:{EMAIL}?subject=Stethos%20workflow">Tell us about it</a>, or see the <a href="/use-cases">use cases</a> and <a href="/docs">docs</a>.</p>
+    <p class="cov-note ex-more">Have a workflow in mind? <a href="mailto:{EMAIL}?subject=Stethos%20workflow">Tell us about it</a>, or see the <a href="/docs">docs</a>. Also: <a href="/use-cases/healthcare-marketing">healthcare marketing</a> and <a href="/use-cases/provider-directories">provider directories</a>.</p>
   </div>
 </section>
-{cta_band("Self-serve", "Run your first workflow", "in five minutes.", "1,000 free credits, no card, no sales call. Pay only for the tool calls you make.", "examples")}
+{cta_band("Self-serve", "Run your first workflow", "in five minutes.", "1,000 free credits, no card, no sales call. Pay only for the tool calls you make.", "use-cases")}
 </main>
 '''
     return h + body + tail(("nav", "examples"))

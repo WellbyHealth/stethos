@@ -16,14 +16,13 @@ def w(path, text):
 
 home = page_home.page().replace("{BLOG_CARDS}", "".join(page_blog.card(p) for p in page_blog.POSTS[:3]))
 w("index.html", home)
-w("use-cases.html", page_other.use_cases())
+w("use-cases.html", page_examples.examples())
 w("pricing.html", page_other.pricing())
 w("docs.html", page_other.docs())
 w("compare/definitive-healthcare.html", page_other.compare_definitive())
 w("compare/iqvia-onekey.html", page_other.compare_onekey())
 w("privacy.html", page_other.privacy())
 w("signup.html", page_other.signup())
-w("examples.html", page_examples.examples())
 w("404.html", page_other.notfound())
 w("blog/index.html", page_blog.blog_index())
 # blog: only posts whose date has arrived; remove any page for a post not (yet) published
@@ -64,7 +63,7 @@ for u in page_other.UC: og(f"g-art-{u[3]}-1600.webp", u[0])
 for p in page_blog.ALL_POSTS: og(f"g-art-{p['art']}-1600.webp", p["slug"])
 for m in page_seo.SEO_PAGES: og(f"g-art-{m['art']}-1600.webp", m["slug"])
 
-urls = ["/"] + [f"/{m['slug']}" for m in page_seo.SEO_PAGES] + ["/use-cases"] + [f"/use-cases/{u[0]}" for u in page_other.UC] + ["/pricing", "/docs", "/compare/definitive-healthcare", "/compare/iqvia-onekey", "/examples", "/blog", "/signup", "/privacy"] + [f"/blog/{p['slug']}" for p in page_blog.POSTS]
+urls = ["/"] + [f"/{m['slug']}" for m in page_seo.SEO_PAGES] + ["/use-cases"] + [f"/use-cases/{u[0]}" for u in page_other.UC] + ["/pricing", "/docs", "/compare/definitive-healthcare", "/compare/iqvia-onekey", "/blog", "/signup", "/privacy"] + [f"/blog/{p['slug']}" for p in page_blog.POSTS]
 LASTMOD = {f"/blog/{p['slug']}": p["date"] for p in page_blog.POSTS}
 if page_blog.POSTS: LASTMOD["/blog"] = page_blog.POSTS[0]["date"]
 w("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -78,7 +77,7 @@ w("llms.txt", f"""# {BRAND}
 - [Home]({SITE}/): what Stethos does and who it's for
 - [Use cases]({SITE}/use-cases): medtech and pharma, health IT and services sales, healthcare marketing, investors, startups, post-acute care and agencies, clinical staffing and provider directories
 """ + "".join(f"- [{u[4]}]({SITE}/use-cases/{u[0]}): {page_uc.UC_PAGES[u[0]]['desc']}\n" for u in page_other.UC) + f"""- [Docs]({SITE}/docs): quickstart for search, enrich, organizations, watchers and MCP (preview)
-""" + "".join(f"- [{m['name']}]({SITE}/{m['slug']}): {m['desc']}\n" for m in page_seo.SEO_PAGES) + f"""- [Examples]({SITE}/examples): agent workflows by segment (medtech, pharma, health IT, investors, startups, staffing, post-acute care, health systems): medtech targeting, new-executive triggers, EHR campaign lists, ABM lists, KOL mapping, market diligence, portfolio monitoring, startup design partners, territory planning, event invites, CRM hygiene, staffing sales, post-acute referral development and physician liaison outreach
+""" + "".join(f"- [{m['name']}]({SITE}/{m['slug']}): {m['desc']}\n" for m in page_seo.SEO_PAGES) + f"""- [Use case workflows]({SITE}/use-cases): agent workflows by segment (medtech, pharma, health IT, investors, startups, staffing, post-acute care, health systems): medtech targeting, new-executive triggers, EHR campaign lists, ABM lists, KOL mapping, market diligence, portfolio monitoring, startup design partners, territory planning, event invites, CRM hygiene, staffing sales, post-acute referral development and physician liaison outreach
 - [Data sources]({SITE}/docs#sources): NPPES, CMS Medicare utilization, Part D, post-acute and hospice files, Care Compare, Provider of Services, ACO participation, cost reports, MA enrollment, Open Payments, state licensing boards, payer directories
 - [Pricing]({SITE}/pricing): per-tool-call credits; Free (1,000 credits), Build ($149/month) and Enterprise
 - [Stethos vs Definitive Healthcare]({SITE}/compare/definitive-healthcare)

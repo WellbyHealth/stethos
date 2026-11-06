@@ -57,5 +57,12 @@
       "source": "/blog",
       "destination": "/blog/index.html"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/examples",
+      "destination": "/use-cases",
+      "permanent": true
+    }
   ]
 }

@@ -545,3 +545,5 @@ html:not(.mo-js) .rot:before{content:none}
   .ex-nav.ex-fl{-webkit-mask-image:linear-gradient(to right,transparent,#000 40px);mask-image:linear-gradient(to right,transparent,#000 40px)}
   .ex-nav.ex-fl.ex-fr{-webkit-mask-image:linear-gradient(to right,transparent,#000 40px,#000 calc(100% - 56px),transparent);mask-image:linear-gradient(to right,transparent,#000 40px,#000 calc(100% - 56px),transparent)}
 }
+.ex-foot{margin:18px 0 0;padding-top:14px;border-top:1px solid var(--line,#e5e3dc);font-size:14.5px;font-weight:600}
+.ex-foot a{color:#4A4FB0;text-decoration:none}.ex-foot a:hover{text-decoration:underline}

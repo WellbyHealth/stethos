@@ -31,7 +31,7 @@
 <link rel="stylesheet" href="/styles.css?v=6c88d771">
 <link rel="stylesheet" href="/v2.css?v=978b51f1">
 <link rel="stylesheet" href="/site.css?v=6703b12a">
-<link rel="stylesheet" href="/stethos.css?v=29ca57db">
+<link rel="stylesheet" href="/stethos.css?v=2d3ef8f7">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I filter health systems by EHR?", "acceptedAnswer": {"@type": "Answer", "text": "Where it's published, yes. Certified health IT use comes from ONC and CMS sources, and each value shows its source and date. Where no public source exists, the field is left empty rather than guessed."}}, {"@type": "Question", "name": "Does it include executive contacts?", "acceptedAnswer": {"@type": "Answer", "text": "Stethos returns named executives and service line leaders from public sources such as organization websites and press releases, with the source for each. It doesn't sell personal emails or phone numbers."}}, {"@type": "Question", "name": "Will it work in Salesforce or HubSpot?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Your agent calls Stethos tools and writes the results into your CRM, and watchers can send a webhook when an account changes so the record and next step update on their own."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos-one.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Use cases", "item": "https://stethos-one.vercel.app/use-cases"}, {"@type": "ListItem", "position": 3, "name": "Health IT and services sales", "item": "https://stethos-one.vercel.app/use-cases/health-it-sales"}]}]}</script>
 </head>
 <body>
@@ -48,15 +48,14 @@
         <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-solutions">Product<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="dd-panel" id="dd-solutions">
           <div class="dd-col"><p class="dd-h">The API</p><ul class="dd-goals"><li><a href="/physician-data-api"><i class="dd-ic" style="--t:#ddf2ee"><img src="/img/g-cl-stk-search-160.webp?v=0f948a37" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Provider search</b><span>Every clinician and organization in the US, filtered your way.</span></span></a></li><li><a href="/npi-lookup-api"><i class="dd-ic" style="--t:#e4f0fd"><img src="/img/g-cl-stk-enrich-160.webp?v=a160c1b7" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>NPI lookup and enrich</b><span>Licenses, affiliations, networks and contact info from an NPI.</span></span></a></li><li><a href="/health-system-data-api"><i class="dd-ic" style="--t:#fdf5d2"><img src="/img/g-cl-stk-orgs-160.webp?v=6843bd5a" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Health system data</b><span>Health systems, groups and clinics, with who works where.</span></span></a></li><li><a href="/license-verification-api"><i class="dd-ic" style="--t:#fcecf6"><img src="/img/g-cl-stk-watch-160.webp?v=b44cee5a" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>License data and alerts</b><span>License status across states, with a webhook when one changes.</span></span></a></li><li><a href="/healthcare-mcp-server"><i class="dd-ic" style="--t:#eff5d6"><img src="/img/g-cl-stk-agents-160.webp?v=a082bcf3" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>MCP server</b><span>Add Stethos to Claude or any MCP client in five minutes.</span></span></a></li></ul></div>
-          <div class="dd-col dd-side"><p class="dd-h">Who it's for</p><ul class="dd-spec"><li><a href="/use-cases/medtech-pharma"><img src="/img/g-cl-stk-search-160.webp?v=0f948a37" width="96" height="96" alt="" loading="lazy" decoding="async">Medtech and pharma sales</a></li><li><a href="/use-cases/health-it-sales"><img src="/img/g-cl-ic-code-96.webp?v=9a682610" width="96" height="96" alt="" loading="lazy" decoding="async">Health IT and services sales</a></li><li><a href="/use-cases/healthcare-marketing"><img src="/img/g-cl-ic-pin-96.webp?v=bccaf9c5" width="96" height="96" alt="" loading="lazy" decoding="async">Healthcare marketing</a></li><li><a href="/use-cases/investors"><img src="/img/g-cl-stk-orgs-160.webp?v=6843bd5a" width="96" height="96" alt="" loading="lazy" decoding="async">Investors and deal teams</a></li><li><a href="/use-cases/digital-health"><img src="/img/g-cl-stk-agents-160.webp?v=a082bcf3" width="96" height="96" alt="" loading="lazy" decoding="async">Healthcare startups</a></li><li><a href="/use-cases/post-acute"><img src="/img/g-cl-ic-pin-96.webp?v=bccaf9c5" width="96" height="96" alt="" loading="lazy" decoding="async">Post-acute care and agencies</a></li><li><a href="/use-cases/clinical-staffing"><img src="/img/g-cl-ic-license-96.webp?v=5ad39758" width="96" height="96" alt="" loading="lazy" decoding="async">Clinical staffing</a></li></ul><a class="dd-all" href="/use-cases">All use cases <span aria-hidden="true">→</span></a><a class="dd-all" href="/examples">Sales and marketing workflows <span aria-hidden="true">→</span></a><img class="dd-art" src="/img/g-cl-stk-search-cut.webp?v=98a13010" width="480" height="480" alt="" loading="lazy" decoding="async"></div>
+          <div class="dd-col dd-side"><p class="dd-h">Who it's for</p><ul class="dd-spec"><li><a href="/use-cases/medtech-pharma"><img src="/img/g-cl-stk-search-160.webp?v=0f948a37" width="96" height="96" alt="" loading="lazy" decoding="async">Medtech and pharma sales</a></li><li><a href="/use-cases/health-it-sales"><img src="/img/g-cl-ic-code-96.webp?v=9a682610" width="96" height="96" alt="" loading="lazy" decoding="async">Health IT and services sales</a></li><li><a href="/use-cases/healthcare-marketing"><img src="/img/g-cl-ic-pin-96.webp?v=bccaf9c5" width="96" height="96" alt="" loading="lazy" decoding="async">Healthcare marketing</a></li><li><a href="/use-cases/investors"><img src="/img/g-cl-stk-orgs-160.webp?v=6843bd5a" width="96" height="96" alt="" loading="lazy" decoding="async">Investors and deal teams</a></li><li><a href="/use-cases/digital-health"><img src="/img/g-cl-stk-agents-160.webp?v=a082bcf3" width="96" height="96" alt="" loading="lazy" decoding="async">Healthcare startups</a></li><li><a href="/use-cases/post-acute"><img src="/img/g-cl-ic-pin-96.webp?v=bccaf9c5" width="96" height="96" alt="" loading="lazy" decoding="async">Post-acute care and agencies</a></li><li><a href="/use-cases/clinical-staffing"><img src="/img/g-cl-ic-license-96.webp?v=5ad39758" width="96" height="96" alt="" loading="lazy" decoding="async">Clinical staffing</a></li></ul><a class="dd-all" href="/use-cases">All use cases <span aria-hidden="true">→</span></a><img class="dd-art" src="/img/g-cl-stk-search-cut.webp?v=98a13010" width="480" height="480" alt="" loading="lazy" decoding="async"></div>
         </div>
       </div>
       <a href="/use-cases">Use cases</a>
-      <a href="/examples">Examples</a>
       <a href="/docs">Docs</a>
       <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
     </nav>
-    <div class="hdr-act"><a class="btn-2" href="/signup#signin">Sign in</a><a class="btn-1" href="/signup">Start free trial</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/#platform">Product</a><a href="/#connect">Connect in 5 minutes</a><a href="/use-cases">Use cases</a><a href="/examples">Examples</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="/signup#signin">Sign in</a></div>
+    <div class="hdr-act"><a class="btn-2" href="/signup#signin">Sign in</a><a class="btn-1" href="/signup">Start free trial</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/#platform">Product</a><a href="/#connect">Connect in 5 minutes</a><a href="/use-cases">Use cases</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="/signup#signin">Sign in</a></div>
   </div>
 </header>
 
@@ -73,6 +72,40 @@
       <h2>Health IT and services sales</h2><p class="sp-k">Stethos is built to</p><p class="sp-do">Build target lists of health systems and practices by EHR, size and service lines, and reach the buyer the week a new leader starts or a system changes vendors.</p></div>
       <div class="sp-p-side"><p class="sp-k">Data you'd use</p><ul class="sp-src"><li>Health systems, groups and clinics, with locations and size</li><li>Certified health IT and EHR in use, where published</li><li>Executives and service line leaders</li><li>Parent and affiliate links across a system</li></ul>
       <p class="sp-k">Signals you'd watch</p><ul class="sp-see"><li>A health system names a new CIO, CMO or CFO</li><li>A practice joins a larger group</li><li>A system opens new sites in your territory</li></ul></div></div></div>
+  </div>
+</section>
+<section class="sec" aria-labelledby="uc-wf-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Workflows</span></p><h2 id="uc-wf-title">What teams <span class="pop">do with it.</span></h2></div>
+    <div class="ex-list"><article class="ex-card" id="exec-trigger" style="--t:#e8f3d2">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-stk-watch-160.webp?v=b44cee5a" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">Health IT and services · Sales</p><h2>Reach the new buyer in their first 90 days</h2></div></div>
+      <p class="ex-trigger"><b>When</b> A target health system names a new CIO, CMIO or CFO.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Tell me when any health system in my territory hires a new CIO or CMIO, and draft a first note for each.”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Watches every account in the territory for executive changes</li><li>Adds the system's EHR, size and recent news to the alert</li><li>Creates a task in the CRM with a short, specific first note for the rep to edit</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Organizations</li><li>Executive changes</li><li>Certified health IT data</li><li>Change events</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">A task in Salesforce or HubSpot, and a Slack message to the rep</p></div>
+      </div>
+    </article>
+<article class="ex-card" id="ehr-campaign" style="--t:#f5efdf">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-stk-agents-160.webp?v=a082bcf3" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">Health IT and services · Marketing</p><h2>Find every hospital on a given EHR</h2></div></div>
+      <p class="ex-trigger"><b>When</b> You launch an integration for a specific EHR.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“List every hospital and large group running Oracle Health, with their IT leaders, and load them into HubSpot.”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Finds organizations by the certified EHR they report using</li><li>Adds the organization's leadership and locations</li><li>Creates a HubSpot list for the campaign</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>ONC certified health IT data</li><li>EHR vendors' published customer lists</li><li>Organizations</li><li>Contacts</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">HubSpot or Salesforce</p></div>
+      </div>
+    </article>
+<article class="ex-card" id="crm-hygiene" style="--t:#f5efdf">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-tr-shield-cut.webp?v=1b776c79" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">Health IT and services · Revenue operations</p><h2>Keep the CRM true without data entry</h2></div></div>
+      <p class="ex-trigger"><b>When</b> Continuously, on every account and contact.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Check every physician contact in Salesforce and fix anyone who moved, retired or changed groups.”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Matches each contact to an NPI-keyed record</li><li>Updates employer, location and specialty, with the source for each change</li><li>Watches the list and sends a webhook whenever a contact changes again</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>NPI Registry</li><li>Affiliations</li><li>Change events</li><li>Licenses</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">Salesforce, HubSpot or your data warehouse</p></div>
+      </div>
+    </article>
+</div>
+    <p class="cov-note ex-more"><a href="/use-cases">See workflows for every segment <span aria-hidden="true">→</span></a></p>
   </div>
 </section>
 <section class="sec" aria-labelledby="uc-call-title">
@@ -123,7 +156,7 @@
     <nav class="foot-links" aria-label="Footer">
       <a href="/#platform">Product</a>
       <a href="/use-cases">Use cases</a>
-      <a href="/examples">Examples</a>
+      
       <a href="/docs">Docs</a>
       <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
       <a href="/healthcare-mcp-server">Healthcare MCP server</a>
