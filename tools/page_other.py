@@ -6,7 +6,7 @@ UC = [
      "Give your sales agents the surgeons, groups and facilities that fit your product, and tell them the week a target moves, opens a site or starts a new service line.",
      ["Specialty, procedure focus and practice setting", "Group and hospital affiliations", "Licenses by state", "Practice contact details", "Industry payments from Open Payments"],
      ["A target surgeon changes groups", "A new ambulatory surgery center opens", "A health system names a new service line leader"]),
-    ("health-it-sales", "sp-lime", "g-cl-ic-code-cut.webp", "uc-digital", "Health IT and services sales",
+    ("health-it-sales", "sp-lime", "g-cl-ic-code-cut.webp", "compare", "Health IT and services sales",
      "Build target lists of health systems and practices by EHR, size and service lines, and reach the buyer the week a new leader starts or a system changes vendors.",
      ["Health systems, groups and clinics, with locations and size", "Certified health IT and EHR in use, where published", "Executives and service line leaders", "Parent and affiliate links across a system"],
      ["A health system names a new CIO, CMO or CFO", "A practice joins a larger group", "A system opens new sites in your territory"]),
@@ -14,6 +14,14 @@ UC = [
      "Build audiences of clinicians and organizations for campaigns, events and account-based marketing, and keep lists clean as people change jobs.",
      ["Clinician audiences by specialty, setting and state", "Account lists of systems and groups, with who works where", "Practice contact details, with sources", "Conference and market-level counts"],
      ["A contact on a list changes employer", "A new practice opens in a target market", "An account adds clinicians in your specialty"]),
+    ("investors", "sp-pink", "g-cl-stk-orgs-160.webp", "uc-investors", "Healthcare investors",
+     "Track practice roll-ups, clinician headcount at portfolio and target companies, and new entrants in a market as it happens, not a quarter later.",
+     ["Organizations with ownership and parent–child links", "Rostered clinicians per organization over time", "Locations by market"],
+     ["A group adds or loses clinicians", "A new location opens in a target market", "An executive hire at a target"]),
+    ("digital-health", "sp-blue", "g-cl-stk-agents-160.webp", "uc-digital", "Healthcare startups",
+     "Find your first customers and design partners, size your market, and power provider search in your product, all from one API and MCP server.",
+     ["Provider search by specialty, location and network", "Organization and location records", "NPI-keyed records that join to your data"],
+     ["A provider in your app changes location", "A practice joins a network your users have", "A record your app shows is re-verified"]),
     ("clinical-staffing", "sp-butter", "g-cl-ic-license-cut.webp", "uc-staffing", "Clinical staffing and recruiting",
      "Source licensed clinicians by state and specialty for your recruiters and agents, and find the health systems hiring hardest right now.",
      ["Clinicians by specialty and license state", "Current employer and affiliation history", "Organizations with open clinical roles"],
@@ -22,20 +30,12 @@ UC = [
      "Check every listing in your directory against current sources, and flag stale addresses, lapsed licenses and network mismatches before members run into them.",
      ["Practice locations and phone numbers, with sources", "Licenses and their status", "Payer network listings across directories", "Accepting-new-patients signals where published"],
      ["A clinician leaves a listed location", "A license lapses or is restricted", "A practice drops out of a network"]),
-    ("investors", "sp-pink", "g-cl-stk-orgs-160.webp", "uc-investors", "Healthcare investors",
-     "Track practice roll-ups, clinician headcount at portfolio and target companies, and new entrants in a market as it happens, not a quarter later.",
-     ["Organizations with ownership and parent–child links", "Rostered clinicians per organization over time", "Locations by market"],
-     ["A group adds or loses clinicians", "A new location opens in a target market", "An executive hire at a target"]),
-    ("digital-health", "sp-blue", "g-cl-ic-code-cut.webp", "uc-digital", "Digital health and AI apps",
-     "Power provider search, referrals and scheduling in your app with one API, and let your agents look up any clinician through MCP.",
-     ["Provider search by specialty, location and network", "Organization and location records", "NPI-keyed records that join to your data"],
-     ["A provider in your app changes location", "A practice joins a network your users have", "A record your app shows is re-verified"]),
 ]
 
 
 def use_cases():
     h = head("Use Cases: Healthcare Sales and Marketing Data | Stethos",
-             "How medtech, pharma, health IT and services sales and marketing teams use Stethos to target, reach and track healthcare accounts and clinicians.",
+             "How medtech, pharma, health IT, startup and investment teams use Stethos to find, size and track healthcare markets, accounts and clinicians.",
              "/use-cases", image="/og/use-cases.jpg", crumbs=[("Use cases", "/use-cases")],
              schema=[{"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": u[4], "url": SITE + "/use-cases/" + u[0]} for i, u in enumerate(UC)]}])
     tabs = "".join(
@@ -427,7 +427,7 @@ def signup():
         <label>Your name<input name="name" autocomplete="name" required></label>
         <label>Work email<input name="email" type="email" autocomplete="email" inputmode="email" required></label>
         <label>Company<input name="company" autocomplete="organization"></label>
-        <label>What are you building?<select name="use_case">{opts([("medtech-pharma","Sales and targeting for medtech or pharma"),("provider-directory","A provider directory or network tool"),("staffing","Clinical staffing or recruiting"),("investing","Healthcare investing or diligence"),("digital-health","A digital health product"),("other","Something else")])}</select></label>
+        <label>What are you building?<select name="use_case">{opts([("medtech-pharma","Sales and targeting for medtech or pharma"),("health-it-sales","Sales for health IT or services"),("marketing","Healthcare marketing"),("provider-directory","A provider directory or network tool"),("staffing","Clinical staffing or recruiting"),("investing","Healthcare investing or diligence"),("digital-health","A healthcare startup or digital health product"),("other","Something else")])}</select></label>
         <label>Where will you use it?<select name="client">{opts([("claude","Claude"),("cursor","Cursor"),("chatgpt","ChatGPT"),("other-mcp","Another MCP client"),("rest-api","REST API from my own code")])}</select></label>
         <label><span>Anything we should know? <span class="opt">Optional</span></span><textarea name="note" rows="3"></textarea></label>
         <input type="hidden" name="source">

@@ -59,9 +59,9 @@ UC_PAGES = {
              ("Does it show ownership?", "Parent and child organizations are linked where public sources show the relationship, with the source on each link."),
              ("Can I get the data as a file?", "Yes. Enterprise includes flat files delivered to your warehouse on a schedule, alongside the API.")]),
     "digital-health": dict(
-        title="Provider Search API for Digital Health Apps | Stethos",
-        desc="Power provider search, referrals and scheduling in your app with one NPI-keyed API, and let AI agents look up any clinician over MCP.",
-        h1a="Provider search for", h1b="digital health and AI apps.",
+        title="Healthcare Data for Startups and Digital Health | Stethos",
+        desc="Find first customers and design partners, size your market and power provider search in your product, with one NPI-keyed API and MCP server.",
+        h1a="Healthcare data for", h1b="startups and digital health.",
         intro="Find-a-doctor, referral and care navigation features all need the same thing underneath: a current, searchable record of who practices where and which networks they're in. Stethos is built to be that layer, through a REST API for your app and an MCP server for your agents.",
         req={"specialty": "dermatology", "city": "Austin", "state": "TX", "network": "[Payer A]", "limit": 10},
         faq=[("Can my AI agent use Stethos directly?", "Yes. The MCP server exposes search, enrich, organization and recent-changes tools to Claude and other MCP clients."),
@@ -86,6 +86,7 @@ def uc_page(n):
            "uc-staffing": "Illustration: clay scrubs on a hanger rack, a stethoscope, a calendar and a small state map with glowing pins.",
            "uc-investors": "Illustration: a clay piggy bank beside a rising bar chart with tiny clinics on top of each bar.",
            "uc-digital": "Illustration: a clay smartphone showing a map of doctor pins, with a small clay robot leaning on it.",
+           "compare": "Illustration: clay stacks of boxes and binders on a table beside a small machine sending out envelopes and pins.",
            "cta": "Illustration: a clay shelf of hospitals, clinics and houses with glowing map pins above them, and a small clay robot."}[art_key]
     body = f'''{HEADER}
 <main id="main">

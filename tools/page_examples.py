@@ -42,6 +42,22 @@ EXAMPLES = [
       "Flags industry relationships so medical affairs can review them first"],
      ["Part D prescribers", "Publications and trials", "NIH grants", "Open Payments"],
      "Your CRM or a medical affairs spreadsheet", "g-cl-stk-enrich-160.webp", "#e8f3d2"),
+    ("deal-diligence", "Investors", "Market diligence in an afternoon",
+     "A deal comes in for a regional orthopedic or GI group.",
+     "Map every orthopedic group in metro Phoenix: size, ownership, hospital ties, volume, quality and payer mix.",
+     ["Maps every group, its clinicians and its parent organization",
+      "Adds Medicare volume, quality scores and Medicare Advantage share by county",
+      "Writes a short memo with a spreadsheet of the underlying records and sources"],
+     ["Organizations", "Affiliations", "Medicare utilization", "Cost reports", "MA enrollment"],
+     "A memo in Claude and a spreadsheet for the deal team", "g-cl-stk-orgs-160.webp", "#e4f0fd"),
+    ("startup-first-customers", "Startups", "Find your first ten design partners",
+     "A seed-stage team is ready to sell.",
+     "Find independent cardiology groups with 10 to 40 clinicians in the Midwest that run athenahealth, with the practice administrator at each.",
+     ["Searches groups by specialty, size, region and reported EHR",
+      "Adds the practice's leaders and contact details, with sources",
+      "Loads the list into your CRM and drafts a short first note for each"],
+     ["Organizations", "Certified health IT data", "Leaders", "Practice contacts"],
+     "HubSpot, Attio or a Google Sheet", "g-cl-stk-agents-160.webp", "#e8f3d2"),
     ("territory-planning", "Sales operations", "Draw territories on real accounts",
      "Annual planning, or a new rep starts.",
      "Split Texas into four territories with a similar number of high-volume orthopedic surgeons in each.",
@@ -87,8 +103,8 @@ EXAMPLES = [
 
 def examples():
     items = [{"@type": "ListItem", "position": i + 1, "name": e[2], "url": f"{SITE}/examples#{e[0]}"} for i, e in enumerate(EXAMPLES)]
-    h = head("Examples: Healthcare Sales and Marketing Workflows | Stethos",
-             "Ten sales and marketing workflows: medtech targeting, new-executive triggers, EHR lists, ABM, KOL mapping, territories, event invites, CRM hygiene and more.",
+    h = head("Examples: Healthcare Sales, Marketing and Deal Workflows",
+             "Twelve workflows for sales, marketing, investment and startup teams: medtech targeting, executive triggers, EHR lists, ABM, diligence, territories and more.",
              "/examples", crumbs=[("Examples", "/examples")],
              schema=[{"@type": "ItemList", "name": "Stethos example workflows", "itemListElement": items}])
     jump = "".join(f'<li><a href="#{e[0]}">{e[1]}</a></li>' for e in EXAMPLES)
@@ -113,8 +129,8 @@ def examples():
     <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Examples</nav>
     <div class="head center">
       <p class="eyebrow"><span>Examples</span></p>
-      <h1 id="ex-title">What sales and marketing agents <span class="pop">do with Stethos.</span></h1>
-      <p class="kpi-lede">Ten sales and marketing workflows your team could run from the AI assistant and CRM it already uses. Each one shows the question, what the agent does, the data behind it and where the result lands. Names and numbers are examples.</p>
+      <h1 id="ex-title">What agents <span class="pop">do with Stethos.</span></h1>
+      <p class="kpi-lede">Twelve workflows for sales, marketing, investment and startup teams, each run from the AI assistant and CRM your team already uses. Each one shows the question, what the agent does, the data behind it and where the result lands. Names and numbers are examples.</p>
     </div>
     <ul class="ex-jump" aria-label="Jump to an example">{jump}</ul>
     <div class="ex-list">

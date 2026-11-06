@@ -72,13 +72,13 @@ w("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://
 w("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
 w("llms.txt", f"""# {BRAND}
 
-> Self-serve MCP server (and REST API) for healthcare sales and marketing teams and their AI agents: current, sourced data on every US clinician, practice, health system and payer network, with a source and checked date on every field, verification agents, and change events. Priced per tool call. Tools: search_providers, enrich_provider, enrich_org, watch_providers, recent_changes. Provider data only, no patient data.\n\nMCP endpoint: """ + MCP_URL + f""" (preview)
+> Self-serve MCP server (and REST API) for healthcare sales, marketing and investment teams, startups and their AI agents: current, sourced data on every US clinician, practice, health system and payer network, with a source and checked date on every field, verification agents, and change events. Priced per tool call. Tools: search_providers, enrich_provider, enrich_org, watch_providers, recent_changes. Provider data only, no patient data.\n\nMCP endpoint: """ + MCP_URL + f""" (preview)
 
 ## Pages
 - [Home]({SITE}/): what Stethos does and who it's for
-- [Use cases]({SITE}/use-cases): medtech and pharma sales, health IT and services sales, healthcare marketing, staffing sales, plus provider directories, investors and digital health
+- [Use cases]({SITE}/use-cases): medtech and pharma, health IT and services sales, healthcare marketing, investors, startups, clinical staffing and provider directories
 """ + "".join(f"- [{u[4]}]({SITE}/use-cases/{u[0]}): {page_uc.UC_PAGES[u[0]]['desc']}\n" for u in page_other.UC) + f"""- [Docs]({SITE}/docs): quickstart for search, enrich, organizations, watchers and MCP (preview)
-""" + "".join(f"- [{m['name']}]({SITE}/{m['slug']}): {m['desc']}\n" for m in page_seo.SEO_PAGES) + f"""- [Examples]({SITE}/examples): ten sales and marketing workflows: medtech targeting, new-executive triggers, EHR campaign lists, ABM lists, KOL mapping, territory planning, event invites, CRM hygiene, staffing sales and physician liaison outreach
+""" + "".join(f"- [{m['name']}]({SITE}/{m['slug']}): {m['desc']}\n" for m in page_seo.SEO_PAGES) + f"""- [Examples]({SITE}/examples): twelve workflows for sales, marketing, investment and startup teams: medtech targeting, new-executive triggers, EHR campaign lists, ABM lists, KOL mapping, market diligence, startup design partners, territory planning, event invites, CRM hygiene, staffing sales and physician liaison outreach
 - [Data sources]({SITE}/docs#sources): NPPES, CMS Medicare utilization, Part D, post-acute and hospice files, Care Compare, Provider of Services, ACO participation, cost reports, MA enrollment, Open Payments, state licensing boards, payer directories
 - [Pricing]({SITE}/pricing): per-tool-call credits; Free (1,000 credits), Build ($149/month) and Enterprise
 - [Stethos vs Definitive Healthcare]({SITE}/compare/definitive-healthcare)
