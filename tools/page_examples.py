@@ -151,7 +151,7 @@ def card(e, tab=False, link=True):
     st = "".join(f"<li>{x}</li>" for x in steps)
     dt = "".join(f"<li>{x}</li>" for x in data)
     attrs = f' role="tabpanel" aria-labelledby="tab-{slug}" tabindex="-1"' if tab is not None else ""
-    more = f'<p class="ex-foot"><a href="/use-cases/{page}">More for {seg.lower() if seg != "Startups" else "startups"} <span aria-hidden="true">→</span></a></p>' if (link and page) else ""
+    more = f'<p class="ex-foot"><a href="/use-cases/{page}">More for {seg} <span aria-hidden="true">→</span></a></p>' if (link and page) else ""
     return f'''<article class="ex-card{" ex-on" if tab else ""}" id="{slug}"{attrs} style="--t:{tint}">
       <div class="ex-head"><span class="ex-ic"><img src="/img/{ic}" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">{seg} · {team}</p><h2>{title}</h2></div></div>
       <p class="ex-trigger"><b>When</b> {trigger}</p>
