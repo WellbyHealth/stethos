@@ -2,7 +2,7 @@ from parts import *
 
 # (slug, team, title, trigger, ask, steps, data, lands, art-icon)
 EXAMPLES = [
-    ("medtech-targeting", "Medtech sales", "Who should I call this week?",
+    ("medtech-targeting", "Sales", "Who should I call this week?",
      "Every Monday, or whenever a rep asks.",
      "Find independent spine surgeons in my territory doing 50+ fusions a year, and tell me who changed anything recently.",
      ["Searches surgeons by specialty, territory and Medicare procedure volume",
@@ -10,7 +10,7 @@ EXAMPLES = [
       "Creates or updates the contacts in Salesforce with a one-line talking point"],
      ["Medicare procedure volumes", "Affiliations", "Change events", "Practice contacts"],
      "Salesforce or HubSpot, plus a weekly list in Claude", "g-cl-stk-search-160.webp", "#e4f0fd"),
-    ("exec-trigger", "Health IT sales", "Reach the new buyer in their first 90 days",
+    ("exec-trigger", "Sales", "Reach the new buyer in their first 90 days",
      "A target health system names a new CIO, CMIO or CFO.",
      "Tell me when any health system in my territory hires a new CIO or CMIO, and draft a first note for each.",
      ["Watches every account in the territory for executive changes",
@@ -18,7 +18,7 @@ EXAMPLES = [
       "Creates a task in the CRM with a short, specific first note for the rep to edit"],
      ["Organizations", "Executive changes", "Certified health IT data", "Change events"],
      "A task in Salesforce or HubSpot, and a Slack message to the rep", "g-cl-stk-watch-160.webp", "#e8f3d2"),
-    ("ehr-campaign", "Health IT marketing", "Find every hospital on a given EHR",
+    ("ehr-campaign", "Marketing", "Find every hospital on a given EHR",
      "You launch an integration for a specific EHR.",
      "List every hospital and large group running Oracle Health, with their IT leaders, and load them into HubSpot.",
      ["Finds organizations by the certified EHR they report using",
@@ -26,7 +26,7 @@ EXAMPLES = [
       "Creates a HubSpot list for the campaign"],
      ["ONC certified health IT data", "EHR vendors' published customer lists", "Organizations", "Contacts"],
      "HubSpot or Salesforce", "g-cl-stk-agents-160.webp", "#f5efdf"),
-    ("abm-list", "Marketing", "Build an ABM account list with the buying team",
+    ("abm-list", "Account-based marketing", "Build an ABM account list with the buying team",
      "Planning a quarter's account-based campaign.",
      "Give me the 200 health systems in the Southeast with 5+ hospitals and a cardiology service line, with the cardiology leaders at each.",
      ["Searches organizations by type, size, region and service lines",
@@ -34,7 +34,7 @@ EXAMPLES = [
       "Scores accounts by fit and loads them into your marketing tool as a list"],
      ["Organizations", "Service lines", "Affiliations", "Leaders"],
      "HubSpot, Salesforce or your ad platform's audience upload", "g-cl-stk-orgs-160.webp", "#ece6fb"),
-    ("kol-mapping", "Pharma", "Map the key opinion leaders for a launch",
+    ("kol-mapping", "Medical affairs and marketing", "Map the key opinion leaders for a launch",
      "A new launch or an upcoming congress.",
      "Who are the most active clinicians in this drug class in the Northeast: publishing, running trials and prescribing?",
      ["Finds clinicians by prescribing volume in the class",
@@ -42,7 +42,7 @@ EXAMPLES = [
       "Flags industry relationships so medical affairs can review them first"],
      ["Part D prescribers", "Publications and trials", "NIH grants", "Open Payments"],
      "Your CRM or a medical affairs spreadsheet", "g-cl-stk-enrich-160.webp", "#e8f3d2"),
-    ("deal-diligence", "Investors", "Market diligence in an afternoon",
+    ("deal-diligence", "Diligence", "Market diligence in an afternoon",
      "A deal comes in for a regional orthopedic or GI group.",
      "Map every orthopedic group in metro Phoenix: size, ownership, hospital ties, volume, quality and payer mix.",
      ["Maps every group, its clinicians and its parent organization",
@@ -50,7 +50,15 @@ EXAMPLES = [
       "Writes a short memo with a spreadsheet of the underlying records and sources"],
      ["Organizations", "Affiliations", "Medicare utilization", "Cost reports", "MA enrollment"],
      "A memo in Claude and a spreadsheet for the deal team", "g-cl-stk-orgs-160.webp", "#e4f0fd"),
-    ("startup-first-customers", "Startups", "Find your first ten design partners",
+    ("portfolio-watch", "Portfolio monitoring", "Know when a portfolio or target company changes",
+     "Continuously, across the portfolio and the pipeline.",
+     "Tell me whenever one of our portfolio companies or the 40 groups on our target list adds or loses clinicians, opens a site or hires an executive.",
+     ["Watches each organization's clinicians, locations and leaders",
+      "Rolls changes into a weekly digest, with the source for each",
+      "Flags big moves, like a group losing several surgeons, the day they show up"],
+     ["Organizations", "Affiliations", "Change events", "Locations"],
+     "A weekly digest in Slack or email, plus your deal CRM", "g-cl-stk-watch-160.webp", "#ece6fb"),
+    ("startup-first-customers", "First customers", "Find your first ten design partners",
      "A seed-stage team is ready to sell.",
      "Find independent cardiology groups with 10 to 40 clinicians in the Midwest that run athenahealth, with the practice administrator at each.",
      ["Searches groups by specialty, size, region and reported EHR",
@@ -82,7 +90,7 @@ EXAMPLES = [
       "Watches the list and sends a webhook whenever a contact changes again"],
      ["NPI Registry", "Affiliations", "Change events", "Licenses"],
      "Salesforce, HubSpot or your data warehouse", "g-cl-tr-shield-cut.webp", "#f5efdf"),
-    ("staffing-sales", "Staffing sales", "Find the systems that need staff now",
+    ("staffing-sales", "Business development", "Find the systems that need staff now",
      "Weekly, for the business development team.",
      "Which hospitals in Arizona are posting the most ICU nursing roles, and who runs nursing there?",
      ["Ranks nearby health systems by recent clinical job posts",
@@ -90,7 +98,7 @@ EXAMPLES = [
       "Creates the accounts and next steps in your CRM"],
      ["Health system job posts", "Organizations", "Leaders", "Change events"],
      "Your CRM, plus a weekly list in Claude", "g-cl-ic-license-96.webp", "#ece6fb"),
-    ("physician-liaison", "Health system marketing", "Grow referrals where your network is thin",
+    ("physician-liaison", "Physician relations", "Grow referrals where your network is thin",
      "A service line's referrals are down.",
      "Which independent primary care doctors near our hospitals aren't affiliated with us, and who recently joined a competing group?",
      ["Finds primary care clinicians near each hospital",
@@ -101,22 +109,41 @@ EXAMPLES = [
 ]
 
 
+SEGMENTS = [
+    ("Medtech", ["medtech-targeting", "territory-planning", "abm-list"]),
+    ("Pharma", ["kol-mapping", "event-invites"]),
+    ("Health IT and services", ["exec-trigger", "ehr-campaign", "crm-hygiene"]),
+    ("Investors", ["deal-diligence", "portfolio-watch"]),
+    ("Startups", ["startup-first-customers"]),
+    ("Clinical staffing", ["staffing-sales"]),
+    ("Health systems", ["physician-liaison"]),
+]
+_by = {e[0]: e for e in EXAMPLES}
+SEG_OF = {slug: name for name, slugs in SEGMENTS for slug in slugs}
+EXAMPLES = [_by[slug] for _, slugs in SEGMENTS for slug in slugs]
+assert len(EXAMPLES) == len(_by)
+
 def examples():
     items = [{"@type": "ListItem", "position": i + 1, "name": e[2], "url": f"{SITE}/examples#{e[0]}"} for i, e in enumerate(EXAMPLES)]
     h = head("Examples: Healthcare Sales, Marketing and Deal Workflows",
-             "Twelve workflows for sales, marketing, investment and startup teams: medtech targeting, executive triggers, EHR lists, ABM, diligence, territories and more.",
+             "Agent workflows by segment: medtech, pharma, health IT, investors, startups, staffing and health systems. Targeting, triggers, ABM, diligence and more.",
              "/examples", crumbs=[("Examples", "/examples")],
              schema=[{"@type": "ItemList", "name": "Stethos example workflows", "itemListElement": items}])
-    jump = "".join(
-        f'<li><a class="ex-tab" href="#{e[0]}" role="tab" id="tab-{e[0]}" aria-controls="{e[0]}" aria-selected="{"true" if n == 0 else "false"}" style="--t:{e[9]}">'
-        f'<span class="ex-tab-ic"><img src="/img/{e[8]}" width="40" height="40" alt="" loading="lazy" decoding="async"></span>'
-        f'<span class="ex-tab-t"><b>{e[1]}</b>{e[2]}</span></a></li>' for n, e in enumerate(EXAMPLES))
+    jump, n = "", 0
+    for name, slugs in SEGMENTS:
+        jump += f'<li class="ex-grp" role="presentation">{name}</li>'
+        for slug in slugs:
+            e = _by[slug]
+            jump += (f'<li role="presentation"><a class="ex-tab" href="#{e[0]}" role="tab" id="tab-{e[0]}" aria-controls="{e[0]}" aria-selected="{"true" if n == 0 else "false"}" style="--t:{e[9]}">'
+                     f'<span class="ex-tab-ic"><img src="/img/{e[8]}" width="40" height="40" alt="" loading="lazy" decoding="async"></span>'
+                     f'<span class="ex-tab-t"><b>{e[1]}</b>{e[2]}</span></a></li>')
+            n += 1
     cards = ""
     for i, (slug, team, title, trigger, ask, steps, data, lands, ic, tint) in enumerate(EXAMPLES, 1):
         st = "".join(f"<li>{x}</li>" for x in steps)
         dt = "".join(f"<li>{x}</li>" for x in data)
         cards += f'''<article class="ex-card{" ex-on" if i == 1 else ""}" id="{slug}" role="tabpanel" aria-labelledby="tab-{slug}" tabindex="-1" style="--t:{tint}">
-      <div class="ex-head"><span class="ex-ic"><img src="/img/{ic}" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">{i:02d} · {team}</p><h2>{title}</h2></div></div>
+      <div class="ex-head"><span class="ex-ic"><img src="/img/{ic}" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">{SEG_OF[slug]} · {team}</p><h2>{title}</h2></div></div>
       <p class="ex-trigger"><b>When</b> {trigger}</p>
       <p class="ex-ask"><span class="ex-ask-k">Ask</span>“{ask}”</p>
       <div class="ex-cols">
@@ -133,7 +160,7 @@ def examples():
     <div class="head center">
       <p class="eyebrow"><span>Examples</span></p>
       <h1 id="ex-title">What agents <span class="pop">do with Stethos.</span></h1>
-      <p class="kpi-lede">Twelve workflows for sales, marketing, investment and startup teams, run from the AI assistant and CRM you already use. Pick one to see how it works.</p>
+      <p class="kpi-lede">Workflows for medtech, pharma, health IT, investment, startup and staffing teams, run from the AI assistant and CRM you already use. Pick one to see how it works.</p>
     </div>
     <div class="ex-split">
       <ul class="ex-nav" role="tablist" aria-label="Example workflows">{jump}</ul>

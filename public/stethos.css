@@ -511,3 +511,11 @@ html:not(.mo-js) .rot:before{content:none}
   .ex-split .ex-card h2{font-size:1.4rem}
 }
 .ex-split .ex-card:focus{outline:none}
+.ex-grp{padding:14px 10px 4px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8a8880}
+.ex-grp:first-child{padding-top:6px}
+.ex-tab-m{display:none}
+@media(max-width:900px){
+  .ex-grp{flex:none;align-self:center;padding:0 0 0 12px;font-size:10.5px;white-space:nowrap;color:#4A4FB0}
+  .ex-grp:first-child{padding:0 0 0 8px}
+  .ex-tab-t b{color:#1f2430}
+}
