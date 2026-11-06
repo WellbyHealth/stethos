@@ -474,3 +474,6 @@ html:not(.mo-js) .rot:before{content:none}
 .ex-more{margin-top:26px}
 @media(max-width:980px){.ex-list{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:560px){.ex-cols{grid-template-columns:minmax(0,1fr)}.ex-card{padding:22px}}
+
+/* stacked side links in product menu */
+.dd-side .dd-all{display:flex;width:max-content}.dd-side .dd-all+.dd-all{margin-top:10px}

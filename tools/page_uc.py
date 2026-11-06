@@ -13,6 +13,24 @@ UC_PAGES = {
         faq=[("Can I filter physicians by procedure focus?", "Search filters include specialty and sub-specialty, practice setting, affiliation and license state. Procedure-focus signals come from public sources such as CMS data and practice websites, and each one shows its source."),
              ("Does it include Open Payments data?", "Yes. Enrich can add an Open Payments summary for a physician as an optional field, so your team can see existing industry relationships before reaching out."),
              ("Can it update our CRM automatically?", "Watchers send a webhook when a target's affiliation, location or license changes, so your CRM or agent can update the record and queue outreach without anyone re-checking lists.")]),
+    "health-it-sales": dict(
+        title="Health System Data for Health IT and Services Sales | Stethos",
+        desc="Target health systems and practices by EHR, size and service line, find the right buyer, and get alerts on new leaders and new sites, for AI sales agents.",
+        h1a="Health system data for", h1b="health IT and services sales.",
+        intro="Selling software or services into healthcare means knowing which systems run which EHR, who owns the budget and when something changes. Stethos is built to give your reps, SDR agents and CRM a current record for every health system and group, from ONC certified health IT data, CMS files and organization websites, and to flag the week a new executive starts or a practice joins a larger system.",
+        req={"org_type": "health_system", "state": "OH", "fields": ["locations", "health_it", "executives", "affiliates"]},
+        faq=[("Can I filter health systems by EHR?", "Where it's published, yes. Certified health IT use comes from ONC and CMS sources, and each value shows its source and date. Where no public source exists, the field is left empty rather than guessed."),
+             ("Does it include executive contacts?", "Stethos returns named executives and service line leaders from public sources such as organization websites and press releases, with the source for each. It doesn't sell personal emails or phone numbers."),
+             ("Will it work in Salesforce or HubSpot?", "Yes. Your agent calls Stethos tools and writes the results into your CRM, and watchers can send a webhook when an account changes so the record and next step update on their own.")]),
+    "healthcare-marketing": dict(
+        title="Clinician and Account Data for Healthcare Marketing | Stethos",
+        desc="Build clinician audiences and account lists for campaigns, events and ABM, and keep them clean as people change jobs. Current, sourced healthcare data.",
+        h1a="Audience and account data for", h1b="healthcare marketing.",
+        intro="Healthcare campaigns go wrong when the list is stale: the surgeon moved, the clinic closed, the group was bought. Stethos is built to give your marketing team and its agents current audiences of clinicians and organizations by specialty, setting and market, each with sources, and to tell you when someone on a list changes employer.",
+        req={"specialty": "cardiology", "state": ["NY", "NJ"], "practice_setting": "hospital_employed", "fields": ["affiliations", "practice_contact"]},
+        faq=[("Can I build an ABM account list?", "Yes. Search organizations by type, size, location and service lines, then pull the clinicians and leaders at each account, with who works where."),
+             ("How do I keep lists up to date?", "Set a watcher on a list. When a contact changes employer or a practice closes or moves, Stethos sends a webhook so your CRM or marketing tool can update the record."),
+             ("Is this patient data?", "No. Stethos only covers clinicians and organizations in their professional capacity, never patients.")]),
     "provider-directories": dict(
         title="Provider Directory Data API for Payers | Stethos",
         desc="Check provider directory listings against current sources. Flag stale locations, lapsed licenses and network mismatches with a real-time provider data API.",
@@ -67,7 +85,8 @@ def uc_page(n):
            "uc-payer": "Illustration: a clay clipboard directory of doctors' offices with check marks, beside an insurance shield and a magnifying glass.",
            "uc-staffing": "Illustration: clay scrubs on a hanger rack, a stethoscope, a calendar and a small state map with glowing pins.",
            "uc-investors": "Illustration: a clay piggy bank beside a rising bar chart with tiny clinics on top of each bar.",
-           "uc-digital": "Illustration: a clay smartphone showing a map of doctor pins, with a small clay robot leaning on it."}[art_key]
+           "uc-digital": "Illustration: a clay smartphone showing a map of doctor pins, with a small clay robot leaning on it.",
+           "cta": "Illustration: a clay shelf of hospitals, clinics and houses with glowing map pins above them, and a small clay robot."}[art_key]
     body = f'''{HEADER}
 <main id="main">
 <section class="sec sp-top ph-top" aria-labelledby="uc-title">

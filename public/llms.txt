@@ -1,15 +1,17 @@
 # Stethos
 
-> Self-serve MCP server (and REST API) giving AI agents current, sourced healthcare data on every US clinician, practice, health system and payer network: a source and checked date on every field, verification agents, and change events. Priced per tool call. Tools: search_providers, enrich_provider, enrich_org, watch_providers, recent_changes. Provider data only, no patient data.
+> Self-serve MCP server (and REST API) for healthcare sales and marketing teams and their AI agents: current, sourced data on every US clinician, practice, health system and payer network, with a source and checked date on every field, verification agents, and change events. Priced per tool call. Tools: search_providers, enrich_provider, enrich_org, watch_providers, recent_changes. Provider data only, no patient data.
 
 MCP endpoint: https://mcp.stethos.health/v1 (preview)
 
 ## Pages
-- [Home]({SITE}/): what Stethos does and who it's for
-- [Use cases]({SITE}/use-cases): medtech and pharma sales, provider directories, clinical staffing, investors, digital health
+- [Home](https://stethos-one.vercel.app/): what Stethos does and who it's for
+- [Use cases](https://stethos-one.vercel.app/use-cases): medtech and pharma sales, health IT and services sales, healthcare marketing, staffing sales, plus provider directories, investors and digital health
 - [Medtech and pharma sales](https://stethos-one.vercel.app/use-cases/medtech-pharma): Find surgeons and physicians by specialty, procedure focus, affiliation and license, and get alerts when targets move. A provider data API for sales agents.
-- [Provider directories and networks](https://stethos-one.vercel.app/use-cases/provider-directories): Check provider directory listings against current sources. Flag stale locations, lapsed licenses and network mismatches with a real-time provider data API.
+- [Health IT and services sales](https://stethos-one.vercel.app/use-cases/health-it-sales): Target health systems and practices by EHR, size and service line, find the right buyer, and get alerts on new leaders and new sites, for AI sales agents.
+- [Healthcare marketing](https://stethos-one.vercel.app/use-cases/healthcare-marketing): Build clinician audiences and account lists for campaigns, events and ABM, and keep them clean as people change jobs. Current, sourced healthcare data.
 - [Clinical staffing and recruiting](https://stethos-one.vercel.app/use-cases/clinical-staffing): Source licensed clinicians by state and specialty, and spot health systems that are hiring. A real-time clinician data API for staffing platforms.
+- [Provider directories and networks](https://stethos-one.vercel.app/use-cases/provider-directories): Check provider directory listings against current sources. Flag stale locations, lapsed licenses and network mismatches with a real-time provider data API.
 - [Healthcare investors](https://stethos-one.vercel.app/use-cases/investors): Track practice roll-ups, clinician headcount and new locations as they happen. Real-time healthcare organization data for investors and corporate development.
 - [Digital health and AI apps](https://stethos-one.vercel.app/use-cases/digital-health): Power provider search, referrals and scheduling in your app with one NPI-keyed API, and let AI agents look up any clinician over MCP.
 - [Docs](https://stethos-one.vercel.app/docs): quickstart for search, enrich, organizations, watchers and MCP (preview)
@@ -21,7 +23,7 @@ MCP endpoint: https://mcp.stethos.health/v1 (preview)
 - [Medicare utilization data API](https://stethos-one.vercel.app/medicare-utilization-data-api): Procedure volumes, Medicare patients and Part D prescribing for every US clinician, from CMS public files, resolved to one NPI record. MCP and REST.
 - [Home health and hospice data API](https://stethos-one.vercel.app/home-health-hospice-data-api): Volume, payments, patient mix, star ratings and ownership for every Medicare home health agency, hospice and nursing facility, via MCP or REST.
 - [Physician referral data](https://stethos-one.vercel.app/physician-referral-data): Map who works with whom: group rosters, hospital affiliations, ACO membership and shared practice sites for every US clinician. Referral flows planned.
-- [Examples](https://stethos-one.vercel.app/examples): nine example agent workflows, from medtech targeting to license watch and in-network lookup
+- [Examples](https://stethos-one.vercel.app/examples): ten sales and marketing workflows: medtech targeting, new-executive triggers, EHR campaign lists, ABM lists, KOL mapping, territory planning, event invites, CRM hygiene, staffing sales and physician liaison outreach
 - [Data sources](https://stethos-one.vercel.app/docs#sources): NPPES, CMS Medicare utilization, Part D, post-acute and hospice files, Care Compare, Provider of Services, ACO participation, cost reports, MA enrollment, Open Payments, state licensing boards, payer directories
 - [Pricing](https://stethos-one.vercel.app/pricing): per-tool-call credits; Free (1,000 credits), Build ($149/month) and Enterprise
 - [Stethos vs Definitive Healthcare](https://stethos-one.vercel.app/compare/definitive-healthcare)

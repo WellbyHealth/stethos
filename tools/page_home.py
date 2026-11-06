@@ -12,9 +12,10 @@ CLIENTS = _clients()
 
 FAQ = [
     ("What is Stethos?", "Current, sourced healthcare data for AI agents, delivered as an MCP server and API. Stethos resolves government, payer and web sources into one record for every US clinician, practice, health system and payer network, puts a source and a checked date on every field, keeps records current with verification agents, and tells your agent when something changes"),
+    ("How does it help sales and marketing?", "Your reps and agents can build target lists by specialty, setting, EHR or territory, enrich accounts and contacts with sourced fields, and get an alert the week a target changes jobs, a practice joins a system or a health system names a new leader. Those changes become your outreach triggers, and the records in your CRM stay current without anyone re-checking lists."),
     ("Can't my agent just ask a general AI assistant?", "General AI assistants can find some provider data, but they answer from whatever web page or registry copy they come across, often months or years old, with no source and no date. Provider data changes constantly: clinicians move groups, licenses lapse, networks change. Stethos re-checks its sources, shows where every field came from and when it was last checked, and tells your agent when a record changes."),
     ("Does it work with our CRM and AI tools?", "Yes, that's the point. Stethos runs as an MCP server inside Claude, ChatGPT, Microsoft Copilot Studio, Cursor or your own agent, and its REST API and webhooks keep records current in Salesforce, HubSpot, Attio or any CRM or data warehouse. There's no separate dashboard to adopt."),
-    ("Who is it for?", "Teams building agents and products on healthcare data: AI sales agents for medtech and pharma, provider directory and network teams at payers and digital front doors, clinical staffing and recruiting platforms, healthcare investors, and digital health apps that need to know who practices where."),
+    ("Who is it for?", "Sales and marketing teams that sell into healthcare: medtech and pharma field teams, health IT, software and services sellers, clinical staffing firms, and the marketers who build their audiences and account lists. Stethos gives their reps, SDR agents and CRM a current view of who practices where, who buys, and what just changed. Provider directory teams, investors and digital health apps use the same data."),
     ("Where does the data come from?", "Government files first: the NPPES NPI Registry, CMS's Medicare utilization files for clinicians, prescribers, hospitals, home health, hospice and nursing facilities, Care Compare ratings and affiliations, ACO participation, cost reports and Open Payments, plus state licensing boards. Payer directories, price transparency files, practice websites and health system job posts are layered on top. Every field carries its source and the date it was last checked. See the full list in the docs."),
     ("Does Stethos handle patient data?", "No. Stethos indexes healthcare professionals and organizations, not patients. There is no PHI in the API, so you don't need a business associate agreement to use it."),
     ("How fresh is it?", "Sources are re-checked on a rolling schedule, and every change is recorded as an event you can query or subscribe to with a webhook. Each record shows when it was last verified, so your agent can decide how much to trust it."),
@@ -37,11 +38,11 @@ def page():
         {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ]}]}
     pre = ('<link rel="preload" as="image" href="/img/g-hero-1600.webp" imagesrcset="/img/g-hero-1600.webp 1600w, /img/g-hero-2400.webp 2400w, /img/g-hero-3200.webp 3200w" imagesizes="100vw" media="(min-width: 761px)" fetchpriority="high">\n'
            '<link rel="preload" as="image" href="/img/g-hero-m-800.webp" imagesrcset="/img/g-hero-m-800.webp 800w, /img/g-hero-m-1200.webp 1200w" imagesizes="100vw" media="(max-width: 760px)" fetchpriority="high">\n')
-    h = head("Stethos: Healthcare Data MCP Server for AI Agents",
-             "Current, sourced data on every US clinician, practice, health system and payer network, as tools your AI agents can call. Live in five minutes, pay per call.",
+    h = head("Stethos: Healthcare Sales and Marketing Data for AI Agents",
+             "Current, sourced data on every US clinician, practice and health system, for healthcare sales and marketing teams and the AI agents and CRM they use.",
              "/", css=("styles", "v2", "site", "home"), extra=pre,
-             share_title="Stethos | Healthcare data for your AI agents",
-             share_desc="Search, enrich and watch every US clinician, practice and health system from Claude, Cursor or any MCP client. Start free with 1,000 credits.",
+             share_title="Stethos | Healthcare sales and marketing data for your AI agents",
+             share_desc="Find, enrich and track every US clinician, practice and health system you sell to, from Claude, ChatGPT, your CRM or any MCP client. Start free with 1,000 credits.",
              ld=f'<script type="application/ld+json">{json.dumps(ld)}</script>\n')
 
     def stk(i, cls, pill, title, pop, note, img):
@@ -57,8 +58,8 @@ def page():
 <main id="main">
 <section class="hero cx" aria-labelledby="hero-title">
   <div class="wrap cx-copy">
-    <h1 id="hero-title">Turn your agent into a world&#8209;class <span class="rot" data-rot data-words="recruiter|network analyst|deal team|care navigator"><span class="rot-w on">medtech rep</span></span></h1>
-    <p class="cx-sub">Current, sourced healthcare data on every US clinician, practice, health system and payer network, as tools your agents can call, inside the CRM and AI assistants your team already uses. Live in five minutes, priced per tool call.</p>
+    <h1 id="hero-title">Turn your agent into a world&#8209;class <span class="rot" data-rot data-words="pharma rep|SDR|account exec|marketing team|staffing recruiter"><span class="rot-w on">medtech rep</span></span></h1>
+    <p class="cx-sub">Current, sourced data on every US clinician, practice and health system you sell to, for healthcare sales and marketing teams. Build target lists, enrich accounts and act the week a target changes jobs, all inside the CRM and AI assistants your team already uses. Live in five minutes, priced per tool call.</p>
     <div class="cx-ctas"><a class="cx-btn dark" href="{TRIAL}">Start free trial<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="cx-btn light" href="/docs">Read the docs<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     <div class="cx-paste">
       <span class="cx-paste-k">Paste in your coding agent</span>
@@ -281,14 +282,14 @@ def page():
   <div class="wrap">
     <div class="head center">
       <p class="eyebrow"><span>Who it's for</span></p>
-      <h2 id="teams-title">Built for teams <span class="pop">building on healthcare.</span></h2>
+      <h2 id="teams-title">Built for teams <span class="pop">selling into healthcare.</span></h2>
     </div>
     <ul class="roles">
-      <li><figure class="role-art" style="--bg:#d3e6fb">{art("uc-medtech", "Illustration: a clay sales desk with a surgical instrument case, a knee model and a laptop showing a map with pins.")}</figure><h3><a class="role-link" href="/use-cases/medtech-pharma">AI sales agents for medtech and pharma</a></h3><p>Find the surgeons and groups that fit, and reach out the week a target changes affiliation or opens a new site.</p></li>
-      <li><figure class="role-art" style="--bg:#e3f1e7">{art("uc-payer", "Illustration: a clay clipboard directory of doctors' offices with check marks, beside an insurance shield and a magnifying glass.")}</figure><h3><a class="role-link" href="/use-cases/provider-directories">Provider directory and network teams</a></h3><p>Flag stale locations, lapsed licenses and network mismatches before a member calls a number that doesn't work.</p></li>
-      <li><figure class="role-art" style="--bg:#f5efdf">{art("uc-staffing", "Illustration: clay scrubs on a hanger rack, a stethoscope, a calendar and a small state map with glowing pins.")}</figure><h3><a class="role-link" href="/use-cases/clinical-staffing">Clinical staffing and recruiting</a></h3><p>Source licensed clinicians by state and specialty, and spot the health systems that are hiring hardest.</p></li>
+      <li><figure class="role-art" style="--bg:#d3e6fb">{art("uc-medtech", "Illustration: a clay sales desk with a surgical instrument case, a knee model and a laptop showing a map with pins.")}</figure><h3><a class="role-link" href="/use-cases/medtech-pharma">Medtech and pharma sales</a></h3><p>Find the surgeons and groups that fit your product, and reach out the week a target changes affiliation or opens a new site.</p></li>
+      <li><figure class="role-art" style="--bg:#f5e9b8">{art("uc-digital", "Illustration: a clay phone showing a map with pins, beside a small friendly robot.")}</figure><h3><a class="role-link" href="/use-cases/health-it-sales">Health IT and services sales</a></h3><p>Target health systems by EHR, size and service line, and hear the week a new CIO or CMO starts.</p></li>
+      <li><figure class="role-art" style="--bg:#0b1b33">{art("cta", "Illustration: a clay shelf of hospitals, clinics and houses with glowing map pins above them, and a small robot.")}</figure><h3><a class="role-link" href="/use-cases/healthcare-marketing">Healthcare marketing</a></h3><p>Build clinician audiences and ABM account lists, and keep them clean as people change jobs.</p></li>
     </ul>
-    <p class="sp-more"><a href="/use-cases/medtech-pharma">Medtech and pharma</a> · <a href="/use-cases/provider-directories">Provider directories</a> · <a href="/use-cases/clinical-staffing">Clinical staffing</a> · <a href="/use-cases">All use cases <span aria-hidden="true">→</span></a> · <a href="/examples">Example workflows <span aria-hidden="true">→</span></a></p>
+    <p class="sp-more"><a href="/use-cases/medtech-pharma">Medtech and pharma</a> · <a href="/use-cases/health-it-sales">Health IT and services</a> · <a href="/use-cases/healthcare-marketing">Marketing</a> · <a href="/use-cases/clinical-staffing">Staffing sales</a> · <a href="/use-cases">All use cases <span aria-hidden="true">→</span></a> · <a href="/examples">Example workflows <span aria-hidden="true">→</span></a></p>
   </div>
 </section>
 

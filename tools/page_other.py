@@ -6,14 +6,22 @@ UC = [
      "Give your sales agents the surgeons, groups and facilities that fit your product, and tell them the week a target moves, opens a site or starts a new service line.",
      ["Specialty, procedure focus and practice setting", "Group and hospital affiliations", "Licenses by state", "Practice contact details", "Industry payments from Open Payments"],
      ["A target surgeon changes groups", "A new ambulatory surgery center opens", "A health system names a new service line leader"]),
-    ("provider-directories", "sp-lime", "g-cl-ic-payer-cut.webp", "uc-payer", "Provider directories and networks",
-     "Check every listing in your directory against current sources, and flag stale addresses, lapsed licenses and network mismatches before members run into them.",
-     ["Practice locations and phone numbers, with sources", "Licenses and their status", "Payer network listings across directories", "Accepting-new-patients signals where published"],
-     ["A clinician leaves a listed location", "A license lapses or is restricted", "A practice drops out of a network"]),
+    ("health-it-sales", "sp-lime", "g-cl-ic-code-cut.webp", "uc-digital", "Health IT and services sales",
+     "Build target lists of health systems and practices by EHR, size and service lines, and reach the buyer the week a new leader starts or a system changes vendors.",
+     ["Health systems, groups and clinics, with locations and size", "Certified health IT and EHR in use, where published", "Executives and service line leaders", "Parent and affiliate links across a system"],
+     ["A health system names a new CIO, CMO or CFO", "A practice joins a larger group", "A system opens new sites in your territory"]),
+    ("healthcare-marketing", "sp-pink", "g-cl-ic-pin-cut.webp", "cta", "Healthcare marketing",
+     "Build audiences of clinicians and organizations for campaigns, events and account-based marketing, and keep lists clean as people change jobs.",
+     ["Clinician audiences by specialty, setting and state", "Account lists of systems and groups, with who works where", "Practice contact details, with sources", "Conference and market-level counts"],
+     ["A contact on a list changes employer", "A new practice opens in a target market", "An account adds clinicians in your specialty"]),
     ("clinical-staffing", "sp-butter", "g-cl-ic-license-cut.webp", "uc-staffing", "Clinical staffing and recruiting",
      "Source licensed clinicians by state and specialty for your recruiters and agents, and find the health systems hiring hardest right now.",
      ["Clinicians by specialty and license state", "Current employer and affiliation history", "Organizations with open clinical roles"],
      ["A new state license is issued", "An organization's clinical job posts spike", "A clinician leaves a large employer"]),
+    ("provider-directories", "sp-lime", "g-cl-ic-payer-cut.webp", "uc-payer", "Provider directories and networks",
+     "Check every listing in your directory against current sources, and flag stale addresses, lapsed licenses and network mismatches before members run into them.",
+     ["Practice locations and phone numbers, with sources", "Licenses and their status", "Payer network listings across directories", "Accepting-new-patients signals where published"],
+     ["A clinician leaves a listed location", "A license lapses or is restricted", "A practice drops out of a network"]),
     ("investors", "sp-pink", "g-cl-stk-orgs-160.webp", "uc-investors", "Healthcare investors",
      "Track practice roll-ups, clinician headcount at portfolio and target companies, and new entrants in a market as it happens, not a quarter later.",
      ["Organizations with ownership and parent–child links", "Rostered clinicians per organization over time", "Locations by market"],
@@ -26,8 +34,8 @@ UC = [
 
 
 def use_cases():
-    h = head("Use Cases: Healthcare Provider Data API | Stethos",
-             "How sales agents, provider directories, staffing platforms, investors and digital health apps use real-time provider data from Stethos.",
+    h = head("Use Cases: Healthcare Sales and Marketing Data | Stethos",
+             "How medtech, pharma, health IT and services sales and marketing teams use Stethos to target, reach and track healthcare accounts and clinicians.",
              "/use-cases", image="/og/use-cases.jpg", crumbs=[("Use cases", "/use-cases")],
              schema=[{"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": u[4], "url": SITE + "/use-cases/" + u[0]} for i, u in enumerate(UC)]}])
     tabs = "".join(

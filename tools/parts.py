@@ -98,12 +98,11 @@ HEADER = f'''
   }{dd_goal("/health-system-data-api", "g-cl-stk-orgs-160.webp", "#fdf5d2", "Health system data", "Health systems, groups and clinics, with who works where.")
   }{dd_goal("/license-verification-api", "g-cl-stk-watch-160.webp", "#fcecf6", "License data and alerts", "License status across states, with a webhook when one changes.")
   }{dd_goal("/healthcare-mcp-server", "g-cl-stk-agents-160.webp", "#eff5d6", "MCP server", "Add Stethos to Claude or any MCP client in five minutes.")}</ul></div>
-          <div class="dd-col dd-side"><p class="dd-h">By use case</p><ul class="dd-spec">{
+          <div class="dd-col dd-side"><p class="dd-h">For sales and marketing</p><ul class="dd-spec">{
     dd_spec("/use-cases/medtech-pharma", "g-cl-stk-search-160.webp", "Medtech and pharma sales")
-  }{dd_spec("/use-cases/provider-directories", "g-cl-ic-payer-96.webp", "Provider directories")
-  }{dd_spec("/use-cases/clinical-staffing", "g-cl-ic-license-96.webp", "Clinical staffing")
-  }{dd_spec("/use-cases/investors", "g-cl-stk-orgs-160.webp", "Healthcare investors")
-  }{dd_spec("/use-cases/digital-health", "g-cl-ic-code-96.webp", "Digital health and AI apps")}</ul><a class="dd-all" href="/use-cases">All use cases <span aria-hidden="true">→</span></a><img class="dd-art" src="/img/g-cl-stk-search-cut.webp" width="480" height="480" alt="" loading="lazy" decoding="async"></div>
+  }{dd_spec("/use-cases/health-it-sales", "g-cl-ic-code-96.webp", "Health IT and services sales")
+  }{dd_spec("/use-cases/healthcare-marketing", "g-cl-ic-pin-96.webp", "Healthcare marketing")
+  }{dd_spec("/use-cases/clinical-staffing", "g-cl-ic-license-96.webp", "Clinical staffing sales")}</ul><a class="dd-all" href="/use-cases">All use cases <span aria-hidden="true">→</span></a><a class="dd-all" href="/examples">Sales and marketing workflows <span aria-hidden="true">→</span></a><img class="dd-art" src="/img/g-cl-stk-search-cut.webp" width="480" height="480" alt="" loading="lazy" decoding="async"></div>
         </div>
       </div>
       <a href="/use-cases">Use cases</a>
@@ -121,7 +120,7 @@ FOOTER = f'''
   <div class="wrap foot-grid">
     <div class="foot-brand">
       <a class="logo" href="/"><img class="mark" src="/img/g-cl-logo-96.webp" width="30" height="30" alt=""><span>{BRAND}</span></a>
-      <p>Current, sourced healthcare data for AI agents, as an MCP server. Product views and tool results on this site use illustrative sample data.</p>
+      <p>Current, sourced healthcare data for sales and marketing teams and their AI agents, as an MCP server. Product views and tool results on this site use illustrative sample data.</p>
     </div>
     <nav class="foot-links" aria-label="Footer">
       <a href="/#platform">Product</a>
