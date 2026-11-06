@@ -145,7 +145,7 @@ def page():
 {stk(3, "stk-reconnect", "Watch", "Built to tell your agent when a record changes,", "so it moves first.", "Affiliation changes, new licenses, network moves, executive hires and hiring spikes.", "stk-watch")}
 {stk(4, "stk-grow", "MCP first", "Built to plug straight into your agents", "as an MCP server, in five minutes.", "REST and webhooks are there too, for the parts of your stack that aren't agents.", "stk-agents")}
 </ul>
-    <p class="sp-more">Explore: <a href="/data-coverage">Data coverage by category</a> · <a href="/healthcare-mcp-server">Healthcare MCP server</a> · <a href="/npi-lookup-api">NPI lookup API</a> · <a href="/physician-data-api">Physician data API</a> · <a href="/license-verification-api">License data API</a> · <a href="/health-system-data-api">Health system data API</a> · <a href="/medicare-utilization-data-api">Medicare utilization data</a> · <a href="/home-health-hospice-data-api">Home health and hospice data</a> · <a href="/physician-referral-data">Physician referral data</a></p>
+    <p class="sp-more">Explore: <a href="/healthcare-mcp-server">Healthcare MCP server</a> · <a href="/npi-lookup-api">NPI lookup API</a> · <a href="/physician-data-api">Physician data API</a> · <a href="/license-verification-api">License data API</a> · <a href="/health-system-data-api">Health system data API</a> · <a href="/medicare-utilization-data-api">Medicare utilization data</a> · <a href="/home-health-hospice-data-api">Home health and hospice data</a> · <a href="/physician-referral-data">Physician referral data</a></p>
   </div>
 </section>
 

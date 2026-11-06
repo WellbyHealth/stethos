@@ -3,7 +3,7 @@
 import os, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from parts import SITE, BRAND, EMAIL, MCP_URL
-import page_home, page_other, page_blog, page_uc, page_seo, page_cov
+import page_home, page_other, page_blog, page_uc, page_seo
 
 OUT = os.path.join(os.path.dirname(__file__), "..", "public")
 
@@ -23,7 +23,6 @@ w("compare/definitive-healthcare.html", page_other.compare_definitive())
 w("compare/iqvia-onekey.html", page_other.compare_onekey())
 w("privacy.html", page_other.privacy())
 w("signup.html", page_other.signup())
-w("data-coverage.html", page_cov.coverage())
 w("404.html", page_other.notfound())
 w("blog/index.html", page_blog.blog_index())
 # blog: only posts whose date has arrived; remove any page for a post not (yet) published
@@ -64,7 +63,7 @@ for u in page_other.UC: og(f"g-art-{u[3]}-1600.webp", u[0])
 for p in page_blog.ALL_POSTS: og(f"g-art-{p['art']}-1600.webp", p["slug"])
 for m in page_seo.SEO_PAGES: og(f"g-art-{m['art']}-1600.webp", m["slug"])
 
-urls = ["/"] + [f"/{m['slug']}" for m in page_seo.SEO_PAGES] + ["/use-cases"] + [f"/use-cases/{u[0]}" for u in page_other.UC] + ["/pricing", "/docs", "/compare/definitive-healthcare", "/compare/iqvia-onekey", "/data-coverage", "/blog", "/signup", "/privacy"] + [f"/blog/{p['slug']}" for p in page_blog.POSTS]
+urls = ["/"] + [f"/{m['slug']}" for m in page_seo.SEO_PAGES] + ["/use-cases"] + [f"/use-cases/{u[0]}" for u in page_other.UC] + ["/pricing", "/docs", "/compare/definitive-healthcare", "/compare/iqvia-onekey", "/blog", "/signup", "/privacy"] + [f"/blog/{p['slug']}" for p in page_blog.POSTS]
 LASTMOD = {f"/blog/{p['slug']}": p["date"] for p in page_blog.POSTS}
 if page_blog.POSTS: LASTMOD["/blog"] = page_blog.POSTS[0]["date"]
 w("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -78,8 +77,7 @@ w("llms.txt", f"""# {BRAND}
 - [Home]({SITE}/): what Stethos does and who it's for
 - [Use cases]({SITE}/use-cases): medtech and pharma sales, provider directories, clinical staffing, investors, digital health
 """ + "".join(f"- [{u[4]}]({SITE}/use-cases/{u[0]}): {page_uc.UC_PAGES[u[0]]['desc']}\n" for u in page_other.UC) + f"""- [Docs]({SITE}/docs): quickstart for search, enrich, organizations, watchers and MCP (preview)
-""" + "".join(f"- [{m['name']}]({SITE}/{m['slug']}): {m['desc']}\n" for m in page_seo.SEO_PAGES) + f"""- [Data coverage]({SITE}/data-coverage): eleven categories of provider data, including agent-verified fields, mapped to six use cases
-- [Data sources]({SITE}/docs#sources): NPPES, CMS Medicare utilization, Part D, post-acute and hospice files, Care Compare, Provider of Services, ACO participation, cost reports, MA enrollment, Open Payments, state licensing boards, payer directories
+""" + "".join(f"- [{m['name']}]({SITE}/{m['slug']}): {m['desc']}\n" for m in page_seo.SEO_PAGES) + f"""- [Data sources]({SITE}/docs#sources): NPPES, CMS Medicare utilization, Part D, post-acute and hospice files, Care Compare, Provider of Services, ACO participation, cost reports, MA enrollment, Open Payments, state licensing boards, payer directories
 - [Pricing]({SITE}/pricing): per-tool-call credits; Free (1,000 credits), Build ($149/month) and Enterprise
 - [Stethos vs Definitive Healthcare]({SITE}/compare/definitive-healthcare)
 - [Stethos vs IQVIA OneKey]({SITE}/compare/iqvia-onekey)

@@ -21,7 +21,6 @@ MCP endpoint: https://mcp.stethos.health/v1 (preview)
 - [Medicare utilization data API](https://stethos-one.vercel.app/medicare-utilization-data-api): Procedure volumes, Medicare patients and Part D prescribing for every US clinician, from CMS public files, resolved to one NPI record. MCP and REST.
 - [Home health and hospice data API](https://stethos-one.vercel.app/home-health-hospice-data-api): Volume, payments, patient mix, star ratings and ownership for every Medicare home health agency, hospice and nursing facility, via MCP or REST.
 - [Physician referral data](https://stethos-one.vercel.app/physician-referral-data): Map who works with whom: group rosters, hospital affiliations, ACO membership and shared practice sites for every US clinician. Referral flows planned.
-- [Data coverage](https://stethos-one.vercel.app/data-coverage): eleven categories of provider data, including agent-verified fields, mapped to six use cases
 - [Data sources](https://stethos-one.vercel.app/docs#sources): NPPES, CMS Medicare utilization, Part D, post-acute and hospice files, Care Compare, Provider of Services, ACO participation, cost reports, MA enrollment, Open Payments, state licensing boards, payer directories
 - [Pricing](https://stethos-one.vercel.app/pricing): per-tool-call credits; Free (1,000 credits), Build ($149/month) and Enterprise
 - [Stethos vs Definitive Healthcare](https://stethos-one.vercel.app/compare/definitive-healthcare)
