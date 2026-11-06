@@ -1,23 +1,30 @@
+"""Builds public/og-home.jpg in the Aria share-card layout: clay scene on top, grass band with headline + logo."""
 from PIL import Image, ImageDraw, ImageFont
 import os, sys
-R='/home/claude/stethos-repo/public'
-W,H=1200,630
-bg=Image.new('RGB',(W,H),(208,210,249))
-art=Image.open(R+'/img/g-hero-3200.webp').convert('RGB')
-s=1320/art.width; a=art.resize((1320,round(art.height*s)),Image.LANCZOS)
-mask=Image.new('L',a.size,255); md=ImageDraw.Draw(mask); fade=120
-for y in range(fade): md.line([(0,y),(a.width,y)],fill=int(255*(y/fade)**1.5))
-top=H-a.height+110
-bg.paste(a,(-60,top),mask)
-d=ImageDraw.Draw(bg)
-h1=ImageFont.truetype('/tmp/fl/figtree650.ttf',66)
-sub=ImageFont.truetype('/tmp/fl/figtree500.ttf',29)
-brand=ImageFont.truetype('/tmp/fl/figtree650.ttf',36)
-logo=Image.open(R+'/img/g-cl-logo-cut.webp').convert('RGBA').resize((60,60),Image.LANCZOS)
-bw=60+10+d.textlength('Stethos',font=brand); bx=(W-bw)/2
-bg.paste(logo,(int(bx),26),logo); d.text((bx+70,34),'Stethos',font=brand,fill=(0,0,0))
-for i,t in enumerate(['Healthcare data','for your AI agents']):
-    tw=d.textlength(t,font=h1); d.text(((W-tw)/2,104+i*72),t,font=h1,fill=(0,0,0))
-bg.save(sys.argv[1],quality=86,optimize=True,progressive=True)
-print(top, a.height, os.path.getsize(sys.argv[1]))
-bg.crop(((W-H)//2,0,(W+H)//2,H)).resize((300,300)).save('/tmp/fl/og_sq.png')
+R = os.path.join(os.path.dirname(__file__), "..", "public")
+W, H, BAND = 1200, 630, 170
+FONT = sys.argv[2] if len(sys.argv) > 2 else "/tmp/fl/figtree"
+out = Image.new("RGB", (W, H), (213, 225, 182))
+art = Image.open(R + "/img/g-hero-3200.webp").convert("RGB")
+a = art.resize((W, round(art.height * W / art.width)), Image.LANCZOS)   # 1200 x 509
+top_h = H - BAND                                                         # 460
+y0 = 22
+out.paste(a.crop((0, y0, W, y0 + top_h)), (0, 0))
+d = ImageDraw.Draw(out)
+band = (213, 225, 182)
+d.rectangle([0, top_h, W, H], fill=band)
+brand = ImageFont.truetype(FONT + "500.ttf", 34)
+logo = Image.open(R + "/img/g-cl-logo-cut.webp").convert("RGBA").resize((64, 64), Image.LANCZOS)
+tw = d.textlength("Stethos", font=brand)
+bx = W - 48 - tw
+d.text((bx, top_h + BAND / 2), "Stethos", font=brand, fill=(17, 17, 17), anchor="lm")
+out.paste(logo, (int(bx - 72), int(top_h + BAND / 2 - 34)), logo)
+line, size = "Healthcare data for your AI agents.", 60
+while True:  # largest size that leaves a 40px gap before the logo
+    h1 = ImageFont.truetype(FONT + "500.ttf", size)
+    if 60 + d.textlength(line, font=h1) <= bx - 72 - 40: break
+    size -= 1
+d.text((60, top_h + BAND / 2), line, font=h1, fill=(17, 17, 17), anchor="lm")
+print("headline size", size)
+out.save(sys.argv[1], quality=88, optimize=True, progressive=True)
+print(os.path.getsize(sys.argv[1]))

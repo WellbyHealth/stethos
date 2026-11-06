@@ -38,8 +38,8 @@ def page():
     h = head("Stethos: Healthcare Provider Data MCP Server for AI Agents",
              "An MCP server for every US healthcare provider and organization. Connect Claude, Cursor or any MCP client in five minutes and pay per tool call. Free credits.",
              "/", css=("styles", "v2", "site", "home"), extra=pre,
-             share_title="Stethos: Healthcare data for your AI agents",
-             share_desc="Every US clinician, practice and health system, through one MCP server. Start free with 1,000 credits.",
+             share_title="Stethos | Healthcare data for your AI agents",
+             share_desc="Search, enrich and watch every US clinician, practice and health system from Claude, Cursor or any MCP client. Start free with 1,000 credits.",
              ld=f'<script type="application/ld+json">{json.dumps(ld)}</script>\n')
 
     def stk(i, cls, pill, title, pop, note, img):
