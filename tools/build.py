@@ -71,7 +71,7 @@ w("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://
 w("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
 w("llms.txt", f"""# {BRAND}
 
-> Self-serve MCP server (and REST API) for US healthcare provider and organization data, built for AI agents and priced per tool call. Tools: search_providers, enrich_provider, enrich_org, watch_providers, recent_changes. Provider data only, no patient data.\n\nMCP endpoint: """ + MCP_URL + """ (preview)
+> Self-serve MCP server (and REST API) giving AI agents current, sourced healthcare data on every US clinician, practice, health system and payer network: a source and checked date on every field, verification agents, and change events. Priced per tool call. Tools: search_providers, enrich_provider, enrich_org, watch_providers, recent_changes. Provider data only, no patient data.\n\nMCP endpoint: """ + MCP_URL + """ (preview)
 
 ## Pages
 - [Home]({SITE}/): what Stethos does and who it's for

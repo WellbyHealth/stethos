@@ -11,9 +11,9 @@ import json
 CLIENTS = _clients()
 
 FAQ = [
-    ("What is Stethos?", "An MCP server, and API, for US healthcare provider data. It's built to keep one clean, current record for every clinician, practice, hospital and health system, stitched together from public registries and licensed sources, and to tell your software the moment one of those records changes."),
+    ("What is Stethos?", "Current, sourced healthcare data for AI agents, delivered as an MCP server and API. Stethos resolves government, payer and web sources into one record for every US clinician, practice, health system and payer network, puts a source and a checked date on every field, keeps records current with verification agents, and tells your agent when something changes"),
     ("Can't my agent just ask a general AI assistant?", "General AI assistants can find some provider data, but they answer from whatever web page or registry copy they come across, often months or years old, with no source and no date. Provider data changes constantly: clinicians move groups, licenses lapse, networks change. Stethos re-checks its sources, shows where every field came from and when it was last checked, and tells your agent when a record changes."),
-    ("Who is it for?", "Teams building products on top of healthcare provider data: AI sales agents for medtech and pharma, provider directory and network teams at payers and digital front doors, clinical staffing and recruiting platforms, healthcare investors, and digital health apps that need to know who practices where."),
+    ("Who is it for?", "Teams building agents and products on healthcare data: AI sales agents for medtech and pharma, provider directory and network teams at payers and digital front doors, clinical staffing and recruiting platforms, healthcare investors, and digital health apps that need to know who practices where."),
     ("Where does the data come from?", "Government files first: the NPPES NPI Registry, CMS's Medicare utilization files for clinicians, prescribers, hospitals, home health, hospice and nursing facilities, Care Compare ratings and affiliations, ACO participation, cost reports and Open Payments, plus state licensing boards. Payer directories, price transparency files, practice websites and health system job posts are layered on top. Every field carries its source and the date it was last checked. See the full list in the docs."),
     ("Does Stethos handle patient data?", "No. Stethos indexes healthcare professionals and organizations, not patients. There is no PHI in the API, so you don't need a business associate agreement to use it."),
     ("How fresh is it?", "Sources are re-checked on a rolling schedule, and every change is recorded as an event you can query or subscribe to with a webhook. Each record shows when it was last verified, so your agent can decide how much to trust it."),
@@ -36,8 +36,8 @@ def page():
         {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ]}]}
     pre = ('<link rel="preload" as="image" href="/img/g-hero-1600.webp" imagesrcset="/img/g-hero-1600.webp 1600w, /img/g-hero-2400.webp 2400w, /img/g-hero-3200.webp 3200w" imagesizes="100vw" media="(min-width: 761px)" fetchpriority="high">\n'
            '<link rel="preload" as="image" href="/img/g-hero-m-800.webp" imagesrcset="/img/g-hero-m-800.webp 800w, /img/g-hero-m-1200.webp 1200w" imagesizes="100vw" media="(max-width: 760px)" fetchpriority="high">\n')
-    h = head("Stethos: Healthcare Provider Data MCP Server for AI Agents",
-             "An MCP server for every US healthcare provider and organization. Connect Claude, Cursor or any MCP client in five minutes and pay per tool call. Free credits.",
+    h = head("Stethos: Healthcare Data MCP Server for AI Agents",
+             "Current, sourced data on every US clinician, practice, health system and payer network, as tools your AI agents can call. Live in five minutes, pay per call.",
              "/", css=("styles", "v2", "site", "home"), extra=pre,
              share_title="Stethos | Healthcare data for your AI agents",
              share_desc="Search, enrich and watch every US clinician, practice and health system from Claude, Cursor or any MCP client. Start free with 1,000 credits.",
@@ -57,7 +57,7 @@ def page():
 <section class="hero cx" aria-labelledby="hero-title">
   <div class="wrap cx-copy">
     <h1 id="hero-title">Turn your agent into a world&#8209;class <span class="rot" data-rot data-words="recruiter|network analyst|deal team|care navigator"><span class="rot-w on">medtech rep</span></span></h1>
-    <p class="cx-sub">Healthcare provider data for your AI agents, via MCP or API. Every US clinician, practice and health system, kept current, with a source on every answer.</p>
+    <p class="cx-sub">Current, sourced healthcare data on every US clinician, practice, health system and payer network, as tools your agents can call. Live in five minutes, priced per tool call.</p>
     <div class="cx-ctas"><a class="cx-btn dark" href="{TRIAL}">Start free trial<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="cx-btn light" href="/docs">Read the docs<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     <div class="cx-paste">
       <span class="cx-paste-k">Paste in your coding agent</span>
@@ -74,7 +74,7 @@ def page():
 
 <section class="srcs" aria-labelledby="srcs-title">
   <p class="srcs-k" id="srcs-title">Resolved from the sources healthcare runs on</p>
-  <div class="mq"><ul class="mq-row"><li>NPPES NPI Registry</li><li>Medicare utilization by clinician</li><li>Medicare Part D prescribers</li><li>Medicare hospital inpatient and outpatient</li><li>Home health, hospice and SNF files</li><li>Care Compare ratings and affiliations</li><li>Provider of Services file</li><li>ACO participation</li><li>Hospital and SNF cost reports</li><li>Medicare Advantage enrollment</li><li>Open Payments</li><li>State licensing boards</li><li>Payer directories</li><li>Price transparency files</li><li>Practice websites</li><li>Health system job posts</li></ul><ul class="mq-row" aria-hidden="true"><li>NPPES NPI Registry</li><li>Medicare utilization by clinician</li><li>Medicare Part D prescribers</li><li>Medicare hospital inpatient and outpatient</li><li>Home health, hospice and SNF files</li><li>Care Compare ratings and affiliations</li><li>Provider of Services file</li><li>ACO participation</li><li>Hospital and SNF cost reports</li><li>Medicare Advantage enrollment</li><li>Open Payments</li><li>State licensing boards</li><li>Payer directories</li><li>Price transparency files</li><li>Practice websites</li><li>Health system job posts</li></ul></div>
+  <div class="mq"><ul class="mq-row"><li>NPPES NPI Registry</li><li>CMS National Provider Directory</li><li>Medicare utilization by clinician</li><li>Medicare Part D prescribers</li><li>Medicare hospital inpatient and outpatient</li><li>Home health, hospice and SNF files</li><li>Care Compare ratings and affiliations</li><li>Provider of Services file</li><li>ACO participation</li><li>Hospital and SNF cost reports</li><li>Medicare Advantage enrollment</li><li>Open Payments</li><li>ONC certified health IT data</li><li>State licensing boards</li><li>Payer directories</li><li>Price transparency files</li><li>Practice websites</li><li>Health system job posts</li></ul><ul class="mq-row" aria-hidden="true"><li>NPPES NPI Registry</li><li>CMS National Provider Directory</li><li>Medicare utilization by clinician</li><li>Medicare Part D prescribers</li><li>Medicare hospital inpatient and outpatient</li><li>Home health, hospice and SNF files</li><li>Care Compare ratings and affiliations</li><li>Provider of Services file</li><li>ACO participation</li><li>Hospital and SNF cost reports</li><li>Medicare Advantage enrollment</li><li>Open Payments</li><li>ONC certified health IT data</li><li>State licensing boards</li><li>Payer directories</li><li>Price transparency files</li><li>Practice websites</li><li>Health system job posts</li></ul></div>
 </section>
 
 <section class="h2-panel" id="team-day" aria-labelledby="day-title">
@@ -134,7 +134,7 @@ def page():
     </div>
     <ul class="stats">
       <li><b><span class="cnt" data-to="51">51</span></b><span>licensing boards in scope: every state plus DC</span></li>
-      <li><b><span class="cnt" data-to="16">16</span></b><span>government and web sources, 11 of them from CMS, resolved into one record</span></li>
+      <li><b><span class="cnt" data-to="18">18</span></b><span>government, payer and web sources, 12 of them from CMS, resolved into one record</span></li>
       <li><b><span class="cnt" data-to="5">5</span></b><span>tools your agent gets: search, enrich, orgs, watch, changes</span></li>
       <li><b><span class="cnt" data-to="100">100</span>%</b><span>of fields carry a source and the date it was checked</span></li>
     </ul>
@@ -270,14 +270,18 @@ def page():
     <figure class="art-wide yours-art">{art("compare", "Illustration: a dusty stack of sealed boxes and reports on one side, and the clay data machine sending out a stream of alerts on the other.", w=1600, h=893)}</figure>
     <div>
       <p class="eyebrow"><span>Why Stethos</span></p>
-      <h2 id="yours-title">Others sell snapshots or guess. <span class="pop">Stethos streams changes.</span></h2>
-      <p class="yours-lede">Established healthcare data vendors are deep and trusted, and they're built for big commercial teams: annual contracts, seats, dashboards and periodic exports. Stethos is built for software that acts: an MCP server you can add to your agent today, priced per tool call, with change events your agents can subscribe to. General AI assistants can find some of this, but from stale pages with no source or date, and provider data changes too often for that.</p>
+      <h2 id="yours-title">Snapshots, raw files or guesses. <span class="pop">Or a record you can trust.</span></h2>
+      <p class="yours-lede">Agents now do the prospecting, sourcing and diligence, and they act on whatever data they are given. Today that means an annual-contract platform built for analysts, free government files that are raw and inconsistently dated, or a general AI assistant answering from old pages. Stethos is the layer in between: current, sourced records your agent can call, priced per call.</p>
       <p class="cmp-links"><a href="/compare/definitive-healthcare">Stethos vs Definitive Healthcare <span aria-hidden="true">→</span></a><a href="/compare/iqvia-onekey">Stethos vs IQVIA OneKey <span aria-hidden="true">→</span></a></p>
     </div>
     <div class="compare">
       <div class="col them">
-        <h3>Traditional data platforms</h3>
+        <h3>Traditional data platforms</h3><p class="col-k">Definitive, IQVIA</p>
         <ul><li>Annual contracts, sold by sales</li><li>Priced per seat or module</li><li>Dashboards first, API often extra</li><li>Periodic refreshes and exports</li><li>You find out what changed later</li><li>Built for analysts</li></ul>
+      </div>
+      <div class="col them">
+        <h3>Free government files</h3>
+        <ul><li>NPPES, CMS's provider directory, Medicare files</li><li>Free and comprehensive</li><li>Raw, in dozens of formats</li><li>No reliable per-record freshness date</li><li>Not matched across sources</li><li>You build and maintain the pipeline</li></ul>
       </div>
       <div class="col them ai">
         <h3>General AI assistants</h3>
@@ -285,24 +289,38 @@ def page():
       </div>
       <div class="col us">
         <h3>Stethos: built for agents</h3>
-        <ul><li>Add to Claude in five minutes</li><li>Priced per tool call</li><li>MCP first, REST and webhooks too</li><li>Sources re-checked continuously</li><li>Change events, as they happen</li><li>Built for developers and agents</li></ul>
+        <ul><li>One matched record per provider and organization</li><li>A source and checked date on every field</li><li>Verified by agents when sources disagree</li><li>Changes pushed to your agent</li><li>Live in five minutes, priced per call</li><li>Built for agents and developers</li></ul>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="sec why-now" aria-labelledby="now-title">
+  <div class="wrap">
+    <div class="head center">
+      <p class="eyebrow"><span>Why now</span></p>
+      <h2 id="now-title">Agents became the buyer. <span class="pop">The data didn't keep up.</span></h2>
+    </div>
+    <ol class="now-list">
+      <li><b>Agents call tools now</b><p>MCP turned data into something an agent calls on its own. Incumbent platforms were built for analysts clicking through dashboards.</p></li>
+      <li><b>Free data got bigger, not fresher</b><p>CMS's new provider directory, EHR data from ONC and Medicare Advantage plan directories are large and free, but they don't tell you how current each record is.</p></li>
+      <li><b>Verification got cheap</b><p>Voice and web agents can do the research calls data vendors have staffed for years, at a fraction of the cost, whenever a record looks stale.</p></li>
+    </ol>
   </div>
 </section>
 
 <section class="sec pillars-sec" aria-labelledby="pill-title">
   <div class="wrap">
     <div class="head center">
-      <p class="eyebrow"><span>Built for agents</span></p>
+      <p class="eyebrow"><span>What you get</span></p>
       <h2 id="pill-title">Data your agent <span class="pop">can act on.</span></h2>
     </div>
     <ul class="pillars">
-      <li style="--t:#e4f0fd"><img src="/img/g-cl-stk-watch-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><h3>Fresh</h3><p>Sources are re-checked continuously, and every change is recorded as an event. Not a quarterly export.</p></li>
-      <li style="--t:#e8f3d2"><img src="/img/g-cl-stk-enrich-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><h3>Deep</h3><p>Licenses, affiliations, networks, locations and the organization behind each clinician. The whole story, not one row.</p></li>
-      <li style="--t:#f5efdf"><img src="/img/g-cl-stk-search-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><h3>Resolved</h3><p>Every NPI, license and directory listing is matched to the right person or practice, so your agent never writes to the wrong Dr. Smith.</p></li>
+      <li style="--t:#e4f0fd"><img src="/img/g-cl-stk-watch-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><h3>Fresh</h3><p>Sources are re-checked continuously, and Stethos agents call practices and check websites to confirm what files can't. Changes arrive as events, not quarterly exports.</p></li>
+      <li style="--t:#e8f3d2"><img src="/img/g-cl-tr-read-cut.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><h3>Trustworthy</h3><p>Every field shows where it came from and when it was last checked, matched to the right person or practice. Consistent answers, not a confident guess.</p></li>
+      <li style="--t:#f5efdf"><img src="/img/g-cl-stk-agents-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><h3>Built for agents</h3><p>MCP first, with REST and webhooks too. Self-serve and priced per tool call: no annual contract, no seats, no sales call.</p></li>
     </ul>
-    <ul class="trust-line"><li>Provider data, not patient data: no PHI, no BAA</li><li>A source and a checked date on every field</li><li>Government registries first, licensed sources on top</li></ul>
+    <ul class="trust-line"><li>No patient data: no PHI, no BAA</li><li>A source and a checked date on every field</li><li>Government registries first, licensed sources on top</li></ul>
   </div>
 </section>
 

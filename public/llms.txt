@@ -1,6 +1,6 @@
 # Stethos
 
-> Self-serve MCP server (and REST API) for US healthcare provider and organization data, built for AI agents and priced per tool call. Tools: search_providers, enrich_provider, enrich_org, watch_providers, recent_changes. Provider data only, no patient data.
+> Self-serve MCP server (and REST API) giving AI agents current, sourced healthcare data on every US clinician, practice, health system and payer network: a source and checked date on every field, verification agents, and change events. Priced per tool call. Tools: search_providers, enrich_provider, enrich_org, watch_providers, recent_changes. Provider data only, no patient data.
 
 MCP endpoint: https://mcp.stethos.health/v1 (preview)
 

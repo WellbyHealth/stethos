@@ -120,7 +120,7 @@ FOOTER = f'''
   <div class="wrap foot-grid">
     <div class="foot-brand">
       <a class="logo" href="/"><img class="mark" src="/img/g-cl-logo-96.webp" width="30" height="30" alt=""><span>{BRAND}</span></a>
-      <p>Healthcare provider data for AI agents, as an MCP server. Product views and tool results on this site use illustrative sample data.</p>
+      <p>Current, sourced healthcare data for AI agents, as an MCP server. Product views and tool results on this site use illustrative sample data.</p>
     </div>
     <nav class="foot-links" aria-label="Footer">
       <a href="/#platform">Product</a>

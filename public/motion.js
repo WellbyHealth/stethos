@@ -127,7 +127,7 @@
 
   /* 5. Scroll reveals */
   if (io && !still) {
-    var targets = document.querySelectorAll("main .head, .stats li, .stk-row > li, .pillars li, .roles li, .kpis li, .split-card, .feed, .connect-grid > *, .play-grid, .compare .col");
+    var targets = document.querySelectorAll("main .head, .stats li, .stk-row > li, .pillars li, .now-list li, .roles li, .kpis li, .split-card, .feed, .connect-grid > *, .play-grid, .compare .col");
     var ro = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("rv-in"); ro.unobserve(e.target); } });
     }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
