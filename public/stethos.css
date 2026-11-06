@@ -381,3 +381,6 @@ html:not(.mo-js) .rot:before{content:none}
 .split-card.dev>p{color:#dce4f0;opacity:1}
 .split-card.biz .split-k{color:#4A4FB0}
 .split-k{margin-bottom:12px}
+/* contrast fixes (Lighthouse) */
+.df-raw li span,.df-end{color:#66655f}
+.src-list .src-conflict dt{color:#3b3d52}

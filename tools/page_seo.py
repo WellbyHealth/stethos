@@ -69,6 +69,51 @@ SEO_PAGES = [
 ]
 
 
+SEO_PAGES += [
+    dict(slug="medicare-utilization-data-api", art="uc-medtech", color="sp-lime",
+         name="Medicare utilization data API",
+         title="Medicare Provider Utilization Data API | Stethos",
+         desc="Procedure volumes, Medicare patients and Part D prescribing for every US clinician, from CMS public files, resolved to one NPI record. MCP and REST.",
+         h1a="Medicare utilization data,", h1b="joined to every provider record.",
+         intro="CMS publishes what every clinician and hospital bills Original Medicare: services by procedure code, Medicare patients seen, Part D prescriptions and equipment ordered. Stethos loads those public files, matches each row to the right NPI and returns them inside the provider record, next to licenses, affiliations and networks, with the release year on every number.",
+         k1="CMS files included", l1=["Medicare Physician &amp; Other Practitioners, by provider and service", "Medicare Part D Prescribers, by provider and drug", "Medicare DMEPOS, by referring provider", "Medicare Inpatient and Outpatient Hospitals, by provider"],
+         k2="What your agent can ask", l2=["Which orthopedic surgeons in Ohio do the most knee replacements", "Which cardiologists prescribe a given drug class most", "Which clinicians order the most CPAP equipment", "Which hospitals in a market do the most spine DRGs"],
+         ep="providers/search", req={"specialty": "orthopedic surgery", "state": "OH", "procedure_codes": ["27447"], "sort": "-medicare_services", "limit": 25},
+         faq=[("Where does this data come from?", "CMS's public Medicare Provider Utilization and Payment files. They summarize 100% of Original Medicare fee-for-service claims at the provider level, and CMS suppresses small counts to protect patients."),
+              ("How current is it?", "CMS releases these files once a year, covering a past year, so they describe volume and mix rather than this week's activity. Stethos shows the data year on every number and pairs it with fresher signals like affiliation and license changes."),
+              ("Does it include Medicare Advantage or commercial claims?", "No. The public files cover Original Medicare only. Claims-level data, including Medicare Advantage, requires CMS research access, which Stethos plans to pursue."),
+              ("Is there patient data in it?", "No. Every number is aggregated to the provider, and CMS removes counts under 11. Stethos returns provider data only.")],
+         related=[("Docs: data sources", "/docs#sources"), ("Physician data API", "/physician-data-api"), ("Medtech and pharma", "/use-cases/medtech-pharma")]),
+    dict(slug="home-health-hospice-data-api", art="uc-payer", color="sp-butter",
+         name="Home health and hospice data API",
+         title="Home Health, Hospice and SNF Data API | Stethos",
+         desc="Volume, payments, patient mix, star ratings and ownership for every Medicare home health agency, hospice and nursing facility, via MCP or REST.",
+         h1a="Post-acute provider data", h1b="for home health, hospice and SNFs.",
+         intro="For every Medicare-certified home health agency, hospice, skilled nursing facility, inpatient rehab facility and long-term care hospital, Stethos combines CMS's post-acute utilization files, Care Compare star ratings and quality measures, the Provider of Services file and cost reports into one record per provider, keyed to its CCN and NPI.",
+         k1="CMS files included", l1=["Medicare Post-Acute Care &amp; Hospice, by provider", "Care Compare star ratings and quality measures", "Provider of Services file: ownership, beds, certification", "Hospital and SNF cost reports (HCRIS)"],
+         k2="What your agent can ask", l2=["Which hospices in a county serve the most dementia patients", "Which home health agencies gained star ratings this year", "Who owns every SNF in a metro, and how many beds each has", "Which agencies' Medicare volume is growing fastest"],
+         ep="orgs/search", req={"type": "home_health_agency", "state": "GA", "fields": ["utilization", "star_rating", "ownership"], "limit": 25},
+         faq=[("How is this different from Trella Health or similar platforms?", "Those platforms are built on claims-level Medicare data and sold as annual subscriptions with dashboards. Stethos starts from CMS's public files, priced per tool call and built for agents through MCP. Claims-level referral flows are planned, through CMS's research data program."),
+              ("How current is it?", "Star ratings and quality measures refresh monthly to quarterly. The utilization files are released yearly. Every field shows its source and date."),
+              ("Can I see referral sources and destinations?", "Not yet. Which hospitals and physicians send patients to which agencies requires claims-level data from CMS's Virtual Research Data Center, which Stethos plans to apply for. Today you get each provider's volume, mix, quality and ownership."),
+              ("Does it include patient data?", "No. Everything is aggregated to the provider, and CMS suppresses small counts.")],
+         related=[("Docs: data sources", "/docs#sources"), ("Health system data API", "/health-system-data-api"), ("Provider directories", "/use-cases/provider-directories")]),
+    dict(slug="physician-referral-data", art="uc-investors", color="sp-pink",
+         name="Physician referral data",
+         title="Physician Referral Data API for AI Agents | Stethos",
+         desc="Map who works with whom: group rosters, hospital affiliations, ACO membership and shared practice sites for every US clinician. Referral flows planned.",
+         h1a="Physician referral data,", h1b="built from what CMS publishes.",
+         intro="Referral relationships follow structure: clinicians in the same group, at the same hospital, in the same ACO or at the same practice address refer to each other most. Stethos maps that structure for every US clinician from public CMS files, so your agent can find the specialists a primary care group is likely to send patients to, and the reverse.",
+         k1="Signals included", l1=["Group practice rosters from Care Compare", "Hospital affiliations", "ACO participation from the Shared Savings Program", "Shared practice addresses and organization NPIs"],
+         k2="What your agent can ask", l2=["Which cardiologists share a group or hospital with these PCPs", "Which ACO a practice belongs to, and who else is in it", "Which surgeons operate at the hospitals a group is affiliated with", "Who joined or left a referral network this quarter"],
+         ep="providers/enrich", req={"npi": "1234567890", "fields": ["affiliations", "group_roster", "aco", "colocated"]},
+         faq=[("Does CMS publish referral data?", "CMS released Physician Shared Patient Patterns files in response to FOIA requests, but they cover claims only through 2015. For current relationships, Stethos uses group, hospital, ACO and location data that CMS updates regularly."),
+              ("Will Stethos have claims-based referral flows?", "That's the plan. Current referral counts between clinicians require claims-level Medicare data from CMS's Virtual Research Data Center. Stethos plans to apply as an Innovator; only aggregate, privacy-protected counts can leave that environment."),
+              ("Is this enough for sales targeting?", "Often, yes. Shared groups, hospitals and ACOs explain most referral patterns, and they change faster than annual claims files. Stethos also tells your agent when an affiliation changes."),
+              ("Is there patient data?", "No. Stethos holds data about clinicians and organizations only.")],
+         related=[("Docs: data sources", "/docs#sources"), ("Physician data API", "/physician-data-api"), ("Medtech and pharma", "/use-cases/medtech-pharma")]),
+]
+
 def seo_page(m):
     path = "/" + m["slug"]
     faqld = {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in m["faq"]]}

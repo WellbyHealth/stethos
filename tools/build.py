@@ -67,7 +67,7 @@ urls = ["/"] + [f"/{m['slug']}" for m in page_seo.SEO_PAGES] + ["/use-cases"] + 
 LASTMOD = {f"/blog/{p['slug']}": p["date"] for p in page_blog.POSTS}
 if page_blog.POSTS: LASTMOD["/blog"] = page_blog.POSTS[0]["date"]
 w("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-  + "".join(f"  <url><loc>{SITE}{u}</loc><lastmod>{LASTMOD.get(u, '2026-11-05')}</lastmod></url>\n" for u in urls) + "</urlset>\n")
+  + "".join(f"  <url><loc>{SITE}{u}</loc><lastmod>{LASTMOD.get(u, page_blog.TODAY.isoformat() if hasattr(page_blog.TODAY,'isoformat') else str(page_blog.TODAY))}</lastmod></url>\n" for u in urls) + "</urlset>\n")
 w("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
 w("llms.txt", f"""# {BRAND}
 
@@ -77,7 +77,8 @@ w("llms.txt", f"""# {BRAND}
 - [Home]({SITE}/): what Stethos does and who it's for
 - [Use cases]({SITE}/use-cases): medtech and pharma sales, provider directories, clinical staffing, investors, digital health
 """ + "".join(f"- [{u[4]}]({SITE}/use-cases/{u[0]}): {page_uc.UC_PAGES[u[0]]['desc']}\n" for u in page_other.UC) + f"""- [Docs]({SITE}/docs): quickstart for search, enrich, organizations, watchers and MCP (preview)
-""" + "".join(f"- [{m['name']}]({SITE}/{m['slug']}): {m['desc']}\n" for m in page_seo.SEO_PAGES) + f"""- [Pricing]({SITE}/pricing): credit-based pricing, Free, Build and Enterprise
+""" + "".join(f"- [{m['name']}]({SITE}/{m['slug']}): {m['desc']}\n" for m in page_seo.SEO_PAGES) + f"""- [Data sources]({SITE}/docs#sources): NPPES, CMS Medicare utilization, Part D, post-acute and hospice files, Care Compare, Provider of Services, ACO participation, cost reports, MA enrollment, Open Payments, state licensing boards, payer directories
+- [Pricing]({SITE}/pricing): per-tool-call credits; Free (1,000 credits), Build ($149/month) and Enterprise
 - [Stethos vs Definitive Healthcare]({SITE}/compare/definitive-healthcare)
 - [Stethos vs IQVIA OneKey]({SITE}/compare/iqvia-onekey)
 

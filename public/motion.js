@@ -18,6 +18,11 @@
 
   /* 1. Rotating role in the hero headline */
   var rot = document.querySelector("[data-rot]");
+  if (rot && rot.dataset.words) {
+    rot.dataset.words.split("|").forEach(function (w) {
+      var sp = document.createElement("span"); sp.className = "rot-w"; sp.setAttribute("aria-hidden", "true"); sp.textContent = w; rot.appendChild(sp);
+    });
+  }
   if (rot) {
     var words = rot.querySelectorAll(".rot-w"), k = 0;
     var fit = function () { var on = rot.querySelector(".rot-w.on"); if (on) rot.style.width = on.offsetWidth + "px"; };
