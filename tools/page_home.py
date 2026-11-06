@@ -55,8 +55,8 @@ def page():
 <main id="main">
 <section class="hero cx" aria-labelledby="hero-title">
   <div class="wrap cx-copy">
-    <h1 id="hero-title">Healthcare data for your&nbsp;AI&nbsp;agents</h1>
-    <p class="cx-sub">An MCP server for every US clinician, practice and health system, kept current. Live in five minutes, priced per tool call, with a source on every answer.</p>
+    <h1 id="hero-title">Turn your agent into a world&#8209;class <span class="rot" data-rot><span class="rot-w on">medtech rep</span><span class="rot-w" aria-hidden="true">recruiter</span><span class="rot-w" aria-hidden="true">network analyst</span><span class="rot-w" aria-hidden="true">deal team</span><span class="rot-w" aria-hidden="true">care navigator</span></span></h1>
+    <p class="cx-sub">Healthcare provider data for your AI agents, via MCP or API. Every US clinician, practice and health system, kept current, with a source on every answer.</p>
     <div class="cx-ctas"><a class="cx-btn dark" href="{TRIAL}">Start free trial<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="cx-btn light" href="/docs">Read the docs<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     <div class="cx-paste">
       <span class="cx-paste-k">Paste in your coding agent</span>
@@ -69,6 +69,11 @@ def page():
     <source media="(max-width: 760px)" srcset="/img/g-hero-m-800.webp 800w, /img/g-hero-m-1200.webp 1200w" sizes="100vw">
     <img src="/img/g-hero-1600.webp" srcset="/img/g-hero-1600.webp 1600w, /img/g-hero-2400.webp 2400w, /img/g-hero-3200.webp 3200w" sizes="100vw" width="3200" height="1358" alt="Illustration: a friendly clay data machine with a glass dome over a map of pins. Records flow into it from a hospital, a doctor's office, government buildings and an insurance office floating on clouds, and alerts flow out to three small clay robots working at laptops, set in green hills under a lavender sky." fetchpriority="high">
   </picture>
+</section>
+
+<section class="srcs" aria-labelledby="srcs-title">
+  <p class="srcs-k" id="srcs-title">Resolved from the sources healthcare runs on</p>
+  <div class="mq"><ul class="mq-row"><li>NPPES NPI Registry</li><li>CMS provider and facility files</li><li>Open Payments</li><li>State licensing boards</li><li>Payer directories</li><li>Price transparency files</li><li>Practice websites</li><li>Health system job posts</li></ul><ul class="mq-row" aria-hidden="true"><li>NPPES NPI Registry</li><li>CMS provider and facility files</li><li>Open Payments</li><li>State licensing boards</li><li>Payer directories</li><li>Price transparency files</li><li>Practice websites</li><li>Health system job posts</li></ul></div>
 </section>
 
 <section class="h2-panel" id="team-day" aria-labelledby="day-title">
@@ -97,20 +102,26 @@ def page():
   </div>
 </section>
 
-<section class="sec" aria-labelledby="familiar-title">
+<section class="sec df" id="difference" aria-labelledby="familiar-title">
   <div class="wrap">
     <div class="head center">
-      <p class="eyebrow"><span>The problem</span></p>
-      <h2 id="familiar-title">Healthcare data goes stale <span class="pop">the day you buy it.</span></h2>
+      <p class="eyebrow"><span>Data is the difference</span></p>
+      <h2 id="familiar-title">Your agent is only as good <span class="pop">as the record it reads.</span></h2>
+      <p class="kpi-lede">Agents now do the prospecting, sourcing and diligence. The same provider, two ways: what a registry lookup hands your agent, and what Stethos does.</p>
     </div>
-    <figure class="art-wide">{art("problem", "Illustration: a dusty clay filing cabinet, faded binders, a curling spreadsheet, returned envelopes and a map whose pins have fallen over.", w=1600, h=893)}</figure>
-    <ul class="pains">
-      <li><img src="/img/g-cl-ic-binder-cut.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><p>Provider databases refresh on a schedule. Clinicians change groups, locations and networks all year.</p></li>
-      <li><img src="/img/g-cl-ic-gov-cut.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><p>The best data is public, but it's scattered across NPPES, CMS files, state boards and payer directories, each with its own format.</p></li>
-      <li><img src="/img/g-cl-ic-license-cut.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><p>Licenses are issued and lapse state by state, on dozens of separate board websites.</p></li>
-      <li><img src="/img/g-cl-ic-payer-cut.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><p>Payer directories disagree with each other, and with where the doctor actually practices.</p></li>
-      <li><img src="/img/g-cl-envelope-cut.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><p>Your agent writes to a surgeon who left that group last spring, and nobody finds out until the email bounces.</p></li>
-    </ul>
+    <div class="df-tabs" role="tablist" aria-label="Sample providers"><button type="button" role="tab" id="df-t-maya" aria-controls="df-p-maya" aria-selected="true" tabindex="0"><b>Dr. Maya Example</b><span>Orthopedic surgeon · Phoenix, AZ</span></button><button type="button" role="tab" id="df-t-jordan" aria-controls="df-p-jordan" aria-selected="false" tabindex="-1"><b>Jordan Example, NP</b><span>Family nurse practitioner · Denver, CO</span></button><button type="button" role="tab" id="df-t-org" aria-controls="df-p-org" aria-selected="false" tabindex="-1"><b>Northfield Spine Partners</b><span>Orthopedic and spine group · Arizona</span></button></div>
+    <div class="df-panels">
+      <div class="df-panel" id="df-p-maya" role="tabpanel" aria-labelledby="df-t-maya">
+        <div class="df-card df-without"><p class="df-h">Without Stethos <span>NPI Registry lookup</span></p><p class="df-name">Dr. Maya Example</p><ul class="df-raw"><li><span>NPI</span><b>1234567890</b></li><li><span>Taxonomy</span><b>Orthopaedic Surgery</b></li><li><span>Practice address</span><b>4410 N 7th St, Phoenix (on file since 2019)</b></li><li><span>Phone</span><b>(602) 555-0100</b></li></ul><p class="df-end">That's the whole record. No sign of what changed.</p></div>
+        <div class="df-card df-with"><p class="df-h">With Stethos <span class="tag">Sample data</span></p><p class="df-name">Dr. Maya Example</p><ul class="df-rich"><li class="df-sig new" style="--i:0"><span class="df-k">Current group</span><b>Northfield Spine Partners</b><span class="df-meta"><em>moved 3 weeks ago</em><span>Source: Practice website</span></span></li><li class="df-sig " style="--i:1"><span class="df-k">Licenses</span><b>AZ active to 2027 · NV active to 2026</b><span class="df-meta"><em>2 states</em><span>Source: State boards</span></span></li><li class="df-sig " style="--i:2"><span class="df-k">Hospital affiliations</span><b>Example Regional Medical Center, Desert Valley Surgical</b><span class="df-meta"><em>2 hospitals</em><span>Source: CMS files</span></span></li><li class="df-sig " style="--i:3"><span class="df-k">Payer networks</span><b>In 7 of 9 major plans in AZ</b><span class="df-meta"><em>checked this week</em><span>Source: Payer directories</span></span></li><li class="df-sig " style="--i:4"><span class="df-k">Contact</span><b>Practice line verified 2 days ago</b><span class="df-meta"><em>direct</em><span>Source: Practice website</span></span></li><li class="df-sig sig" style="--i:5"><span class="df-k">Signal</span><b>Group posted 3 new surgical roles</b><span class="df-meta"><em>hiring</em><span>Source: Job posts</span></span></li></ul></div>
+      </div><div class="df-panel" id="df-p-jordan" role="tabpanel" aria-labelledby="df-t-jordan" hidden>
+        <div class="df-card df-without"><p class="df-h">Without Stethos <span>NPI Registry lookup</span></p><p class="df-name">Jordan Example, NP</p><ul class="df-raw"><li><span>NPI</span><b>1234567891</b></li><li><span>Taxonomy</span><b>Nurse Practitioner, Family</b></li><li><span>Practice address</span><b>Mailing address only</b></li><li><span>Phone</span><b>Not listed</b></li></ul><p class="df-end">That's the whole record. No sign of what changed.</p></div>
+        <div class="df-card df-with"><p class="df-h">With Stethos <span class="tag">Sample data</span></p><p class="df-name">Jordan Example, NP</p><ul class="df-rich"><li class="df-sig new" style="--i:0"><span class="df-k">Current location</span><b>Example Primary Care, Lakewood clinic</b><span class="df-meta"><em>since August</em><span>Source: Practice website</span></span></li><li class="df-sig " style="--i:1"><span class="df-k">Licenses</span><b>CO active · compact privilege in 3 states</b><span class="df-meta"><em>multistate</em><span>Source: State boards</span></span></li><li class="df-sig " style="--i:2"><span class="df-k">Organization</span><b>Example Primary Care, 14 sites, 120 clinicians</b><span class="df-meta"><em>parent: Example Health</em><span>Source: CMS files</span></span></li><li class="df-sig " style="--i:3"><span class="df-k">Payer networks</span><b>Medicare, Medicaid and 5 commercial plans</b><span class="df-meta"><em>checked this week</em><span>Source: Payer directories</span></span></li><li class="df-sig " style="--i:4"><span class="df-k">Accepting patients</span><b>Yes, new patients this month</b><span class="df-meta"><em>current</em><span>Source: Practice website</span></span></li><li class="df-sig sig" style="--i:5"><span class="df-k">Signal</span><b>License issued in Utah last week</b><span class="df-meta"><em>license.issued</em><span>Source: State boards</span></span></li></ul></div>
+      </div><div class="df-panel" id="df-p-org" role="tabpanel" aria-labelledby="df-t-org" hidden>
+        <div class="df-card df-without"><p class="df-h">Without Stethos <span>NPI Registry lookup</span></p><p class="df-name">Northfield Spine Partners</p><ul class="df-raw"><li><span>NPI</span><b>1234567892 (organization)</b></li><li><span>Taxonomy</span><b>Multi-Specialty Group</b></li><li><span>Practice address</span><b>One location listed</b></li><li><span>Authorized official</span><b>Listed by name only</b></li></ul><p class="df-end">That's the whole record. No sign of what changed.</p></div>
+        <div class="df-card df-with"><p class="df-h">With Stethos <span class="tag">Sample data</span></p><p class="df-name">Northfield Spine Partners</p><ul class="df-rich"><li class="df-sig new" style="--i:0"><span class="df-k">Locations</span><b>4 clinics and 1 surgery center</b><span class="df-meta"><em>1 opened in October</em><span>Source: Practice website</span></span></li><li class="df-sig " style="--i:1"><span class="df-k">Rostered clinicians</span><b>23 surgeons, 11 advanced practitioners</b><span class="df-meta"><em>+2 this quarter</em><span>Source: CMS files</span></span></li><li class="df-sig " style="--i:2"><span class="df-k">Leadership</span><b>CEO, CMO and practice administrator</b><span class="df-meta"><em>named</em><span>Source: Practice website</span></span></li><li class="df-sig " style="--i:3"><span class="df-k">Ownership</span><b>Independent, no parent health system</b><span class="df-meta"><em>verified</em><span>Source: CMS files</span></span></li><li class="df-sig " style="--i:4"><span class="df-k">Industry payments</span><b>Received from 6 device makers last year</b><span class="df-meta"><em>Open Payments</em><span>Source: Open Payments</span></span></li><li class="df-sig sig" style="--i:5"><span class="df-k">Signal</span><b>Hiring spike: 8 clinical roles posted</b><span class="df-meta"><em>org.hiring_spike</em><span>Source: Job posts</span></span></li></ul></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -120,6 +131,12 @@ def page():
       <p class="eyebrow"><span>The platform</span></p>
       <h2 id="platform-title">One clean record for every provider, <span class="pop">and every change to it.</span></h2>
     </div>
+    <ul class="stats">
+      <li><b><span class="cnt" data-to="51">51</span></b><span>licensing boards in scope: every state plus DC</span></li>
+      <li><b><span class="cnt" data-to="8">8</span></b><span>kinds of sources resolved into one record per provider</span></li>
+      <li><b><span class="cnt" data-to="5">5</span></b><span>tools your agent gets: search, enrich, orgs, watch, changes</span></li>
+      <li><b><span class="cnt" data-to="100">100</span>%</b><span>of fields carry a source and the date it was checked</span></li>
+    </ul>
     <ul class="stk-row">
 {stk(0, "stk-market", "Search", "Built to search every clinician and organization in the US", "by specialty, place, license, affiliation or network.", "Wide, cheap queries so your agent can look at everyone before it picks anyone.", "stk-search")}
 {stk(1, "stk-understand", "Enrich", "Built to turn an NPI into a full record", "with licenses, affiliations, networks and contacts.", "Additive pricing: the base record first, then only the extra fields you ask for.", "stk-enrich")}
@@ -217,11 +234,15 @@ def page():
       <h2 id="kpi-title">The changes <span class="pop">worth acting on.</span></h2>
       <p class="kpi-lede">Most databases tell you what's true today. Stethos is built to record every change as an event, so you can ask what changed this week, or get told as it happens.</p>
     </div>
+    <div class="feed" aria-label="Sample change feed">
+      <div class="feed-top"><span class="hq-t">Change feed</span><span class="hq-live"><i></i>Sample data</span></div>
+      <ol class="feed-list" id="feed-list" aria-live="off"></ol>
+    </div>
     <ul class="kpis">
       <li style="--t:#e4f0fd"><b>Moves</b><h3>affiliation.changed</h3><p>A clinician joins or leaves a group, hospital or health system.</p></li>
       <li style="--t:#e8f3d2"><b>Licenses</b><h3>license.issued · license.lapsed</h3><p>A new state license, or one that expired or was restricted.</p></li>
       <li style="--t:#fbe3ee"><b>Networks</b><h3>network.joined · network.left</h3><p>A practice shows up in, or drops out of, a payer's directory.</p></li>
-      <li style="--t:#fde7d6"><b>Locations</b><h3>location.opened</h3><p>A new clinic, practice site or service line comes online.</p></li>
+      <li style="--t:#f5efdf"><b>Locations</b><h3>location.opened</h3><p>A new clinic, practice site or service line comes online.</p></li>
       <li style="--t:#ece6fb"><b>Leaders</b><h3>org.exec_hire</h3><p>A health system names a new CMO, CNO, CFO or service line head.</p></li>
       <li style="--t:#e4f0fd"><b>Hiring</b><h3>org.hiring_spike</h3><p>An organization posts far more clinical roles than usual.</p></li>
     </ul>
@@ -237,7 +258,7 @@ def page():
     <ul class="roles">
       <li><figure class="role-art" style="--bg:#d3e6fb">{art("uc-medtech", "Illustration: a clay sales desk with a surgical instrument case, a knee model and a laptop showing a map with pins.")}</figure><h3><a class="role-link" href="/use-cases/medtech-pharma">AI sales agents for medtech and pharma</a></h3><p>Find the surgeons and groups that fit, and reach out the week a target changes affiliation or opens a new site.</p></li>
       <li><figure class="role-art" style="--bg:#e3f1e7">{art("uc-payer", "Illustration: a clay clipboard directory of doctors' offices with check marks, beside an insurance shield and a magnifying glass.")}</figure><h3><a class="role-link" href="/use-cases/provider-directories">Provider directory and network teams</a></h3><p>Flag stale locations, lapsed licenses and network mismatches before a member calls a number that doesn't work.</p></li>
-      <li><figure class="role-art" style="--bg:#fde7d6">{art("uc-staffing", "Illustration: clay scrubs on a hanger rack, a stethoscope, a calendar and a small state map with glowing pins.")}</figure><h3><a class="role-link" href="/use-cases/clinical-staffing">Clinical staffing and recruiting</a></h3><p>Source licensed clinicians by state and specialty, and spot the health systems that are hiring hardest.</p></li>
+      <li><figure class="role-art" style="--bg:#f5efdf">{art("uc-staffing", "Illustration: clay scrubs on a hanger rack, a stethoscope, a calendar and a small state map with glowing pins.")}</figure><h3><a class="role-link" href="/use-cases/clinical-staffing">Clinical staffing and recruiting</a></h3><p>Source licensed clinicians by state and specialty, and spot the health systems that are hiring hardest.</p></li>
     </ul>
     <p class="sp-more"><a href="/use-cases/medtech-pharma">Medtech and pharma</a> · <a href="/use-cases/provider-directories">Provider directories</a> · <a href="/use-cases/clinical-staffing">Clinical staffing</a> · <a href="/use-cases">All use cases <span aria-hidden="true">→</span></a></p>
   </div>
@@ -265,14 +286,18 @@ def page():
   </div>
 </section>
 
-<section class="sec trust-sec" aria-labelledby="trust-title">
+<section class="sec pillars-sec" aria-labelledby="pill-title">
   <div class="wrap">
-    <h2 class="sr" id="trust-title">Built for healthcare data</h2>
-    <ul class="trust has-ic">
-      <li><img class="tr-ic" src="/img/g-cl-tr-shield-cut.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><b>Provider data, not patient data</b><span>No PHI in the API, so there's no business associate agreement to sign before you start.</span></li>
-      <li><img class="tr-ic" src="/img/g-cl-tr-read-cut.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><b>Source on every field</b><span>Every value carries where it came from and when it was last checked.</span></li>
-      <li><img class="tr-ic" src="/img/g-cl-ic-gov-cut.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><b>Public and licensed sources</b><span>Built on government registries first, with licensed and web sources layered on top.</span></li>
+    <div class="head center">
+      <p class="eyebrow"><span>Built for agents</span></p>
+      <h2 id="pill-title">Data your agent <span class="pop">can act on.</span></h2>
+    </div>
+    <ul class="pillars">
+      <li style="--t:#e4f0fd"><img src="/img/g-cl-stk-watch-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><h3>Fresh</h3><p>Sources are re-checked continuously, and every change is recorded as an event. Not a quarterly export.</p></li>
+      <li style="--t:#e8f3d2"><img src="/img/g-cl-stk-enrich-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><h3>Deep</h3><p>Licenses, affiliations, networks, locations and the organization behind each clinician. The whole story, not one row.</p></li>
+      <li style="--t:#f5efdf"><img src="/img/g-cl-stk-search-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><h3>Resolved</h3><p>Every NPI, license and directory listing is matched to the right person or practice, so your agent never writes to the wrong Dr. Smith.</p></li>
     </ul>
+    <ul class="trust-line"><li>Provider data, not patient data: no PHI, no BAA</li><li>A source and a checked date on every field</li><li>Government registries first, licensed sources on top</li></ul>
   </div>
 </section>
 
@@ -312,18 +337,29 @@ def page():
 </section>
 
 <section class="sec" id="waitlist" aria-labelledby="join-title">
-  <div class="panel navy wrap-panel join-grid">
-    <div class="join-copy">
-      <p class="eyebrow on-dark"><span>Self-serve</span></p>
+  <div class="wrap">
+    <div class="head center">
+      <p class="eyebrow"><span>Get started</span></p>
       <h2 id="join-title">Give your agent <span class="pop">the healthcare map.</span></h2>
-      <p>Paste one URL into Claude or your MCP client, sign in, and ask. Pay only for the tool calls you make.</p>
-      <ul class="perks"><li>1,000 free credits, no card</li><li>Live in five minutes, no sales call</li><li>Provider data only, no PHI</li></ul>
-      <div class="join-ctas"><a class="btn-cta" href="{TRIAL}">Start free trial</a><a class="join-signin" href="{TRIAL}#signin">Already have an account? Sign in</a></div>
-      <p class="join-alt">Questions first? <a href="mailto:{EMAIL}?subject=Stethos">Email our team</a></p>
     </div>
-    <figure class="join-art">{art("cta", "Illustration: a shelf of small clay healthcare buildings, each with a glowing teal map pin, and a clay robot holding a laptop.")}</figure>
+    <div class="split">
+      <div class="split-card biz">
+        <p class="split-k">For business leaders</p>
+        <h3>See it on your own accounts.</h3>
+        <p>Send us the providers or health systems you care about, and we'll show you what Stethos returns for them, side by side with what you have today.</p>
+        <ul class="perks dark"><li>Your own list, not a canned demo</li><li>Sources and checked dates on every field</li><li>Volume pricing and data agreements available</li></ul>
+        <a class="split-btn light" href="mailto:{EMAIL}?subject=Stethos%20on%20our%20accounts">Talk to our team {ARROW}</a>
+      </div>
+      <div class="split-card dev">
+        <p class="split-k">For developers</p>
+        <h3>Ship an agent tonight.</h3>
+        <p>Paste one URL into Claude, Cursor or your MCP client and start calling tools. Pay only for the calls you make.</p>
+        <ul class="perks"><li>1,000 free credits, no card</li><li>MCP server, REST API and webhooks</li><li>Live in five minutes, no sales call</li></ul>
+        <div class="split-ctas"><a class="split-btn" href="{TRIAL}">Start free trial {ARROW}</a><a class="split-alt" href="/docs">Read the docs</a></div>
+      </div>
+    </div>
   </div>
 </section>
 </main>
 '''
-    return h + body + tail(("nav", "teamday", "play", "copy"))
+    return h + body + tail(("nav", "teamday", "play", "copy", "motion"))

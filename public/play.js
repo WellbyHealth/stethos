@@ -1,6 +1,6 @@
 // "Try a call": the endpoint buttons swap the sample request and response. All data is illustrative.
 (() => {
-  const btns = document.querySelectorAll('#playground .seg button');
+  let btns = Array.from(document.querySelectorAll('#playground .seg button'));
   const req = document.getElementById('pl-req');
   const res = document.getElementById('pl-res');
   if (!btns.length || !req || !res) return;
@@ -119,16 +119,46 @@
     .replace(/: "([^"]*)"/g, ': <span class="s">"$1"</span>')
     .replace(/: (-?\d+(?:\.\d+)?)/g, ': <span class="n">$1</span>');
 
-  const set = key => {
-    const e = EP[key];
+  const still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let run = 0;
+  const set = (key, animate) => {
+    const e = EP[key], me = ++run;
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.ep === key)));
-    req.textContent = e.req;
-    res.innerHTML = paint(e.res);
     cost.textContent = e.cost;
     note.textContent = e.note;
-    status.textContent = e.status;
-    if (ask) ask.textContent = e.ask;
+    const lines = paint(e.res).split('\n').map((l, i) => '<span class="ln" style="--i:' + i + '">' + (l || ' ') + '</span>').join('\n');
+    if (still || !animate) {
+      req.textContent = e.req; res.innerHTML = lines; status.textContent = e.status;
+      if (ask) ask.textContent = e.ask;
+      res.classList.add('shown');
+      return;
+    }
+    // Type the agent's request, then stream the tool call and result in, like a live run.
+    req.textContent = ''; res.innerHTML = ''; res.classList.remove('shown');
+    status.textContent = 'thinking…'; status.classList.add('busy');
+    if (ask) ask.textContent = '';
+    const text = e.ask || '';
+    let i = 0;
+    const type = () => {
+      if (me !== run) return;
+      if (ask && i <= text.length) { ask.textContent = text.slice(0, i++); ask.classList.add('typing'); return setTimeout(type, 18 + Math.random() * 22); }
+      if (ask) ask.classList.remove('typing');
+      req.textContent = e.req; req.classList.remove('pop-in'); void req.offsetWidth; req.classList.add('pop-in');
+      status.textContent = 'calling tool…';
+      setTimeout(() => {
+        if (me !== run) return;
+        res.innerHTML = lines; void res.offsetWidth; res.classList.add('shown');
+        status.textContent = e.status; status.classList.remove('busy');
+      }, 650);
+    };
+    type();
   };
-  btns.forEach(b => b.addEventListener('click', () => set(b.dataset.ep)));
-  set('search');
+  btns.forEach(b => b.addEventListener('click', () => set(b.dataset.ep, true)));
+  set('search', false);
+  // Play the first run once the demo scrolls into view.
+  const box = document.getElementById('playground');
+  if (box && 'IntersectionObserver' in window && !still) {
+    const io = new IntersectionObserver(es => { if (es[0].isIntersecting) { io.disconnect(); set('search', true); } }, { threshold: 0.35 });
+    io.observe(box);
+  }
 })();
