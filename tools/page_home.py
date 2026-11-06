@@ -13,7 +13,7 @@ CLIENTS = _clients()
 FAQ = [
     ("What is Stethos?", "An MCP server, and API, for US healthcare provider data. It's built to keep one clean, current record for every clinician, practice, hospital and health system, stitched together from public registries and licensed sources, and to tell your software the moment one of those records changes."),
     ("Who is it for?", "Teams building products on top of healthcare provider data: AI sales agents for medtech and pharma, provider directory and network teams at payers and digital front doors, clinical staffing and recruiting platforms, healthcare investors, and digital health apps that need to know who practices where."),
-    ("Where does the data come from?", "Public sources like the NPPES NPI Registry, CMS provider and facility files, Open Payments and state licensing boards, plus payer directories, price transparency files, practice websites and health system job posts. Every field carries its source and the date it was last checked."),
+    ("Where does the data come from?", "Government files first: the NPPES NPI Registry, CMS's Medicare utilization files for clinicians, prescribers, hospitals, home health, hospice and nursing facilities, Care Compare ratings and affiliations, ACO participation, cost reports and Open Payments, plus state licensing boards. Payer directories, price transparency files, practice websites and health system job posts are layered on top. Every field carries its source and the date it was last checked. See the full list in the docs."),
     ("Does Stethos handle patient data?", "No. Stethos indexes healthcare professionals and organizations, not patients. There is no PHI in the API, so you don't need a business associate agreement to use it."),
     ("How fresh is it?", "Sources are re-checked on a rolling schedule, and every change is recorded as an event you can query or subscribe to with a webhook. Each record shows when it was last verified, so your agent can decide how much to trust it."),
     ("How is this different from Definitive Healthcare or IQVIA OneKey?", "Both are established, deep datasets, sold mostly through annual contracts to large commercial teams. Stethos is built API-first for developers and agents: pay per call, start free, and get change events instead of quarterly refreshes. See Stethos vs Definitive and Stethos vs IQVIA OneKey."),
@@ -73,7 +73,7 @@ def page():
 
 <section class="srcs" aria-labelledby="srcs-title">
   <p class="srcs-k" id="srcs-title">Resolved from the sources healthcare runs on</p>
-  <div class="mq"><ul class="mq-row"><li>NPPES NPI Registry</li><li>CMS provider and facility files</li><li>Open Payments</li><li>State licensing boards</li><li>Payer directories</li><li>Price transparency files</li><li>Practice websites</li><li>Health system job posts</li></ul><ul class="mq-row" aria-hidden="true"><li>NPPES NPI Registry</li><li>CMS provider and facility files</li><li>Open Payments</li><li>State licensing boards</li><li>Payer directories</li><li>Price transparency files</li><li>Practice websites</li><li>Health system job posts</li></ul></div>
+  <div class="mq"><ul class="mq-row"><li>NPPES NPI Registry</li><li>Medicare utilization by clinician</li><li>Medicare Part D prescribers</li><li>Medicare hospital inpatient and outpatient</li><li>Home health, hospice and SNF files</li><li>Care Compare ratings and affiliations</li><li>Provider of Services file</li><li>ACO participation</li><li>Hospital and SNF cost reports</li><li>Medicare Advantage enrollment</li><li>Open Payments</li><li>State licensing boards</li><li>Payer directories</li><li>Price transparency files</li><li>Practice websites</li><li>Health system job posts</li></ul><ul class="mq-row" aria-hidden="true"><li>NPPES NPI Registry</li><li>Medicare utilization by clinician</li><li>Medicare Part D prescribers</li><li>Medicare hospital inpatient and outpatient</li><li>Home health, hospice and SNF files</li><li>Care Compare ratings and affiliations</li><li>Provider of Services file</li><li>ACO participation</li><li>Hospital and SNF cost reports</li><li>Medicare Advantage enrollment</li><li>Open Payments</li><li>State licensing boards</li><li>Payer directories</li><li>Price transparency files</li><li>Practice websites</li><li>Health system job posts</li></ul></div>
 </section>
 
 <section class="h2-panel" id="team-day" aria-labelledby="day-title">
@@ -133,7 +133,7 @@ def page():
     </div>
     <ul class="stats">
       <li><b><span class="cnt" data-to="51">51</span></b><span>licensing boards in scope: every state plus DC</span></li>
-      <li><b><span class="cnt" data-to="8">8</span></b><span>kinds of sources resolved into one record per provider</span></li>
+      <li><b><span class="cnt" data-to="16">16</span></b><span>government and web sources, 11 of them from CMS, resolved into one record</span></li>
       <li><b><span class="cnt" data-to="5">5</span></b><span>tools your agent gets: search, enrich, orgs, watch, changes</span></li>
       <li><b><span class="cnt" data-to="100">100</span>%</b><span>of fields carry a source and the date it was checked</span></li>
     </ul>
@@ -205,7 +205,7 @@ def page():
       <h2 id="acct-title">Every field shows <span class="pop">where it came from.</span></h2>
       <p class="acct-lede">An agent that acts on healthcare data needs to know how far to trust it. Stethos is built to keep the source and the last-verified date on every single field, not just on the record.</p>
       <ul class="acct-pts">
-        <li><h3>Public registries first</h3><p>NPPES, CMS provider and facility files, Open Payments and state licensing boards are the backbone.</p></li>
+        <li><h3>Public registries first</h3><p>NPPES, CMS utilization, post-acute and Care Compare files, Open Payments and state licensing boards are the backbone.</p></li>
         <li><h3>Licensed and web sources on top</h3><p>Payer directories, price transparency files, practice websites and health system job posts fill the gaps.</p></li>
         <li><h3>Conflicts kept, not hidden</h3><p>When two sources disagree, you see both and which one we picked, so your agent can decide.</p></li>
         <li><h3>NPI as the key</h3><p>Join cleanly to the claims, CRM and EHR data you already have.</p></li>
