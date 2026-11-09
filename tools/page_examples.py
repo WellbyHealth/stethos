@@ -98,8 +98,24 @@ EXAMPLES = [
       "Creates the accounts and next steps in your CRM"],
      ["Health system job posts", "Organizations", "Leaders", "Change events"],
      "Your CRM, plus a weekly list in Claude", "g-cl-ic-license-96.webp", "#ece6fb"),
+    ("referrer-nudge", "Marketing", "Never let a referrer go quiet",
+     "Every Monday, for each marketer on the team.",
+     "Each week, tell every marketer which of their referrers they haven't reached in 60 days, and flag anyone who changed practices.",
+     ["Matches your referral list, with the last time each one was contacted, to current records",
+      "Finds referrers who've gone quiet, and anyone who moved to a new practice or hospital",
+      "Sends each marketer a short list with the right address and a reason to reach out"],
+     ["Your referral list", "Affiliations", "Practice contacts", "Change events"],
+     "A weekly email or Slack message per marketer; no CRM needed", "g-cl-envelope-cut.webp", "#fbe3ee"),
+    ("referral-map", "Market strategy", "Map your referral network against the market",
+     "Entering a new city, or planning where to add a marketer.",
+     "Compare our referral network with every physician practice and hospital in Dallas County, and show which offices and campuses we haven't reached.",
+     ["Matches your referrers to their practices, hospitals and campuses",
+      "Breaks large medical centers into departments and locations, with who works where",
+      "Ranks the gaps by size and fit, so you know where the next marketer should start"],
+     ["Your referral list", "Organizations", "Affiliations", "Medicare post-acute utilization"],
+     "A territory map and ranked list in Claude, or a spreadsheet", "g-cl-ic-pin-96.webp", "#e4f0fd"),
     ("referral-partners", "Referral development", "Find the doctors who should be referring to you",
-     "A home health or hospice agency enters a new county, or referrals dip.",
+     "There are more referrers than your team can cover, or referrals dip.",
      "Which physicians in Maricopa County order the most home health for Medicare patients, and which of them don't refer to us yet?",
      ["Ranks physicians by home health and hospice orders from Medicare data",
       "Adds their practice, hospital ties and contact details",
@@ -132,7 +148,7 @@ SEGMENTS = [
     ("Investors", "investors", ["deal-diligence", "portfolio-watch"]),
     ("Startups", "digital-health", ["startup-first-customers"]),
     ("Clinical staffing", "clinical-staffing", ["staffing-sales"]),
-    ("Post-acute care and agencies", "post-acute", ["referral-partners", "discharge-sources"]),
+    ("Post-acute care and agencies", "post-acute", ["referrer-nudge", "referral-map", "referral-partners", "discharge-sources"]),
     ("Health systems", None, ["physician-liaison"]),
 ]
 _by = {e[0]: e for e in EXAMPLES}
@@ -208,7 +224,7 @@ def examples():
     return h + body + tail(("nav", "examples"))
 
 
-HOME_PICKS = ["medtech-targeting", "kol-mapping", "exec-trigger", "deal-diligence", "referral-partners"]
+HOME_PICKS = ["medtech-targeting", "kol-mapping", "exec-trigger", "deal-diligence", "referrer-nudge"]
 
 
 def home_split():
