@@ -9,6 +9,7 @@ def _clients():
         out.append(f'<li class="has-ic" title="{name}"><img src="/img/clients/{f}" width="20" height="20" alt="{name}"></li>' if f else f"<li>{name}</li>")
     return '<ul class="cx-clients" aria-label="Works with">' + "".join(out) + '<li class="cx-any">Any MCP client</li></ul>'
 import json
+import re
 CLIENTS = _clients()
 
 FAQ = [
@@ -61,13 +62,8 @@ def page():
   <div class="wrap cx-copy">
     <h1 id="hero-title">Turn your agent into a world&#8209;class <span class="rot" data-rot data-words="pharma rep|SDR|deal team|marketing team|founder"><span class="rot-w on">medtech rep</span></span></h1>
     <p class="cx-sub">Current, sourced data on every US clinician, practice and health system, inside the CRM and AI tools your team already uses.</p>
-    <div class="cx-ctas"><a class="cx-btn dark" href="{TRIAL}">Start free trial<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="cx-btn light" href="/docs">Read the docs<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-    <div class="cx-paste">
-      <span class="cx-paste-k">Paste in your coding agent</span>
-      <code class="cx-paste-v">Add the Stethos MCP server: {MCP_URL}</code>
-      <button class="cx-copybtn copy-mcp" type="button" data-copy="Add the Stethos MCP server: {MCP_URL}">Copy</button>
-    </div>
-    <div class="cx-meta"><span class="cx-or">or install directly with</span>{CLIENTS}<span class="cx-fine">1,000 free credits · no card · no sales call</span></div>
+    <div class="cx-ctas"><a class="cx-btn dark" href="{TRIAL}">Start free trial<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="cx-btn light" href="/how-it-works">See how it works<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    <div class="cx-meta"><span class="cx-or">Works with</span>{CLIENTS}<span class="cx-fine">1,000 free credits · no card · no sales call</span></div>
   </div>
   <picture class="cx-art">
     <source media="(max-width: 760px)" srcset="/img/g-hero-m-800.webp 800w, /img/g-hero-m-1200.webp 1200w" sizes="100vw">
@@ -125,7 +121,7 @@ def page():
         <li role="presentation"><button type="button" role="tab" id="td-s2" aria-controls="td-r2" aria-selected="false" data-i="1"><span class="td-n">2</span><span class="td-t"><b>Ask: the agent picks the tool</b><span>"Find independent orthopedic surgeons in Arizona" becomes a search_providers call, then enrich_provider on the ones that fit.</span></span></button></li>
         <li role="presentation"><button type="button" role="tab" id="td-s3" aria-controls="td-r3" aria-selected="false" data-i="2"><span class="td-n">3</span><span class="td-t"><b>Watch: changes come to you</b><span>watch_providers follows the people you care about and tells your agent when someone moves, gets licensed or joins a network.</span></span></button></li>
       </ol>
-      <p class="td-cta"><a class="h2-btn w" href="#connect">Connect in 5 minutes {ARROW}</a><span>1,000 free credits · no sales call</span></p>
+      <p class="td-cta"><a class="h2-btn w" href="/how-it-works#connect">Connect in 5 minutes {ARROW}</a><span>1,000 free credits · no sales call</span></p>
     </div>
     <div class="hq td-card" id="td-card" aria-label="Example of three Stethos tool calls">
       <div class="hq-top"><span class="hq-t">Stethos in Claude <span class="td-time">Mon 7:30 AM</span></span><span class="hq-live"><i></i>Sample data</span></div>
@@ -135,7 +131,7 @@ def page():
       <div class="td-link" aria-hidden="true"><i></i></div>
       <div class="hq-row td-row" id="td-r3" role="tabpanel" aria-labelledby="td-s3" data-r="3"><span class="td-num" aria-hidden="true">3</span><img class="hq-ic" src="/img/g-cl-stk-watch-160.webp" width="160" height="160" alt=""><div class="hq-txt"><span class="hq-k">Watch · Affiliation changed</span><b>Joined Northfield Spine Partners</b><span class="hq-d">Your agent was told <span class="td-count" data-from="0" data-to="4">4</span> min after the change was seen</span></div><span class="hq-chip up">Agent alerted</span></div>
     </div>
-    <p class="td-cta td-cta-m"><a class="h2-btn w" href="#connect">Connect in 5 minutes {ARROW}</a><span>1,000 free credits · no sales call</span></p>
+    <p class="td-cta td-cta-m"><a class="h2-btn w" href="/how-it-works#connect">Connect in 5 minutes {ARROW}</a><span>1,000 free credits · no sales call</span></p>
   </div>
 </section>
 
@@ -425,4 +421,39 @@ def page():
 </main>
 '''
     body = body.replace("{HOME_EX}", PX.home_split())
-    return h + body + tail(("nav", "teamday", "play", "copy", "motion", "examples"))
+    global TECH
+    TECH = {}
+    for sid in ("platform", "connect", "playground", "sources", "kpis"):
+        m = re.search(r'<section class="[^"]*" id="%s".*?</section>\n' % sid, body, re.S)
+        TECH[sid] = m.group(0)
+        body = body.replace(m.group(0), "")
+    return h + body + tail(("nav", "teamday", "motion", "examples"))
+
+
+TECH = {}
+
+
+def how_it_works():
+    if not TECH: page()
+    h = head("How Stethos Works: MCP Server, Tools and Sources | Stethos",
+             "Connect Stethos to Claude, ChatGPT or your own agent in five minutes, try the tools, and see the sources and change events behind every record.",
+             "/how-it-works", image="/og/how-it-works.jpg", image_alt="Clay phone with a map of doctor pins and a small robot, above the line: How Stethos works, under the hood.", crumbs=[("How it works", "/how-it-works")],
+             share_title="How Stethos works", share_desc="Connect in five minutes, try the tools, and see the source behind every field.")
+    top = f'''<section class="sec sp-top hiw-top" aria-labelledby="hiw-title">
+  <div class="wrap">
+    <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / How it works</nav>
+    <div class="head center">
+      <p class="eyebrow"><span>How it works</span></p>
+      <h1 id="hiw-title">Under the hood, <span class="pop">for the technical folks.</span></h1>
+      <p class="kpi-lede">How to connect Stethos to your agent, what its tools return, where every field comes from and which changes you can subscribe to. For setup details per client, see the <a href="/docs">docs</a>.</p>
+      <div class="cx-paste hiw-paste">
+        <span class="cx-paste-k">Paste in your coding agent</span>
+        <code class="cx-paste-v">Add the Stethos MCP server: {MCP_URL}</code>
+        <button class="cx-copybtn copy-mcp" type="button" data-copy="Add the Stethos MCP server: {MCP_URL}">Copy</button>
+      </div>
+    </div>
+  </div>
+</section>
+'''
+    body = HEADER + '\n<main id="main">\n' + top + "".join(TECH[k] for k in ("connect", "playground", "sources", "platform", "kpis")) + cta_band("Self-serve", "Connect in five minutes,", "pay per tool call.", "1,000 free credits, no card, no sales call.", "how-it-works") + "\n</main>\n"
+    return h + body + tail(("nav", "play", "copy", "motion"))

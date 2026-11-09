@@ -6,6 +6,7 @@ MCP endpoint: https://mcp.stethos.health/v1 (preview)
 
 ## Pages
 - [Home](https://stethos-one.vercel.app/): what Stethos does and who it's for
+- [How it works](https://stethos-one.vercel.app/how-it-works): connecting the MCP server, tool results, sources and change events
 - [Use cases](https://stethos-one.vercel.app/use-cases): medtech and pharma, health IT and services sales, healthcare marketing, investors, startups, post-acute care and agencies, clinical staffing and provider directories
 - [Medtech and pharma sales](https://stethos-one.vercel.app/use-cases/medtech-pharma): Find surgeons and physicians by specialty, procedure focus, affiliation and license, and get alerts when targets move. A provider data API for sales agents.
 - [Health IT and services sales](https://stethos-one.vercel.app/use-cases/health-it-sales): Target health systems and practices by EHR, size and service line, find the right buyer, and get alerts on new leaders and new sites, for AI sales agents.

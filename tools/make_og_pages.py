@@ -48,7 +48,8 @@ def card(art, line, name):
 
 jobs = [("pricing", "Pay per tool call. Start free.", "pricing"),
         ("compare", "Stethos vs the legacy data platforms", "compare"),
-        ("uc-medtech", "What teams do with Stethos.", "use-cases")]
+        ("uc-medtech", "What teams do with Stethos.", "use-cases"),
+        ("uc-digital", "How Stethos works, under the hood", "how-it-works")]
 jobs += [(u[3], u[4], u[0]) for u in page_other.UC]
 jobs += [(m["art"], m["name"], m["slug"]) for m in page_seo.SEO_PAGES]
 jobs += [(p["art"], p["title"], p["slug"]) for p in page_blog.ALL_POSTS]

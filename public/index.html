@@ -34,7 +34,7 @@
 <link rel="stylesheet" href="/v2.css?v=978b51f1">
 <link rel="stylesheet" href="/site.css?v=6703b12a">
 <link rel="stylesheet" href="/home.css?v=38d801c9">
-<link rel="stylesheet" href="/stethos.css?v=2d3ef8f7">
+<link rel="stylesheet" href="/stethos.css?v=2c0729ac">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "name": "Stethos", "url": "https://stethos-one.vercel.app/", "logo": "https://stethos-one.vercel.app/icon-512.png", "email": "team@stethos.health", "@id": "https://stethos-one.vercel.app/#org"}, {"@type": "WebSite", "@id": "https://stethos-one.vercel.app/#site", "name": "Stethos", "url": "https://stethos-one.vercel.app/", "publisher": {"@id": "https://stethos-one.vercel.app/#org"}}, {"@type": "SoftwareApplication", "name": "Stethos", "applicationCategory": "DeveloperApplication", "operatingSystem": "Web", "url": "https://stethos-one.vercel.app/", "description": "An MCP server and API for US healthcare provider and organization data, built for AI agents and priced per tool call.", "publisher": {"@id": "https://stethos-one.vercel.app/#org"}, "offers": [{"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Build", "price": "149", "priceCurrency": "USD", "url": "https://stethos-one.vercel.app/pricing"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Stethos?", "acceptedAnswer": {"@type": "Answer", "text": "Current, sourced healthcare data for AI agents, delivered as an MCP server and API. Stethos resolves government, payer and web sources into one record for every US clinician, practice, health system and payer network, puts a source and a checked date on every field, keeps records current with verification agents, and tells your agent when something changes"}}, {"@type": "Question", "name": "How does it help sales, marketing and investing?", "acceptedAnswer": {"@type": "Answer", "text": "Your reps and agents can build target lists by specialty, setting, EHR or territory, enrich accounts and contacts with sourced fields, and get an alert the week a target changes jobs, a practice joins a system or a health system names a new leader. Those changes become your outreach triggers, and the records in your CRM stay current without anyone re-checking lists. Investment teams use the same tools to map a market, size a platform and track portfolio companies."}}, {"@type": "Question", "name": "Can't my agent just ask a general AI assistant?", "acceptedAnswer": {"@type": "Answer", "text": "General AI assistants can find some provider data, but they answer from whatever web page or registry copy they come across, often months or years old, with no source and no date. Provider data changes constantly: clinicians move groups, licenses lapse, networks change. Stethos re-checks its sources, shows where every field came from and when it was last checked, and tells your agent when a record changes."}}, {"@type": "Question", "name": "Does it work with our CRM and AI tools?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, that's the point. Stethos runs as an MCP server inside Claude, ChatGPT, Microsoft Copilot Studio, Cursor or your own agent, and its REST API and webhooks keep records current in Salesforce, HubSpot, Attio or any CRM or data warehouse. There's no separate dashboard to adopt."}}, {"@type": "Question", "name": "Who is it for?", "acceptedAnswer": {"@type": "Answer", "text": "Anyone who sells into, markets to or invests in healthcare: medtech and pharma commercial teams, health IT, software and services sellers, healthcare marketers, investors and deal teams, startups finding their first customers, home care, hospice and post-acute agencies keeping their referral networks warm, and clinical staffing firms. Stethos gives their people, agents and CRM a current view of who practices where, who buys, and what just changed. Provider directory teams use the same data."}}, {"@type": "Question", "name": "Where does the data come from?", "acceptedAnswer": {"@type": "Answer", "text": "Government files first: the NPPES NPI Registry, CMS's Medicare utilization files for clinicians, prescribers, hospitals, home health, hospice and nursing facilities, Care Compare ratings and affiliations, ACO participation, cost reports and Open Payments, plus state licensing boards. Payer directories, price transparency files, practice websites and health system job posts are layered on top. Every field carries its source and the date it was last checked. See the full list in the docs."}}, {"@type": "Question", "name": "Does Stethos handle patient data?", "acceptedAnswer": {"@type": "Answer", "text": "No. Stethos indexes healthcare professionals and organizations, not patients. There is no PHI in the API, so you don't need a business associate agreement to use it."}}, {"@type": "Question", "name": "How fresh is it?", "acceptedAnswer": {"@type": "Answer", "text": "Sources are re-checked on a rolling schedule, and every change is recorded as an event you can query or subscribe to with a webhook. Each record shows when it was last verified, so your agent can decide how much to trust it."}}, {"@type": "Question", "name": "How is this different from Definitive Healthcare or IQVIA OneKey?", "acceptedAnswer": {"@type": "Answer", "text": "Both are established, deep datasets, sold mostly through annual contracts to large commercial teams. Stethos is built API-first for developers and agents: pay per call, start free, and get change events instead of quarterly refreshes. See Stethos vs Definitive and Stethos vs IQVIA OneKey."}}, {"@type": "Question", "name": "How do I connect it?", "acceptedAnswer": {"@type": "Answer", "text": "Copy the Stethos MCP server URL and add it to your client: as a custom connector in Claude, or in the MCP config of Cursor or your own agent. Sign in, and the tools appear. It takes about five minutes and there's no sales call."}}, {"@type": "Question", "name": "Is there a REST API too?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The same data is available over REST, with webhooks for change events, for the parts of your stack that aren't agents."}}, {"@type": "Question", "name": "How does pricing work?", "acceptedAnswer": {"@type": "Answer", "text": "Per tool call, in credits. A search costs a fraction of a credit per result, enriching a provider costs more, and you only pay for the fields you ask for. Every account starts with 1,000 free credits, Build is a monthly plan, and Enterprise adds bulk files and volume pricing."}}, {"@type": "Question", "name": "Can we get the whole dataset as a file?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, on Enterprise. We deliver flat files to your warehouse on a schedule, alongside API access for real-time lookups."}}, {"@type": "Question", "name": "Is it live?", "acceptedAnswer": {"@type": "Answer", "text": "Stethos is in development. The tools on this site are a preview of what we're building, and the results shown are sample data. Join the early access list and we'll send you access as soon as it's ready."}}]}]}</script>
 </head>
 <body>
@@ -55,10 +55,11 @@
         </div>
       </div>
       <a href="/use-cases">Use cases</a>
+      <a href="/how-it-works">How it works</a>
       <a href="/docs">Docs</a>
       <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
     </nav>
-    <div class="hdr-act"><a class="btn-2" href="/signup#signin">Sign in</a><a class="btn-1" href="/signup">Start free trial</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/#platform">Product</a><a href="/#connect">Connect in 5 minutes</a><a href="/use-cases">Use cases</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="/signup#signin">Sign in</a></div>
+    <div class="hdr-act"><a class="btn-2" href="/signup#signin">Sign in</a><a class="btn-1" href="/signup">Start free trial</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/how-it-works">How it works</a><a href="/how-it-works#connect">Connect in 5 minutes</a><a href="/use-cases">Use cases</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="/signup#signin">Sign in</a></div>
   </div>
 </header>
 
@@ -67,13 +68,8 @@
   <div class="wrap cx-copy">
     <h1 id="hero-title">Turn your agent into a world&#8209;class <span class="rot" data-rot data-words="pharma rep|SDR|deal team|marketing team|founder"><span class="rot-w on">medtech rep</span></span></h1>
     <p class="cx-sub">Current, sourced data on every US clinician, practice and health system, inside the CRM and AI tools your team already uses.</p>
-    <div class="cx-ctas"><a class="cx-btn dark" href="/signup">Start free trial<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="cx-btn light" href="/docs">Read the docs<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-    <div class="cx-paste">
-      <span class="cx-paste-k">Paste in your coding agent</span>
-      <code class="cx-paste-v">Add the Stethos MCP server: https://mcp.stethos.health/v1</code>
-      <button class="cx-copybtn copy-mcp" type="button" data-copy="Add the Stethos MCP server: https://mcp.stethos.health/v1">Copy</button>
-    </div>
-    <div class="cx-meta"><span class="cx-or">or install directly with</span><ul class="cx-clients" aria-label="Works with"><li>Claude</li><li>Cursor</li><li>ChatGPT</li><li class="cx-any">Any MCP client</li></ul><span class="cx-fine">1,000 free credits · no card · no sales call</span></div>
+    <div class="cx-ctas"><a class="cx-btn dark" href="/signup">Start free trial<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="cx-btn light" href="/how-it-works">See how it works<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    <div class="cx-meta"><span class="cx-or">Works with</span><ul class="cx-clients" aria-label="Works with"><li>Claude</li><li>Cursor</li><li>ChatGPT</li><li class="cx-any">Any MCP client</li></ul><span class="cx-fine">1,000 free credits · no card · no sales call</span></div>
   </div>
   <picture class="cx-art">
     <source media="(max-width: 760px)" srcset="/img/g-hero-m-800.webp 800w, /img/g-hero-m-1200.webp 1200w" sizes="100vw">
@@ -179,7 +175,7 @@
         <li role="presentation"><button type="button" role="tab" id="td-s2" aria-controls="td-r2" aria-selected="false" data-i="1"><span class="td-n">2</span><span class="td-t"><b>Ask: the agent picks the tool</b><span>"Find independent orthopedic surgeons in Arizona" becomes a search_providers call, then enrich_provider on the ones that fit.</span></span></button></li>
         <li role="presentation"><button type="button" role="tab" id="td-s3" aria-controls="td-r3" aria-selected="false" data-i="2"><span class="td-n">3</span><span class="td-t"><b>Watch: changes come to you</b><span>watch_providers follows the people you care about and tells your agent when someone moves, gets licensed or joins a network.</span></span></button></li>
       </ol>
-      <p class="td-cta"><a class="h2-btn w" href="#connect">Connect in 5 minutes <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span>1,000 free credits · no sales call</span></p>
+      <p class="td-cta"><a class="h2-btn w" href="/how-it-works#connect">Connect in 5 minutes <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span>1,000 free credits · no sales call</span></p>
     </div>
     <div class="hq td-card" id="td-card" aria-label="Example of three Stethos tool calls">
       <div class="hq-top"><span class="hq-t">Stethos in Claude <span class="td-time">Mon 7:30 AM</span></span><span class="hq-live"><i></i>Sample data</span></div>
@@ -189,7 +185,7 @@
       <div class="td-link" aria-hidden="true"><i></i></div>
       <div class="hq-row td-row" id="td-r3" role="tabpanel" aria-labelledby="td-s3" data-r="3"><span class="td-num" aria-hidden="true">3</span><img class="hq-ic" src="/img/g-cl-stk-watch-160.webp?v=b44cee5a" width="160" height="160" alt=""><div class="hq-txt"><span class="hq-k">Watch · Affiliation changed</span><b>Joined Northfield Spine Partners</b><span class="hq-d">Your agent was told <span class="td-count" data-from="0" data-to="4">4</span> min after the change was seen</span></div><span class="hq-chip up">Agent alerted</span></div>
     </div>
-    <p class="td-cta td-cta-m"><a class="h2-btn w" href="#connect">Connect in 5 minutes <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span>1,000 free credits · no sales call</span></p>
+    <p class="td-cta td-cta-m"><a class="h2-btn w" href="/how-it-works#connect">Connect in 5 minutes <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span>1,000 free credits · no sales call</span></p>
   </div>
 </section>
 
@@ -216,129 +212,10 @@
   </div>
 </section>
 
-<section class="sec stack" id="platform" aria-labelledby="platform-title">
-  <div class="wrap">
-    <div class="head center">
-      <p class="eyebrow"><span>The platform</span></p>
-      <h2 id="platform-title">One clean record for every provider, <span class="pop">and every change to it.</span></h2>
-    </div>
-    <ul class="stats">
-      <li><b><span class="cnt" data-to="51">51</span></b><span>licensing boards in scope: every state plus DC</span></li>
-      <li><b><span class="cnt" data-to="18">18</span></b><span>government, payer and web sources, 12 of them from CMS, resolved into one record</span></li>
-      <li><b><span class="cnt" data-to="5">5</span></b><span>tools your agent gets: search, enrich, orgs, watch, changes</span></li>
-      <li><b><span class="cnt" data-to="100">100</span>%</b><span>of fields carry a source and the date it was checked</span></li>
-    </ul>
-    <ul class="stk-row">
-<li class="stk-item" style="--i:0"><article class="stk stk-market" aria-labelledby="stk-h0"><p class="stk-pill">Search</p><h3 class="stk-h" id="stk-h0">Built to search every clinician and organization in the US<span class="pop"> by specialty, place, license, affiliation or network.</span></h3><p class="stk-note">Wide, cheap queries so your agent can look at everyone before it picks anyone.</p><div class="stk-art" aria-hidden="true"><img src="/img/g-cl-stk-search-cut.webp?v=98a13010" srcset="/img/g-cl-stk-search-cut.webp 480w, /img/g-cl-stk-search-960.webp 960w" sizes="(max-width: 900px) 90vw, 560px" width="480" height="480" alt="" loading="lazy" decoding="async"><i></i><i></i><i></i></div></article></li>
-<li class="stk-item" style="--i:1"><article class="stk stk-understand" aria-labelledby="stk-h1"><p class="stk-pill">Enrich</p><h3 class="stk-h" id="stk-h1">Built to turn an NPI into a full record<span class="pop"> with licenses, affiliations, networks and contacts.</span></h3><p class="stk-note">Additive pricing: the base record first, then only the extra fields you ask for.</p><div class="stk-art" aria-hidden="true"><img src="/img/g-cl-stk-enrich-cut.webp?v=56f27d97" srcset="/img/g-cl-stk-enrich-cut.webp 480w, /img/g-cl-stk-enrich-960.webp 960w" sizes="(max-width: 900px) 90vw, 560px" width="480" height="480" alt="" loading="lazy" decoding="async"><i></i><i></i><i></i></div></article></li>
-<li class="stk-item" style="--i:2"><article class="stk stk-plan" aria-labelledby="stk-h2"><p class="stk-pill">Organizations</p><h3 class="stk-h" id="stk-h2">Built to map health systems, groups and clinics<span class="pop"> and who works at each one.</span></h3><p class="stk-note">Locations, rostered clinicians, leadership, open roles and parent–child ownership.</p><div class="stk-art" aria-hidden="true"><img src="/img/g-cl-stk-orgs-cut.webp?v=f1a9000a" srcset="/img/g-cl-stk-orgs-cut.webp 480w, /img/g-cl-stk-orgs-960.webp 960w" sizes="(max-width: 900px) 90vw, 560px" width="480" height="480" alt="" loading="lazy" decoding="async"><i></i><i></i><i></i></div></article></li>
-<li class="stk-item" style="--i:3"><article class="stk stk-reconnect" aria-labelledby="stk-h3"><p class="stk-pill">Watch</p><h3 class="stk-h" id="stk-h3">Built to tell your agent when a record changes,<span class="pop"> so it moves first.</span></h3><p class="stk-note">Affiliation changes, new licenses, network moves, executive hires and hiring spikes.</p><div class="stk-art" aria-hidden="true"><img src="/img/g-cl-stk-watch-cut.webp?v=36887215" srcset="/img/g-cl-stk-watch-cut.webp 480w, /img/g-cl-stk-watch-960.webp 960w" sizes="(max-width: 900px) 90vw, 560px" width="480" height="480" alt="" loading="lazy" decoding="async"><i></i><i></i><i></i></div></article></li>
-<li class="stk-item" style="--i:4"><article class="stk stk-grow" aria-labelledby="stk-h4"><p class="stk-pill">MCP first</p><h3 class="stk-h" id="stk-h4">Built to plug straight into your agents<span class="pop"> as an MCP server, in five minutes.</span></h3><p class="stk-note">REST and webhooks are there too, for the parts of your stack that aren't agents.</p><div class="stk-art" aria-hidden="true"><img src="/img/g-cl-stk-agents-cut.webp?v=ddc6d49d" srcset="/img/g-cl-stk-agents-cut.webp 480w, /img/g-cl-stk-agents-960.webp 960w" sizes="(max-width: 900px) 90vw, 560px" width="480" height="480" alt="" loading="lazy" decoding="async"><i></i><i></i><i></i></div></article></li>
-</ul>
-    <p class="sp-more">Explore: <a href="/healthcare-mcp-server">Healthcare MCP server</a> · <a href="/npi-lookup-api">NPI lookup API</a> · <a href="/physician-data-api">Physician data API</a> · <a href="/license-verification-api">License data API</a> · <a href="/health-system-data-api">Health system data API</a> · <a href="/medicare-utilization-data-api">Medicare utilization data</a> · <a href="/home-health-hospice-data-api">Home health and hospice data</a> · <a href="/physician-referral-data">Physician referral data</a></p>
-  </div>
-</section>
 
-<section class="sec" id="connect" aria-labelledby="connect-title">
-  <div class="wrap connect-grid">
-    <div>
-      <p class="eyebrow"><span>Live in five minutes</span></p>
-      <h2 id="connect-title">Add Stethos to your agent. <span class="pop">No sales call.</span></h2>
-      <ol class="connect-steps">
-        <li><b>Copy the server URL</b><span>One endpoint for every tool: <code>https://mcp.stethos.health/v1</code></span></li>
-        <li><b>Add it to your client</b><span>In Claude, add it as a custom connector. In Cursor or your own agent, add it to your MCP config.</span></li>
-        <li><b>Sign in and ask</b><span>Your account starts with 1,000 free credits. Every tool result shows the credits it used.</span></li>
-      </ol>
-      <p class="connect-more"><a href="/docs#connect">Step-by-step setup for each client <span aria-hidden="true">→</span></a></p>
-    </div>
-    <div class="card connect-card">
-      <div class="card-top"><span>MCP config</span><button class="copy-mcp connect-copy" type="button" data-copy='{"mcpServers": {"stethos": {"url": "https://mcp.stethos.health/v1"}}}'>Copy</button></div>
-<pre class="code" tabindex="0" aria-label="MCP client config">{
-  "mcpServers": {
-    "stethos": {
-      "url": "https://mcp.stethos.health/v1"
-    }
-  }
-}</pre>
-      <p class="play-note">Tools: <code>search_providers</code> · <code>enrich_provider</code> · <code>enrich_org</code> · <code>watch_providers</code> · <code>recent_changes</code></p>
-    </div>
-  </div>
-</section>
 
-<section class="sec" id="playground" aria-labelledby="play-title">
-  <div class="panel navy wrap-panel">
-    <div class="head product-head">
-      <div>
-        <p class="eyebrow on-dark"><span>Try a tool call</span></p>
-        <h2 id="play-title">Your agent asks, <span class="pop">Stethos answers with sources.</span></h2>
-      </div>
-      <div class="product-side"><div class="seg" role="group" aria-label="Pick a tool"><button type="button" data-ep="search" aria-pressed="true">search_providers</button><button type="button" data-ep="enrich" aria-pressed="false">enrich_provider</button><button type="button" data-ep="org" aria-pressed="false">enrich_org</button><button type="button" data-ep="watch" aria-pressed="false">watch_providers</button></div><p class="product-hint">Pick a tool to see what your agent sends and what comes back. <span class="tag">Sample data</span></p></div>
-    </div>
-    <div class="play-grid">
-      <div class="card play-card">
-        <div class="card-top"><span id="pl-label">Agent tool call</span><span id="pl-cost">0.05 credits per result</span></div>
-        <p class="play-ask" id="pl-ask"></p>
-        <pre class="code" id="pl-req" tabindex="0" aria-label="Tool call"></pre>
-        <p class="play-note" id="pl-note"></p>
-      </div>
-      <div class="card play-card">
-        <div class="card-top"><span>Tool result</span><span class="play-ok" id="pl-status">ok</span></div>
-        <pre class="code" id="pl-res" tabindex="0" aria-label="Tool result" aria-live="polite"></pre>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="sec acct" id="sources" aria-labelledby="acct-title">
-  <div class="wrap acct-grid">
-    <div class="acct-copy">
-      <p class="eyebrow"><span>Provenance</span></p>
-      <h2 id="acct-title">Every field shows <span class="pop">where it came from.</span></h2>
-      <p class="acct-lede">An agent that acts on healthcare data needs to know how far to trust it. Stethos is built to keep the source and the last-verified date on every single field, not just on the record.</p>
-      <ul class="acct-pts">
-        <li><h3>Public registries first</h3><p>NPPES, CMS utilization, post-acute and Care Compare files, Open Payments and state licensing boards are the backbone.</p></li>
-        <li><h3>Licensed and web sources on top</h3><p>Payer directories, price transparency files, practice websites and health system job posts fill the gaps.</p></li>
-        <li><h3>Conflicts kept, not hidden</h3><p>When two sources disagree, you see both and which one we picked, so your agent can decide.</p></li>
-        <li><h3>NPI as the key</h3><p>Join cleanly to the claims, CRM and EHR data you already have.</p></li>
-      </ul>
-    </div>
-    <figure class="acct-card" aria-label="Sample provider record with sources">
-      <div class="acct-top"><span>Provider record</span><span class="tag">Sample data</span></div>
-      <p class="acct-name">Dr. Jane Example, MD</p>
-      <p class="acct-meta">NPI 1234567890 · Interventional cardiology</p>
-      <dl class="src-list">
-        <div><dt>Practice location</dt><dd>Example Heart Group, Phoenix AZ</dd><dd class="src">Practice website · verified today</dd></div>
-        <div><dt>Licenses</dt><dd>AZ active · NV active</dd><dd class="src">State boards · verified 3 days ago</dd></div>
-        <div><dt>Affiliations</dt><dd>Sample Regional Medical Center</dd><dd class="src">CMS provider data · verified 6 days ago</dd></div>
-        <div><dt>Networks</dt><dd>[Payer A] · [Payer B]</dd><dd class="src">Payer directories · verified 2 days ago</dd></div>
-        <div class="src-conflict"><dt>Phone</dt><dd>(555) 010-0199</dd><dd class="src">2 sources disagree · picked the practice website</dd></div>
-      </dl>
-      <p class="acct-goal">Last change: <b>affiliation added</b>, seen 4 days ago.</p>
-    </figure>
-  </div>
-</section>
 
-<section class="sec" id="kpis" aria-labelledby="kpi-title">
-  <div class="wrap">
-    <div class="head center">
-      <p class="eyebrow"><span>Signals</span></p>
-      <h2 id="kpi-title">The changes <span class="pop">worth acting on.</span></h2>
-      <p class="kpi-lede">Most databases tell you what's true today. Stethos is built to record every change as an event, so you can ask what changed this week, or get told as it happens.</p>
-    </div>
-    <div class="feed" aria-label="Sample change feed">
-      <div class="feed-top"><span class="hq-t">Change feed</span><span class="hq-live"><i></i>Sample data</span></div>
-      <ol class="feed-list" id="feed-list" aria-live="off"></ol>
-    </div>
-    <ul class="kpis">
-      <li style="--t:#e4f0fd"><b>Moves</b><h3>affiliation.changed</h3><p>A clinician joins or leaves a group, hospital or health system.</p></li>
-      <li style="--t:#e8f3d2"><b>Licenses</b><h3>license.issued · license.lapsed</h3><p>A new state license, or one that expired or was restricted.</p></li>
-      <li style="--t:#fbe3ee"><b>Networks</b><h3>network.joined · network.left</h3><p>A practice shows up in, or drops out of, a payer's directory.</p></li>
-      <li style="--t:#f5efdf"><b>Locations</b><h3>location.opened</h3><p>A new clinic, practice site or service line comes online.</p></li>
-      <li style="--t:#ece6fb"><b>Leaders</b><h3>org.exec_hire</h3><p>A health system names a new CMO, CNO, CFO or service line head.</p></li>
-      <li style="--t:#e4f0fd"><b>Hiring</b><h3>org.hiring_spike</h3><p>An organization posts far more clinical roles than usual.</p></li>
-    </ul>
-  </div>
-</section>
 
 <section class="sec" id="teams" aria-labelledby="teams-title">
   <div class="wrap">
@@ -498,7 +375,7 @@
       <p>Current, sourced healthcare data for sales, marketing and investment teams and their AI agents, as an MCP server. Product views and tool results on this site use illustrative sample data.</p>
     </div>
     <nav class="foot-links" aria-label="Footer">
-      <a href="/#platform">Product</a>
+      <a href="/how-it-works">How it works</a>
       <a href="/use-cases">Use cases</a>
       
       <a href="/docs">Docs</a>
@@ -525,8 +402,6 @@
 </footer>
 <script src="/nav.js?v=462bebb5" defer></script>
 <script src="/teamday.js?v=750108fe" defer></script>
-<script src="/play.js?v=fce12f9f" defer></script>
-<script src="/copy.js?v=14a0d4e9" defer></script>
 <script src="/motion.js?v=f9cbc149" defer></script>
 <script src="/examples.js?v=eb518b0d" defer></script>
 </body>

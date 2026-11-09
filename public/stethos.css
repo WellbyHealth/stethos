@@ -547,3 +547,7 @@ html:not(.mo-js) .rot:before{content:none}
 }
 .ex-foot{margin:18px 0 0;padding-top:14px;border-top:1px solid var(--line,#e5e3dc);font-size:14.5px;font-weight:600}
 .ex-foot a{color:#4A4FB0;text-decoration:none}.ex-foot a:hover{text-decoration:underline}
+
+.hiw-top{padding-bottom:0}.hiw-paste{margin:26px auto 0}
+@media(max-width:760px){.hiw-paste{display:flex!important;flex-wrap:wrap}.hiw-paste .cx-paste-v{min-width:0;max-width:100%}}
+@media(max-width:760px){.hiw-paste{max-width:100%;box-sizing:border-box}.hiw-paste .cx-paste-v{white-space:normal;overflow-wrap:anywhere;flex:1 1 100%}}
