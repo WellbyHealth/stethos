@@ -89,7 +89,7 @@ def blog_index():
     h = head("Blog: Guides to Healthcare Provider Data | Stethos", "Plain-English guides to US healthcare provider data: the NPI registry, why provider directories go stale, and how to give AI agents healthcare data safely.", "/blog", crumbs=[("Blog", "/blog")])
     body = f'''{HEADER}
 <main id="main">
-  <div class="wrap blog-head ph-top"><div class="head ph"><h1>Guides for teams <span class="pop">building on provider data.</span></h1><p class="sp-lede">Plain-English guides on US healthcare provider data, where it comes from, how it goes wrong and how to put it to work.</p></div></div>
+  <div class="wrap blog-head ph-top"><div class="head ph"><h1>Guides for teams <span class="pop">selling into healthcare.</span></h1><p class="sp-lede">Plain-English guides on US healthcare provider data, where it comes from, how it goes wrong and how to put it to work.</p></div></div>
   <div class="wrap"><ul class="blog-grid">{"".join(card(p, "h2") for p in POSTS)}</ul></div>
 </main>
 '''

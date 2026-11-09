@@ -76,6 +76,31 @@
     </div>
   </div>
 </section>
+<section class="h2-panel" id="team-day" aria-labelledby="day-title">
+  <span id="how" class="anchor" aria-hidden="true"></span>
+  <div class="h2-panel-in">
+    <div class="h2-day">
+      <p class="eyebrow"><span>How it works</span></p>
+      <h2 id="day-title">Connect once. Ask in plain words. <span class="pop">Hear when it changes.</span></h2>
+      <p class="td-lede">Your agent gets Stethos as a set of tools. It decides when to search, enrich or watch, and every answer comes back with its sources.</p>
+      <ol class="td-steps" role="tablist" aria-label="Search, enrich, watch">
+        <li role="presentation"><button type="button" role="tab" id="td-s1" aria-controls="td-r1" aria-selected="true" data-i="0"><span class="td-n">1</span><span class="td-t"><b>Connect: paste one URL</b><span>Add the Stethos MCP server to Claude, Cursor or your own agent. Sign in, and the tools show up.</span></span></button></li>
+        <li role="presentation"><button type="button" role="tab" id="td-s2" aria-controls="td-r2" aria-selected="false" data-i="1"><span class="td-n">2</span><span class="td-t"><b>Ask: the agent picks the tool</b><span>"Find independent orthopedic surgeons in Arizona" becomes a search_providers call, then enrich_provider on the ones that fit.</span></span></button></li>
+        <li role="presentation"><button type="button" role="tab" id="td-s3" aria-controls="td-r3" aria-selected="false" data-i="2"><span class="td-n">3</span><span class="td-t"><b>Watch: changes come to you</b><span>watch_providers follows the people you care about and tells your agent when someone moves, gets licensed or joins a network.</span></span></button></li>
+      </ol>
+      <p class="td-cta"><a class="h2-btn w" href="/how-it-works#connect">Connect in 5 minutes <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span>1,000 free credits · no sales call</span></p>
+    </div>
+    <div class="hq td-card" id="td-card" aria-label="Example of three Stethos tool calls">
+      <div class="hq-top"><span class="hq-t">Stethos in Claude <span class="td-time">Mon 7:30 AM</span></span><span class="hq-live"><i></i>Sample data</span></div>
+      <div class="hq-row td-row on" id="td-r1" role="tabpanel" aria-labelledby="td-s1" data-r="1"><span class="td-num" aria-hidden="true">1</span><img class="hq-ic" src="/img/g-cl-stk-search-160.webp?v=0f948a37" width="160" height="160" alt=""><div class="hq-txt"><span class="hq-k">Search · Ortho surgeons, AZ</span><b><span class="td-count" data-from="0" data-to="412">412</span> independent matches</b><span class="hq-d">0.05 credits per result · sources on every match</span></div><span class="hq-chip td-chip1">search_providers</span></div>
+      <div class="td-link" aria-hidden="true"><i></i></div>
+      <div class="hq-row td-row" id="td-r2" role="tabpanel" aria-labelledby="td-s2" data-r="2"><span class="td-num" aria-hidden="true">2</span><img class="hq-ic" src="/img/g-cl-stk-enrich-160.webp?v=a160c1b7" width="160" height="160" alt=""><div class="hq-txt"><span class="hq-k">Enrich · Dr. Jane Example</span><b>Licensed in AZ and NV, 2 affiliations</b><span class="hq-d">Practice phone added · verified today</span></div><span class="hq-chip btn td-send" data-done="Enriched ✓" data-idle="enrich_provider">enrich_provider</span></div>
+      <div class="td-link" aria-hidden="true"><i></i></div>
+      <div class="hq-row td-row" id="td-r3" role="tabpanel" aria-labelledby="td-s3" data-r="3"><span class="td-num" aria-hidden="true">3</span><img class="hq-ic" src="/img/g-cl-stk-watch-160.webp?v=b44cee5a" width="160" height="160" alt=""><div class="hq-txt"><span class="hq-k">Watch · Affiliation changed</span><b>Joined Northfield Spine Partners</b><span class="hq-d">Your agent was told <span class="td-count" data-from="0" data-to="4">4</span> min after the change was seen</span></div><span class="hq-chip up">Agent alerted</span></div>
+    </div>
+    <p class="td-cta td-cta-m"><a class="h2-btn w" href="/how-it-works#connect">Connect in 5 minutes <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span>1,000 free credits · no sales call</span></p>
+  </div>
+</section>
 <section class="sec" id="connect" aria-labelledby="connect-title">
   <div class="wrap connect-grid">
     <div>
@@ -240,6 +265,7 @@
   </div>
 </footer>
 <script src="/nav.js?v=462bebb5" defer></script>
+<script src="/teamday.js?v=750108fe" defer></script>
 <script src="/play.js?v=fce12f9f" defer></script>
 <script src="/copy.js?v=14a0d4e9" defer></script>
 <script src="/motion.js?v=f9cbc149" defer></script>

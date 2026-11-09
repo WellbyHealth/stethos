@@ -13,7 +13,7 @@ import re
 CLIENTS = _clients()
 
 FAQ = [
-    ("What is Stethos?", "Current, sourced healthcare data for AI agents, delivered as an MCP server and API. Stethos resolves government, payer and web sources into one record for every US clinician, practice, health system and payer network, puts a source and a checked date on every field, keeps records current with verification agents, and tells your agent when something changes"),
+    ("What is Stethos?", "Current, sourced healthcare data for AI agents, delivered as an MCP server and API. Stethos resolves government, payer and web sources into one record for every US clinician, practice, health system and payer network, puts a source and a checked date on every field, keeps records current with verification agents, and tells your agent when something changes."),
     ("How does it help sales, marketing and investing?", "Your reps and agents can build target lists by specialty, setting, EHR or territory, enrich accounts and contacts with sourced fields, and get an alert the week a target changes jobs, a practice joins a system or a health system names a new leader. Those changes become your outreach triggers, and the records in your CRM stay current without anyone re-checking lists. Investment teams use the same tools to map a market, size a platform and track portfolio companies."),
     ("Can't my agent just ask a general AI assistant?", "General AI assistants can find some provider data, but they answer from whatever web page or registry copy they come across, often months or years old, with no source and no date. Provider data changes constantly: clinicians move groups, licenses lapse, networks change. Stethos re-checks its sources, shows where every field came from and when it was last checked, and tells your agent when a record changes."),
     ("Does it work with our CRM and AI tools?", "Yes, that's the point. Stethos runs as an MCP server inside Claude, ChatGPT, Microsoft Copilot Studio, Cursor or your own agent, and its REST API and webhooks keep records current in Salesforce, HubSpot, Attio or any CRM or data warehouse. There's no separate dashboard to adopt."),
@@ -21,12 +21,12 @@ FAQ = [
     ("Where does the data come from?", "Government files first: the NPPES NPI Registry, CMS's Medicare utilization files for clinicians, prescribers, hospitals, home health, hospice and nursing facilities, Care Compare ratings and affiliations, ACO participation, cost reports and Open Payments, plus state licensing boards. Payer directories, price transparency files, practice websites and health system job posts are layered on top. Every field carries its source and the date it was last checked. See the full list in the docs."),
     ("Does Stethos handle patient data?", "No. Stethos indexes healthcare professionals and organizations, not patients. There is no PHI in the API, so you don't need a business associate agreement to use it."),
     ("How fresh is it?", "Sources are re-checked on a rolling schedule, and every change is recorded as an event you can query or subscribe to with a webhook. Each record shows when it was last verified, so your agent can decide how much to trust it."),
-    ("How is this different from Definitive Healthcare or IQVIA OneKey?", "Both are established, deep datasets, sold mostly through annual contracts to large commercial teams. Stethos is built API-first for developers and agents: pay per call, start free, and get change events instead of quarterly refreshes. See Stethos vs Definitive and Stethos vs IQVIA OneKey."),
+    ("How is this different from Definitive Healthcare or IQVIA OneKey?", "Both are established, deep datasets, sold mostly through annual contracts to large commercial teams. Stethos is built for teams that work through AI assistants and CRMs: pay per call, start free, and get change events instead of quarterly refreshes. See Stethos vs Definitive and Stethos vs IQVIA OneKey."),
     ("How do I connect it?", "Copy the Stethos MCP server URL and add it to your client: as a custom connector in Claude, or in the MCP config of Cursor or your own agent. Sign in, and the tools appear. It takes about five minutes and there's no sales call."),
     ("Is there a REST API too?", "Yes. The same data is available over REST, with webhooks for change events, for the parts of your stack that aren't agents."),
     ("How does pricing work?", "Per tool call, in credits. A search costs a fraction of a credit per result, enriching a provider costs more, and you only pay for the fields you ask for. Every account starts with 1,000 free credits, Build is a monthly plan, and Enterprise adds bulk files and volume pricing."),
     ("Can we get the whole dataset as a file?", "Yes, on Enterprise. We deliver flat files to your warehouse on a schedule, alongside API access for real-time lookups."),
-    ("Is it live?", "Stethos is in development. The tools on this site are a preview of what we're building, and the results shown are sample data. Join the early access list and we'll send you access as soon as it's ready."),
+    ("Is it live?", "Stethos is in early access. The tools on this site are a preview, and the results shown are sample data. Start a free trial to claim your 1,000 credits, and we'll email you as soon as your account is ready."),
 ]
 
 
@@ -105,7 +105,7 @@ def page():
         <p>Enrich accounts and contacts through the API, and let webhooks update the record and alert its owner when a provider moves, a license lapses or a network changes.</p>
       </div>
     </div>
-    <p class="plug-ex"><b>Example:</b> a rep asks Claude for independent spine surgeons in Arizona. Stethos returns them with sources, the agent creates the contacts in Salesforce, and when one changes groups next month the record updates and the rep gets a task. <a href="/use-cases">See nine more examples</a>.</p>
+    <p class="plug-ex"><b>Example:</b> a rep asks Claude for independent spine surgeons in Arizona. Stethos returns them with sources, the agent creates the contacts in Salesforce, and when one changes groups next month the record updates and the rep gets a task. <a href="/use-cases">See more use cases</a>.</p>
   </div>
 </section>
 
@@ -294,7 +294,7 @@ def page():
       <li><figure class="role-art" style="--bg:#0b1b33">{art("cta", "Illustration: a clay shelf of hospitals, clinics and houses with glowing map pins above them, and a small robot.")}</figure><h3><a class="role-link" href="/use-cases/healthcare-marketing">Healthcare marketing</a></h3><p>Build clinician audiences and ABM account lists, and keep them clean as people change jobs.</p></li>
       <li><figure class="role-art" style="--bg:#e3dcf7">{art("uc-investors", "Illustration: a clay piggy bank beside a rising bar chart topped with small clinic buildings.")}</figure><h3><a class="role-link" href="/use-cases/investors">Investors and deal teams</a></h3><p>Map a market in an afternoon: every group, its clinicians, owners and volume, and who just added sites.</p></li>
       <li><figure class="role-art" style="--bg:#f5e9b8">{art("uc-digital", "Illustration: a clay phone showing a map with pins, beside a small friendly robot.")}</figure><h3><a class="role-link" href="/use-cases/digital-health">Healthcare startups</a></h3><p>Find first customers and design partners, size your market, and power provider search in your product.</p></li>
-      <li><figure class="role-art" style="--bg:#f5efdf">{art("uc-staffing", "Illustration: clay scrubs on a hanger rack, a stethoscope, a calendar and a small state map with glowing pins.")}</figure><h3><a class="role-link" href="/use-cases/clinical-staffing">Clinical staffing</a></h3><p>Find the systems hiring hardest and the licensed clinicians to place there.</p></li>
+      <li><figure class="role-art" style="--bg:#dce9f8">{art("notfound", "Illustration: a clay folded map with a dotted path to a map pin, beside a magnifying glass.")}</figure><h3><a class="role-link" href="/use-cases/post-acute">Home care, hospice and post-acute</a></h3><p>Cover more referrers than your marketers can, and get a nudge before a good one goes quiet.</p></li>
     </ul>
     <p class="sp-more"><a href="/use-cases">All use cases <span aria-hidden="true">→</span></a></p>
   </div>
@@ -306,7 +306,7 @@ def page():
     <div>
       <p class="eyebrow"><span>Why Stethos</span></p>
       <h2 id="yours-title">Snapshots, raw files or guesses. <span class="pop">Or a record you can trust.</span></h2>
-      <p class="yours-lede">Agents now do the prospecting, sourcing and diligence, and they act on whatever data they are given. Today that means an annual-contract platform built for analysts, free government files that are raw and inconsistently dated, or a general AI assistant answering from old pages. Stethos is the layer in between: current, sourced records your agent can call, priced per call.</p>
+      <p class="yours-lede">Whatever your agent reads, it acts on. Today the options are an annual-contract platform built for analysts, free government files that are raw and inconsistently dated, or a general AI assistant answering from old pages. Stethos is the layer in between: current, sourced records your agent can call, priced per call.</p>
       <p class="cmp-links"><a href="/compare/definitive-healthcare">Stethos vs Definitive Healthcare <span aria-hidden="true">→</span></a><a href="/compare/iqvia-onekey">Stethos vs IQVIA OneKey <span aria-hidden="true">→</span></a></p>
     </div>
     <div class="compare">
@@ -388,7 +388,7 @@ def page():
 
 <section class="sec home-blog" id="home-blog" aria-labelledby="hb-title">
   <div class="wrap">
-    <div class="head center"><p class="eyebrow"><span>From the blog</span></p><h2 id="hb-title">Guides for teams <span class="pop">building on provider data.</span></h2></div>
+    <div class="head center"><p class="eyebrow"><span>From the blog</span></p><h2 id="hb-title">Guides for teams <span class="pop">selling into healthcare.</span></h2></div>
     <ul class="blog-grid">{{BLOG_CARDS}}</ul>
     <p class="sp-more"><a href="/blog">Read all guides <span aria-hidden="true">→</span></a></p>
   </div>
@@ -409,11 +409,11 @@ def page():
         <a class="split-btn light" href="mailto:{EMAIL}?subject=Stethos%20on%20our%20accounts">Talk to our team {ARROW}</a>
       </div>
       <div class="split-card dev">
-        <p class="split-k">For developers</p>
-        <h3>Ship an agent tonight.</h3>
-        <p>Paste one URL into Claude, Cursor or your MCP client and start calling tools. Pay only for the calls you make.</p>
-        <ul class="perks"><li>1,000 free credits, no card</li><li>MCP server, REST API and webhooks</li><li>Live in five minutes, no sales call</li></ul>
-        <div class="split-ctas"><a class="split-btn" href="{TRIAL}">Start free trial {ARROW}</a><a class="split-alt" href="/docs">Read the docs</a></div>
+        <p class="split-k">For your team</p>
+        <h3>Try it yourself today.</h3>
+        <p>Add Stethos to Claude, ChatGPT or your own agent in five minutes and ask about your own market. Pay only for the calls you make.</p>
+        <ul class="perks"><li>1,000 free credits, no card</li><li>Works in your AI assistant and CRM</li><li>Live in five minutes, no sales call</li></ul>
+        <div class="split-ctas"><a class="split-btn" href="{TRIAL}">Start free trial {ARROW}</a><a class="split-alt" href="/how-it-works">See how it works</a></div>
       </div>
     </div>
   </div>
@@ -423,11 +423,11 @@ def page():
     body = body.replace("{HOME_EX}", PX.home_split())
     global TECH
     TECH = {}
-    for sid in ("platform", "connect", "playground", "sources", "kpis"):
+    for sid in ("team-day", "platform", "connect", "playground", "sources", "kpis"):
         m = re.search(r'<section class="[^"]*" id="%s".*?</section>\n' % sid, body, re.S)
         TECH[sid] = m.group(0)
         body = body.replace(m.group(0), "")
-    return h + body + tail(("nav", "teamday", "motion", "examples"))
+    return h + body + tail(("nav", "motion", "examples"))
 
 
 TECH = {}
@@ -455,5 +455,5 @@ def how_it_works():
   </div>
 </section>
 '''
-    body = HEADER + '\n<main id="main">\n' + top + "".join(TECH[k] for k in ("connect", "playground", "sources", "platform", "kpis")) + cta_band("Self-serve", "Connect in five minutes,", "pay per tool call.", "1,000 free credits, no card, no sales call.", "how-it-works") + "\n</main>\n"
-    return h + body + tail(("nav", "play", "copy", "motion"))
+    body = HEADER + '\n<main id="main">\n' + top + "".join(TECH[k] for k in ("team-day", "connect", "playground", "sources", "platform", "kpis")) + cta_band("Self-serve", "Connect in five minutes,", "pay per tool call.", "1,000 free credits, no card, no sales call.", "how-it-works") + "\n</main>\n"
+    return h + body + tail(("nav", "teamday", "play", "copy", "motion"))
