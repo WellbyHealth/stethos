@@ -30,7 +30,7 @@
 <link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css?v=6c88d771">
 <link rel="stylesheet" href="/v2.css?v=978b51f1">
-<link rel="stylesheet" href="/site.css?v=b2dba5ee">
+<link rel="stylesheet" href="/site.css?v=b9b21c69">
 <link rel="stylesheet" href="/stethos.css?v=2c0729ac">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Where does organization data come from?", "acceptedAnswer": {"@type": "Answer", "text": "CMS provider and facility data, organization NPIs, health system websites and job posts, and press releases for leadership changes. Every field shows its source."}}, {"@type": "Question", "name": "Can I see who works at a hospital?", "acceptedAnswer": {"@type": "Answer", "text": "Organization records include rostered clinicians drawn from affiliation data, and the list updates as clinicians join or leave."}}, {"@type": "Question", "name": "Can I track leadership changes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The org.exec_hire event fires when an organization names a new executive or service line leader."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos-one.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Health system data API", "item": "https://stethos-one.vercel.app/health-system-data-api"}]}]}</script>
 </head>
@@ -67,24 +67,52 @@
 </header>
 
 <main id="main">
-<section class="sec sp-top ph-top" aria-labelledby="kw-title">
+<section class="sec sp-top kw-hero" aria-labelledby="kw-title">
   <div class="wrap">
     <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Health system data API</nav>
-    <div class="head ph">
+    <div class="head center">
+      <p class="eyebrow"><span>Health system data API</span></p>
       <h1 id="kw-title">Health system and hospital data, <span class="pop">with the people inside.</span></h1>
-      <p class="sp-lede">Know how a health system is built: the hospitals and groups it owns, who leads them, who practices there and where it's hiring. Stethos is built to keep that map current and alert you when it changes.</p>
+      <p class="kpi-lede">Know how a health system is built: the hospitals and groups it owns, who leads them, who practices there and where it's hiring. Stethos is built to keep that map current and alert you when it changes.</p>
       <div class="kw-ctas"><a class="btn-1" href="/signup">Start free trial</a><a class="btn-2" href="/docs">Read the docs</a></div>
     </div>
-    <div class="sp-panels uc-one"><div class="sp-panel sp-pink"><div class="sp-p-main">
-      <figure class="sp-scene"><img fetchpriority="high" src="/img/g-art-s-healthsys-900.webp?v=f3cab129" srcset="/img/g-art-s-healthsys-900.webp 900w, /img/g-art-s-healthsys-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 560px" width="1600" height="1195" alt="Illustration for Health system data API" decoding="async"></figure>
-      <h2>Health system data API</h2><p class="sp-k">Organization types</p><ul class="sp-src"><li>Health systems and hospitals</li><li>Physician groups and clinics</li><li>Ambulatory surgery centers</li><li>Home health and post-acute providers</li></ul></div>
-      <div class="sp-p-side"><p class="sp-k">Record includes</p><ul class="sp-see"><li>Locations and child organizations</li><li>Rostered clinicians</li><li>Leadership with start dates</li><li>Open clinical roles</li><li>Executive hire and hiring spike events</li></ul></div></div></div>
   </div>
 </section>
-<figure class="scene-band"><img src="/img/g-w-s-healthsys-1600.webp?v=b31d63bf" srcset="/img/g-w-s-healthsys-900.webp 900w, /img/g-w-s-healthsys-1600.webp 1600w" sizes="100vw" width="1600" height="686" alt="Illustration: a hospital campus on a hill with roads down to clinics, an urgent care and a surgery center." loading="lazy" decoding="async"></figure>
+<figure class="scene-band"><img src="/img/g-w-s-healthsys-1600.webp?v=b31d63bf" srcset="/img/g-w-s-healthsys-900.webp 900w, /img/g-w-s-healthsys-1600.webp 1600w" sizes="100vw" width="1600" height="686" alt="Illustration: a hospital campus on a hill with roads down to clinics, an urgent care and a surgery center." decoding="async"></figure>
+<section class="sec" aria-labelledby="kw-data-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>The data</span></p><h2 id="kw-data-title">What it looks like <span class="pop">for your agent.</span></h2></div>
+    <div class="kw-data">
+      <article class="rec" aria-label="Sample record"><div class="rec-top"><div><p class="rec-t">Example Health</p><p class="rec-sub">Health system · Tennessee</p></div><span class="hq-live"><i></i>Sample data</span></div><ul class="rec-rows"><li><span class="rec-k">Hospitals</span><span class="rec-v">6 hospitals, 1,420 beds</span><span class="rec-s">CMS data</span></li><li><span class="rec-k">Groups and clinics</span><span class="rec-v">48 sites, 610 rostered clinicians</span><span class="rec-s">system website</span></li><li><span class="rec-k">Leadership</span><span class="rec-v">New chief medical officer, 2 weeks ago</span><span class="rec-s">press release</span></li><li><span class="rec-k">Open roles</span><span class="rec-v">38 clinical roles, up 40% this month</span><span class="rec-s">job posts</span></li><li><span class="rec-k">Health IT</span><span class="rec-v">Epic, where published</span><span class="rec-s">ONC data</span></li><li><span class="rec-k">Growth</span><span class="rec-v">Added a 9-site physician group this year</span><span class="rec-s">announcement</span></li></ul></article>
+      <div class="kw-side"><p class="sp-k">Organization types</p><ul class="kw-list"><li>Health systems and hospitals</li><li>Physician groups and clinics</li><li>Ambulatory surgery centers</li><li>Home health and post-acute providers</li></ul><p class="sp-k">Record includes</p><ul class="kw-list"><li>Locations and child organizations</li><li>Rostered clinicians</li><li>Leadership with start dates</li><li>Open clinical roles</li><li>Executive hire and hiring spike events</li></ul></div>
+    </div>
+  </div>
+</section>
+<section class="sec kw-asks-sec" aria-labelledby="kw-ask-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Ask in plain words</span></p><h2 id="kw-ask-title">What your agent <span class="pop">can ask.</span></h2></div>
+    <ul class="kw-asks"><li><p class="ask-q">“Which systems in Tennessee run Epic and have 3 or more hospitals?”</p><p class="ask-a">Filter by type, size, EHR and place.</p></li><li><p class="ask-q">“Who leads cardiology at Example Health?”</p><p class="ask-a">Leaders with start dates and sources.</p></li><li><p class="ask-q">“Which systems named a new CIO this quarter?”</p><p class="ask-a">Executive hire events.</p></li><li><p class="ask-q">“Where is this system hiring nurses fastest?”</p><p class="ask-a">Open clinical roles by site.</p></li></ul>
+  </div>
+</section>
+<section class="sec" aria-labelledby="kw-who-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Who uses it</span></p><h2 id="kw-who-title">Built for teams <span class="pop">like yours.</span></h2></div>
+    <ul class="kw-teams"><li><a href="/use-cases/health-it-sales" style="--t:#ece6fb"><img class="seg-logo" src="/img/g-l-healthit-160.webp?v=cca03189" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Health IT and services</b>Sell to systems by EHR, size and leader.</span></a></li><li><a href="/use-cases/investors" style="--t:#fbe4ea"><img class="seg-logo" src="/img/g-l-investors-160.webp?v=bb2097b6" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Investors and PE</b>Roll-ups, headcount and new sites.</span></a></li><li><a href="/use-cases/health-systems" style="--t:#fbe4ea"><img class="seg-logo" src="/img/g-l-healthsystems-160.webp?v=5beee26b" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Health systems</b>Physician relations and network growth.</span></a></li></ul>
+    <div class="kw-wf"><article class="ex-card" id="exec-trigger" style="--t:#e8f3d2">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-stk-watch-160.webp?v=b44cee5a" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">Health IT and services · Sales</p><h2>Reach the new buyer in their first 90 days</h2></div></div>
+      <p class="ex-trigger"><b>When</b> A target health system names a new CIO, CMIO or CFO.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Tell me when any health system in my territory hires a new CIO or CMIO, and draft a first note for each.”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Watches every account in the territory for executive changes</li><li>Adds the system's EHR, size and recent news to the alert</li><li>Creates a task in the CRM with a short, specific first note for the rep to edit</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Organizations</li><li>Executive changes</li><li>Certified health IT data</li><li>Change events</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">A task in Salesforce or HubSpot, and a Slack message to the rep</p></div>
+      </div><p class="ex-foot"><a href="/use-cases/health-it-sales">More for Health IT and services <span aria-hidden="true">→</span></a></p>
+    </article>
+</div>
+  </div>
+</section>
 <section class="sec" aria-labelledby="kw-call-title">
   <div class="wrap uc-call">
-    <div><p class="eyebrow"><span>Example call</span></p><h2 id="kw-call-title">One request, <span class="pop">sourced answers.</span></h2>
+    <div><p class="eyebrow"><span>For developers</span></p><h2 id="kw-call-title">One request, <span class="pop">sourced answers.</span></h2>
     <p class="uc-call-p">Your agent can make the same call as an MCP tool. Every result carries the source and last-verified date on each field and the credits it used. See the <a href="/docs">quickstart</a> and <a href="/pricing">pricing</a>.</p></div>
 <pre class="uc-code" tabindex="0" aria-label="Example request"><code>curl https://api.stethos.health/v1/orgs/enrich \
   -H "Authorization: Bearer $STETHOS_KEY" \
@@ -101,8 +129,14 @@
 </section>
 <section class="sec" aria-labelledby="kw-faq-title">
   <div class="wrap faq-grid">
-    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">Health system data API: common questions</h2><p class="faq-more">Related: <a href="/use-cases/investors">Healthcare investors</a> · <a href="/docs#orgs">Docs: organizations</a> · <a href="/pricing">Pricing</a></p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp?v=a84942d7" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
+    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">Common questions</h2><p class="faq-more">Related: <a href="/use-cases/investors">Healthcare investors</a> · <a href="/docs#orgs">Docs: organizations</a> · <a href="/pricing">Pricing</a></p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp?v=a84942d7" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
     <div class="qs"><details><summary>Where does organization data come from?</summary><p>CMS provider and facility data, organization NPIs, health system websites and job posts, and press releases for leadership changes. Every field shows its source.</p></details><details><summary>Can I see who works at a hospital?</summary><p>Organization records include rostered clinicians drawn from affiliation data, and the list updates as clinicians join or leave.</p></details><details><summary>Can I track leadership changes?</summary><p>Yes. The org.exec_hire event fires when an organization names a new executive or service line leader.</p></details></div>
+  </div>
+</section>
+<section class="sec" aria-labelledby="kw-rel-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Related data</span></p><h2 id="kw-rel-title">Pairs well <span class="pop">with.</span></h2></div>
+    <ul class="kw-rel"><li><a href="/private-equity-healthcare-ownership-data"><img src="/img/g-art-s-pe-900.webp?v=af729207" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Private equity ownership data</b>Which private equity firms own which practices, clinics, MSOs and facilities, in which markets.</span></a></li><li><a href="/physician-referral-data"><img src="/img/g-art-s-referral-900.webp?v=339819b5" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Physician referral data</b>Map who works with whom: group rosters, hospital affiliations, ACO membership and shared practice sites for every US clinician.</span></a></li><li><a href="/home-health-hospice-data-api"><img src="/img/g-art-s-homehealth-900.webp?v=8c15ca35" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Home health and hospice data API</b>Volume, payments, patient mix, star ratings and ownership for every Medicare home health agency, hospice and nursing facility, via MCP or REST.</span></a></li></ul>
   </div>
 </section>
 <section class="sec">

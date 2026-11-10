@@ -1,10 +1,23 @@
 from parts import *
-from segments import BY as SEGBY, SCENE_ALT, scene, seg_tabs, logo
+from segments import BY as SEGBY, SCENE_ALT, scene, seg_tabs, seg_grid, logo
 from page_other import UC
 import page_examples as PX
 import json
 
 # Extra copy for one landing page per use case: (seo title, meta description, H1 a, H1 b, intro, example request, FAQs)
+UC_DATA = {
+    "medtech": ["physician-data-api", "medicare-utilization-data-api", "npi-lookup-api"],
+    "pharma": ["medicare-utilization-data-api", "physician-data-api", "physician-referral-data"],
+    "health-it-sales": ["health-system-data-api", "private-equity-healthcare-ownership-data", "healthcare-mcp-server"],
+    "healthcare-marketing": ["physician-data-api", "health-system-data-api", "npi-lookup-api"],
+    "investors": ["private-equity-healthcare-ownership-data", "health-system-data-api", "home-health-hospice-data-api"],
+    "digital-health": ["healthcare-mcp-server", "npi-lookup-api", "physician-data-api"],
+    "post-acute": ["physician-referral-data", "home-health-hospice-data-api", "health-system-data-api"],
+    "clinical-staffing": ["license-verification-api", "health-system-data-api", "physician-data-api"],
+    "provider-directories": ["npi-lookup-api", "license-verification-api", "physician-data-api"],
+    "health-systems": ["physician-referral-data", "physician-data-api", "health-system-data-api"],
+}
+
 UC_PAGES = {
     "medtech": dict(
         title="Surgeon and Physician Data for Medtech Sales | Stethos",
@@ -144,27 +157,45 @@ def uc_page(n):
   </div>
 </section>
 ''' if wfs else "")
+    import page_seo as PS
+    pages = {p2["slug"]: p2 for p2 in PS.SEO_PAGES}
+    data_cards = "".join(
+        f'<li><a href="/{r}"><img src="/img/g-art-{pages[r]["art"]}-900.webp" width="900" height="672" alt="" loading="lazy" decoding="async">'
+        f'<span><b>{pages[r]["name"]}</b>{pages[r]["desc"].split(". ")[0].rstrip(".")}.</span></a></li>' for r in UC_DATA[slug])
     body = f'''{HEADER}
 <main id="main">
-<section class="sec sp-top ph-top" aria-labelledby="uc-title">
+<section class="sec sp-top kw-hero" aria-labelledby="uc-title">
   <div class="wrap">
     <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/use-cases">Solutions</a> / {name}</nav>
     {seg_tabs(slug)}
-    <div class="head ph seg-head">{logo(slug, 88, "seg-hero-logo")}
+    <div class="head center">
+      {logo(slug, 84, "seg-hero-logo")}
       <h1 id="uc-title">{m["h1a"]} <span class="pop">{m["h1b"]}</span></h1>
-      <p class="sp-lede">{m["intro"]}</p>
+      <p class="kpi-lede">{m["intro"]}</p>
+      <div class="kw-ctas"><a class="btn-1" href="{TRIAL}">Start free trial</a><a class="btn-2" href="mailto:{EMAIL}?subject=Stethos%20{name.replace(" ", "%20")}">Talk to our team</a></div>
     </div>
-    <div class="sp-panels uc-one"><div class="sp-panel {color}"><div class="sp-p-main">
-      <figure class="sp-scene"><img fetchpriority="high" src="/img/g-art-{art_key}-900.webp" srcset="/img/g-art-{art_key}-900.webp 900w, /img/g-art-{art_key}-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 560px" width="1600" height="1195" alt="{alt}" decoding="async"></figure>
-      <h2>{name}</h2><p class="sp-k">Stethos is built to</p><p class="sp-do">{does}</p></div>
-      <div class="sp-p-side"><p class="sp-k">Data you'd use</p><ul class="sp-src">{"".join(f"<li>{x}</li>" for x in src)}</ul>
-      <p class="sp-k">Signals you'd watch</p><ul class="sp-see">{"".join(f"<li>{x}</li>" for x in watch)}</ul></div></div></div>
   </div>
 </section>
-{scene(SEGBY[slug][5], SCENE_ALT[SEGBY[slug][5]])}
-{wf}<section class="sec" aria-labelledby="uc-call-title">
+{scene(SEGBY[slug][5], SCENE_ALT[SEGBY[slug][5]], eager=True)}
+<section class="sec" aria-labelledby="uc-get-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>What you get</span></p><h2 id="uc-get-title">What Stethos does <span class="pop">for your team.</span></h2></div>
+    <div class="uc-get">
+      <div class="uc-does"><p class="sp-k">Stethos is built to</p><p>{does}</p></div>
+      <div><p class="sp-k">Data you'd use</p><ul class="kw-list">{"".join(f"<li>{x}</li>" for x in src)}</ul></div>
+      <div><p class="sp-k">Signals you'd watch</p><ul class="kw-list">{"".join(f"<li>{x}</li>" for x in watch)}</ul></div>
+    </div>
+  </div>
+</section>
+{wf}<section class="sec" aria-labelledby="uc-rel-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>The data behind it</span></p><h2 id="uc-rel-title">Data sets <span class="pop">you'd use.</span></h2></div>
+    <ul class="kw-rel">{data_cards}</ul>
+  </div>
+</section>
+<section class="sec" aria-labelledby="uc-call-title">
   <div class="wrap uc-call">
-    <div><p class="eyebrow"><span>Example call</span></p><h2 id="uc-call-title">What it looks like <span class="pop">in code.</span></h2>
+    <div><p class="eyebrow"><span>For developers</span></p><h2 id="uc-call-title">What it looks like <span class="pop">in code.</span></h2>
     <p class="uc-call-p">One request against the Stethos API. Responses carry the source and last-verified date on every field. See the <a href="/docs">quickstart</a> for authentication, watchers and the MCP server, and <a href="/pricing">pricing</a> for what each call costs.</p></div>
 <pre class="uc-code" tabindex="0" aria-label="Example request"><code>curl https://api.stethos.health/v1/{ep} \\
   -H "Authorization: Bearer $STETHOS_KEY" \\
@@ -173,12 +204,9 @@ def uc_page(n):
 </section>
 <section class="sec" aria-labelledby="uc-faq-title">
   <div class="wrap faq-grid">
-    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="uc-faq-title">{name}: common questions</h2><p class="faq-more">Something else? <a href="mailto:{EMAIL}?subject=Stethos%20{name.replace(" ", "%20")}">Email our team</a>.</p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
+    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="uc-faq-title">Common questions</h2><p class="faq-more">Something else? <a href="mailto:{EMAIL}?subject=Stethos%20{name.replace(" ", "%20")}">Email our team</a>.</p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
     <div class="qs">{faq}</div>
   </div>
-</section>
-<section class="sec" aria-labelledby="uc-more-title">
-  <div class="wrap"><h2 id="uc-more-title" class="uc-more-h">More use cases</h2><ul class="uc-more">{others}</ul></div>
 </section>
 {cta_band("Free credits", "Try it on", "your own targets.", "Get a key, run your first search in minutes, and pay only for the data you use.", "Stethos%20" + slug)}
 </main>

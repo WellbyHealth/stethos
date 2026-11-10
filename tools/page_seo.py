@@ -135,33 +135,69 @@ SEO_PAGES += [
 ]
 
 def seo_page(m):
+    import page_examples as PX
+    from segments import BY as SEGBY
+    from seo_extra import EXTRA
+    x = EXTRA[m["slug"]]
     path = "/" + m["slug"]
     faqld = {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in m["faq"]]}
     h = head(m["title"], m["desc"], path, image=f"/og/{m['slug']}.jpg", image_alt=f"Illustration for {m['name']}",
              crumbs=[(m["name"], path)], schema=[faqld])
-    li = lambda xs: "".join(f"<li>{x}</li>" for x in xs)
+    li = lambda xs: "".join(f"<li>{v}</li>" for v in xs)
     faq = "".join(f'<details><summary>{q}</summary><p>{a}</p></details>' for q, a in m["faq"])
     rel = " · ".join(f'<a href="{u}">{t}</a>' for t, u in m["related"])
+    sm = x["sample"]
+    rows = "".join(f'<li><span class="rec-k">{k}</span><span class="rec-v">{v}</span><span class="rec-s">{n}</span></li>' for k, v, n in sm["rows"])
+    asks_is_l2 = m["k2"].lower().startswith("what your agent")
+    lists = f'<p class="sp-k">{m["k1"]}</p><ul class="kw-list">{li(m["l1"])}</ul>'
+    if not asks_is_l2:
+        lists += f'<p class="sp-k">{m["k2"]}</p><ul class="kw-list">{li(m["l2"])}</ul>'
+    asks = "".join(f'<li><p class="ask-q">“{q}”</p><p class="ask-a">{a}</p></li>' for q, a in x["asks"])
+    teams = "".join(f'<li><a href="/use-cases/{t}" style="--t:{SEGBY[t][4]}">{logo(t, 64)}<span><b>{SEGBY[t][1]}</b>{SEGBY[t][2]}</span></a></li>' for t in x["teams"])
+    wf = PX.card(PX._by[x["workflow"]], tab=None, link=True)
+    pages = {p2["slug"]: p2 for p2 in SEO_PAGES}
+    related = "".join(
+        f'<li><a href="/{r}"><img src="/img/g-art-{pages[r]["art"]}-900.webp" width="900" height="672" alt="" loading="lazy" decoding="async">'
+        f'<span><b>{pages[r]["name"]}</b>{pages[r]["desc"].split(". ")[0].rstrip(".")}.</span></a></li>' for r in x["related"])
     body = f'''{HEADER}
 <main id="main">
-<section class="sec sp-top ph-top" aria-labelledby="kw-title">
+<section class="sec sp-top kw-hero" aria-labelledby="kw-title">
   <div class="wrap">
     <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / {m["name"]}</nav>
-    <div class="head ph">
+    <div class="head center">
+      <p class="eyebrow"><span>{m["name"]}</span></p>
       <h1 id="kw-title">{m["h1a"]} <span class="pop">{m["h1b"]}</span></h1>
-      <p class="sp-lede">{m["intro"]}</p>
+      <p class="kpi-lede">{m["intro"]}</p>
       <div class="kw-ctas"><a class="btn-1" href="{TRIAL}">Start free trial</a><a class="btn-2" href="/docs">Read the docs</a></div>
     </div>
-    <div class="sp-panels uc-one"><div class="sp-panel {m["color"]}"><div class="sp-p-main">
-      <figure class="sp-scene"><img fetchpriority="high" src="/img/g-art-{m["art"]}-900.webp" srcset="/img/g-art-{m["art"]}-900.webp 900w, /img/g-art-{m["art"]}-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 560px" width="1600" height="1195" alt="Illustration for {m["name"]}" decoding="async"></figure>
-      <h2>{m["name"]}</h2><p class="sp-k">{m["k1"]}</p><ul class="sp-src">{li(m["l1"])}</ul></div>
-      <div class="sp-p-side"><p class="sp-k">{m["k2"]}</p><ul class="sp-see">{li(m["l2"])}</ul></div></div></div>
   </div>
 </section>
-{scene(SCENES[m["slug"]], SCENE_ALTS[SCENES[m["slug"]]])}
+{scene(SCENES[m["slug"]], SCENE_ALTS[SCENES[m["slug"]]], eager=True)}
+<section class="sec" aria-labelledby="kw-data-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>The data</span></p><h2 id="kw-data-title">What it looks like <span class="pop">for your agent.</span></h2></div>
+    <div class="kw-data">
+      <article class="rec" aria-label="Sample record"><div class="rec-top"><div><p class="rec-t">{sm["title"]}</p><p class="rec-sub">{sm["sub"]}</p></div><span class="hq-live"><i></i>Sample data</span></div><ul class="rec-rows">{rows}</ul></article>
+      <div class="kw-side">{lists}</div>
+    </div>
+  </div>
+</section>
+<section class="sec kw-asks-sec" aria-labelledby="kw-ask-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Ask in plain words</span></p><h2 id="kw-ask-title">What your agent <span class="pop">can ask.</span></h2></div>
+    <ul class="kw-asks">{asks}</ul>
+  </div>
+</section>
+<section class="sec" aria-labelledby="kw-who-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Who uses it</span></p><h2 id="kw-who-title">Built for teams <span class="pop">like yours.</span></h2></div>
+    <ul class="kw-teams">{teams}</ul>
+    <div class="kw-wf">{wf}</div>
+  </div>
+</section>
 <section class="sec" aria-labelledby="kw-call-title">
   <div class="wrap uc-call">
-    <div><p class="eyebrow"><span>Example call</span></p><h2 id="kw-call-title">One request, <span class="pop">sourced answers.</span></h2>
+    <div><p class="eyebrow"><span>For developers</span></p><h2 id="kw-call-title">One request, <span class="pop">sourced answers.</span></h2>
     <p class="uc-call-p">Your agent can make the same call as an MCP tool. Every result carries the source and last-verified date on each field and the credits it used. See the <a href="/docs">quickstart</a> and <a href="/pricing">pricing</a>.</p></div>
 <pre class="uc-code" tabindex="0" aria-label="Example request"><code>curl https://api.stethos.health/v1/{m["ep"]} \\
   -H "Authorization: Bearer $STETHOS_KEY" \\
@@ -170,8 +206,14 @@ def seo_page(m):
 </section>
 <section class="sec" aria-labelledby="kw-faq-title">
   <div class="wrap faq-grid">
-    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">{m["name"]}: common questions</h2><p class="faq-more">Related: {rel}</p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
+    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">Common questions</h2><p class="faq-more">Related: {rel}</p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
     <div class="qs">{faq}</div>
+  </div>
+</section>
+<section class="sec" aria-labelledby="kw-rel-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Related data</span></p><h2 id="kw-rel-title">Pairs well <span class="pop">with.</span></h2></div>
+    <ul class="kw-rel">{related}</ul>
   </div>
 </section>
 {cta_band("Self-serve", "Make your first tool call", "in five minutes.", "1,000 free credits, no card, no sales call. Pay only for the tool calls you make.", "Stethos%20" + m["slug"])}

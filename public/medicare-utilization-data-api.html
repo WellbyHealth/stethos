@@ -30,7 +30,7 @@
 <link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css?v=6c88d771">
 <link rel="stylesheet" href="/v2.css?v=978b51f1">
-<link rel="stylesheet" href="/site.css?v=b2dba5ee">
+<link rel="stylesheet" href="/site.css?v=b9b21c69">
 <link rel="stylesheet" href="/stethos.css?v=2c0729ac">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Where does this data come from?", "acceptedAnswer": {"@type": "Answer", "text": "CMS's Medicare Provider Utilization and Payment data. They summarize 100% of Original Medicare fee-for-service claims at the provider level, and CMS suppresses small counts to protect patients."}}, {"@type": "Question", "name": "How current is it?", "acceptedAnswer": {"@type": "Answer", "text": "CMS releases these files once a year, covering a past year, so they describe volume and mix rather than this week's activity. Stethos shows the data year on every number and pairs it with fresher signals like affiliation and license changes."}}, {"@type": "Question", "name": "Does it include Medicare Advantage or commercial claims?", "acceptedAnswer": {"@type": "Answer", "text": "No. These files cover Original Medicare only. Claims-level data, including Medicare Advantage, requires CMS research access, which Stethos plans to pursue."}}, {"@type": "Question", "name": "Is there patient data in it?", "acceptedAnswer": {"@type": "Answer", "text": "No. Every number is aggregated to the provider, and CMS removes counts under 11. Stethos returns provider data only."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos-one.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Medicare utilization data API", "item": "https://stethos-one.vercel.app/medicare-utilization-data-api"}]}]}</script>
 </head>
@@ -67,24 +67,52 @@
 </header>
 
 <main id="main">
-<section class="sec sp-top ph-top" aria-labelledby="kw-title">
+<section class="sec sp-top kw-hero" aria-labelledby="kw-title">
   <div class="wrap">
     <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Medicare utilization data API</nav>
-    <div class="head ph">
+    <div class="head center">
+      <p class="eyebrow"><span>Medicare utilization data API</span></p>
       <h1 id="kw-title">Medicare utilization data, <span class="pop">joined to every provider record.</span></h1>
-      <p class="sp-lede">Medicare billing data for every clinician and hospital, matched to the right NPI: services by procedure code, Medicare patients seen, Part D prescriptions and equipment ordered, with the release year on every number.</p>
+      <p class="kpi-lede">Medicare billing data for every clinician and hospital, matched to the right NPI: services by procedure code, Medicare patients seen, Part D prescriptions and equipment ordered, with the release year on every number.</p>
       <div class="kw-ctas"><a class="btn-1" href="/signup">Start free trial</a><a class="btn-2" href="/docs">Read the docs</a></div>
     </div>
-    <div class="sp-panels uc-one"><div class="sp-panel sp-lime"><div class="sp-p-main">
-      <figure class="sp-scene"><img fetchpriority="high" src="/img/g-art-s-medicare-900.webp?v=baf6103f" srcset="/img/g-art-s-medicare-900.webp 900w, /img/g-art-s-medicare-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 560px" width="1600" height="1195" alt="Illustration for Medicare utilization data API" decoding="async"></figure>
-      <h2>Medicare utilization data API</h2><p class="sp-k">CMS files included</p><ul class="sp-src"><li>Medicare Physician &amp; Other Practitioners, by provider and service</li><li>Medicare Part D Prescribers, by provider and drug</li><li>Medicare DMEPOS, by referring provider</li><li>Medicare Inpatient and Outpatient Hospitals, by provider</li></ul></div>
-      <div class="sp-p-side"><p class="sp-k">What your agent can ask</p><ul class="sp-see"><li>Which orthopedic surgeons in Ohio do the most knee replacements</li><li>Which cardiologists prescribe a given drug class most</li><li>Which clinicians order the most CPAP equipment</li><li>Which hospitals in a market do the most spine DRGs</li></ul></div></div></div>
   </div>
 </section>
-<figure class="scene-band"><img src="/img/g-w-s-medicare-1600.webp?v=5af0312e" srcset="/img/g-w-s-medicare-900.webp 900w, /img/g-w-s-medicare-1600.webp 1600w" sizes="100vw" width="1600" height="686" alt="Illustration: towers of stacked pill capsules beside a government building, with the robot measuring one." loading="lazy" decoding="async"></figure>
+<figure class="scene-band"><img src="/img/g-w-s-medicare-1600.webp?v=5af0312e" srcset="/img/g-w-s-medicare-900.webp 900w, /img/g-w-s-medicare-1600.webp 1600w" sizes="100vw" width="1600" height="686" alt="Illustration: towers of stacked pill capsules beside a government building, with the robot measuring one." decoding="async"></figure>
+<section class="sec" aria-labelledby="kw-data-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>The data</span></p><h2 id="kw-data-title">What it looks like <span class="pop">for your agent.</span></h2></div>
+    <div class="kw-data">
+      <article class="rec" aria-label="Sample record"><div class="rec-top"><div><p class="rec-t">Dr. Lee Example, MD</p><p class="rec-sub">Orthopedic surgery · Cleveland, OH</p></div><span class="hq-live"><i></i>Sample data</span></div><ul class="rec-rows"><li><span class="rec-k">Knee replacements</span><span class="rec-v">212 Medicare procedures</span><span class="rec-s">CMS · 2024 data</span></li><li><span class="rec-k">Medicare patients</span><span class="rec-v">1,840 beneficiaries</span><span class="rec-s">CMS · 2024 data</span></li><li><span class="rec-k">Top procedures</span><span class="rec-v">Knee, hip and shoulder replacement</span><span class="rec-s">CMS · 2024 data</span></li><li><span class="rec-k">Equipment ordered</span><span class="rec-v">Knee braces and walkers</span><span class="rec-s">CMS DMEPOS</span></li><li><span class="rec-k">Hospital</span><span class="rec-v">Example Medical Center</span><span class="rec-s">CMS data</span></li></ul></article>
+      <div class="kw-side"><p class="sp-k">CMS files included</p><ul class="kw-list"><li>Medicare Physician &amp; Other Practitioners, by provider and service</li><li>Medicare Part D Prescribers, by provider and drug</li><li>Medicare DMEPOS, by referring provider</li><li>Medicare Inpatient and Outpatient Hospitals, by provider</li></ul></div>
+    </div>
+  </div>
+</section>
+<section class="sec kw-asks-sec" aria-labelledby="kw-ask-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Ask in plain words</span></p><h2 id="kw-ask-title">What your agent <span class="pop">can ask.</span></h2></div>
+    <ul class="kw-asks"><li><p class="ask-q">“Which orthopedic surgeons in Ohio do the most knee replacements?”</p><p class="ask-a">Ranked by Medicare procedure volume.</p></li><li><p class="ask-q">“Which cardiologists prescribe a given drug class most?”</p><p class="ask-a">Part D volume by drug.</p></li><li><p class="ask-q">“Which clinicians order the most CPAP equipment?”</p><p class="ask-a">Equipment orders by referring clinician.</p></li><li><p class="ask-q">“Which hospitals in a market do the most spine surgery?”</p><p class="ask-a">Inpatient volume by DRG.</p></li></ul>
+  </div>
+</section>
+<section class="sec" aria-labelledby="kw-who-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Who uses it</span></p><h2 id="kw-who-title">Built for teams <span class="pop">like yours.</span></h2></div>
+    <ul class="kw-teams"><li><a href="/use-cases/medtech" style="--t:#e4f0fd"><img class="seg-logo" src="/img/g-l-medtech-160.webp?v=00a46869" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Medtech</b>Reach surgeons the week they move.</span></a></li><li><a href="/use-cases/pharma" style="--t:#e3f4ec"><img class="seg-logo" src="/img/g-l-pharma-160.webp?v=fc1a4bbc" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Pharma and life sciences</b>Map prescribers and KOLs for a launch.</span></a></li><li><a href="/use-cases/investors" style="--t:#fbe4ea"><img class="seg-logo" src="/img/g-l-investors-160.webp?v=bb2097b6" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Investors and PE</b>Roll-ups, headcount and new sites.</span></a></li></ul>
+    <div class="kw-wf"><article class="ex-card" id="kol-mapping" style="--t:#e8f3d2">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-stk-enrich-160.webp?v=a160c1b7" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">Pharma · Medical affairs and marketing</p><h2>Map the key opinion leaders for a launch</h2></div></div>
+      <p class="ex-trigger"><b>When</b> A new launch or an upcoming congress.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Who are the most active clinicians in this drug class in the Northeast: publishing, running trials and prescribing?”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Finds clinicians by prescribing volume in the class</li><li>Adds their publications, trials and grants</li><li>Flags industry relationships so medical affairs can review them first</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Part D prescribers</li><li>Publications and trials</li><li>NIH grants</li><li>Open Payments</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">Your CRM or a medical affairs spreadsheet</p></div>
+      </div><p class="ex-foot"><a href="/use-cases/pharma">More for Pharma <span aria-hidden="true">→</span></a></p>
+    </article>
+</div>
+  </div>
+</section>
 <section class="sec" aria-labelledby="kw-call-title">
   <div class="wrap uc-call">
-    <div><p class="eyebrow"><span>Example call</span></p><h2 id="kw-call-title">One request, <span class="pop">sourced answers.</span></h2>
+    <div><p class="eyebrow"><span>For developers</span></p><h2 id="kw-call-title">One request, <span class="pop">sourced answers.</span></h2>
     <p class="uc-call-p">Your agent can make the same call as an MCP tool. Every result carries the source and last-verified date on each field and the credits it used. See the <a href="/docs">quickstart</a> and <a href="/pricing">pricing</a>.</p></div>
 <pre class="uc-code" tabindex="0" aria-label="Example request"><code>curl https://api.stethos.health/v1/providers/search \
   -H "Authorization: Bearer $STETHOS_KEY" \
@@ -101,8 +129,14 @@
 </section>
 <section class="sec" aria-labelledby="kw-faq-title">
   <div class="wrap faq-grid">
-    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">Medicare utilization data API: common questions</h2><p class="faq-more">Related: <a href="/docs#sources">Docs: data sources</a> · <a href="/physician-data-api">Physician data API</a> · <a href="/use-cases/medtech">Medtech sales</a></p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp?v=a84942d7" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
+    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">Common questions</h2><p class="faq-more">Related: <a href="/docs#sources">Docs: data sources</a> · <a href="/physician-data-api">Physician data API</a> · <a href="/use-cases/medtech">Medtech sales</a></p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp?v=a84942d7" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
     <div class="qs"><details><summary>Where does this data come from?</summary><p>CMS's Medicare Provider Utilization and Payment data. They summarize 100% of Original Medicare fee-for-service claims at the provider level, and CMS suppresses small counts to protect patients.</p></details><details><summary>How current is it?</summary><p>CMS releases these files once a year, covering a past year, so they describe volume and mix rather than this week's activity. Stethos shows the data year on every number and pairs it with fresher signals like affiliation and license changes.</p></details><details><summary>Does it include Medicare Advantage or commercial claims?</summary><p>No. These files cover Original Medicare only. Claims-level data, including Medicare Advantage, requires CMS research access, which Stethos plans to pursue.</p></details><details><summary>Is there patient data in it?</summary><p>No. Every number is aggregated to the provider, and CMS removes counts under 11. Stethos returns provider data only.</p></details></div>
+  </div>
+</section>
+<section class="sec" aria-labelledby="kw-rel-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Related data</span></p><h2 id="kw-rel-title">Pairs well <span class="pop">with.</span></h2></div>
+    <ul class="kw-rel"><li><a href="/physician-data-api"><img src="/img/g-art-s-physician-900.webp?v=e14bad4d" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Physician data API</b>A physician data API with specialties, affiliations, state licenses and practice contacts for every US physician, plus webhooks when physicians move.</span></a></li><li><a href="/home-health-hospice-data-api"><img src="/img/g-art-s-homehealth-900.webp?v=8c15ca35" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Home health and hospice data API</b>Volume, payments, patient mix, star ratings and ownership for every Medicare home health agency, hospice and nursing facility, via MCP or REST.</span></a></li><li><a href="/physician-referral-data"><img src="/img/g-art-s-referral-900.webp?v=339819b5" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Physician referral data</b>Map who works with whom: group rosters, hospital affiliations, ACO membership and shared practice sites for every US clinician.</span></a></li></ul>
   </div>
 </section>
 <section class="sec">

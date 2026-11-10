@@ -30,7 +30,7 @@
 <link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css?v=6c88d771">
 <link rel="stylesheet" href="/v2.css?v=978b51f1">
-<link rel="stylesheet" href="/site.css?v=b2dba5ee">
+<link rel="stylesheet" href="/site.css?v=b9b21c69">
 <link rel="stylesheet" href="/stethos.css?v=2c0729ac">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why not just ask a general AI assistant?", "acceptedAnswer": {"@type": "Answer", "text": "General assistants answer from whatever page they find, often out of date, with no source or date. Stethos returns current records with the source and last-checked date on every field, and alerts your agent when something changes."}}, {"@type": "Question", "name": "How is this different from free NPI MCP servers?", "acceptedAnswer": {"@type": "Answer", "text": "Free servers wrap the NPI registry. Stethos starts from the same NPI and adds state licenses, current affiliations, payer networks and organization data, with a source on every field and alerts when a record changes."}}, {"@type": "Question", "name": "Do I need to talk to sales?", "acceptedAnswer": {"@type": "Answer", "text": "No. It's self-serve: 1,000 free credits, no card, and plans and top-ups you can manage yourself."}}, {"@type": "Question", "name": "Does it handle patient data?", "acceptedAnswer": {"@type": "Answer", "text": "No. Stethos only holds data about clinicians and organizations, so there's no PHI and no business associate agreement needed."}}, {"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Each tool call costs credits: a search result is 0.05, a provider record is 1 plus optional fields. Build is $149 a month for 20,000 credits."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos-one.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Healthcare MCP server", "item": "https://stethos-one.vercel.app/healthcare-mcp-server"}]}]}</script>
 </head>
@@ -67,24 +67,52 @@
 </header>
 
 <main id="main">
-<section class="sec sp-top ph-top" aria-labelledby="kw-title">
+<section class="sec sp-top kw-hero" aria-labelledby="kw-title">
   <div class="wrap">
     <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Healthcare MCP server</nav>
-    <div class="head ph">
+    <div class="head center">
+      <p class="eyebrow"><span>Healthcare MCP server</span></p>
       <h1 id="kw-title">A healthcare MCP server <span class="pop">your agents can use today.</span></h1>
-      <p class="sp-lede">A remote MCP server for US healthcare provider data. Your agent can search clinicians and organizations, enrich any NPI, map health systems and watch for changes. Paste one URL, sign in and pay per tool call.</p>
+      <p class="kpi-lede">A remote MCP server for US healthcare provider data. Your agent can search clinicians and organizations, enrich any NPI, map health systems and watch for changes. Paste one URL, sign in and pay per tool call.</p>
       <div class="kw-ctas"><a class="btn-1" href="/signup">Start free trial</a><a class="btn-2" href="/docs">Read the docs</a></div>
     </div>
-    <div class="sp-panels uc-one"><div class="sp-panel sp-blue"><div class="sp-p-main">
-      <figure class="sp-scene"><img fetchpriority="high" src="/img/g-art-s-mcp-900.webp?v=d8f29477" srcset="/img/g-art-s-mcp-900.webp 900w, /img/g-art-s-mcp-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 560px" width="1600" height="1195" alt="Illustration for Healthcare MCP server" decoding="async"></figure>
-      <h2>Healthcare MCP server</h2><p class="sp-k">Works with</p><ul class="sp-src"><li>Claude, as a custom connector</li><li>Cursor and Claude Code</li><li>Your own agent, via any MCP SDK</li><li>REST and webhooks for everything else</li></ul></div>
-      <div class="sp-p-side"><p class="sp-k">Tools</p><ul class="sp-see"><li>search_providers</li><li>enrich_provider</li><li>enrich_org</li><li>watch_providers</li><li>recent_changes</li></ul></div></div></div>
   </div>
 </section>
-<figure class="scene-band"><img src="/img/g-w-s-mcp-1600.webp?v=b0105721" srcset="/img/g-w-s-mcp-900.webp 900w, /img/g-w-s-mcp-1600.webp 1600w" sizes="100vw" width="1600" height="686" alt="Illustration: a clay server box on a hill with cables running to little robots on clouds." loading="lazy" decoding="async"></figure>
+<figure class="scene-band"><img src="/img/g-w-s-mcp-1600.webp?v=b0105721" srcset="/img/g-w-s-mcp-900.webp 900w, /img/g-w-s-mcp-1600.webp 1600w" sizes="100vw" width="1600" height="686" alt="Illustration: a clay server box on a hill with cables running to little robots on clouds." decoding="async"></figure>
+<section class="sec" aria-labelledby="kw-data-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>The data</span></p><h2 id="kw-data-title">What it looks like <span class="pop">for your agent.</span></h2></div>
+    <div class="kw-data">
+      <article class="rec" aria-label="Sample record"><div class="rec-top"><div><p class="rec-t">search_providers</p><p class="rec-sub">Agent asked: independent spine surgeons in Arizona</p></div><span class="hq-live"><i></i>Sample data</span></div><ul class="rec-rows"><li><span class="rec-k">Results</span><span class="rec-v">412 surgeons in 38 groups</span><span class="rec-s">0.05 credits each</span></li><li><span class="rec-k">Top match</span><span class="rec-v">Dr. Jane Example, Northfield Spine Partners</span><span class="rec-s">verified today</span></li><li><span class="rec-k">Affiliations</span><span class="rec-v">2 hospitals, 1 surgery center</span><span class="rec-s">CMS data</span></li><li><span class="rec-k">Licenses</span><span class="rec-v">AZ active · NV active</span><span class="rec-s">state boards</span></li><li><span class="rec-k">Changed</span><span class="rec-v">Joined Northfield 3 weeks ago</span><span class="rec-s">practice website</span></li></ul></article>
+      <div class="kw-side"><p class="sp-k">Works with</p><ul class="kw-list"><li>Claude, as a custom connector</li><li>Cursor and Claude Code</li><li>Your own agent, via any MCP SDK</li><li>REST and webhooks for everything else</li></ul><p class="sp-k">Tools</p><ul class="kw-list"><li>search_providers</li><li>enrich_provider</li><li>enrich_org</li><li>watch_providers</li><li>recent_changes</li></ul></div>
+    </div>
+  </div>
+</section>
+<section class="sec kw-asks-sec" aria-labelledby="kw-ask-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Ask in plain words</span></p><h2 id="kw-ask-title">What your agent <span class="pop">can ask.</span></h2></div>
+    <ul class="kw-asks"><li><p class="ask-q">“Find independent spine surgeons in Arizona”</p><p class="ask-a">search_providers returns every match, with sources.</p></li><li><p class="ask-q">“Enrich these 20 NPIs with licenses and groups”</p><p class="ask-a">enrich_provider adds only the fields you ask for.</p></li><li><p class="ask-q">“Tell me when any of them changes groups”</p><p class="ask-a">watch_providers sends an event as it happens.</p></li><li><p class="ask-q">“What changed in my territory this week?”</p><p class="ask-a">recent_changes lists moves, new licenses and openings.</p></li></ul>
+  </div>
+</section>
+<section class="sec" aria-labelledby="kw-who-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Who uses it</span></p><h2 id="kw-who-title">Built for teams <span class="pop">like yours.</span></h2></div>
+    <ul class="kw-teams"><li><a href="/use-cases/digital-health" style="--t:#e4f0fd"><img class="seg-logo" src="/img/g-l-startups-160.webp?v=04e78ea2" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Healthcare startups</b>First customers and provider search.</span></a></li><li><a href="/use-cases/health-it-sales" style="--t:#ece6fb"><img class="seg-logo" src="/img/g-l-healthit-160.webp?v=cca03189" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Health IT and services</b>Sell to systems by EHR, size and leader.</span></a></li><li><a href="/use-cases/medtech" style="--t:#e4f0fd"><img class="seg-logo" src="/img/g-l-medtech-160.webp?v=00a46869" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Medtech</b>Reach surgeons the week they move.</span></a></li></ul>
+    <div class="kw-wf"><article class="ex-card" id="medtech-targeting" style="--t:#e4f0fd">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-stk-search-160.webp?v=0f948a37" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">Medtech · Sales</p><h2>Who should I call this week?</h2></div></div>
+      <p class="ex-trigger"><b>When</b> Every Monday, or whenever a rep asks.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Find independent spine surgeons in my territory doing 50+ fusions a year, and tell me who changed anything recently.”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Searches surgeons by specialty, territory and Medicare procedure volume</li><li>Ranks them by recent changes: a new group, a new surgery center, new hires</li><li>Creates or updates the contacts in Salesforce with a one-line talking point</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Medicare procedure volumes</li><li>Affiliations</li><li>Change events</li><li>Practice contacts</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">Salesforce or HubSpot, plus a weekly list in Claude</p></div>
+      </div><p class="ex-foot"><a href="/use-cases/medtech">More for Medtech <span aria-hidden="true">→</span></a></p>
+    </article>
+</div>
+  </div>
+</section>
 <section class="sec" aria-labelledby="kw-call-title">
   <div class="wrap uc-call">
-    <div><p class="eyebrow"><span>Example call</span></p><h2 id="kw-call-title">One request, <span class="pop">sourced answers.</span></h2>
+    <div><p class="eyebrow"><span>For developers</span></p><h2 id="kw-call-title">One request, <span class="pop">sourced answers.</span></h2>
     <p class="uc-call-p">Your agent can make the same call as an MCP tool. Every result carries the source and last-verified date on each field and the credits it used. See the <a href="/docs">quickstart</a> and <a href="/pricing">pricing</a>.</p></div>
 <pre class="uc-code" tabindex="0" aria-label="Example request"><code>curl https://api.stethos.health/v1/providers/search \
   -H "Authorization: Bearer $STETHOS_KEY" \
@@ -98,8 +126,14 @@
 </section>
 <section class="sec" aria-labelledby="kw-faq-title">
   <div class="wrap faq-grid">
-    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">Healthcare MCP server: common questions</h2><p class="faq-more">Related: <a href="/docs#connect">Docs: connect in five minutes</a> · <a href="/npi-lookup-api">NPI lookup API</a> · <a href="/pricing">Pricing</a></p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp?v=a84942d7" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
+    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">Common questions</h2><p class="faq-more">Related: <a href="/docs#connect">Docs: connect in five minutes</a> · <a href="/npi-lookup-api">NPI lookup API</a> · <a href="/pricing">Pricing</a></p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp?v=a84942d7" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
     <div class="qs"><details><summary>Why not just ask a general AI assistant?</summary><p>General assistants answer from whatever page they find, often out of date, with no source or date. Stethos returns current records with the source and last-checked date on every field, and alerts your agent when something changes.</p></details><details><summary>How is this different from free NPI MCP servers?</summary><p>Free servers wrap the NPI registry. Stethos starts from the same NPI and adds state licenses, current affiliations, payer networks and organization data, with a source on every field and alerts when a record changes.</p></details><details><summary>Do I need to talk to sales?</summary><p>No. It's self-serve: 1,000 free credits, no card, and plans and top-ups you can manage yourself.</p></details><details><summary>Does it handle patient data?</summary><p>No. Stethos only holds data about clinicians and organizations, so there's no PHI and no business associate agreement needed.</p></details><details><summary>What does it cost?</summary><p>Each tool call costs credits: a search result is 0.05, a provider record is 1 plus optional fields. Build is $149 a month for 20,000 credits.</p></details></div>
+  </div>
+</section>
+<section class="sec" aria-labelledby="kw-rel-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Related data</span></p><h2 id="kw-rel-title">Pairs well <span class="pop">with.</span></h2></div>
+    <ul class="kw-rel"><li><a href="/npi-lookup-api"><img src="/img/g-art-s-npi-900.webp?v=7d20daf3" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>NPI lookup API</b>Look up any NPI and get more than the registry: licenses, affiliations, payer networks and practice contacts, each with a source and verified date.</span></a></li><li><a href="/physician-data-api"><img src="/img/g-art-s-physician-900.webp?v=e14bad4d" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Physician data API</b>A physician data API with specialties, affiliations, state licenses and practice contacts for every US physician, plus webhooks when physicians move.</span></a></li><li><a href="/health-system-data-api"><img src="/img/g-art-s-healthsys-900.webp?v=f3cab129" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Health system data API</b>Health systems, hospitals, groups and clinics in one API: locations, rostered clinicians, leadership, open roles and ownership, with change alerts.</span></a></li></ul>
   </div>
 </section>
 <section class="sec">

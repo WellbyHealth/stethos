@@ -30,7 +30,7 @@
 <link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css?v=6c88d771">
 <link rel="stylesheet" href="/v2.css?v=978b51f1">
-<link rel="stylesheet" href="/site.css?v=b2dba5ee">
+<link rel="stylesheet" href="/site.css?v=b9b21c69">
 <link rel="stylesheet" href="/stethos.css?v=2c0729ac">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many physicians does it cover?", "acceptedAnswer": {"@type": "Answer", "text": "Stethos is built to cover every US physician with an NPI, from the NPPES registry, with other sources layered on top. Coverage of each field will be published at launch."}}, {"@type": "Question", "name": "Can I get contact details?", "acceptedAnswer": {"@type": "Answer", "text": "Practice contact details, such as phone, fax and practice address, are an optional field with their sources. Stethos does not sell personal home addresses or personal phone numbers."}}, {"@type": "Question", "name": "Can I sync it to a CRM?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Enrich records on demand and subscribe to watchers so your CRM is updated when a physician moves, instead of re-importing lists."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos-one.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Physician data API", "item": "https://stethos-one.vercel.app/physician-data-api"}]}]}</script>
 </head>
@@ -67,24 +67,52 @@
 </header>
 
 <main id="main">
-<section class="sec sp-top ph-top" aria-labelledby="kw-title">
+<section class="sec sp-top kw-hero" aria-labelledby="kw-title">
   <div class="wrap">
     <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Physician data API</nav>
-    <div class="head ph">
+    <div class="head center">
+      <p class="eyebrow"><span>Physician data API</span></p>
       <h1 id="kw-title">A physician data API that <span class="pop">keeps up with physicians.</span></h1>
-      <p class="sp-lede">Physicians change groups, add locations, pick up licenses and join networks all year. Stethos is built to keep one current record per physician, keyed on the NPI, and to tell your product or sales agent when that record changes.</p>
+      <p class="kpi-lede">Physicians change groups, add locations, pick up licenses and join networks all year. Stethos is built to keep one current record per physician, keyed on the NPI, and to tell your product or sales agent when that record changes.</p>
       <div class="kw-ctas"><a class="btn-1" href="/signup">Start free trial</a><a class="btn-2" href="/docs">Read the docs</a></div>
     </div>
-    <div class="sp-panels uc-one"><div class="sp-panel sp-blue"><div class="sp-p-main">
-      <figure class="sp-scene"><img fetchpriority="high" src="/img/g-art-s-physician-900.webp?v=e14bad4d" srcset="/img/g-art-s-physician-900.webp 900w, /img/g-art-s-physician-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 560px" width="1600" height="1195" alt="Illustration for Physician data API" decoding="async"></figure>
-      <h2>Physician data API</h2><p class="sp-k">Filter physicians by</p><ul class="sp-src"><li>Specialty and sub-specialty</li><li>State, city or radius</li><li>Hospital or group affiliation</li><li>License state</li><li>Payer network</li></ul></div>
-      <div class="sp-p-side"><p class="sp-k">Record includes</p><ul class="sp-see"><li>Practice locations and contact details</li><li>Affiliations with start dates</li><li>State licenses and status</li><li>Open Payments summary</li><li>Change history</li></ul></div></div></div>
   </div>
 </section>
-<figure class="scene-band"><img src="/img/g-w-s-physician-1600.webp?v=dc861539" srcset="/img/g-w-s-physician-900.webp 900w, /img/g-w-s-physician-1600.webp 1600w" sizes="100vw" width="1600" height="686" alt="Illustration: a town of clinics with map pins, a doctor's coat on a signpost and the robot pointing the way." loading="lazy" decoding="async"></figure>
+<figure class="scene-band"><img src="/img/g-w-s-physician-1600.webp?v=dc861539" srcset="/img/g-w-s-physician-900.webp 900w, /img/g-w-s-physician-1600.webp 1600w" sizes="100vw" width="1600" height="686" alt="Illustration: a town of clinics with map pins, a doctor's coat on a signpost and the robot pointing the way." decoding="async"></figure>
+<section class="sec" aria-labelledby="kw-data-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>The data</span></p><h2 id="kw-data-title">What it looks like <span class="pop">for your agent.</span></h2></div>
+    <div class="kw-data">
+      <article class="rec" aria-label="Sample record"><div class="rec-top"><div><p class="rec-t">Dr. Sam Example, DO</p><p class="rec-sub">Cardiology · Columbus, OH</p></div><span class="hq-live"><i></i>Sample data</span></div><ul class="rec-rows"><li><span class="rec-k">Practices</span><span class="rec-v">Example Heart Group, 2 locations</span><span class="rec-s">practice website</span></li><li><span class="rec-k">Hospitals</span><span class="rec-v">Example Medical Center, since 2019</span><span class="rec-s">CMS data</span></li><li><span class="rec-k">Licenses</span><span class="rec-v">OH active · KY active</span><span class="rec-s">state boards</span></li><li><span class="rec-k">Networks</span><span class="rec-v">5 commercial plans and Medicare</span><span class="rec-s">payer directories</span></li><li><span class="rec-k">Industry payments</span><span class="rec-v">3 companies last year</span><span class="rec-s">Open Payments</span></li><li><span class="rec-k">Last change</span><span class="rec-v">Added a Dublin, OH location</span><span class="rec-s">5 days ago</span></li></ul></article>
+      <div class="kw-side"><p class="sp-k">Filter physicians by</p><ul class="kw-list"><li>Specialty and sub-specialty</li><li>State, city or radius</li><li>Hospital or group affiliation</li><li>License state</li><li>Payer network</li></ul><p class="sp-k">Record includes</p><ul class="kw-list"><li>Practice locations and contact details</li><li>Affiliations with start dates</li><li>State licenses and status</li><li>Open Payments summary</li><li>Change history</li></ul></div>
+    </div>
+  </div>
+</section>
+<section class="sec kw-asks-sec" aria-labelledby="kw-ask-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Ask in plain words</span></p><h2 id="kw-ask-title">What your agent <span class="pop">can ask.</span></h2></div>
+    <ul class="kw-asks"><li><p class="ask-q">“Interventional cardiologists within 30 miles of Columbus”</p><p class="ask-a">Filtered by specialty, place and affiliation.</p></li><li><p class="ask-q">“Which of them joined a new group this year?”</p><p class="ask-a">Change history, with dates.</p></li><li><p class="ask-q">“Who is in network with our plan?”</p><p class="ask-a">Payer network listings, with sources.</p></li><li><p class="ask-q">“Alert me when a target adds a location”</p><p class="ask-a">A watcher sends the event.</p></li></ul>
+  </div>
+</section>
+<section class="sec" aria-labelledby="kw-who-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Who uses it</span></p><h2 id="kw-who-title">Built for teams <span class="pop">like yours.</span></h2></div>
+    <ul class="kw-teams"><li><a href="/use-cases/medtech" style="--t:#e4f0fd"><img class="seg-logo" src="/img/g-l-medtech-160.webp?v=00a46869" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Medtech</b>Reach surgeons the week they move.</span></a></li><li><a href="/use-cases/pharma" style="--t:#e3f4ec"><img class="seg-logo" src="/img/g-l-pharma-160.webp?v=fc1a4bbc" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Pharma and life sciences</b>Map prescribers and KOLs for a launch.</span></a></li><li><a href="/use-cases/healthcare-marketing" style="--t:#fde8dc"><img class="seg-logo" src="/img/g-l-marketing-160.webp?v=98b6b71c" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Healthcare marketing</b>Clinician audiences that stay current.</span></a></li></ul>
+    <div class="kw-wf"><article class="ex-card" id="territory-planning" style="--t:#e4f0fd">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-ic-pin-96.webp?v=bccaf9c5" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">Medtech · Sales operations</p><h2>Draw territories on real accounts</h2></div></div>
+      <p class="ex-trigger"><b>When</b> Annual planning, or a new rep starts.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Split Texas into four territories with a similar number of high-volume orthopedic surgeons in each.”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Counts target surgeons and facilities by county and metro</li><li>Weights them by procedure volume and current affiliation</li><li>Proposes balanced territories and lists the top accounts in each</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Medicare procedure volumes</li><li>Practice locations</li><li>Affiliations</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">A territory sheet for sales ops, and account owners in the CRM</p></div>
+      </div><p class="ex-foot"><a href="/use-cases/medtech">More for Medtech <span aria-hidden="true">→</span></a></p>
+    </article>
+</div>
+  </div>
+</section>
 <section class="sec" aria-labelledby="kw-call-title">
   <div class="wrap uc-call">
-    <div><p class="eyebrow"><span>Example call</span></p><h2 id="kw-call-title">One request, <span class="pop">sourced answers.</span></h2>
+    <div><p class="eyebrow"><span>For developers</span></p><h2 id="kw-call-title">One request, <span class="pop">sourced answers.</span></h2>
     <p class="uc-call-p">Your agent can make the same call as an MCP tool. Every result carries the source and last-verified date on each field and the credits it used. See the <a href="/docs">quickstart</a> and <a href="/pricing">pricing</a>.</p></div>
 <pre class="uc-code" tabindex="0" aria-label="Example request"><code>curl https://api.stethos.health/v1/providers/search \
   -H "Authorization: Bearer $STETHOS_KEY" \
@@ -98,8 +126,14 @@
 </section>
 <section class="sec" aria-labelledby="kw-faq-title">
   <div class="wrap faq-grid">
-    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">Physician data API: common questions</h2><p class="faq-more">Related: <a href="/use-cases/medtech">Medtech sales</a> · <a href="/npi-lookup-api">NPI lookup API</a> · <a href="/pricing">Pricing</a></p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp?v=a84942d7" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
+    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">Common questions</h2><p class="faq-more">Related: <a href="/use-cases/medtech">Medtech sales</a> · <a href="/npi-lookup-api">NPI lookup API</a> · <a href="/pricing">Pricing</a></p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp?v=a84942d7" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
     <div class="qs"><details><summary>How many physicians does it cover?</summary><p>Stethos is built to cover every US physician with an NPI, from the NPPES registry, with other sources layered on top. Coverage of each field will be published at launch.</p></details><details><summary>Can I get contact details?</summary><p>Practice contact details, such as phone, fax and practice address, are an optional field with their sources. Stethos does not sell personal home addresses or personal phone numbers.</p></details><details><summary>Can I sync it to a CRM?</summary><p>Yes. Enrich records on demand and subscribe to watchers so your CRM is updated when a physician moves, instead of re-importing lists.</p></details></div>
+  </div>
+</section>
+<section class="sec" aria-labelledby="kw-rel-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Related data</span></p><h2 id="kw-rel-title">Pairs well <span class="pop">with.</span></h2></div>
+    <ul class="kw-rel"><li><a href="/npi-lookup-api"><img src="/img/g-art-s-npi-900.webp?v=7d20daf3" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>NPI lookup API</b>Look up any NPI and get more than the registry: licenses, affiliations, payer networks and practice contacts, each with a source and verified date.</span></a></li><li><a href="/health-system-data-api"><img src="/img/g-art-s-healthsys-900.webp?v=f3cab129" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Health system data API</b>Health systems, hospitals, groups and clinics in one API: locations, rostered clinicians, leadership, open roles and ownership, with change alerts.</span></a></li><li><a href="/physician-referral-data"><img src="/img/g-art-s-referral-900.webp?v=339819b5" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Physician referral data</b>Map who works with whom: group rosters, hospital affiliations, ACO membership and shared practice sites for every US clinician.</span></a></li></ul>
   </div>
 </section>
 <section class="sec">

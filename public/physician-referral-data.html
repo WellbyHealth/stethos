@@ -30,7 +30,7 @@
 <link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css?v=6c88d771">
 <link rel="stylesheet" href="/v2.css?v=978b51f1">
-<link rel="stylesheet" href="/site.css?v=b2dba5ee">
+<link rel="stylesheet" href="/site.css?v=b9b21c69">
 <link rel="stylesheet" href="/stethos.css?v=2c0729ac">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does CMS publish referral data?", "acceptedAnswer": {"@type": "Answer", "text": "CMS released Physician Shared Patient Patterns files in response to FOIA requests, but they cover claims only through 2015. For current relationships, Stethos uses group, hospital, ACO and location data that CMS updates regularly."}}, {"@type": "Question", "name": "Will Stethos have claims-based referral flows?", "acceptedAnswer": {"@type": "Answer", "text": "That's the plan. Current referral counts between clinicians require claims-level Medicare data from CMS's Virtual Research Data Center. Stethos plans to apply as an Innovator; only aggregate, privacy-protected counts can leave that environment."}}, {"@type": "Question", "name": "Is this enough for sales targeting?", "acceptedAnswer": {"@type": "Answer", "text": "Often, yes. Shared groups, hospitals and ACOs explain most referral patterns, and they change faster than annual claims files. Stethos also tells your agent when an affiliation changes."}}, {"@type": "Question", "name": "Is there patient data?", "acceptedAnswer": {"@type": "Answer", "text": "No. Stethos holds data about clinicians and organizations only."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos-one.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Physician referral data", "item": "https://stethos-one.vercel.app/physician-referral-data"}]}]}</script>
 </head>
@@ -67,24 +67,52 @@
 </header>
 
 <main id="main">
-<section class="sec sp-top ph-top" aria-labelledby="kw-title">
+<section class="sec sp-top kw-hero" aria-labelledby="kw-title">
   <div class="wrap">
     <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Physician referral data</nav>
-    <div class="head ph">
+    <div class="head center">
+      <p class="eyebrow"><span>Physician referral data</span></p>
       <h1 id="kw-title">Physician referral data, <span class="pop">built from what CMS publishes.</span></h1>
-      <p class="sp-lede">Clinicians in the same group, hospital, ACO or building refer to each other most. Stethos maps those ties for every US clinician from CMS data, so your agent can see who is likely to refer to whom.</p>
+      <p class="kpi-lede">Clinicians in the same group, hospital, ACO or building refer to each other most. Stethos maps those ties for every US clinician from CMS data, so your agent can see who is likely to refer to whom.</p>
       <div class="kw-ctas"><a class="btn-1" href="/signup">Start free trial</a><a class="btn-2" href="/docs">Read the docs</a></div>
     </div>
-    <div class="sp-panels uc-one"><div class="sp-panel sp-pink"><div class="sp-p-main">
-      <figure class="sp-scene"><img fetchpriority="high" src="/img/g-art-s-referral-900.webp?v=339819b5" srcset="/img/g-art-s-referral-900.webp 900w, /img/g-art-s-referral-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 560px" width="1600" height="1195" alt="Illustration for Physician referral data" decoding="async"></figure>
-      <h2>Physician referral data</h2><p class="sp-k">Signals included</p><ul class="sp-src"><li>Group practice rosters from Care Compare</li><li>Hospital affiliations</li><li>ACO participation from the Shared Savings Program</li><li>Shared practice addresses and organization NPIs</li></ul></div>
-      <div class="sp-p-side"><p class="sp-k">What your agent can ask</p><ul class="sp-see"><li>Which cardiologists share a group or hospital with these PCPs</li><li>Which ACO a practice belongs to, and who else is in it</li><li>Which surgeons operate at the hospitals a group is affiliated with</li><li>Who joined or left a referral network this quarter</li></ul></div></div></div>
   </div>
 </section>
-<figure class="scene-band"><img src="/img/g-w-s-referral-1600.webp?v=86ecaea4" srcset="/img/g-w-s-referral-900.webp 900w, /img/g-w-s-referral-1600.webp 1600w" sizes="100vw" width="1600" height="686" alt="Illustration: envelopes with hearts flying like birds between a hospital and clinics on the hills." loading="lazy" decoding="async"></figure>
+<figure class="scene-band"><img src="/img/g-w-s-referral-1600.webp?v=86ecaea4" srcset="/img/g-w-s-referral-900.webp 900w, /img/g-w-s-referral-1600.webp 1600w" sizes="100vw" width="1600" height="686" alt="Illustration: envelopes with hearts flying like birds between a hospital and clinics on the hills." decoding="async"></figure>
+<section class="sec" aria-labelledby="kw-data-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>The data</span></p><h2 id="kw-data-title">What it looks like <span class="pop">for your agent.</span></h2></div>
+    <div class="kw-data">
+      <article class="rec" aria-label="Sample record"><div class="rec-top"><div><p class="rec-t">Example Primary Care</p><p class="rec-sub">Primary care group · 14 clinicians · Denver, CO</p></div><span class="hq-live"><i></i>Sample data</span></div><ul class="rec-rows"><li><span class="rec-k">Hospital ties</span><span class="rec-v">Example Regional Medical Center</span><span class="rec-s">CMS data</span></li><li><span class="rec-k">ACO</span><span class="rec-v">Example Health ACO, 42 practices</span><span class="rec-s">Shared Savings Program</span></li><li><span class="rec-k">Likely referrals</span><span class="rec-v">9 cardiologists share its hospital or ACO</span><span class="rec-s">Stethos referral map</span></li><li><span class="rec-k">Same building</span><span class="rec-v">Example Imaging, Example Heart Group</span><span class="rec-s">practice addresses</span></li><li><span class="rec-k">Changed</span><span class="rec-v">2 physicians joined from another group</span><span class="rec-s">this quarter</span></li></ul></article>
+      <div class="kw-side"><p class="sp-k">Signals included</p><ul class="kw-list"><li>Group practice rosters from Care Compare</li><li>Hospital affiliations</li><li>ACO participation from the Shared Savings Program</li><li>Shared practice addresses and organization NPIs</li></ul></div>
+    </div>
+  </div>
+</section>
+<section class="sec kw-asks-sec" aria-labelledby="kw-ask-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Ask in plain words</span></p><h2 id="kw-ask-title">What your agent <span class="pop">can ask.</span></h2></div>
+    <ul class="kw-asks"><li><p class="ask-q">“Which cardiologists share a group or hospital with these PCPs?”</p><p class="ask-a">Ties ranked by strength.</p></li><li><p class="ask-q">“Which ACO is this practice in, and who else is in it?”</p><p class="ask-a">ACO membership, with every practice.</p></li><li><p class="ask-q">“Which surgeons operate at this group's hospitals?”</p><p class="ask-a">Hospital affiliations, both ways.</p></li><li><p class="ask-q">“Who joined or left this referral network this quarter?”</p><p class="ask-a">Affiliation change events.</p></li></ul>
+  </div>
+</section>
+<section class="sec" aria-labelledby="kw-who-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Who uses it</span></p><h2 id="kw-who-title">Built for teams <span class="pop">like yours.</span></h2></div>
+    <ul class="kw-teams"><li><a href="/use-cases/post-acute" style="--t:#fdf5d2"><img class="seg-logo" src="/img/g-l-postacute-160.webp?v=f29aae3a" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Post-acute care</b>Rank referrers and see who's gone quiet.</span></a></li><li><a href="/use-cases/health-systems" style="--t:#fbe4ea"><img class="seg-logo" src="/img/g-l-healthsystems-160.webp?v=5beee26b" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Health systems</b>Physician relations and network growth.</span></a></li><li><a href="/use-cases/medtech" style="--t:#e4f0fd"><img class="seg-logo" src="/img/g-l-medtech-160.webp?v=00a46869" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Medtech</b>Reach surgeons the week they move.</span></a></li></ul>
+    <div class="kw-wf"><article class="ex-card" id="referral-partners" style="--t:#e8f3d2">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-ic-pin-96.webp?v=bccaf9c5" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">Post-acute care and agencies · Referral development</p><h2>Find the doctors who should be referring to you</h2></div></div>
+      <p class="ex-trigger"><b>When</b> There are more referrers than your team can cover, or referrals dip.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Which physicians in Maricopa County order the most home health for Medicare patients, and which of them don't refer to us yet?”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Ranks physicians by home health and hospice orders from Medicare data</li><li>Adds their practice, hospital ties and contact details</li><li>Builds a call plan for each liaison and logs visits in the CRM</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Medicare post-acute utilization</li><li>Affiliations</li><li>Practice contacts</li><li>Your CRM</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">Your referral CRM, plus a weekly list in Claude</p></div>
+      </div><p class="ex-foot"><a href="/use-cases/post-acute">More for Post-acute care and agencies <span aria-hidden="true">→</span></a></p>
+    </article>
+</div>
+  </div>
+</section>
 <section class="sec" aria-labelledby="kw-call-title">
   <div class="wrap uc-call">
-    <div><p class="eyebrow"><span>Example call</span></p><h2 id="kw-call-title">One request, <span class="pop">sourced answers.</span></h2>
+    <div><p class="eyebrow"><span>For developers</span></p><h2 id="kw-call-title">One request, <span class="pop">sourced answers.</span></h2>
     <p class="uc-call-p">Your agent can make the same call as an MCP tool. Every result carries the source and last-verified date on each field and the credits it used. See the <a href="/docs">quickstart</a> and <a href="/pricing">pricing</a>.</p></div>
 <pre class="uc-code" tabindex="0" aria-label="Example request"><code>curl https://api.stethos.health/v1/providers/enrich \
   -H "Authorization: Bearer $STETHOS_KEY" \
@@ -101,8 +129,14 @@
 </section>
 <section class="sec" aria-labelledby="kw-faq-title">
   <div class="wrap faq-grid">
-    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">Physician referral data: common questions</h2><p class="faq-more">Related: <a href="/docs#sources">Docs: data sources</a> · <a href="/physician-data-api">Physician data API</a> · <a href="/use-cases/medtech">Medtech sales</a></p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp?v=a84942d7" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
+    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">Common questions</h2><p class="faq-more">Related: <a href="/docs#sources">Docs: data sources</a> · <a href="/physician-data-api">Physician data API</a> · <a href="/use-cases/medtech">Medtech sales</a></p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp?v=a84942d7" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
     <div class="qs"><details><summary>Does CMS publish referral data?</summary><p>CMS released Physician Shared Patient Patterns files in response to FOIA requests, but they cover claims only through 2015. For current relationships, Stethos uses group, hospital, ACO and location data that CMS updates regularly.</p></details><details><summary>Will Stethos have claims-based referral flows?</summary><p>That's the plan. Current referral counts between clinicians require claims-level Medicare data from CMS's Virtual Research Data Center. Stethos plans to apply as an Innovator; only aggregate, privacy-protected counts can leave that environment.</p></details><details><summary>Is this enough for sales targeting?</summary><p>Often, yes. Shared groups, hospitals and ACOs explain most referral patterns, and they change faster than annual claims files. Stethos also tells your agent when an affiliation changes.</p></details><details><summary>Is there patient data?</summary><p>No. Stethos holds data about clinicians and organizations only.</p></details></div>
+  </div>
+</section>
+<section class="sec" aria-labelledby="kw-rel-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Related data</span></p><h2 id="kw-rel-title">Pairs well <span class="pop">with.</span></h2></div>
+    <ul class="kw-rel"><li><a href="/physician-data-api"><img src="/img/g-art-s-physician-900.webp?v=e14bad4d" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Physician data API</b>A physician data API with specialties, affiliations, state licenses and practice contacts for every US physician, plus webhooks when physicians move.</span></a></li><li><a href="/home-health-hospice-data-api"><img src="/img/g-art-s-homehealth-900.webp?v=8c15ca35" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Home health and hospice data API</b>Volume, payments, patient mix, star ratings and ownership for every Medicare home health agency, hospice and nursing facility, via MCP or REST.</span></a></li><li><a href="/health-system-data-api"><img src="/img/g-art-s-healthsys-900.webp?v=f3cab129" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Health system data API</b>Health systems, hospitals, groups and clinics in one API: locations, rostered clinicians, leadership, open roles and ownership, with change alerts.</span></a></li></ul>
   </div>
 </section>
 <section class="sec">

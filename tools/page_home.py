@@ -55,7 +55,6 @@ def page():
 <main id="main">
 <section class="hero cx" aria-labelledby="hero-title">
   <div class="wrap cx-copy">
-    <p class="cx-eyebrow">Healthcare market data for AI agents</p>
     <h1 id="hero-title">Turn your agent into a world&#8209;class <span class="rot" data-rot data-words="pharma rep|SDR|deal team|marketing team|recruiter"><span class="rot-w on">medtech rep</span></span></h1>
     <p class="cx-sub">Providers, organizations, referral patterns, ownership and Medicare volume across the US, current and sourced, inside the CRM and AI tools your team already uses.</p>
     <div class="cx-ctas"><a class="cx-btn dark" href="{TRIAL}">Start free trial<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="cx-btn light" href="/how-it-works">See how it works<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>

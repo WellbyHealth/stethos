@@ -30,7 +30,7 @@
 <link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css?v=6c88d771">
 <link rel="stylesheet" href="/v2.css?v=978b51f1">
-<link rel="stylesheet" href="/site.css?v=b2dba5ee">
+<link rel="stylesheet" href="/site.css?v=b9b21c69">
 <link rel="stylesheet" href="/stethos.css?v=2c0729ac">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is this different from Trella Health or similar platforms?", "acceptedAnswer": {"@type": "Answer", "text": "Those platforms are built on claims-level Medicare data and sold as annual subscriptions with dashboards. Stethos starts from CMS data, priced per tool call and built for agents through MCP. Claims-level referral flows are planned, through CMS's research data program."}}, {"@type": "Question", "name": "How current is it?", "acceptedAnswer": {"@type": "Answer", "text": "Star ratings and quality measures refresh monthly to quarterly. The utilization files are released yearly. Every field shows its source and date."}}, {"@type": "Question", "name": "Can I see referral sources and destinations?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet. Which hospitals and physicians send patients to which agencies requires claims-level data from CMS's Virtual Research Data Center, which Stethos plans to apply for. Today you get each provider's volume, mix, quality and ownership."}}, {"@type": "Question", "name": "Does it include patient data?", "acceptedAnswer": {"@type": "Answer", "text": "No. Everything is aggregated to the provider, and CMS suppresses small counts."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos-one.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Home health and hospice data API", "item": "https://stethos-one.vercel.app/home-health-hospice-data-api"}]}]}</script>
 </head>
@@ -67,24 +67,52 @@
 </header>
 
 <main id="main">
-<section class="sec sp-top ph-top" aria-labelledby="kw-title">
+<section class="sec sp-top kw-hero" aria-labelledby="kw-title">
   <div class="wrap">
     <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Home health and hospice data API</nav>
-    <div class="head ph">
+    <div class="head center">
+      <p class="eyebrow"><span>Home health and hospice data API</span></p>
       <h1 id="kw-title">Post-acute provider data <span class="pop">for home health, hospice and SNFs.</span></h1>
-      <p class="sp-lede">One record for every Medicare home health agency, hospice, nursing facility, rehab facility and long-term care hospital: volume, star ratings, quality, ownership and costs, keyed to its CCN and NPI.</p>
+      <p class="kpi-lede">One record for every Medicare home health agency, hospice, nursing facility, rehab facility and long-term care hospital: volume, star ratings, quality, ownership and costs, keyed to its CCN and NPI.</p>
       <div class="kw-ctas"><a class="btn-1" href="/signup">Start free trial</a><a class="btn-2" href="/docs">Read the docs</a></div>
     </div>
-    <div class="sp-panels uc-one"><div class="sp-panel sp-butter"><div class="sp-p-main">
-      <figure class="sp-scene"><img fetchpriority="high" src="/img/g-art-s-homehealth-900.webp?v=8c15ca35" srcset="/img/g-art-s-homehealth-900.webp 900w, /img/g-art-s-homehealth-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 560px" width="1600" height="1195" alt="Illustration for Home health and hospice data API" decoding="async"></figure>
-      <h2>Home health and hospice data API</h2><p class="sp-k">CMS files included</p><ul class="sp-src"><li>Medicare Post-Acute Care &amp; Hospice, by provider</li><li>Care Compare star ratings and quality measures</li><li>Provider of Services file: ownership, beds, certification</li><li>Hospital and SNF cost reports (HCRIS)</li></ul></div>
-      <div class="sp-p-side"><p class="sp-k">What your agent can ask</p><ul class="sp-see"><li>Which hospices in a county serve the most dementia patients</li><li>Which home health agencies gained star ratings this year</li><li>Who owns every SNF in a metro, and how many beds each has</li><li>Which agencies' Medicare volume is growing fastest</li></ul></div></div></div>
   </div>
 </section>
-<figure class="scene-band"><img src="/img/g-w-s-homehealth-1600.webp?v=8eca9e60" srcset="/img/g-w-s-homehealth-900.webp 900w, /img/g-w-s-homehealth-1600.webp 1600w" sizes="100vw" width="1600" height="686" alt="Illustration: a little car on a country road visiting houses with hearts on their roofs." loading="lazy" decoding="async"></figure>
+<figure class="scene-band"><img src="/img/g-w-s-homehealth-1600.webp?v=8eca9e60" srcset="/img/g-w-s-homehealth-900.webp 900w, /img/g-w-s-homehealth-1600.webp 1600w" sizes="100vw" width="1600" height="686" alt="Illustration: a little car on a country road visiting houses with hearts on their roofs." decoding="async"></figure>
+<section class="sec" aria-labelledby="kw-data-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>The data</span></p><h2 id="kw-data-title">What it looks like <span class="pop">for your agent.</span></h2></div>
+    <div class="kw-data">
+      <article class="rec" aria-label="Sample record"><div class="rec-top"><div><p class="rec-t">Example Home Health of Ohio</p><p class="rec-sub">Home health agency · Columbus, OH</p></div><span class="hq-live"><i></i>Sample data</span></div><ul class="rec-rows"><li><span class="rec-k">Medicare episodes</span><span class="rec-v">3,120 in the latest year</span><span class="rec-s">CMS data</span></li><li><span class="rec-k">Star rating</span><span class="rec-v">4 stars, up from 3.5</span><span class="rec-s">Care Compare</span></li><li><span class="rec-k">Patient mix</span><span class="rec-v">41% post-surgical, 22% cardiac</span><span class="rec-s">CMS data</span></li><li><span class="rec-k">Owner</span><span class="rec-v">Private equity, acquired last year</span><span class="rec-s">CMS ownership data</span></li><li><span class="rec-k">Service area</span><span class="rec-v">9 counties</span><span class="rec-s">Provider of Services</span></li><li><span class="rec-k">Costs</span><span class="rec-v">Cost per visit and margin</span><span class="rec-s">cost reports</span></li></ul></article>
+      <div class="kw-side"><p class="sp-k">CMS files included</p><ul class="kw-list"><li>Medicare Post-Acute Care &amp; Hospice, by provider</li><li>Care Compare star ratings and quality measures</li><li>Provider of Services file: ownership, beds, certification</li><li>Hospital and SNF cost reports (HCRIS)</li></ul></div>
+    </div>
+  </div>
+</section>
+<section class="sec kw-asks-sec" aria-labelledby="kw-ask-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Ask in plain words</span></p><h2 id="kw-ask-title">What your agent <span class="pop">can ask.</span></h2></div>
+    <ul class="kw-asks"><li><p class="ask-q">“Which hospices in a county serve the most dementia patients?”</p><p class="ask-a">Volume and patient mix by provider.</p></li><li><p class="ask-q">“Which home health agencies gained star ratings this year?”</p><p class="ask-a">Ratings with the change.</p></li><li><p class="ask-q">“Who owns every SNF in a metro, and how many beds each has?”</p><p class="ask-a">Owners, owner type and beds.</p></li><li><p class="ask-q">“Whose Medicare volume is growing fastest?”</p><p class="ask-a">Year-over-year volume by agency.</p></li></ul>
+  </div>
+</section>
+<section class="sec" aria-labelledby="kw-who-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Who uses it</span></p><h2 id="kw-who-title">Built for teams <span class="pop">like yours.</span></h2></div>
+    <ul class="kw-teams"><li><a href="/use-cases/post-acute" style="--t:#fdf5d2"><img class="seg-logo" src="/img/g-l-postacute-160.webp?v=f29aae3a" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Post-acute care</b>Rank referrers and see who's gone quiet.</span></a></li><li><a href="/use-cases/investors" style="--t:#fbe4ea"><img class="seg-logo" src="/img/g-l-investors-160.webp?v=bb2097b6" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Investors and PE</b>Roll-ups, headcount and new sites.</span></a></li><li><a href="/use-cases/health-systems" style="--t:#fbe4ea"><img class="seg-logo" src="/img/g-l-healthsystems-160.webp?v=5beee26b" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Health systems</b>Physician relations and network growth.</span></a></li></ul>
+    <div class="kw-wf"><article class="ex-card" id="discharge-sources" style="--t:#f5efdf">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-ic-gov-cut.webp?v=7fd56fe8" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">Post-acute care and agencies · Hospital partnerships</p><h2>Get on the discharge planner's short list</h2></div></div>
+      <p class="ex-trigger"><b>When</b> A skilled nursing facility or agency wants more hospital referrals.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Which hospitals within 20 miles discharge the most patients to skilled nursing, who leads case management there, and how do we compare with nearby facilities?”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Lists nearby hospitals by Medicare discharge volume to post-acute care</li><li>Adds case management and population health leaders at each</li><li>Compares your Care Compare ratings with nearby competitors for the pitch</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Hospitals</li><li>Medicare post-acute files</li><li>Care Compare ratings</li><li>Leaders</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">A partnership plan in Claude and accounts in the CRM</p></div>
+      </div><p class="ex-foot"><a href="/use-cases/post-acute">More for Post-acute care and agencies <span aria-hidden="true">→</span></a></p>
+    </article>
+</div>
+  </div>
+</section>
 <section class="sec" aria-labelledby="kw-call-title">
   <div class="wrap uc-call">
-    <div><p class="eyebrow"><span>Example call</span></p><h2 id="kw-call-title">One request, <span class="pop">sourced answers.</span></h2>
+    <div><p class="eyebrow"><span>For developers</span></p><h2 id="kw-call-title">One request, <span class="pop">sourced answers.</span></h2>
     <p class="uc-call-p">Your agent can make the same call as an MCP tool. Every result carries the source and last-verified date on each field and the credits it used. See the <a href="/docs">quickstart</a> and <a href="/pricing">pricing</a>.</p></div>
 <pre class="uc-code" tabindex="0" aria-label="Example request"><code>curl https://api.stethos.health/v1/orgs/search \
   -H "Authorization: Bearer $STETHOS_KEY" \
@@ -102,8 +130,14 @@
 </section>
 <section class="sec" aria-labelledby="kw-faq-title">
   <div class="wrap faq-grid">
-    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">Home health and hospice data API: common questions</h2><p class="faq-more">Related: <a href="/docs#sources">Docs: data sources</a> · <a href="/health-system-data-api">Health system data API</a> · <a href="/use-cases/provider-directories">Provider directories</a></p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp?v=a84942d7" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
+    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">Common questions</h2><p class="faq-more">Related: <a href="/docs#sources">Docs: data sources</a> · <a href="/health-system-data-api">Health system data API</a> · <a href="/use-cases/provider-directories">Provider directories</a></p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp?v=a84942d7" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
     <div class="qs"><details><summary>How is this different from Trella Health or similar platforms?</summary><p>Those platforms are built on claims-level Medicare data and sold as annual subscriptions with dashboards. Stethos starts from CMS data, priced per tool call and built for agents through MCP. Claims-level referral flows are planned, through CMS's research data program.</p></details><details><summary>How current is it?</summary><p>Star ratings and quality measures refresh monthly to quarterly. The utilization files are released yearly. Every field shows its source and date.</p></details><details><summary>Can I see referral sources and destinations?</summary><p>Not yet. Which hospitals and physicians send patients to which agencies requires claims-level data from CMS's Virtual Research Data Center, which Stethos plans to apply for. Today you get each provider's volume, mix, quality and ownership.</p></details><details><summary>Does it include patient data?</summary><p>No. Everything is aggregated to the provider, and CMS suppresses small counts.</p></details></div>
+  </div>
+</section>
+<section class="sec" aria-labelledby="kw-rel-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Related data</span></p><h2 id="kw-rel-title">Pairs well <span class="pop">with.</span></h2></div>
+    <ul class="kw-rel"><li><a href="/private-equity-healthcare-ownership-data"><img src="/img/g-art-s-pe-900.webp?v=af729207" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Private equity ownership data</b>Which private equity firms own which practices, clinics, MSOs and facilities, in which markets.</span></a></li><li><a href="/physician-referral-data"><img src="/img/g-art-s-referral-900.webp?v=339819b5" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Physician referral data</b>Map who works with whom: group rosters, hospital affiliations, ACO membership and shared practice sites for every US clinician.</span></a></li><li><a href="/health-system-data-api"><img src="/img/g-art-s-healthsys-900.webp?v=f3cab129" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Health system data API</b>Health systems, hospitals, groups and clinics in one API: locations, rostered clinicians, leadership, open roles and ownership, with change alerts.</span></a></li></ul>
   </div>
 </section>
 <section class="sec">

@@ -30,7 +30,7 @@
 <link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css?v=6c88d771">
 <link rel="stylesheet" href="/v2.css?v=978b51f1">
-<link rel="stylesheet" href="/site.css?v=b2dba5ee">
+<link rel="stylesheet" href="/site.css?v=b9b21c69">
 <link rel="stylesheet" href="/stethos.css?v=2c0729ac">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Where does ownership data come from?", "acceptedAnswer": {"@type": "Answer", "text": "For hospitals, nursing homes, home health agencies, hospices, rural health clinics and FQHCs, CMS publishes ownership files that list each owner and flag owner types such as private equity. For physician practices, surgery centers and MSOs, which those files don't cover, Stethos is built to combine firm portfolio pages, acquisition announcements and state filings. Every link carries its source and the date it was seen."}}, {"@type": "Question", "name": "Who is this for?", "acceptedAnswer": {"@type": "Answer", "text": "Teams that sell to multi-site, PE-backed groups: revenue cycle, billing, staffing, software and services vendors. Selling to one MSO can open dozens of sites, and the decision usually sits with the MSO and the firm's operating partners rather than each clinic."}}, {"@type": "Question", "name": "Can I see the people, not just the companies?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Stethos is built to return MSO executives and the firm's healthcare deal and operating partners, with business contact details where they're published."}}, {"@type": "Question", "name": "How current is it?", "acceptedAnswer": {"@type": "Answer", "text": "CMS updates its ownership files regularly, and acquisitions are picked up when they're announced. Your agent can watch a firm or a platform and hear about new add-ons as they happen."}}, {"@type": "Question", "name": "Does it include patient data?", "acceptedAnswer": {"@type": "Answer", "text": "No. Stethos holds data about organizations, their owners and the people who run them only."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos-one.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Private equity ownership data", "item": "https://stethos-one.vercel.app/private-equity-healthcare-ownership-data"}]}]}</script>
 </head>
@@ -67,24 +67,52 @@
 </header>
 
 <main id="main">
-<section class="sec sp-top ph-top" aria-labelledby="kw-title">
+<section class="sec sp-top kw-hero" aria-labelledby="kw-title">
   <div class="wrap">
     <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Private equity ownership data</nav>
-    <div class="head ph">
+    <div class="head center">
+      <p class="eyebrow"><span>Private equity ownership data</span></p>
       <h1 id="kw-title">See which private equity firms own <span class="pop">which clinics, and where.</span></h1>
-      <p class="sp-lede">Private equity has rolled up practices, surgery centers and agencies across the US. Stethos is built to map each firm, its platforms and every site they own by market, plus the people who decide for all of them.</p>
+      <p class="kpi-lede">Private equity has rolled up practices, surgery centers and agencies across the US. Stethos is built to map each firm, its platforms and every site they own by market, plus the people who decide for all of them.</p>
       <div class="kw-ctas"><a class="btn-1" href="/signup">Start free trial</a><a class="btn-2" href="/docs">Read the docs</a></div>
     </div>
-    <div class="sp-panels uc-one"><div class="sp-panel sp-blue"><div class="sp-p-main">
-      <figure class="sp-scene"><img fetchpriority="high" src="/img/g-art-s-pe-900.webp?v=af729207" srcset="/img/g-art-s-pe-900.webp 900w, /img/g-art-s-pe-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 560px" width="1600" height="1195" alt="Illustration for Private equity ownership data" decoding="async"></figure>
-      <h2>Private equity ownership data</h2><p class="sp-k">What you get</p><ul class="sp-src"><li>Private equity owner for each practice, clinic, MSO and facility</li><li>Platform and add-on links, with the date each deal was seen</li><li>Every site in a roll-up, by state and metro</li><li>Deal team and operating partners at the firm, plus MSO leadership</li></ul></div>
-      <div class="sp-p-side"><p class="sp-k">What your agent can ask</p><ul class="sp-see"><li>Which PE-backed orthopedic or GI groups operate in Texas</li><li>Every site owned by this firm's dermatology platform</li><li>Which home health agencies in Ohio have a private equity owner</li><li>Which practices in my territory were acquired this quarter</li></ul></div></div></div>
   </div>
 </section>
-<figure class="scene-band"><img src="/img/g-w-s-pe-1600.webp?v=dd7adeb6" srcset="/img/g-w-s-pe-900.webp 900w, /img/g-w-s-pe-1600.webp 1600w" sizes="100vw" width="1600" height="686" alt="Illustration: three hill regions whose clinics share flag colors, each linked to a matching briefcase-shaped building." loading="lazy" decoding="async"></figure>
+<figure class="scene-band"><img src="/img/g-w-s-pe-1600.webp?v=dd7adeb6" srcset="/img/g-w-s-pe-900.webp 900w, /img/g-w-s-pe-1600.webp 1600w" sizes="100vw" width="1600" height="686" alt="Illustration: three hill regions whose clinics share flag colors, each linked to a matching briefcase-shaped building." decoding="async"></figure>
+<section class="sec" aria-labelledby="kw-data-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>The data</span></p><h2 id="kw-data-title">What it looks like <span class="pop">for your agent.</span></h2></div>
+    <div class="kw-data">
+      <article class="rec" aria-label="Sample record"><div class="rec-top"><div><p class="rec-t">Example Capital Partners</p><p class="rec-sub">Private equity firm · healthcare services</p></div><span class="hq-live"><i></i>Sample data</span></div><ul class="rec-rows"><li><span class="rec-k">Platforms</span><span class="rec-v">2: gastroenterology and dermatology</span><span class="rec-s">firm website</span></li><li><span class="rec-k">Sites</span><span class="rec-v">61 sites in Texas, Oklahoma and Louisiana</span><span class="rec-s">practice websites</span></li><li><span class="rec-k">Latest add-on</span><span class="rec-v">Example Digestive Care, Tyler TX</span><span class="rec-s">announced 3 weeks ago</span></li><li><span class="rec-k">MSO</span><span class="rec-v">Example GI Partners</span><span class="rec-s">state filings</span></li><li><span class="rec-k">People</span><span class="rec-v">MSO CEO, CFO and revenue cycle lead; 2 operating partners</span><span class="rec-s">websites</span></li><li><span class="rec-k">Also owns</span><span class="rec-v">4 home health agencies in Texas</span><span class="rec-s">CMS ownership data</span></li></ul></article>
+      <div class="kw-side"><p class="sp-k">What you get</p><ul class="kw-list"><li>Private equity owner for each practice, clinic, MSO and facility</li><li>Platform and add-on links, with the date each deal was seen</li><li>Every site in a roll-up, by state and metro</li><li>Deal team and operating partners at the firm, plus MSO leadership</li></ul></div>
+    </div>
+  </div>
+</section>
+<section class="sec kw-asks-sec" aria-labelledby="kw-ask-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Ask in plain words</span></p><h2 id="kw-ask-title">What your agent <span class="pop">can ask.</span></h2></div>
+    <ul class="kw-asks"><li><p class="ask-q">“Which PE-backed orthopedic or GI groups operate in Texas?”</p><p class="ask-a">Firms, platforms and sites by metro.</p></li><li><p class="ask-q">“List every site in this firm's dermatology platform”</p><p class="ask-a">Each site, with the date it joined.</p></li><li><p class="ask-q">“Which home health agencies in Ohio have a private equity owner?”</p><p class="ask-a">Owner and owner type per agency.</p></li><li><p class="ask-q">“Which practices in my territory were acquired this quarter?”</p><p class="ask-a">Add-on events as they're seen.</p></li></ul>
+  </div>
+</section>
+<section class="sec" aria-labelledby="kw-who-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Who uses it</span></p><h2 id="kw-who-title">Built for teams <span class="pop">like yours.</span></h2></div>
+    <ul class="kw-teams"><li><a href="/use-cases/investors" style="--t:#fbe4ea"><img class="seg-logo" src="/img/g-l-investors-160.webp?v=bb2097b6" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Investors and PE</b>Roll-ups, headcount and new sites.</span></a></li><li><a href="/use-cases/health-it-sales" style="--t:#ece6fb"><img class="seg-logo" src="/img/g-l-healthit-160.webp?v=cca03189" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Health IT and services</b>Sell to systems by EHR, size and leader.</span></a></li><li><a href="/use-cases/post-acute" style="--t:#fdf5d2"><img class="seg-logo" src="/img/g-l-postacute-160.webp?v=f29aae3a" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Post-acute care</b>Rank referrers and see who's gone quiet.</span></a></li></ul>
+    <div class="kw-wf"><article class="ex-card" id="pe-rollup-sell" style="--t:#fde8e4">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-stk-orgs-160.webp?v=6843bd5a" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">Health IT and services · Sales</p><h2>Sell to a PE-backed roll-up as one account</h2></div></div>
+      <p class="ex-trigger"><b>When</b> A billing, staffing or software vendor wants multi-site groups.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Which private equity firms own GI and orthopedic groups in the Southeast, how many sites does each platform have, and who runs the MSO?”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Maps each firm's platforms and every site they own, by state</li><li>Adds the MSO's executives and the firm's healthcare operating partners</li><li>Creates one account per platform in your CRM, with its sites underneath</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Ownership</li><li>Organizations</li><li>Leadership</li><li>Locations</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">Your CRM, one account per platform</p></div>
+      </div><p class="ex-foot"><a href="/use-cases/health-it-sales">More for Health IT and services <span aria-hidden="true">→</span></a></p>
+    </article>
+</div>
+  </div>
+</section>
 <section class="sec" aria-labelledby="kw-call-title">
   <div class="wrap uc-call">
-    <div><p class="eyebrow"><span>Example call</span></p><h2 id="kw-call-title">One request, <span class="pop">sourced answers.</span></h2>
+    <div><p class="eyebrow"><span>For developers</span></p><h2 id="kw-call-title">One request, <span class="pop">sourced answers.</span></h2>
     <p class="uc-call-p">Your agent can make the same call as an MCP tool. Every result carries the source and last-verified date on each field and the credits it used. See the <a href="/docs">quickstart</a> and <a href="/pricing">pricing</a>.</p></div>
 <pre class="uc-code" tabindex="0" aria-label="Example request"><code>curl https://api.stethos.health/v1/orgs/search \
   -H "Authorization: Bearer $STETHOS_KEY" \
@@ -104,8 +132,14 @@
 </section>
 <section class="sec" aria-labelledby="kw-faq-title">
   <div class="wrap faq-grid">
-    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">Private equity ownership data: common questions</h2><p class="faq-more">Related: <a href="/docs#sources">Docs: data sources</a> · <a href="/blog/cms-ownership-data-private-equity">What CMS ownership files show</a> · <a href="/use-cases/investors">Healthcare investors</a></p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp?v=a84942d7" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
+    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">Common questions</h2><p class="faq-more">Related: <a href="/docs#sources">Docs: data sources</a> · <a href="/blog/cms-ownership-data-private-equity">What CMS ownership files show</a> · <a href="/use-cases/investors">Healthcare investors</a></p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp?v=a84942d7" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
     <div class="qs"><details><summary>Where does ownership data come from?</summary><p>For hospitals, nursing homes, home health agencies, hospices, rural health clinics and FQHCs, CMS publishes ownership files that list each owner and flag owner types such as private equity. For physician practices, surgery centers and MSOs, which those files don't cover, Stethos is built to combine firm portfolio pages, acquisition announcements and state filings. Every link carries its source and the date it was seen.</p></details><details><summary>Who is this for?</summary><p>Teams that sell to multi-site, PE-backed groups: revenue cycle, billing, staffing, software and services vendors. Selling to one MSO can open dozens of sites, and the decision usually sits with the MSO and the firm's operating partners rather than each clinic.</p></details><details><summary>Can I see the people, not just the companies?</summary><p>Yes. Stethos is built to return MSO executives and the firm's healthcare deal and operating partners, with business contact details where they're published.</p></details><details><summary>How current is it?</summary><p>CMS updates its ownership files regularly, and acquisitions are picked up when they're announced. Your agent can watch a firm or a platform and hear about new add-ons as they happen.</p></details><details><summary>Does it include patient data?</summary><p>No. Stethos holds data about organizations, their owners and the people who run them only.</p></details></div>
+  </div>
+</section>
+<section class="sec" aria-labelledby="kw-rel-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Related data</span></p><h2 id="kw-rel-title">Pairs well <span class="pop">with.</span></h2></div>
+    <ul class="kw-rel"><li><a href="/health-system-data-api"><img src="/img/g-art-s-healthsys-900.webp?v=f3cab129" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Health system data API</b>Health systems, hospitals, groups and clinics in one API: locations, rostered clinicians, leadership, open roles and ownership, with change alerts.</span></a></li><li><a href="/home-health-hospice-data-api"><img src="/img/g-art-s-homehealth-900.webp?v=8c15ca35" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Home health and hospice data API</b>Volume, payments, patient mix, star ratings and ownership for every Medicare home health agency, hospice and nursing facility, via MCP or REST.</span></a></li><li><a href="/physician-referral-data"><img src="/img/g-art-s-referral-900.webp?v=339819b5" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Physician referral data</b>Map who works with whom: group rosters, hospital affiliations, ACO membership and shared practice sites for every US clinician.</span></a></li></ul>
   </div>
 </section>
 <section class="sec">

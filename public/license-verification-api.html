@@ -30,7 +30,7 @@
 <link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css?v=6c88d771">
 <link rel="stylesheet" href="/v2.css?v=978b51f1">
-<link rel="stylesheet" href="/site.css?v=b2dba5ee">
+<link rel="stylesheet" href="/site.css?v=b9b21c69">
 <link rel="stylesheet" href="/stethos.css?v=2c0729ac">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is this primary source verification?", "acceptedAnswer": {"@type": "Answer", "text": "No. Stethos is not a credentials verification organization. It's built for sourcing, prospecting, directory checks and monitoring. For credentialing, verify with the state board or your verification vendor."}}, {"@type": "Question", "name": "Which professions are covered?", "acceptedAnswer": {"@type": "Answer", "text": "Physicians first, then nurses and other licensed clinicians. Coverage will be published by state and profession at launch."}}, {"@type": "Question", "name": "Can I be told when a license lapses?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Watchers fire license.lapsed and license.issued events for the clinicians you follow."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos-one.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "License data API", "item": "https://stethos-one.vercel.app/license-verification-api"}]}]}</script>
 </head>
@@ -67,24 +67,52 @@
 </header>
 
 <main id="main">
-<section class="sec sp-top ph-top" aria-labelledby="kw-title">
+<section class="sec sp-top kw-hero" aria-labelledby="kw-title">
   <div class="wrap">
     <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / License data API</nav>
-    <div class="head ph">
+    <div class="head center">
+      <p class="eyebrow"><span>License data API</span></p>
       <h1 id="kw-title">Medical license lookups <span class="pop">across every state, in one call.</span></h1>
-      <p class="sp-lede">Every state runs its own licensing boards, each with its own website and format. Stethos is built to gather license records from state boards into one NPI-keyed record, show each license's status and source, and alert you when one changes.</p>
+      <p class="kpi-lede">Every state runs its own licensing boards, each with its own website and format. Stethos is built to gather license records from state boards into one NPI-keyed record, show each license's status and source, and alert you when one changes.</p>
       <div class="kw-ctas"><a class="btn-1" href="/signup">Start free trial</a><a class="btn-2" href="/docs">Read the docs</a></div>
     </div>
-    <div class="sp-panels uc-one"><div class="sp-panel sp-butter"><div class="sp-p-main">
-      <figure class="sp-scene"><img fetchpriority="high" src="/img/g-art-s-license-900.webp?v=9e184528" srcset="/img/g-art-s-license-900.webp 900w, /img/g-art-s-license-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 560px" width="1600" height="1195" alt="Illustration for License data API" decoding="async"></figure>
-      <h2>License data API</h2><p class="sp-k">Look up</p><ul class="sp-src"><li>All licenses for an NPI</li><li>Clinicians licensed in a given state</li><li>Recent license events by state and profession</li></ul></div>
-      <div class="sp-p-side"><p class="sp-k">For each license</p><ul class="sp-see"><li>State, profession and license number</li><li>Status: active, expired, restricted</li><li>Issue and expiration dates where published</li><li>Source board and verified date</li></ul></div></div></div>
   </div>
 </section>
-<figure class="scene-band"><img src="/img/g-w-s-license-1600.webp?v=6f4b2942" srcset="/img/g-w-s-license-900.webp 900w, /img/g-w-s-license-1600.webp 1600w" sizes="100vw" width="1600" height="686" alt="Illustration: hills like a patchwork quilt of states with license scrolls planted on them." loading="lazy" decoding="async"></figure>
+<figure class="scene-band"><img src="/img/g-w-s-license-1600.webp?v=6f4b2942" srcset="/img/g-w-s-license-900.webp 900w, /img/g-w-s-license-1600.webp 1600w" sizes="100vw" width="1600" height="686" alt="Illustration: hills like a patchwork quilt of states with license scrolls planted on them." decoding="async"></figure>
+<section class="sec" aria-labelledby="kw-data-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>The data</span></p><h2 id="kw-data-title">What it looks like <span class="pop">for your agent.</span></h2></div>
+    <div class="kw-data">
+      <article class="rec" aria-label="Sample record"><div class="rec-top"><div><p class="rec-t">Jordan Example, NP</p><p class="rec-sub">Family nurse practitioner · NPI 1234567891</p></div><span class="hq-live"><i></i>Sample data</span></div><ul class="rec-rows"><li><span class="rec-k">Colorado</span><span class="rec-v">RN and APRN · active · expires 2027</span><span class="rec-s">CO board · verified today</span></li><li><span class="rec-k">Utah</span><span class="rec-v">APRN · active · issued last week</span><span class="rec-s">UT board · new</span></li><li><span class="rec-k">Wyoming</span><span class="rec-v">RN · expired</span><span class="rec-s">WY board</span></li><li><span class="rec-k">Restrictions</span><span class="rec-v">None found</span><span class="rec-s">3 boards checked</span></li><li><span class="rec-k">Watching</span><span class="rec-v">License events in 3 states</span><span class="rec-s">webhook on change</span></li></ul></article>
+      <div class="kw-side"><p class="sp-k">Look up</p><ul class="kw-list"><li>All licenses for an NPI</li><li>Clinicians licensed in a given state</li><li>Recent license events by state and profession</li></ul><p class="sp-k">For each license</p><ul class="kw-list"><li>State, profession and license number</li><li>Status: active, expired, restricted</li><li>Issue and expiration dates where published</li><li>Source board and verified date</li></ul></div>
+    </div>
+  </div>
+</section>
+<section class="sec kw-asks-sec" aria-labelledby="kw-ask-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Ask in plain words</span></p><h2 id="kw-ask-title">What your agent <span class="pop">can ask.</span></h2></div>
+    <ul class="kw-asks"><li><p class="ask-q">“Which NPs got a new Utah license this month?”</p><p class="ask-a">License events by state and profession.</p></li><li><p class="ask-q">“Is this nurse's Colorado license active?”</p><p class="ask-a">Status, dates and the source board.</p></li><li><p class="ask-q">“Alert me if any of our clinicians' licenses lapse”</p><p class="ask-a">Watchers send a webhook on change.</p></li><li><p class="ask-q">“Which surgeons are licensed in both Arizona and Nevada?”</p><p class="ask-a">Search across states in one call.</p></li></ul>
+  </div>
+</section>
+<section class="sec" aria-labelledby="kw-who-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Who uses it</span></p><h2 id="kw-who-title">Built for teams <span class="pop">like yours.</span></h2></div>
+    <ul class="kw-teams"><li><a href="/use-cases/clinical-staffing" style="--t:#e3f4ec"><img class="seg-logo" src="/img/g-l-staffing-160.webp?v=04248e76" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Clinical staffing</b>Licensed clinicians and who's hiring.</span></a></li><li><a href="/use-cases/provider-directories" style="--t:#ece6fb"><img class="seg-logo" src="/img/g-l-directories-160.webp?v=ab6768c8" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Payers and directories</b>Keep every listing accurate.</span></a></li><li><a href="/use-cases/digital-health" style="--t:#e4f0fd"><img class="seg-logo" src="/img/g-l-startups-160.webp?v=04e78ea2" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>Healthcare startups</b>First customers and provider search.</span></a></li></ul>
+    <div class="kw-wf"><article class="ex-card" id="staffing-sales" style="--t:#ece6fb">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-ic-license-96.webp?v=5ad39758" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">Clinical staffing · Business development</p><h2>Find the systems that need staff now</h2></div></div>
+      <p class="ex-trigger"><b>When</b> Weekly, for the business development team.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Which hospitals in Arizona are posting the most ICU nursing roles, and who runs nursing there?”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Ranks nearby health systems by recent clinical job posts</li><li>Adds the chief nursing officer and other leaders at each</li><li>Creates the accounts and next steps in your CRM</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Health system job posts</li><li>Organizations</li><li>Leaders</li><li>Change events</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">Your CRM, plus a weekly list in Claude</p></div>
+      </div><p class="ex-foot"><a href="/use-cases/clinical-staffing">More for Clinical staffing <span aria-hidden="true">→</span></a></p>
+    </article>
+</div>
+  </div>
+</section>
 <section class="sec" aria-labelledby="kw-call-title">
   <div class="wrap uc-call">
-    <div><p class="eyebrow"><span>Example call</span></p><h2 id="kw-call-title">One request, <span class="pop">sourced answers.</span></h2>
+    <div><p class="eyebrow"><span>For developers</span></p><h2 id="kw-call-title">One request, <span class="pop">sourced answers.</span></h2>
     <p class="uc-call-p">Your agent can make the same call as an MCP tool. Every result carries the source and last-verified date on each field and the credits it used. See the <a href="/docs">quickstart</a> and <a href="/pricing">pricing</a>.</p></div>
 <pre class="uc-code" tabindex="0" aria-label="Example request"><code>curl https://api.stethos.health/v1/providers/enrich \
   -H "Authorization: Bearer $STETHOS_KEY" \
@@ -98,8 +126,14 @@
 </section>
 <section class="sec" aria-labelledby="kw-faq-title">
   <div class="wrap faq-grid">
-    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">License data API: common questions</h2><p class="faq-more">Related: <a href="/use-cases/clinical-staffing">Clinical staffing and recruiting</a> · <a href="/docs#watch">Docs: watchers</a> · <a href="/physician-data-api">Physician data API</a></p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp?v=a84942d7" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
+    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">Common questions</h2><p class="faq-more">Related: <a href="/use-cases/clinical-staffing">Clinical staffing and recruiting</a> · <a href="/docs#watch">Docs: watchers</a> · <a href="/physician-data-api">Physician data API</a></p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp?v=a84942d7" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
     <div class="qs"><details><summary>Is this primary source verification?</summary><p>No. Stethos is not a credentials verification organization. It's built for sourcing, prospecting, directory checks and monitoring. For credentialing, verify with the state board or your verification vendor.</p></details><details><summary>Which professions are covered?</summary><p>Physicians first, then nurses and other licensed clinicians. Coverage will be published by state and profession at launch.</p></details><details><summary>Can I be told when a license lapses?</summary><p>Yes. Watchers fire license.lapsed and license.issued events for the clinicians you follow.</p></details></div>
+  </div>
+</section>
+<section class="sec" aria-labelledby="kw-rel-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Related data</span></p><h2 id="kw-rel-title">Pairs well <span class="pop">with.</span></h2></div>
+    <ul class="kw-rel"><li><a href="/physician-data-api"><img src="/img/g-art-s-physician-900.webp?v=e14bad4d" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Physician data API</b>A physician data API with specialties, affiliations, state licenses and practice contacts for every US physician, plus webhooks when physicians move.</span></a></li><li><a href="/npi-lookup-api"><img src="/img/g-art-s-npi-900.webp?v=7d20daf3" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>NPI lookup API</b>Look up any NPI and get more than the registry: licenses, affiliations, payer networks and practice contacts, each with a source and verified date.</span></a></li><li><a href="/healthcare-mcp-server"><img src="/img/g-art-s-mcp-900.webp?v=d8f29477" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Healthcare MCP server</b>A self-serve MCP server for US healthcare provider data.</span></a></li></ul>
   </div>
 </section>
 <section class="sec">
