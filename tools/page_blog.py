@@ -2,6 +2,7 @@ from parts import *
 import datetime as _dt
 from zoneinfo import ZoneInfo as _Z
 from posts_scheduled import SCHEDULED
+from posts_recent import RECENT
 
 POSTS = [
     dict(slug="what-the-npi-registry-can-and-cant-tell-you", tag="Public data", art="uc-payer", date="2026-11-05", nice="November 5, 2026", mins=5,
@@ -76,7 +77,7 @@ POSTS = [
 TODAY = _dt.datetime.now(_Z("America/Los_Angeles")).date().isoformat()
 import os as _os
 TODAY = _os.environ.get("STETHOS_TODAY", TODAY)   # override to preview a later date
-ALL_POSTS = POSTS + SCHEDULED
+ALL_POSTS = POSTS + RECENT + SCHEDULED
 COVER = {"what-the-npi-registry-can-and-cant-tell-you": "c-npi", "giving-an-ai-agent-healthcare-data-checklist": "c-checklist",
          "how-to-look-up-an-npi-number": "c-lookup", "type-1-vs-type-2-npi": "c-type12", "medical-license-verification-across-states": "c-license",
          "why-physician-affiliations-are-hard-to-track": "c-affil", "healthcare-provider-taxonomy-codes-explained": "c-taxonomy",
@@ -91,6 +92,10 @@ FIGS = {
     "medical-license-verification-across-states": ("i-license", "Verification vs monitoring", "Clay illustration: a sealed license scroll with a green checkmark, beside a bell watching licenses on a calendar.", "Verification checks a license once. Monitoring keeps watching for changes after that."),
     "why-physician-affiliations-are-hard-to-track": ("i-affil", "What a good affiliation record looks like", "Clay illustration: a clinician badge linked to three hospitals, each link tagged with a date; one link is faded and dotted.", "A good record keeps when each link was last seen, so an old affiliation fades out instead of lingering."),
     "healthcare-provider-taxonomy-codes-explained": ("i-taxonomy", "What the code set is", "Clay illustration: three nested trays, the smallest holding a single heart.", "Each code narrows down in up to three levels: grouping, classification and specialization."),
+    "who-owns-a-medical-practice": ("i-whoowns", "Check the public records", "Clay illustration: a government building, a rolled newspaper and a filing cabinet on pedestals, linked by a dotted path to a clinic.", "CMS files, announcements and state filings each show part of the ownership picture."),
+    "what-is-an-mso": ("i-mso", "What an MSO is", "Clay illustration: one golden key linked by strings to five clinic doors.", "In a roll-up, one MSO can manage the back office for every practice on the platform."),
+    "cms-ownership-data-private-equity": ("i-cmsowners", "The flags that matter", "Clay illustration: a nursing home linked up through a holding company to a briefcase at the top, like a small family tree.", "Owner-type flags let you trace a facility up through holding companies to the firm behind it."),
+    "healthcare-buyer-job-changes": ("i-jobchange", "Why healthcare titles go stale so fast", "Clay illustration: the little robot swapping a faded contact card for a fresh one while a bell rings.", "When the person in a seat changes, the record should change with it."),
     "webhooks-vs-polling-for-provider-data": ("i-webhooks", "Webhooks", "Clay illustration: a tall pile of empty envelopes beside a tired alarm clock, and one bright envelope arriving at a happy bell.", "Polling asks again and again. Webhooks tell you once, when something changes."),
 }
 for _p in ALL_POSTS:

@@ -112,6 +112,22 @@ SEO_PAGES += [
               ("Is this enough for sales targeting?", "Often, yes. Shared groups, hospitals and ACOs explain most referral patterns, and they change faster than annual claims files. Stethos also tells your agent when an affiliation changes."),
               ("Is there patient data?", "No. Stethos holds data about clinicians and organizations only.")],
          related=[("Docs: data sources", "/docs#sources"), ("Physician data API", "/physician-data-api"), ("Medtech and pharma", "/use-cases/medtech-pharma")]),
+    dict(slug="private-equity-healthcare-ownership-data", art="s-pe", color="sp-blue",
+         name="Private equity ownership data",
+         title="Private Equity Healthcare Ownership Data API | Stethos",
+         desc="Which private equity firms own which practices, clinics, MSOs and facilities, in which markets. Owner, platform and add-on links with sources, via MCP or REST.",
+         h1a="See which private equity firms own",
+         h1b="which clinics, and where.",
+         intro="Private equity has rolled up practices, surgery centers, home health agencies and clinics across the US, usually as a platform company plus a string of add-ons under one management services organization (MSO). Stethos is built to map that structure: the firm, its platforms, every site they own and the markets they're in, so your agent can work a roll-up as one account and find the people who decide for all of its sites.",
+         k1="What you get", l1=["Private equity owner for each practice, clinic, MSO and facility", "Platform and add-on links, with the date each deal was seen", "Every site in a roll-up, by state and metro", "Deal team and operating partners at the firm, plus MSO leadership"],
+         k2="What your agent can ask", l2=["Which PE-backed orthopedic or GI groups operate in Texas", "Every site owned by this firm's dermatology platform", "Which home health agencies in Ohio have a private equity owner", "Which practices in my territory were acquired this quarter"],
+         ep="orgs/search", req={"owner_type": "private_equity", "specialty": "gastroenterology", "state": "TN", "fields": ["owners", "platform", "sites", "leadership"], "limit": 25},
+         faq=[("Where does ownership data come from?", "For hospitals, nursing homes, home health agencies, hospices, rural health clinics and FQHCs, CMS publishes ownership files that list each owner and flag owner types such as private equity. For physician practices, surgery centers and MSOs, which those files don't cover, Stethos is built to combine firm portfolio pages, acquisition announcements and state filings. Every link carries its source and the date it was seen."),
+              ("Who is this for?", "Teams that sell to multi-site, PE-backed groups: revenue cycle, billing, staffing, software and services vendors. Selling to one MSO can open dozens of sites, and the decision usually sits with the MSO and the firm's operating partners rather than each clinic."),
+              ("Can I see the people, not just the companies?", "Yes. Stethos is built to return MSO executives and the firm's healthcare deal and operating partners, with business contact details where they're published."),
+              ("How current is it?", "CMS updates its ownership files regularly, and acquisitions are picked up when they're announced. Your agent can watch a firm or a platform and hear about new add-ons as they happen."),
+              ("Does it include patient data?", "No. Stethos holds data about organizations, their owners and the people who run them only.")],
+         related=[("Docs: data sources", "/docs#sources"), ("What CMS ownership files show", "/blog/cms-ownership-data-private-equity"), ("Healthcare investors", "/use-cases/investors")]),
 ]
 
 def seo_page(m):
@@ -149,7 +165,7 @@ def seo_page(m):
 </section>
 <section class="sec" aria-labelledby="kw-faq-title">
   <div class="wrap faq-grid">
-    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">{m["name"]}: common questions</h2><p class="faq-more">Related: {rel}</p></div>
+    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">{m["name"]}: common questions</h2><p class="faq-more">Related: {rel}</p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
     <div class="qs">{faq}</div>
   </div>
 </section>

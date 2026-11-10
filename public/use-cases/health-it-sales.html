@@ -30,7 +30,7 @@
 <link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css?v=6c88d771">
 <link rel="stylesheet" href="/v2.css?v=978b51f1">
-<link rel="stylesheet" href="/site.css?v=bd36723d">
+<link rel="stylesheet" href="/site.css?v=9352280d">
 <link rel="stylesheet" href="/stethos.css?v=2c0729ac">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I filter health systems by EHR?", "acceptedAnswer": {"@type": "Answer", "text": "Where it's published, yes. Certified health IT use comes from ONC and CMS sources, and each value shows its source and date. Where no public source exists, the field is left empty rather than guessed."}}, {"@type": "Question", "name": "Does it include executive contacts?", "acceptedAnswer": {"@type": "Answer", "text": "Stethos returns named executives and service line leaders from public sources such as organization websites and press releases, with the source for each. It doesn't sell personal emails or phone numbers."}}, {"@type": "Question", "name": "Will it work in Salesforce or HubSpot?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Your agent calls Stethos tools and writes the results into your CRM, and watchers can send a webhook when an account changes so the record and next step update on their own."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos-one.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Use cases", "item": "https://stethos-one.vercel.app/use-cases"}, {"@type": "ListItem", "position": 3, "name": "Health IT and services sales", "item": "https://stethos-one.vercel.app/use-cases/health-it-sales"}]}]}</script>
 </head>
@@ -87,6 +87,15 @@
         <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Organizations</li><li>Executive changes</li><li>Certified health IT data</li><li>Change events</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">A task in Salesforce or HubSpot, and a Slack message to the rep</p></div>
       </div>
     </article>
+<article class="ex-card" id="pe-rollup-sell" style="--t:#fde8e4">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-stk-orgs-160.webp?v=6843bd5a" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">Health IT and services · Sales</p><h2>Sell to a PE-backed roll-up as one account</h2></div></div>
+      <p class="ex-trigger"><b>When</b> A billing, staffing or software vendor wants multi-site groups.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Which private equity firms own GI and orthopedic groups in the Southeast, how many sites does each platform have, and who runs the MSO?”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Maps each firm's platforms and every site they own, by state</li><li>Adds the MSO's executives and the firm's healthcare operating partners</li><li>Creates one account per platform in your CRM, with its sites underneath</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Ownership</li><li>Organizations</li><li>Leadership</li><li>Locations</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">Your CRM, one account per platform</p></div>
+      </div>
+    </article>
 <article class="ex-card" id="ehr-campaign" style="--t:#f5efdf">
       <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-stk-agents-160.webp?v=a082bcf3" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">Health IT and services · Marketing</p><h2>Find every hospital on a given EHR</h2></div></div>
       <p class="ex-trigger"><b>When</b> You launch an integration for a specific EHR.</p>
@@ -129,7 +138,7 @@
 </section>
 <section class="sec" aria-labelledby="uc-faq-title">
   <div class="wrap faq-grid">
-    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="uc-faq-title">Health IT and services sales: common questions</h2><p class="faq-more">Something else? <a href="mailto:team@stethos.health?subject=Stethos%20Health%20IT%20and%20services%20sales">Email our team</a>.</p></div>
+    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="uc-faq-title">Health IT and services sales: common questions</h2><p class="faq-more">Something else? <a href="mailto:team@stethos.health?subject=Stethos%20Health%20IT%20and%20services%20sales">Email our team</a>.</p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp?v=a84942d7" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
     <div class="qs"><details><summary>Can I filter health systems by EHR?</summary><p>Where it's published, yes. Certified health IT use comes from ONC and CMS sources, and each value shows its source and date. Where no public source exists, the field is left empty rather than guessed.</p></details><details><summary>Does it include executive contacts?</summary><p>Stethos returns named executives and service line leaders from public sources such as organization websites and press releases, with the source for each. It doesn't sell personal emails or phone numbers.</p></details><details><summary>Will it work in Salesforce or HubSpot?</summary><p>Yes. Your agent calls Stethos tools and writes the results into your CRM, and watchers can send a webhook when an account changes so the record and next step update on their own.</p></details></div>
   </div>
 </section>
@@ -168,6 +177,7 @@
       <a href="/medicare-utilization-data-api">Medicare utilization data</a>
       <a href="/home-health-hospice-data-api">Home health and hospice data</a>
       <a href="/physician-referral-data">Physician referral data</a>
+      <a href="/private-equity-healthcare-ownership-data">Private equity ownership</a>
       <a href="/use-cases/medtech-pharma">Medtech and pharma</a>
       <a href="/use-cases/provider-directories">Provider directories</a>
       <a href="/use-cases/clinical-staffing">Clinical staffing</a>

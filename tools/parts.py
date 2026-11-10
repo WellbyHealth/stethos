@@ -139,6 +139,7 @@ FOOTER = f'''
       <a href="/medicare-utilization-data-api">Medicare utilization data</a>
       <a href="/home-health-hospice-data-api">Home health and hospice data</a>
       <a href="/physician-referral-data">Physician referral data</a>
+      <a href="/private-equity-healthcare-ownership-data">Private equity ownership</a>
       <a href="/use-cases/medtech-pharma">Medtech and pharma</a>
       <a href="/use-cases/provider-directories">Provider directories</a>
       <a href="/use-cases/clinical-staffing">Clinical staffing</a>

@@ -67,7 +67,7 @@ UC_PAGES = {
         intro="In healthcare services, the leading indicators are clinicians and locations: who is joining a platform, where new sites are opening and which groups are losing people. Stethos is built to turn those changes into events you can track across a portfolio or a target list.",
         req={"name": "Example Ortho Partners", "state": "AZ", "fields": ["children", "rostered_clinicians", "locations"]},
         faq=[("Can I track clinician headcount over time?", "Organization records include rostered clinicians, and change history shows who joined and left and when, so you can chart headcount for a group or platform."),
-             ("Does it show ownership?", "Parent and child organizations are linked where public sources show the relationship, with the source on each link."),
+             ("Does it show ownership?", "Yes. Parent and child organizations are linked where public sources show the relationship, and private equity owners are linked to the practices, clinics and facilities they own, with the source on each link. See <a href=\"/private-equity-healthcare-ownership-data\">private equity ownership data</a>."),
              ("Can I get the data as a file?", "Yes. Enterprise includes flat files delivered to your warehouse on a schedule, alongside the API.")]),
     "digital-health": dict(
         title="Healthcare Data for Startups and Digital Health | Stethos",
@@ -79,6 +79,21 @@ UC_PAGES = {
              ("Is it HIPAA-covered data?", "No. Stethos holds provider and organization data only, with no patient information, so you can use it without a business associate agreement."),
              ("How do I keep my app's listings fresh?", "Create a watcher for the providers your app shows. When one changes location, network or license, you get a webhook and can update the listing.")]),
 }
+
+
+EX_ART = {"clinical-staffing": ("r-staffing", "Illustration: the little clay robot with a clipboard outside a hospital, beside a calendar and a stack of clinician badges."),
+          "digital-health": ("r-digital", "Illustration: the little clay robot next to a big phone showing a heart and map pins, with a small rocket lifting off."),
+          "medtech-pharma": ("s-physician", "Illustration: a clay doctor's coat and stethoscope on a coat stand, beside index cards and a map pin."),
+          "investors": ("s-pe", "Illustration: the little clay robot with a magnifying glass over a regional map where clinics in each cluster share a flag color, linked to matching briefcases."),
+          "health-it-sales": ("s-healthsys", "Illustration: a clay hospital on a hill linked by roads to smaller clinics around it.")}
+
+
+def ex_art(slug):
+    a = EX_ART.get(slug)
+    if not a:
+        return ""
+    return (f'<figure class="ex-art"><img src="/img/g-art-{a[0]}-900.webp" srcset="/img/g-art-{a[0]}-900.webp 900w, /img/g-art-{a[0]}-1600.webp 1600w" '
+            f'sizes="(max-width: 820px) 100vw, 540px" width="1600" height="1195" alt="{a[1]}" loading="lazy" decoding="async"></figure>')
 
 
 def uc_page(n):
@@ -104,7 +119,7 @@ def uc_page(n):
     wf = (f'''<section class="sec" aria-labelledby="uc-wf-title">
   <div class="wrap">
     <div class="head"><p class="eyebrow"><span>Workflows</span></p><h2 id="uc-wf-title">What teams <span class="pop">do with it.</span></h2></div>
-    <div class="ex-list">{"".join(PX.card(e, tab=None, link=False) for e in wfs)}</div>
+    <div class="ex-list">{"".join(PX.card(e, tab=None, link=False) for e in wfs)}{ex_art(slug) if len(wfs) % 2 else ""}</div>
     <p class="cov-note ex-more"><a href="/use-cases">See workflows for every segment <span aria-hidden="true">→</span></a></p>
   </div>
 </section>
@@ -136,7 +151,7 @@ def uc_page(n):
 </section>
 <section class="sec" aria-labelledby="uc-faq-title">
   <div class="wrap faq-grid">
-    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="uc-faq-title">{name}: common questions</h2><p class="faq-more">Something else? <a href="mailto:{EMAIL}?subject=Stethos%20{name.replace(" ", "%20")}">Email our team</a>.</p></div>
+    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="uc-faq-title">{name}: common questions</h2><p class="faq-more">Something else? <a href="mailto:{EMAIL}?subject=Stethos%20{name.replace(" ", "%20")}">Email our team</a>.</p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
     <div class="qs">{faq}</div>
   </div>
 </section>

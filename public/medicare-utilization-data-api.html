@@ -30,7 +30,7 @@
 <link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css?v=6c88d771">
 <link rel="stylesheet" href="/v2.css?v=978b51f1">
-<link rel="stylesheet" href="/site.css?v=bd36723d">
+<link rel="stylesheet" href="/site.css?v=9352280d">
 <link rel="stylesheet" href="/stethos.css?v=2c0729ac">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Where does this data come from?", "acceptedAnswer": {"@type": "Answer", "text": "CMS's public Medicare Provider Utilization and Payment files. They summarize 100% of Original Medicare fee-for-service claims at the provider level, and CMS suppresses small counts to protect patients."}}, {"@type": "Question", "name": "How current is it?", "acceptedAnswer": {"@type": "Answer", "text": "CMS releases these files once a year, covering a past year, so they describe volume and mix rather than this week's activity. Stethos shows the data year on every number and pairs it with fresher signals like affiliation and license changes."}}, {"@type": "Question", "name": "Does it include Medicare Advantage or commercial claims?", "acceptedAnswer": {"@type": "Answer", "text": "No. The public files cover Original Medicare only. Claims-level data, including Medicare Advantage, requires CMS research access, which Stethos plans to pursue."}}, {"@type": "Question", "name": "Is there patient data in it?", "acceptedAnswer": {"@type": "Answer", "text": "No. Every number is aggregated to the provider, and CMS removes counts under 11. Stethos returns provider data only."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos-one.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Medicare utilization data API", "item": "https://stethos-one.vercel.app/medicare-utilization-data-api"}]}]}</script>
 </head>
@@ -94,7 +94,7 @@
 </section>
 <section class="sec" aria-labelledby="kw-faq-title">
   <div class="wrap faq-grid">
-    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">Medicare utilization data API: common questions</h2><p class="faq-more">Related: <a href="/docs#sources">Docs: data sources</a> · <a href="/physician-data-api">Physician data API</a> · <a href="/use-cases/medtech-pharma">Medtech and pharma</a></p></div>
+    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="kw-faq-title">Medicare utilization data API: common questions</h2><p class="faq-more">Related: <a href="/docs#sources">Docs: data sources</a> · <a href="/physician-data-api">Physician data API</a> · <a href="/use-cases/medtech-pharma">Medtech and pharma</a></p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp?v=a84942d7" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
     <div class="qs"><details><summary>Where does this data come from?</summary><p>CMS's public Medicare Provider Utilization and Payment files. They summarize 100% of Original Medicare fee-for-service claims at the provider level, and CMS suppresses small counts to protect patients.</p></details><details><summary>How current is it?</summary><p>CMS releases these files once a year, covering a past year, so they describe volume and mix rather than this week's activity. Stethos shows the data year on every number and pairs it with fresher signals like affiliation and license changes.</p></details><details><summary>Does it include Medicare Advantage or commercial claims?</summary><p>No. The public files cover Original Medicare only. Claims-level data, including Medicare Advantage, requires CMS research access, which Stethos plans to pursue.</p></details><details><summary>Is there patient data in it?</summary><p>No. Every number is aggregated to the provider, and CMS removes counts under 11. Stethos returns provider data only.</p></details></div>
   </div>
 </section>
@@ -130,6 +130,7 @@
       <a href="/medicare-utilization-data-api">Medicare utilization data</a>
       <a href="/home-health-hospice-data-api">Home health and hospice data</a>
       <a href="/physician-referral-data">Physician referral data</a>
+      <a href="/private-equity-healthcare-ownership-data">Private equity ownership</a>
       <a href="/use-cases/medtech-pharma">Medtech and pharma</a>
       <a href="/use-cases/provider-directories">Provider directories</a>
       <a href="/use-cases/clinical-staffing">Clinical staffing</a>

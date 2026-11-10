@@ -91,14 +91,16 @@ def page():
       <p class="kpi-lede">Stethos isn't another tool to log into. Your team asks for healthcare data in the AI assistant they already use, and the answers land in the CRM they already live in, with sources attached.</p>
     </div>
     <div class="plug-grid">
-      <div class="plug-card">
+      <div class="plug-card has-art">
+        <img class="card-art" src="/img/g-spot-r-chat-320.webp" width="160" height="160" alt="" loading="lazy" decoding="async">
         <p class="plug-k">AI assistants and agents</p>
         <h3>Ask in plain words</h3>
         <ul class="plug-chips"><li>Claude</li><li>ChatGPT</li><li>Microsoft Copilot Studio</li><li>Cursor</li><li>Your own agent</li></ul>
         <p>Add Stethos as an MCP server and its tools show up in the assistant. Search, enrich, map organizations and watch for changes without leaving the chat.</p>
       </div>
       <div class="plug-flow" aria-hidden="true"><span></span><i>→</i><span></span></div>
-      <div class="plug-card">
+      <div class="plug-card has-art">
+        <img class="card-art" src="/img/g-spot-r-crm-320.webp" width="160" height="160" alt="" loading="lazy" decoding="async">
         <p class="plug-k">CRMs and systems of record</p>
         <h3>Records stay current</h3>
         <ul class="plug-chips"><li>Salesforce</li><li>HubSpot</li><li>Attio</li><li>Lightfield</li><li>Your data warehouse</li></ul>
@@ -173,11 +175,11 @@ def page():
     <ul class="stk-row">
 {stk(0, "stk-market", "Search", "Built to search every clinician and organization in the US", "by specialty, place, license, affiliation or network.", "Wide, cheap queries so your agent can look at everyone before it picks anyone.", "stk-search")}
 {stk(1, "stk-understand", "Enrich", "Built to turn an NPI into a full record", "with licenses, affiliations, networks and contacts.", "Additive pricing: the base record first, then only the extra fields you ask for.", "stk-enrich")}
-{stk(2, "stk-plan", "Organizations", "Built to map health systems, groups and clinics", "and who works at each one.", "Locations, rostered clinicians, leadership, open roles and parent–child ownership.", "stk-orgs")}
+{stk(2, "stk-plan", "Organizations", "Built to map health systems, groups and clinics", "and who works at each one.", "Locations, rostered clinicians, leadership, open roles, parent–child links and private equity owners.", "stk-orgs")}
 {stk(3, "stk-reconnect", "Watch", "Built to tell your agent when a record changes,", "so it moves first.", "Affiliation changes, new licenses, network moves, executive hires and hiring spikes.", "stk-watch")}
 {stk(4, "stk-grow", "MCP first", "Built to plug straight into your agents", "as an MCP server, in five minutes.", "REST and webhooks are there too, for the parts of your stack that aren't agents.", "stk-agents")}
 </ul>
-    <p class="sp-more">Explore: <a href="/healthcare-mcp-server">Healthcare MCP server</a> · <a href="/npi-lookup-api">NPI lookup API</a> · <a href="/physician-data-api">Physician data API</a> · <a href="/license-verification-api">License data API</a> · <a href="/health-system-data-api">Health system data API</a> · <a href="/medicare-utilization-data-api">Medicare utilization data</a> · <a href="/home-health-hospice-data-api">Home health and hospice data</a> · <a href="/physician-referral-data">Physician referral data</a></p>
+    <p class="sp-more">Explore: <a href="/healthcare-mcp-server">Healthcare MCP server</a> · <a href="/npi-lookup-api">NPI lookup API</a> · <a href="/physician-data-api">Physician data API</a> · <a href="/license-verification-api">License data API</a> · <a href="/health-system-data-api">Health system data API</a> · <a href="/medicare-utilization-data-api">Medicare utilization data</a> · <a href="/home-health-hospice-data-api">Home health and hospice data</a> · <a href="/physician-referral-data">Physician referral data</a> · <a href="/private-equity-healthcare-ownership-data">Private equity ownership</a></p>
   </div>
 </section>
 
@@ -337,9 +339,9 @@ def page():
       <h2 id="now-title">Agents became the buyer. <span class="pop">The data didn't keep up.</span></h2>
     </div>
     <ol class="now-list">
-      <li><b>Agents call tools now</b><p>MCP turned data into something an agent calls on its own. Incumbent platforms were built for analysts clicking through dashboards.</p></li>
-      <li><b>Free data got bigger, not fresher</b><p>CMS's new provider directory, EHR data from ONC and Medicare Advantage plan directories are large and free, but they don't tell you how current each record is.</p></li>
-      <li><b>Verification got cheap</b><p>Voice and web agents can do the research calls data vendors have staffed for years, at a fraction of the cost, whenever a record looks stale.</p></li>
+      <li class="has-art"><img class="card-art" src="/img/g-spot-r-tools-320.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><b>Agents call tools now</b><p>MCP turned data into something an agent calls on its own. Incumbent platforms were built for analysts clicking through dashboards.</p></li>
+      <li class="has-art"><img class="card-art" src="/img/g-spot-r-pile-320.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><b>Free data got bigger, not fresher</b><p>CMS's new provider directory, EHR data from ONC and Medicare Advantage plan directories are large and free, but they don't tell you how current each record is.</p></li>
+      <li class="has-art"><img class="card-art" src="/img/g-spot-r-call-320.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><b>Verification got cheap</b><p>Voice and web agents can do the research calls data vendors have staffed for years, at a fraction of the cost, whenever a record looks stale.</p></li>
     </ol>
   </div>
 </section>
@@ -401,14 +403,16 @@ def page():
       <h2 id="join-title">Give your agent <span class="pop">the healthcare map.</span></h2>
     </div>
     <div class="split">
-      <div class="split-card biz">
+      <div class="split-card biz has-art">
+        <img class="card-art" src="/img/g-spot-r-present-320.webp" width="160" height="160" alt="" loading="lazy" decoding="async">
         <p class="split-k">For business leaders</p>
         <h3>See it on your own accounts.</h3>
         <p>Send us the providers or health systems you care about, and we'll show you what Stethos returns for them, side by side with what you have today.</p>
         <ul class="perks dark"><li>Your own list, not a canned demo</li><li>Sources and checked dates on every field</li><li>Volume pricing and data agreements available</li></ul>
         <a class="split-btn light" href="mailto:{EMAIL}?subject=Stethos%20on%20our%20accounts">Talk to our team {ARROW}</a>
       </div>
-      <div class="split-card dev">
+      <div class="split-card dev has-art">
+        <img class="card-art" src="/img/g-spot-r-laptop-320.webp" width="160" height="160" alt="" loading="lazy" decoding="async">
         <p class="split-k">For your team</p>
         <h3>Try it yourself today.</h3>
         <p>Add Stethos to Claude, ChatGPT or your own agent in five minutes and ask about your own market. Pay only for the calls you make.</p>
@@ -423,7 +427,7 @@ def page():
     body = body.replace("{HOME_EX}", PX.home_split())
     global TECH
     TECH = {}
-    for sid in ("team-day", "platform", "connect", "playground", "sources", "kpis"):
+    for sid in ("team-day", "connect", "playground", "sources", "kpis"):
         m = re.search(r'<section class="[^"]*" id="%s".*?</section>\n' % sid, body, re.S)
         TECH[sid] = m.group(0)
         body = body.replace(m.group(0), "")
@@ -452,8 +456,9 @@ def how_it_works():
         <button class="cx-copybtn copy-mcp" type="button" data-copy="Add the Stethos MCP server: {MCP_URL}">Copy</button>
       </div>
     </div>
+    <figure class="art-wide hiw-art">{art("r-hiw", "Illustration: the little clay robot on a step stool, shining a flashlight into an open data server full of gears, ID cards and a bell.", w=1600, h=900, lazy=False)}</figure>
   </div>
 </section>
 '''
-    body = HEADER + '\n<main id="main">\n' + top + "".join(TECH[k] for k in ("team-day", "connect", "playground", "sources", "platform", "kpis")) + cta_band("Self-serve", "Connect in five minutes,", "pay per tool call.", "1,000 free credits, no card, no sales call.", "how-it-works") + "\n</main>\n"
+    body = HEADER + '\n<main id="main">\n' + top + "".join(TECH[k] for k in ("team-day", "connect", "playground", "sources", "kpis")) + cta_band("Self-serve", "Connect in five minutes,", "pay per tool call.", "1,000 free credits, no card, no sales call.", "how-it-works") + "\n</main>\n"
     return h + body + tail(("nav", "teamday", "play", "copy", "motion"))
