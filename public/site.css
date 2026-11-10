@@ -281,3 +281,8 @@ p,li,dd,summary{text-wrap:pretty}
 .dd-goals .dd-ic{background:none!important;box-shadow:none!important}
 .dd-goals .dd-ic img{filter:drop-shadow(0 5px 7px rgba(11,27,51,.14))}
 .dd-spec img{background:none!important;object-fit:contain;filter:drop-shadow(0 4px 6px rgba(11,27,51,.14))}
+/* team icons are transparent clay objects now: no tiles behind them */
+.dd-segs .dd-ic{background:none!important;box-shadow:none!important;border-radius:0!important;overflow:visible}
+.dd-segs .dd-ic img{object-fit:contain;filter:drop-shadow(0 5px 7px rgba(11,27,51,.16))}
+.ih-logo{border-radius:0!important;box-shadow:none!important;background:none!important;filter:drop-shadow(0 10px 14px rgba(11,27,51,.18));width:76px;height:76px}
+.seg-logo{background:none!important;border-radius:0!important;object-fit:contain;filter:drop-shadow(0 3px 4px rgba(11,27,51,.16))}
