@@ -1,19 +1,29 @@
 from parts import *
+from segments import BY as SEGBY, SCENE_ALT, scene, seg_tabs, logo
 from page_other import UC
 import page_examples as PX
 import json
 
 # Extra copy for one landing page per use case: (seo title, meta description, H1 a, H1 b, intro, example request, FAQs)
 UC_PAGES = {
-    "medtech-pharma": dict(
-        title="Physician Data API for Medtech and Pharma Sales | Stethos",
-        desc="Find surgeons and physicians by specialty, procedure focus, affiliation and license, and get alerts when targets move. A provider data API for sales agents.",
-        h1a="Physician data for", h1b="medtech and pharma sales agents.",
+    "medtech": dict(
+        title="Surgeon and Physician Data for Medtech Sales | Stethos",
+        desc="Find surgeons by specialty, procedure focus, affiliation and license, and get alerts when targets move. Provider data for medtech sales teams and agents.",
+        h1a="Surgeon and physician data", h1b="for medtech sales agents.",
         intro="Reach the right surgeon at the right moment: when they join a new group, start at a new facility or take over a service line. Stethos is built to keep a current record for every target and tell your agents the week it changes.",
         req={"specialty": "orthopedic surgery", "state": "AZ", "affiliation_type": "independent_group", "fields": ["affiliations", "practice_contact", "industry_payments"]},
         faq=[("Can I filter physicians by procedure focus?", "Search filters include specialty and sub-specialty, practice setting, affiliation and license state. Procedure-focus signals come from public sources such as CMS data and practice websites, and each one shows its source."),
              ("Does it include Open Payments data?", "Yes. Enrich can add an Open Payments summary for a physician as an optional field, so your team can see existing industry relationships before reaching out."),
              ("Can it update our CRM automatically?", "Watchers send a webhook when a target's affiliation, location or license changes, so your CRM or agent can update the record and queue outreach without anyone re-checking lists.")]),
+    "pharma": dict(
+        title="Prescriber and KOL Data for Pharma Teams | Stethos",
+        desc="Find prescribers by drug class and volume, map key opinion leaders, and get alerts when they move. Provider data for pharma commercial and medical teams.",
+        h1a="Prescriber and KOL data", h1b="for pharma and life sciences.",
+        intro="Launches depend on reaching the right prescribers and experts. Stethos is built to rank prescribers by Medicare Part D volume, map key opinion leaders and their work, and tell your teams when someone moves.",
+        req={"specialty": "endocrinology", "state": "OH", "fields": ["part_d_volume", "affiliations", "publications", "industry_payments"], "limit": 25},
+        faq=[("Where does prescribing data come from?", "From CMS's Medicare Part D Prescribers files, which report prescriptions by clinician and drug each year. Stethos matches each row to the right NPI and shows the release year on every number."),
+             ("Can it map key opinion leaders?", "Stethos is built to add publications, clinical trials and NIH grants to a physician's record, next to affiliations and Open Payments, so medical affairs can see who leads in a therapeutic area."),
+             ("Is there patient data?", "No. Part D data is aggregated to the prescriber, and CMS suppresses small counts. Stethos holds no patient records.")]),
     "health-it-sales": dict(
         title="Health System Data for Health IT and Services Sales | Stethos",
         desc="Target health systems and practices by EHR, size and service line, find the right buyer, and get alerts on new leaders and new sites, for AI sales agents.",
@@ -78,12 +88,22 @@ UC_PAGES = {
         faq=[("Can my AI agent use Stethos directly?", "Yes. The MCP server exposes search, enrich, organization and recent-changes tools to Claude and other MCP clients."),
              ("Is it HIPAA-covered data?", "No. Stethos holds provider and organization data only, with no patient information, so you can use it without a business associate agreement."),
              ("How do I keep my app's listings fresh?", "Create a watcher for the providers your app shows. When one changes location, network or license, you get a webhook and can update the listing.")]),
+    "health-systems": dict(
+        title="Physician Relations Data for Health Systems | Stethos",
+        desc="Map community physicians, their affiliations and Medicare volume around your hospitals, and alert physician liaisons when a doctor moves or joins a competitor.",
+        h1a="Physician relations data", h1b="for health systems.",
+        intro="Physician liaisons grow referrals one office at a time. Stethos is built to map the community physicians around your hospitals, show who is affiliated with you or a competitor, and flag the doctors worth a visit this week.",
+        req={"specialty": "cardiology", "city": "Nashville", "state": "TN", "fields": ["affiliations", "aco", "medicare_volume"], "limit": 25},
+        faq=[("Can I see which physicians refer to us?", "Not from claims yet. Claims-level referral flows need CMS's research data environment, which Stethos plans to apply for. Today Stethos uses group, hospital and ACO ties, which explain much of who refers to whom, plus Medicare volume."),
+             ("Does it work with our physician relations CRM?", "Yes. Enrich and watch through the API or MCP server, and send changes to your CRM with webhooks."),
+             ("Is there patient data?", "No. Stethos holds data about clinicians and organizations only.")])
 }
 
 
 EX_ART = {"clinical-staffing": ("r-staffing", "Illustration: the little clay robot with a clipboard outside a hospital, beside a calendar and a stack of clinician badges."),
           "digital-health": ("r-digital", "Illustration: the little clay robot next to a big phone showing a heart and map pins, with a small rocket lifting off."),
-          "medtech-pharma": ("s-physician", "Illustration: a clay doctor's coat and stethoscope on a coat stand, beside index cards and a map pin."),
+          "health-systems": ("s-referral", "Illustration: envelopes with hearts flying from a clay hospital to a home-care house along a dotted arc."),
+          "medtech": ("s-physician", "Illustration: a clay doctor's coat and stethoscope on a coat stand, beside index cards and a map pin."),
           "investors": ("s-pe", "Illustration: the little clay robot with a magnifying glass over a regional map where clinics in each cluster share a flag color, linked to matching briefcases."),
           "health-it-sales": ("s-healthsys", "Illustration: a clay hospital on a hill linked by roads to smaller clinics around it.")}
 
@@ -106,7 +126,7 @@ def uc_page(n):
     req = json.dumps(m["req"], indent=2)
     ep = "orgs/enrich" if slug == "investors" else ("providers/enrich" if "npi" in m["req"] else "providers/search")
     faq = "".join(f'<details><summary>{q}</summary><p>{a}</p></details>' for q, a in m["faq"])
-    others = "".join(f'<li><a href="/use-cases/{o[0]}"><img src="/img/{o[2]}" width="160" height="160" alt="" loading="lazy" decoding="async"><span>{o[4]}</span></a></li>' for o in UC if o[0] != slug)
+    others = "".join(f'<li><a href="/use-cases/{o[0]}">{logo(o[0], 64)}<span>{o[4]}</span></a></li>' for o in UC if o[0] != slug)
     alt = {"uc-medtech": "Illustration: a clay sales desk with a surgical instrument case, a knee model and a laptop showing a map with pins.",
            "uc-payer": "Illustration: a clay clipboard directory of doctors' offices with check marks, beside an insurance shield and a magnifying glass.",
            "uc-staffing": "Illustration: clay scrubs on a hanger rack, a stethoscope, a calendar and a small state map with glowing pins.",
@@ -114,7 +134,7 @@ def uc_page(n):
            "uc-digital": "Illustration: a clay smartphone showing a map of doctor pins, with a small clay robot leaning on it.",
            "compare": "Illustration: clay stacks of boxes and binders on a table beside a small machine sending out envelopes and pins.",
            "notfound": "Illustration: a clay folded map with a dotted path leading to a map pin, beside a magnifying glass.",
-           "cta": "Illustration: a clay shelf of hospitals, clinics and houses with glowing map pins above them, and a small clay robot."}[art_key]
+           "cta": "Illustration: a clay shelf of hospitals, clinics and houses with glowing map pins above them, and a small clay robot."}.get(art_key, f"Illustration for {name}")
     wfs = PX.for_page(slug) or [PX._by[x] for x in {"healthcare-marketing": ["abm-list", "ehr-campaign", "event-invites"]}.get(slug, [])]
     wf = (f'''<section class="sec" aria-labelledby="uc-wf-title">
   <div class="wrap">
@@ -128,8 +148,9 @@ def uc_page(n):
 <main id="main">
 <section class="sec sp-top ph-top" aria-labelledby="uc-title">
   <div class="wrap">
-    <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/use-cases">Use cases</a> / {name}</nav>
-    <div class="head ph">
+    <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/use-cases">Solutions</a> / {name}</nav>
+    {seg_tabs(slug)}
+    <div class="head ph seg-head">{logo(slug, 88, "seg-hero-logo")}
       <h1 id="uc-title">{m["h1a"]} <span class="pop">{m["h1b"]}</span></h1>
       <p class="sp-lede">{m["intro"]}</p>
     </div>
@@ -140,6 +161,7 @@ def uc_page(n):
       <p class="sp-k">Signals you'd watch</p><ul class="sp-see">{"".join(f"<li>{x}</li>" for x in watch)}</ul></div></div></div>
   </div>
 </section>
+{scene(SEGBY[slug][5], SCENE_ALT[SEGBY[slug][5]])}
 {wf}<section class="sec" aria-labelledby="uc-call-title">
   <div class="wrap uc-call">
     <div><p class="eyebrow"><span>Example call</span></p><h2 id="uc-call-title">What it looks like <span class="pop">in code.</span></h2>

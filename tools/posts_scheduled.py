@@ -70,7 +70,7 @@ SCHEDULED = [
 <p>The NPI registry lists one primary practice location, and it's self-reported. CMS enrollment data connects clinicians to the organizations they bill through. Hospitals and groups publish their own directories. Each source sees part of the picture, on its own schedule.</p>
 <h2>What a good affiliation record looks like</h2>
 <p>A useful affiliation isn't just "Dr. Example works at Sample Medical Center." It says where that fact came from, when it was first seen and when it was last confirmed. With those dates, you can tell a current relationship from one that ended a year ago.</p>
-<p>That's how the <a href="/physician-data-api">Stethos physician data API</a> is designed, with an <code>affiliation.changed</code> event when a link appears or disappears. Read how sales teams use it in <a href="/use-cases/medtech-pharma">medtech and pharma sales</a>.</p>'''),
+<p>That's how the <a href="/physician-data-api">Stethos physician data API</a> is designed, with an <code>affiliation.changed</code> event when a link appears or disappears. Read how sales teams use it in <a href="/use-cases/medtech">medtech and pharma sales</a>.</p>'''),
     dict(slug="healthcare-provider-taxonomy-codes-explained", tag="Public data", art="problem", date="2026-12-08", nice="December 8, 2026", mins=4,
          title="Healthcare provider taxonomy codes, explained", seo="Healthcare Provider Taxonomy Codes Explained", kw="provider taxonomy codes, NUCC taxonomy, specialty codes",
          desc="Taxonomy codes describe a provider's type and specialty. Here's how the code set works, how it shows up in NPI records, and where it falls short.",

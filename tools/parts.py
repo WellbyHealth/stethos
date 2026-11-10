@@ -81,6 +81,8 @@ def dd_spec(href, img, label):
     return f'<li><a href="{href}"><img src="/img/{img}" width="96" height="96" alt="" loading="lazy" decoding="async">{label}</a></li>'
 
 
+from segments import SEG
+
 HEADER = f'''
 <header class="hdr">
   <div class="bar">
@@ -98,22 +100,25 @@ HEADER = f'''
   }{dd_goal("/health-system-data-api", "g-cl-stk-orgs-160.webp", "#fdf5d2", "Health system data", "Health systems, groups and clinics, with who works where.")
   }{dd_goal("/license-verification-api", "g-cl-stk-watch-160.webp", "#fcecf6", "License data and alerts", "License status across states, with a webhook when one changes.")
   }{dd_goal("/healthcare-mcp-server", "g-cl-stk-agents-160.webp", "#eff5d6", "MCP server", "Add Stethos to Claude or any MCP client in five minutes.")}</ul></div>
-          <div class="dd-col dd-side"><p class="dd-h">Who it's for</p><ul class="dd-spec">{
-    dd_spec("/use-cases/medtech-pharma", "g-cl-stk-search-160.webp", "Medtech and pharma sales")
-  }{dd_spec("/use-cases/health-it-sales", "g-cl-ic-code-96.webp", "Health IT and services sales")
-  }{dd_spec("/use-cases/healthcare-marketing", "g-cl-ic-pin-96.webp", "Healthcare marketing")
-  }{dd_spec("/use-cases/investors", "g-cl-stk-orgs-160.webp", "Investors and deal teams")
-  }{dd_spec("/use-cases/digital-health", "g-cl-stk-agents-160.webp", "Healthcare startups")
-  }{dd_spec("/use-cases/post-acute", "g-cl-ic-pin-96.webp", "Post-acute care and agencies")
-  }{dd_spec("/use-cases/clinical-staffing", "g-cl-ic-license-96.webp", "Clinical staffing")}</ul><a class="dd-all" href="/use-cases">All use cases <span aria-hidden="true">→</span></a><img class="dd-art" src="/img/g-cl-stk-search-cut.webp" width="480" height="480" alt="" loading="lazy" decoding="async"></div>
+          <div class="dd-col dd-side"><p class="dd-h">Data sets</p><ul class="dd-spec">{
+    dd_spec("/medicare-utilization-data-api", "g-l-pharma-160.webp", "Medicare utilization data")
+  }{dd_spec("/home-health-hospice-data-api", "g-l-postacute-160.webp", "Home health and hospice data")
+  }{dd_spec("/physician-referral-data", "g-l-healthsystems-160.webp", "Physician referral data")
+  }{dd_spec("/private-equity-healthcare-ownership-data", "g-l-investors-160.webp", "Private equity ownership")}</ul><a class="dd-all" href="/docs#sources">All data sources <span aria-hidden="true">→</span></a><img class="dd-art" src="/img/g-cl-stk-search-cut.webp" width="480" height="480" alt="" loading="lazy" decoding="async"></div>
         </div>
       </div>
-      <a href="/use-cases">Use cases</a>
+      <div class="dd">
+        <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-teams">Solutions<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dd-panel dd-teams" id="dd-teams">
+          <p class="dd-h">By team</p><ul class="dd-segs">{"".join(f'<li><a href="/use-cases/{s[0]}"><i class="dd-ic" style="--t:{s[4]}"><img src="/img/g-{s[3]}-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>{s[1]}</b><span>{s[2]}</span></span></a></li>' for s in SEG)}</ul>
+          <a class="dd-all" href="/use-cases">All use cases and workflows <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
       <a href="/how-it-works">How it works</a>
       <a href="/docs">Docs</a>
       <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
     </nav>
-    <div class="hdr-act"><a class="btn-2" href="{TRIAL}#signin">Sign in</a><a class="btn-1" href="{TRIAL}">Start free trial</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/how-it-works">How it works</a><a href="/how-it-works#connect">Connect in 5 minutes</a><a href="/use-cases">Use cases</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="{TRIAL}#signin">Sign in</a></div>
+    <div class="hdr-act"><a class="btn-2" href="{TRIAL}#signin">Sign in</a><a class="btn-1" href="{TRIAL}">Start free trial</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/use-cases">Solutions by team</a><a href="/how-it-works">How it works</a><a href="/how-it-works#connect">Connect in 5 minutes</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="{TRIAL}#signin">Sign in</a></div>
   </div>
 </header>
 '''
@@ -127,7 +132,7 @@ FOOTER = f'''
     </div>
     <nav class="foot-links" aria-label="Footer">
       <a href="/how-it-works">How it works</a>
-      <a href="/use-cases">Use cases</a>
+      <a href="/use-cases">Solutions</a>
       
       <a href="/docs">Docs</a>
       <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
@@ -140,7 +145,9 @@ FOOTER = f'''
       <a href="/home-health-hospice-data-api">Home health and hospice data</a>
       <a href="/physician-referral-data">Physician referral data</a>
       <a href="/private-equity-healthcare-ownership-data">Private equity ownership</a>
-      <a href="/use-cases/medtech-pharma">Medtech and pharma</a>
+      <a href="/use-cases/medtech">Medtech</a>
+      <a href="/use-cases/pharma">Pharma</a>
+      <a href="/use-cases/health-systems">Health systems</a>
       <a href="/use-cases/provider-directories">Provider directories</a>
       <a href="/use-cases/clinical-staffing">Clinical staffing</a>
       <a href="/compare/definitive-healthcare">vs Definitive</a>
@@ -158,6 +165,7 @@ FOOTER = f'''
 def cta_band(eyebrow, h2a, h2b, lede, subject):
     return f'''<section class="sec">
   <div class="panel navy wrap-panel sp-cta">
+    <figure class="cta-scene"><img src="/img/g-w-cta-1600.webp" srcset="/img/g-w-cta-900.webp 900w, /img/g-w-cta-1600.webp 1600w" sizes="(max-width: 1200px) 100vw, 1200px" width="1600" height="686" alt="" loading="lazy" decoding="async"></figure>
     <img class="cta-art l" src="/img/g-cl-stk-agents-cut.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><img class="cta-art r" src="/img/g-cl-ic-pin-cut.webp" width="360" height="360" alt="" loading="lazy" decoding="async">
     <p class="eyebrow on-dark"><span>{eyebrow}</span></p>
     <h2>{h2a} <span class="pop">{h2b}</span></h2>

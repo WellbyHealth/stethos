@@ -1,4 +1,5 @@
 from parts import *
+from segments import scene, seg_grid, seg_tabs, logo
 import datetime as _dt
 from zoneinfo import ZoneInfo as _Z
 from posts_scheduled import SCHEDULED
@@ -129,6 +130,7 @@ def blog_index():
     body = f'''{HEADER}
 <main id="main">
   <div class="wrap blog-head ph-top"><div class="head ph"><h1>Guides for teams <span class="pop">selling into healthcare.</span></h1><p class="sp-lede">Plain-English guides on US healthcare provider data, where it comes from, how it goes wrong and how to put it to work.</p></div></div>
+  {scene("w-blog", "Illustration: the little robot reading under a tree while books and pages drift through the sky.", eager=True)}
   <div class="wrap"><ul class="blog-grid">{"".join(card(p, "h2") for p in POSTS)}</ul></div>
 </main>
 '''

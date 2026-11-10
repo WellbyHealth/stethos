@@ -63,6 +63,11 @@
       "source": "/examples",
       "destination": "/use-cases",
       "permanent": true
+    },
+    {
+      "source": "/use-cases/medtech-pharma",
+      "destination": "/use-cases/medtech",
+      "permanent": true
     }
   ]
 }

@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Surgeon and Physician Data for Medtech Sales | Stethos</title>
+<meta name="description" content="Find surgeons by specialty, procedure focus, affiliation and license, and get alerts when targets move. Provider data for medtech sales teams and agents.">
+<meta name="theme-color" content="#D0D2F9">
+<link rel="canonical" href="https://stethos-one.vercel.app/use-cases/medtech">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Stethos">
+<meta property="og:title" content="Surgeon and Physician Data for Medtech Sales | Stethos">
+<meta property="og:description" content="Find surgeons by specialty, procedure focus, affiliation and license, and get alerts when targets move. Provider data for medtech sales teams and agents.">
+<meta property="og:url" content="https://stethos-one.vercel.app/use-cases/medtech">
+<meta property="og:image" content="https://stethos-one.vercel.app/og/medtech.jpg?v=4">
+<meta property="og:image:secure_url" content="https://stethos-one.vercel.app/og/medtech.jpg?v=4">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Illustration for Medtech sales">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Surgeon and Physician Data for Medtech Sales | Stethos">
+<meta name="twitter:description" content="Find surgeons by specialty, procedure focus, affiliation and license, and get alerts when targets move. Provider data for medtech sales teams and agents.">
+<meta name="twitter:image" content="https://stethos-one.vercel.app/og/medtech.jpg?v=4">
+<meta name="twitter:image:alt" content="Illustration for Medtech sales">
+<link rel="icon" href="/favicon-32.png?v=cf8c8908" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=d0d2cf04">
+<link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css?v=6c88d771">
+<link rel="stylesheet" href="/v2.css?v=978b51f1">
+<link rel="stylesheet" href="/site.css?v=814fa799">
+<link rel="stylesheet" href="/stethos.css?v=2c0729ac">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I filter physicians by procedure focus?", "acceptedAnswer": {"@type": "Answer", "text": "Search filters include specialty and sub-specialty, practice setting, affiliation and license state. Procedure-focus signals come from public sources such as CMS data and practice websites, and each one shows its source."}}, {"@type": "Question", "name": "Does it include Open Payments data?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Enrich can add an Open Payments summary for a physician as an optional field, so your team can see existing industry relationships before reaching out."}}, {"@type": "Question", "name": "Can it update our CRM automatically?", "acceptedAnswer": {"@type": "Answer", "text": "Watchers send a webhook when a target's affiliation, location or license changes, so your CRM or agent can update the record and queue outreach without anyone re-checking lists."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos-one.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Use cases", "item": "https://stethos-one.vercel.app/use-cases"}, {"@type": "ListItem", "position": 3, "name": "Medtech sales", "item": "https://stethos-one.vercel.app/use-cases/medtech"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr">
+  <div class="bar">
+    <a class="logo" href="/" aria-label="Stethos home">
+      <img class="mark" src="/img/g-cl-logo-96.webp?v=a9b0c3f6" width="30" height="30" alt="">
+      <span>Stethos</span>
+    </a>
+    <nav aria-label="Primary">
+      <div class="dd">
+        <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-solutions">Product<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dd-panel" id="dd-solutions">
+          <div class="dd-col"><p class="dd-h">The API</p><ul class="dd-goals"><li><a href="/physician-data-api"><i class="dd-ic" style="--t:#ddf2ee"><img src="/img/g-cl-stk-search-160.webp?v=0f948a37" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Provider search</b><span>Every clinician and organization in the US, filtered your way.</span></span></a></li><li><a href="/npi-lookup-api"><i class="dd-ic" style="--t:#e4f0fd"><img src="/img/g-cl-stk-enrich-160.webp?v=a160c1b7" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>NPI lookup and enrich</b><span>Licenses, affiliations, networks and contact info from an NPI.</span></span></a></li><li><a href="/health-system-data-api"><i class="dd-ic" style="--t:#fdf5d2"><img src="/img/g-cl-stk-orgs-160.webp?v=6843bd5a" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Health system data</b><span>Health systems, groups and clinics, with who works where.</span></span></a></li><li><a href="/license-verification-api"><i class="dd-ic" style="--t:#fcecf6"><img src="/img/g-cl-stk-watch-160.webp?v=b44cee5a" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>License data and alerts</b><span>License status across states, with a webhook when one changes.</span></span></a></li><li><a href="/healthcare-mcp-server"><i class="dd-ic" style="--t:#eff5d6"><img src="/img/g-cl-stk-agents-160.webp?v=a082bcf3" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>MCP server</b><span>Add Stethos to Claude or any MCP client in five minutes.</span></span></a></li></ul></div>
+          <div class="dd-col dd-side"><p class="dd-h">Data sets</p><ul class="dd-spec"><li><a href="/medicare-utilization-data-api"><img src="/img/g-l-pharma-160.webp?v=fc1a4bbc" width="96" height="96" alt="" loading="lazy" decoding="async">Medicare utilization data</a></li><li><a href="/home-health-hospice-data-api"><img src="/img/g-l-postacute-160.webp?v=f29aae3a" width="96" height="96" alt="" loading="lazy" decoding="async">Home health and hospice data</a></li><li><a href="/physician-referral-data"><img src="/img/g-l-healthsystems-160.webp?v=5beee26b" width="96" height="96" alt="" loading="lazy" decoding="async">Physician referral data</a></li><li><a href="/private-equity-healthcare-ownership-data"><img src="/img/g-l-investors-160.webp?v=bb2097b6" width="96" height="96" alt="" loading="lazy" decoding="async">Private equity ownership</a></li></ul><a class="dd-all" href="/docs#sources">All data sources <span aria-hidden="true">→</span></a><img class="dd-art" src="/img/g-cl-stk-search-cut.webp?v=98a13010" width="480" height="480" alt="" loading="lazy" decoding="async"></div>
+        </div>
+      </div>
+      <div class="dd">
+        <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-teams">Solutions<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dd-panel dd-teams" id="dd-teams">
+          <p class="dd-h">By team</p><ul class="dd-segs"><li><a href="/use-cases/medtech"><i class="dd-ic" style="--t:#e4f0fd"><img src="/img/g-l-medtech-160.webp?v=00a46869" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Medtech</b><span>Reach surgeons the week they move.</span></span></a></li><li><a href="/use-cases/pharma"><i class="dd-ic" style="--t:#e3f4ec"><img src="/img/g-l-pharma-160.webp?v=fc1a4bbc" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Pharma and life sciences</b><span>Map prescribers and KOLs for a launch.</span></span></a></li><li><a href="/use-cases/health-it-sales"><i class="dd-ic" style="--t:#ece6fb"><img src="/img/g-l-healthit-160.webp?v=cca03189" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Health IT and services</b><span>Sell to systems by EHR, size and leader.</span></span></a></li><li><a href="/use-cases/healthcare-marketing"><i class="dd-ic" style="--t:#fde8dc"><img src="/img/g-l-marketing-160.webp?v=98b6b71c" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Healthcare marketing</b><span>Clinician audiences that stay current.</span></span></a></li><li><a href="/use-cases/investors"><i class="dd-ic" style="--t:#fbe4ea"><img src="/img/g-l-investors-160.webp?v=bb2097b6" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Investors and PE</b><span>Roll-ups, headcount and new sites.</span></span></a></li><li><a href="/use-cases/digital-health"><i class="dd-ic" style="--t:#e4f0fd"><img src="/img/g-l-startups-160.webp?v=04e78ea2" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Healthcare startups</b><span>First customers and provider search.</span></span></a></li><li><a href="/use-cases/post-acute"><i class="dd-ic" style="--t:#fdf5d2"><img src="/img/g-l-postacute-160.webp?v=f29aae3a" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Post-acute care</b><span>Rank referrers and see who's gone quiet.</span></span></a></li><li><a href="/use-cases/clinical-staffing"><i class="dd-ic" style="--t:#e3f4ec"><img src="/img/g-l-staffing-160.webp?v=04248e76" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Clinical staffing</b><span>Licensed clinicians and who's hiring.</span></span></a></li><li><a href="/use-cases/provider-directories"><i class="dd-ic" style="--t:#ece6fb"><img src="/img/g-l-directories-160.webp?v=ab6768c8" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Payers and directories</b><span>Keep every listing accurate.</span></span></a></li><li><a href="/use-cases/health-systems"><i class="dd-ic" style="--t:#fbe4ea"><img src="/img/g-l-healthsystems-160.webp?v=5beee26b" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Health systems</b><span>Physician relations and network growth.</span></span></a></li></ul>
+          <a class="dd-all" href="/use-cases">All use cases and workflows <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <a href="/how-it-works">How it works</a>
+      <a href="/docs">Docs</a>
+      <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
+    </nav>
+    <div class="hdr-act"><a class="btn-2" href="/signup#signin">Sign in</a><a class="btn-1" href="/signup">Start free trial</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/use-cases">Solutions by team</a><a href="/how-it-works">How it works</a><a href="/how-it-works#connect">Connect in 5 minutes</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="/signup#signin">Sign in</a></div>
+  </div>
+</header>
+
+<main id="main">
+<section class="sec sp-top ph-top" aria-labelledby="uc-title">
+  <div class="wrap">
+    <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/use-cases">Solutions</a> / Medtech sales</nav>
+    <nav class="seg-tabs" aria-label="Solutions by team"><ul><li><a href="/use-cases/medtech" style="--t:#e4f0fd" aria-current="page"><img class="seg-logo" src="/img/g-l-medtech-160.webp?v=00a46869" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Medtech</span></a></li><li><a href="/use-cases/pharma" style="--t:#e3f4ec"><img class="seg-logo" src="/img/g-l-pharma-160.webp?v=fc1a4bbc" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Pharma and life sciences</span></a></li><li><a href="/use-cases/health-it-sales" style="--t:#ece6fb"><img class="seg-logo" src="/img/g-l-healthit-160.webp?v=cca03189" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Health IT and services</span></a></li><li><a href="/use-cases/healthcare-marketing" style="--t:#fde8dc"><img class="seg-logo" src="/img/g-l-marketing-160.webp?v=98b6b71c" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Healthcare marketing</span></a></li><li><a href="/use-cases/investors" style="--t:#fbe4ea"><img class="seg-logo" src="/img/g-l-investors-160.webp?v=bb2097b6" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Investors and PE</span></a></li><li><a href="/use-cases/digital-health" style="--t:#e4f0fd"><img class="seg-logo" src="/img/g-l-startups-160.webp?v=04e78ea2" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Healthcare startups</span></a></li><li><a href="/use-cases/post-acute" style="--t:#fdf5d2"><img class="seg-logo" src="/img/g-l-postacute-160.webp?v=f29aae3a" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Post-acute care</span></a></li><li><a href="/use-cases/clinical-staffing" style="--t:#e3f4ec"><img class="seg-logo" src="/img/g-l-staffing-160.webp?v=04248e76" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Clinical staffing</span></a></li><li><a href="/use-cases/provider-directories" style="--t:#ece6fb"><img class="seg-logo" src="/img/g-l-directories-160.webp?v=ab6768c8" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Payers and directories</span></a></li><li><a href="/use-cases/health-systems" style="--t:#fbe4ea"><img class="seg-logo" src="/img/g-l-healthsystems-160.webp?v=5beee26b" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Health systems</span></a></li></ul></nav>
+    <div class="head ph seg-head"><img class="seg-hero-logo" src="/img/g-l-medtech-320.webp?v=c58c5fc8" width="88" height="88" alt="" loading="lazy" decoding="async">
+      <h1 id="uc-title">Surgeon and physician data <span class="pop">for medtech sales agents.</span></h1>
+      <p class="sp-lede">Reach the right surgeon at the right moment: when they join a new group, start at a new facility or take over a service line. Stethos is built to keep a current record for every target and tell your agents the week it changes.</p>
+    </div>
+    <div class="sp-panels uc-one"><div class="sp-panel sp-blue"><div class="sp-p-main">
+      <figure class="sp-scene"><img fetchpriority="high" src="/img/g-art-uc-medtech-900.webp?v=02b9dfdf" srcset="/img/g-art-uc-medtech-900.webp 900w, /img/g-art-uc-medtech-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 560px" width="1600" height="1195" alt="Illustration: a clay sales desk with a surgical instrument case, a knee model and a laptop showing a map with pins." decoding="async"></figure>
+      <h2>Medtech sales</h2><p class="sp-k">Stethos is built to</p><p class="sp-do">Give your sales agents the surgeons, groups and facilities that fit your product, and tell them the week a target moves, opens a site or starts a new service line.</p></div>
+      <div class="sp-p-side"><p class="sp-k">Data you'd use</p><ul class="sp-src"><li>Specialty, procedure focus and practice setting</li><li>Group and hospital affiliations</li><li>Licenses by state</li><li>Practice contact details</li><li>Industry payments from Open Payments</li></ul>
+      <p class="sp-k">Signals you'd watch</p><ul class="sp-see"><li>A target surgeon changes groups</li><li>A new ambulatory surgery center opens</li><li>A health system names a new service line leader</li></ul></div></div></div>
+  </div>
+</section>
+<figure class="scene-band"><img src="/img/g-w-uc-medtech-1600.webp?v=855f0916" srcset="/img/g-w-uc-medtech-900.webp 900w, /img/g-w-uc-medtech-1600.webp 1600w" sizes="100vw" width="1600" height="686" alt="Illustration: the little clay robot riding a delivery van with a device box from a surgery center toward a cluster of clinics." loading="lazy" decoding="async"></figure>
+<section class="sec" aria-labelledby="uc-wf-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Workflows</span></p><h2 id="uc-wf-title">What teams <span class="pop">do with it.</span></h2></div>
+    <div class="ex-list"><article class="ex-card" id="medtech-targeting" style="--t:#e4f0fd">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-stk-search-160.webp?v=0f948a37" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">Medtech · Sales</p><h2>Who should I call this week?</h2></div></div>
+      <p class="ex-trigger"><b>When</b> Every Monday, or whenever a rep asks.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Find independent spine surgeons in my territory doing 50+ fusions a year, and tell me who changed anything recently.”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Searches surgeons by specialty, territory and Medicare procedure volume</li><li>Ranks them by recent changes: a new group, a new surgery center, new hires</li><li>Creates or updates the contacts in Salesforce with a one-line talking point</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Medicare procedure volumes</li><li>Affiliations</li><li>Change events</li><li>Practice contacts</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">Salesforce or HubSpot, plus a weekly list in Claude</p></div>
+      </div>
+    </article>
+<article class="ex-card" id="territory-planning" style="--t:#e4f0fd">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-ic-pin-96.webp?v=bccaf9c5" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">Medtech · Sales operations</p><h2>Draw territories on real accounts</h2></div></div>
+      <p class="ex-trigger"><b>When</b> Annual planning, or a new rep starts.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Split Texas into four territories with a similar number of high-volume orthopedic surgeons in each.”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Counts target surgeons and facilities by county and metro</li><li>Weights them by procedure volume and current affiliation</li><li>Proposes balanced territories and lists the top accounts in each</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Medicare procedure volumes</li><li>Practice locations</li><li>Affiliations</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">A territory sheet for sales ops, and account owners in the CRM</p></div>
+      </div>
+    </article>
+<article class="ex-card" id="abm-list" style="--t:#ece6fb">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-stk-orgs-160.webp?v=6843bd5a" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">Medtech · Account-based marketing</p><h2>Build an ABM account list with the buying team</h2></div></div>
+      <p class="ex-trigger"><b>When</b> Planning a quarter's account-based campaign.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Give me the 200 health systems in the Southeast with 5+ hospitals and a cardiology service line, with the cardiology leaders at each.”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Searches organizations by type, size, region and service lines</li><li>Adds the clinicians and leaders in cardiology at each account</li><li>Scores accounts by fit and loads them into your marketing tool as a list</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Organizations</li><li>Service lines</li><li>Affiliations</li><li>Leaders</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">HubSpot, Salesforce or your ad platform's audience upload</p></div>
+      </div>
+    </article>
+<figure class="ex-art"><img src="/img/g-art-s-physician-900.webp?v=e14bad4d" srcset="/img/g-art-s-physician-900.webp 900w, /img/g-art-s-physician-1600.webp 1600w" sizes="(max-width: 820px) 100vw, 540px" width="1600" height="1195" alt="Illustration: a clay doctor's coat and stethoscope on a coat stand, beside index cards and a map pin." loading="lazy" decoding="async"></figure></div>
+    <p class="cov-note ex-more"><a href="/use-cases">See workflows for every segment <span aria-hidden="true">→</span></a></p>
+  </div>
+</section>
+<section class="sec" aria-labelledby="uc-call-title">
+  <div class="wrap uc-call">
+    <div><p class="eyebrow"><span>Example call</span></p><h2 id="uc-call-title">What it looks like <span class="pop">in code.</span></h2>
+    <p class="uc-call-p">One request against the Stethos API. Responses carry the source and last-verified date on every field. See the <a href="/docs">quickstart</a> for authentication, watchers and the MCP server, and <a href="/pricing">pricing</a> for what each call costs.</p></div>
+<pre class="uc-code" tabindex="0" aria-label="Example request"><code>curl https://api.stethos.health/v1/providers/search \
+  -H "Authorization: Bearer $STETHOS_KEY" \
+  -d '{
+  "specialty": "orthopedic surgery",
+  "state": "AZ",
+  "affiliation_type": "independent_group",
+  "fields": [
+    "affiliations",
+    "practice_contact",
+    "industry_payments"
+  ]
+}'</code></pre>
+  </div>
+</section>
+<section class="sec" aria-labelledby="uc-faq-title">
+  <div class="wrap faq-grid">
+    <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="uc-faq-title">Medtech sales: common questions</h2><p class="faq-more">Something else? <a href="mailto:team@stethos.health?subject=Stethos%20Medtech%20sales">Email our team</a>.</p><figure class="faq-art"><img src="/img/g-art-r-faq-900.webp?v=a84942d7" width="900" height="672" alt="Illustration: the little clay robot sitting on a stack of books, thinking, next to a question mark and a lightbulb." loading="lazy" decoding="async"></figure></div>
+    <div class="qs"><details><summary>Can I filter physicians by procedure focus?</summary><p>Search filters include specialty and sub-specialty, practice setting, affiliation and license state. Procedure-focus signals come from public sources such as CMS data and practice websites, and each one shows its source.</p></details><details><summary>Does it include Open Payments data?</summary><p>Yes. Enrich can add an Open Payments summary for a physician as an optional field, so your team can see existing industry relationships before reaching out.</p></details><details><summary>Can it update our CRM automatically?</summary><p>Watchers send a webhook when a target's affiliation, location or license changes, so your CRM or agent can update the record and queue outreach without anyone re-checking lists.</p></details></div>
+  </div>
+</section>
+<section class="sec" aria-labelledby="uc-more-title">
+  <div class="wrap"><h2 id="uc-more-title" class="uc-more-h">More use cases</h2><ul class="uc-more"><li><a href="/use-cases/pharma"><img class="seg-logo" src="/img/g-l-pharma-160.webp?v=fc1a4bbc" width="64" height="64" alt="" loading="lazy" decoding="async"><span>Pharma and life sciences</span></a></li><li><a href="/use-cases/health-it-sales"><img class="seg-logo" src="/img/g-l-healthit-160.webp?v=cca03189" width="64" height="64" alt="" loading="lazy" decoding="async"><span>Health IT and services sales</span></a></li><li><a href="/use-cases/healthcare-marketing"><img class="seg-logo" src="/img/g-l-marketing-160.webp?v=98b6b71c" width="64" height="64" alt="" loading="lazy" decoding="async"><span>Healthcare marketing</span></a></li><li><a href="/use-cases/investors"><img class="seg-logo" src="/img/g-l-investors-160.webp?v=bb2097b6" width="64" height="64" alt="" loading="lazy" decoding="async"><span>Healthcare investors</span></a></li><li><a href="/use-cases/digital-health"><img class="seg-logo" src="/img/g-l-startups-160.webp?v=04e78ea2" width="64" height="64" alt="" loading="lazy" decoding="async"><span>Healthcare startups</span></a></li><li><a href="/use-cases/post-acute"><img class="seg-logo" src="/img/g-l-postacute-160.webp?v=f29aae3a" width="64" height="64" alt="" loading="lazy" decoding="async"><span>Post-acute care and agencies</span></a></li><li><a href="/use-cases/clinical-staffing"><img class="seg-logo" src="/img/g-l-staffing-160.webp?v=04248e76" width="64" height="64" alt="" loading="lazy" decoding="async"><span>Clinical staffing and recruiting</span></a></li><li><a href="/use-cases/provider-directories"><img class="seg-logo" src="/img/g-l-directories-160.webp?v=ab6768c8" width="64" height="64" alt="" loading="lazy" decoding="async"><span>Provider directories and networks</span></a></li><li><a href="/use-cases/health-systems"><img class="seg-logo" src="/img/g-l-healthsystems-160.webp?v=5beee26b" width="64" height="64" alt="" loading="lazy" decoding="async"><span>Health systems</span></a></li></ul></div>
+</section>
+<section class="sec">
+  <div class="panel navy wrap-panel sp-cta">
+    <figure class="cta-scene"><img src="/img/g-w-cta-1600.webp?v=9ad3b515" srcset="/img/g-w-cta-900.webp 900w, /img/g-w-cta-1600.webp 1600w" sizes="(max-width: 1200px) 100vw, 1200px" width="1600" height="686" alt="" loading="lazy" decoding="async"></figure>
+    <img class="cta-art l" src="/img/g-cl-stk-agents-cut.webp?v=ddc6d49d" width="320" height="320" alt="" loading="lazy" decoding="async"><img class="cta-art r" src="/img/g-cl-ic-pin-cut.webp?v=dc8aa564" width="360" height="360" alt="" loading="lazy" decoding="async">
+    <p class="eyebrow on-dark"><span>Free credits</span></p>
+    <h2>Try it on <span class="pop">your own targets.</span></h2>
+    <p>Get a key, run your first search in minutes, and pay only for the data you use.</p>
+    <div class="sp-cta-row"><a class="btn-cta" href="/signup">Start free trial</a><a class="sp-cta-alt" href="mailto:team@stethos.health?subject=Stethos%20medtech">Questions? Email our team</a></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="logo" href="/"><img class="mark" src="/img/g-cl-logo-96.webp?v=a9b0c3f6" width="30" height="30" alt=""><span>Stethos</span></a>
+      <p>Current, sourced healthcare data for sales, marketing and investment teams and their AI agents, as an MCP server. Product views and tool results on this site use illustrative sample data.</p>
+    </div>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="/how-it-works">How it works</a>
+      <a href="/use-cases">Solutions</a>
+      
+      <a href="/docs">Docs</a>
+      <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
+      <a href="/healthcare-mcp-server">Healthcare MCP server</a>
+      <a href="/npi-lookup-api">NPI lookup API</a>
+      <a href="/physician-data-api">Physician data API</a>
+      <a href="/license-verification-api">License data API</a>
+      <a href="/health-system-data-api">Health system data API</a>
+      <a href="/medicare-utilization-data-api">Medicare utilization data</a>
+      <a href="/home-health-hospice-data-api">Home health and hospice data</a>
+      <a href="/physician-referral-data">Physician referral data</a>
+      <a href="/private-equity-healthcare-ownership-data">Private equity ownership</a>
+      <a href="/use-cases/medtech">Medtech</a>
+      <a href="/use-cases/pharma">Pharma</a>
+      <a href="/use-cases/health-systems">Health systems</a>
+      <a href="/use-cases/provider-directories">Provider directories</a>
+      <a href="/use-cases/clinical-staffing">Clinical staffing</a>
+      <a href="/compare/definitive-healthcare">vs Definitive</a>
+      <a href="/compare/iqvia-onekey">vs IQVIA OneKey</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/privacy">Privacy</a>
+      <a href="mailto:team@stethos.health?subject=Stethos">Contact</a>
+    </nav>
+    <p class="foot-copy">© 2026 Stethos</p>
+  </div>
+</footer>
+<script src="/nav.js?v=81514c99" defer></script>
+</body>
+</html>

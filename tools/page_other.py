@@ -1,11 +1,16 @@
 from parts import *
+from segments import scene, seg_grid, seg_tabs, logo
 
 # ---------- use cases (same tabbed layout as Inroad's specialties page) ----------
 UC = [
-    ("medtech-pharma", "sp-blue", "g-cl-stk-search-160.webp", "uc-medtech", "Medtech and pharma sales",
+    ("medtech", "sp-blue", "g-cl-stk-search-160.webp", "uc-medtech", "Medtech sales",
      "Give your sales agents the surgeons, groups and facilities that fit your product, and tell them the week a target moves, opens a site or starts a new service line.",
      ["Specialty, procedure focus and practice setting", "Group and hospital affiliations", "Licenses by state", "Practice contact details", "Industry payments from Open Payments"],
      ["A target surgeon changes groups", "A new ambulatory surgery center opens", "A health system names a new service line leader"]),
+    ("pharma", "sp-lime", "g-cl-stk-enrich-160.webp", "s-medicare", "Pharma and life sciences",
+     "Map the prescribers, key opinion leaders and institutions that matter for a launch, and keep commercial and medical teams current as people move.",
+     ["Prescribing volume by drug class from Medicare Part D", "Publications, clinical trials and NIH grants", "Hospital and group affiliations", "Industry payments from Open Payments"],
+     ["A high-volume prescriber changes practice", "A key opinion leader joins a new institution", "A new practice opens in a launch territory"]),
     ("health-it-sales", "sp-lime", "g-cl-ic-code-cut.webp", "compare", "Health IT and services sales",
      "Build target lists of health systems and practices by EHR, size and service lines, and reach the buyer the week a new leader starts or a system changes vendors.",
      ["Health systems, groups and clinics, with locations and size", "Certified health IT and EHR in use, where published", "Executives and service line leaders", "Parent and affiliate links across a system"],
@@ -34,6 +39,10 @@ UC = [
      "Check every listing in your directory against current sources, and flag stale addresses, lapsed licenses and network mismatches before members run into them.",
      ["Practice locations and phone numbers, with sources", "Licenses and their status", "Payer network listings across directories", "Accepting-new-patients signals where published"],
      ["A clinician leaves a listed location", "A license lapses or is restricted", "A practice drops out of a network"]),
+    ("health-systems", "sp-pink", "g-cl-stk-orgs-160.webp", "s-healthsys", "Health systems",
+     "Map the community physicians around your hospitals, see who is affiliated with you or a competitor, and tell your physician liaisons when a doctor moves or opens a practice.",
+     ["Community physicians by specialty and location", "Hospital and group affiliations, including competitors", "ACO participation", "Medicare volume by clinician"],
+     ["A physician joins a competing group", "A new practice opens in your service area", "A group joins another health system"]),
 ]
 
 
@@ -162,6 +171,7 @@ def pricing():
     </div>
   </div>
 </section>
+{scene("w-pricing", "Illustration: a pastel vending machine on a hill dispensing tokens, with the little robot catching them in a basket.")}
 <section class="sec" aria-labelledby="pr-faq-title">
   <div class="wrap faq-grid">
     <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="pr-faq-title">Pricing questions</h2><figure class="faq-art"><img src="/img/g-art-pricing-900.webp" srcset="/img/g-art-pricing-900.webp 900w, /img/g-art-pricing-1600.webp 1600w" sizes="(max-width: 820px) 100vw, 480px" width="1600" height="1195" alt="Illustration: a glass jar of clay credit tokens beside a small meter dial." loading="lazy" decoding="async"></figure><p class="faq-more">Something else? <a href="mailto:{EMAIL}?subject=Stethos%20pricing">Email our team</a>.</p></div>
@@ -272,6 +282,7 @@ def docs():
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Docs</nav>
   <h1>Quickstart: connect Stethos to your agent</h1>
   <p class="doc-meta">Preview · tools and prices may change before launch</p>
+  <figure class="scene-inline"><img src="/img/g-w-docs-1600.webp" srcset="/img/g-w-docs-900.webp 900w, /img/g-w-docs-1600.webp 1600w" sizes="(max-width: 800px) 100vw, 760px" width="1600" height="686" alt="Illustration: the little robot at a workbench on a hill, plugging cables into the clay data machine." decoding="async"></figure>
   <ul class="doc-toc"><li><a href="#connect">Connect</a></li><li><a href="#tools">Tools</a></li><li><a href="#sources">Data sources</a></li><li><a href="#credits">Credits</a></li><li><a href="#rest">REST API</a></li><li><a href="#watch">Webhooks</a></li><li><a href="#errors">Errors</a></li></ul>
   <p class="note">Stethos is in development. This page shows the MCP server and API we're building so you can plan against it. <a href="{TRIAL}">Join early access</a> to get access when it opens.</p>
 
@@ -436,7 +447,7 @@ def signup():
         <label>Your name<input name="name" autocomplete="name" required></label>
         <label>Work email<input name="email" type="email" autocomplete="email" inputmode="email" required></label>
         <label>Company<input name="company" autocomplete="organization"></label>
-        <label>What are you building?<select name="use_case">{opts([("medtech-pharma","Sales and targeting for medtech or pharma"),("health-it-sales","Sales for health IT or services"),("marketing","Healthcare marketing"),("provider-directory","A provider directory or network tool"),("post-acute","Post-acute care or an agency"),("staffing","Clinical staffing or recruiting"),("investing","Healthcare investing or diligence"),("digital-health","A healthcare startup or digital health product"),("other","Something else")])}</select></label>
+        <label>What are you building?<select name="use_case">{opts([("medtech","Sales and targeting for medtech or pharma"),("health-it-sales","Sales for health IT or services"),("marketing","Healthcare marketing"),("provider-directory","A provider directory or network tool"),("post-acute","Post-acute care or an agency"),("staffing","Clinical staffing or recruiting"),("investing","Healthcare investing or diligence"),("digital-health","A healthcare startup or digital health product"),("other","Something else")])}</select></label>
         <label>Where will you use it?<select name="client">{opts([("claude","Claude"),("cursor","Cursor"),("chatgpt","ChatGPT"),("other-mcp","Another MCP client"),("rest-api","REST API from my own code")])}</select></label>
         <label><span>Anything we should know? <span class="opt">Optional</span></span><textarea name="note" rows="3"></textarea></label>
         <input type="hidden" name="source">
@@ -455,6 +466,7 @@ def signup():
     </div>
   </div>
 </section>
+{scene("w-signup", "Illustration: the little robot waving under a flower arch at the start of a path up the hills to the data machine.")}
 </main>
 '''
     return h + body + tail(("nav", "signup"))

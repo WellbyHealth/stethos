@@ -1,1 +1,32 @@
-(()=>{"use strict";const i=document.querySelector(".menu-btn"),s=document.getElementById("mnav");if(i&&s){const e=n=>{s.hidden=!n,i.setAttribute("aria-expanded",n),i.setAttribute("aria-label",n?"Close menu":"Open menu")};i.addEventListener("click",n=>{n.stopPropagation(),e(s.hidden)}),document.addEventListener("click",n=>{!s.hidden&&!s.contains(n.target)&&e(!1)}),document.addEventListener("keydown",n=>{n.key==="Escape"&&!s.hidden&&(e(!1),i.focus())}),s.addEventListener("click",n=>{n.target.closest("a")&&e(!1)})}const t=document.querySelector(".dd");if(!t)return;const d=t.querySelector(".dd-btn"),r=t.querySelector(".dd-panel"),c=matchMedia("(hover: hover) and (pointer: fine)");let o=0;const a=e=>{clearTimeout(o),t.classList.toggle("open",e),d.setAttribute("aria-expanded",e)};d.addEventListener("click",()=>a(!t.classList.contains("open"))),t.addEventListener("mouseenter",()=>{c.matches&&a(!0)}),t.addEventListener("mouseleave",()=>{c.matches&&(o=setTimeout(()=>a(!1),160))}),document.addEventListener("keydown",e=>{e.key==="Escape"&&t.classList.contains("open")&&(a(!1),d.focus())}),document.addEventListener("click",e=>{t.contains(e.target)||a(!1)}),t.addEventListener("focusout",e=>{t.contains(e.relatedTarget)||a(!1)}),r.addEventListener("click",e=>{e.target.closest("a")&&a(!1)})})();
+(() => {
+  "use strict";
+  // Mobile menu
+  const btn = document.querySelector(".menu-btn"), menu = document.getElementById("mnav");
+  if (btn && menu) {
+    const set = (open) => { menu.hidden = !open; btn.setAttribute("aria-expanded", open); btn.setAttribute("aria-label", open ? "Close menu" : "Open menu"); };
+    btn.addEventListener("click", (e) => { e.stopPropagation(); set(menu.hidden); });
+    document.addEventListener("click", (e) => { if (!menu.hidden && !menu.contains(e.target)) set(false); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !menu.hidden) { set(false); btn.focus(); } });
+    menu.addEventListener("click", (e) => { if (e.target.closest("a")) set(false); });
+  }
+  // Header dropdowns (Product, Solutions)
+  const hover = matchMedia("(hover: hover) and (pointer: fine)");
+  const all = [...document.querySelectorAll(".dd")];
+  all.forEach((dd) => {
+    const b = dd.querySelector(".dd-btn"), panel = dd.querySelector(".dd-panel");
+    if (!b || !panel) return;
+    let t = 0, hoverAt = 0;
+    const set = (open) => {
+      clearTimeout(t);
+      if (open) all.forEach((o) => { if (o !== dd && o.classList.contains("open")) { o.classList.remove("open"); o.querySelector(".dd-btn").setAttribute("aria-expanded", false); } });
+      dd.classList.toggle("open", open); b.setAttribute("aria-expanded", open);
+    };
+    b.addEventListener("click", () => set(Date.now() - hoverAt < 400 ? true : !dd.classList.contains("open")));
+    dd.addEventListener("mouseenter", () => { if (hover.matches) { if (!dd.classList.contains("open")) hoverAt = Date.now(); set(true); } });
+    dd.addEventListener("mouseleave", () => { if (hover.matches) t = setTimeout(() => set(false), 160); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && dd.classList.contains("open")) { set(false); b.focus(); } });
+    document.addEventListener("click", (e) => { if (!dd.contains(e.target)) set(false); });
+    dd.addEventListener("focusout", (e) => { if (!dd.contains(e.relatedTarget)) set(false); });
+    panel.addEventListener("click", (e) => { if (e.target.closest("a")) set(false); });
+  });
+})();

@@ -1,4 +1,5 @@
 from parts import *
+from segments import scene, seg_grid, seg_tabs, logo
 
 # (slug, team, title, trigger, ask, steps, data, lands, art-icon)
 EXAMPLES = [
@@ -158,14 +159,14 @@ EXAMPLES = [
 
 
 SEGMENTS = [
-    ("Medtech", "medtech-pharma", ["medtech-targeting", "territory-planning", "abm-list"]),
-    ("Pharma", "medtech-pharma", ["kol-mapping", "event-invites"]),
+    ("Medtech", "medtech", ["medtech-targeting", "territory-planning", "abm-list"]),
+    ("Pharma", "pharma", ["kol-mapping", "event-invites"]),
     ("Health IT and services", "health-it-sales", ["exec-trigger", "pe-rollup-sell", "ehr-campaign", "crm-hygiene"]),
     ("Investors", "investors", ["deal-diligence", "pe-map", "portfolio-watch"]),
     ("Startups", "digital-health", ["startup-first-customers"]),
     ("Clinical staffing", "clinical-staffing", ["staffing-sales"]),
     ("Post-acute care and agencies", "post-acute", ["referrer-nudge", "referral-map", "referral-partners", "discharge-sources"]),
-    ("Health systems", None, ["physician-liaison"]),
+    ("Health systems", "health-systems", ["physician-liaison"]),
 ]
 _by = {e[0]: e for e in EXAMPLES}
 SEG_OF = {slug: (name, page) for name, page, slugs in SEGMENTS for slug in slugs}
@@ -198,8 +199,8 @@ def card(e, tab=False, link=True):
 
 def examples():
     items = [{"@type": "ListItem", "position": i + 1, "name": e[2], "url": f"{SITE}/use-cases#{e[0]}"} for i, e in enumerate(EXAMPLES)]
-    h = head("Use Cases: Healthcare Sales, Marketing and Deal Workflows",
-             "Agent workflows by segment: medtech, pharma, health IT, investors, startups, staffing, post-acute and health systems. Targeting, referrals, ABM and more.",
+    h = head("Solutions: Healthcare Data for Every Team | Stethos",
+             "Healthcare provider data for medtech, pharma, health IT, marketing, investors, startups, post-acute, staffing, payers and health systems, with agent workflows.",
              "/use-cases", image="/og/use-cases.jpg", image_alt="Clay illustration of a sales desk with a laptop map, above the line: What teams do with Stethos.", crumbs=[("Use cases", "/use-cases")],
              schema=[{"@type": "ItemList", "name": "Stethos use cases", "itemListElement": items}])
     jump, n = "", 0
@@ -216,12 +217,19 @@ def examples():
 <main id="main">
 <section class="sec sp-top ex" aria-labelledby="ex-title">
   <div class="wrap">
-    <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Use cases</nav>
+    <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Solutions</nav>
     <div class="head center">
       <p class="eyebrow"><span>Use cases</span></p>
-      <h1 id="ex-title">What teams <span class="pop">do with Stethos.</span></h1>
-      <p class="kpi-lede">Real workflows by segment, run from the AI assistant and CRM you already use. Pick one to see how it works, or open a segment for the data behind it.</p>
+      <h1 id="ex-title">Solutions for every team <span class="pop">that sells into healthcare.</span></h1>
+      <p class="kpi-lede">Pick your team for its own page, or try a workflow below.</p>
     </div>
+    {seg_grid()}
+  </div>
+</section>
+{scene("w-usecases", "Illustration: a little clay town with a hospital, a pharma lab, an office tower, a bank and a home-care house, with the robot walking between them.")}
+<section class="sec ex" aria-labelledby="ex-wf-title">
+  <div class="wrap">
+    <div class="head center"><p class="eyebrow"><span>Workflows</span></p><h2 id="ex-wf-title">What teams <span class="pop">do with Stethos.</span></h2></div>
     <div class="ex-split">
       <div class="ex-navwrap">
         <ul class="ex-nav" role="tablist" aria-label="Example workflows">{jump}</ul>

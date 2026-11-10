@@ -1,8 +1,12 @@
 from parts import *
+from segments import scene, seg_grid, seg_tabs, logo
 import json
 
 # Landing pages aimed at specific searches. Each: slug, art, tint class, seo title, meta description,
 # H1 (two parts), intro, two lists, example request, FAQs, related links.
+SCENES = {'healthcare-mcp-server': 'w-s-mcp', 'npi-lookup-api': 'w-s-npi', 'physician-data-api': 'w-s-physician', 'license-verification-api': 'w-s-license', 'health-system-data-api': 'w-s-healthsys', 'medicare-utilization-data-api': 'w-s-medicare', 'home-health-hospice-data-api': 'w-s-homehealth', 'physician-referral-data': 'w-s-referral', 'private-equity-healthcare-ownership-data': 'w-s-pe'}
+SCENE_ALTS = {'w-s-mcp': 'Illustration: a clay server box on a hill with cables running to little robots on clouds.', 'w-s-npi': 'Illustration: a meadow of clinician ID cards standing like signposts, and the robot with a big magnifying glass.', 'w-s-physician': "Illustration: a town of clinics with map pins, a doctor's coat on a signpost and the robot pointing the way.", 'w-s-license': 'Illustration: hills like a patchwork quilt of states with license scrolls planted on them.', 'w-s-healthsys': 'Illustration: a hospital campus on a hill with roads down to clinics, an urgent care and a surgery center.', 'w-s-medicare': 'Illustration: towers of stacked pill capsules beside a government building, with the robot measuring one.', 'w-s-homehealth': 'Illustration: a little car on a country road visiting houses with hearts on their roofs.', 'w-s-referral': 'Illustration: envelopes with hearts flying like birds between a hospital and clinics on the hills.', 'w-s-pe': 'Illustration: three hill regions whose clinics share flag colors, each linked to a matching briefcase-shaped building.'}
+
 SEO_PAGES = [
     dict(slug="healthcare-mcp-server", art="s-mcp", color="sp-blue", name="Healthcare MCP server",
          title="Healthcare MCP Server for Provider Data | Stethos",
@@ -41,7 +45,7 @@ SEO_PAGES = [
          faq=[("How many physicians does it cover?", "Stethos is built to cover every US physician with an NPI, from the NPPES registry, with other sources layered on top. Coverage of each field will be published at launch."),
               ("Can I get contact details?", "Practice contact details, such as phone, fax and practice address, are an optional field with their sources. Stethos does not sell personal home addresses or personal phone numbers."),
               ("Can I sync it to a CRM?", "Yes. Enrich records on demand and subscribe to watchers so your CRM is updated when a physician moves, instead of re-importing lists.")],
-         related=[("Medtech and pharma sales", "/use-cases/medtech-pharma"), ("NPI lookup API", "/npi-lookup-api"), ("Pricing", "/pricing")]),
+         related=[("Medtech sales", "/use-cases/medtech"), ("NPI lookup API", "/npi-lookup-api"), ("Pricing", "/pricing")]),
     dict(slug="license-verification-api", art="s-license", color="sp-butter", name="License data API",
          title="Medical License Lookup API by State | Stethos",
          desc="Check physician and nurse license status across states in one API call, and get a webhook when a license is issued, expires or is restricted.",
@@ -83,7 +87,7 @@ SEO_PAGES += [
               ("How current is it?", "CMS releases these files once a year, covering a past year, so they describe volume and mix rather than this week's activity. Stethos shows the data year on every number and pairs it with fresher signals like affiliation and license changes."),
               ("Does it include Medicare Advantage or commercial claims?", "No. The public files cover Original Medicare only. Claims-level data, including Medicare Advantage, requires CMS research access, which Stethos plans to pursue."),
               ("Is there patient data in it?", "No. Every number is aggregated to the provider, and CMS removes counts under 11. Stethos returns provider data only.")],
-         related=[("Docs: data sources", "/docs#sources"), ("Physician data API", "/physician-data-api"), ("Medtech and pharma", "/use-cases/medtech-pharma")]),
+         related=[("Docs: data sources", "/docs#sources"), ("Physician data API", "/physician-data-api"), ("Medtech sales", "/use-cases/medtech")]),
     dict(slug="home-health-hospice-data-api", art="s-homehealth", color="sp-butter",
          name="Home health and hospice data API",
          title="Home Health, Hospice and SNF Data API | Stethos",
@@ -111,7 +115,7 @@ SEO_PAGES += [
               ("Will Stethos have claims-based referral flows?", "That's the plan. Current referral counts between clinicians require claims-level Medicare data from CMS's Virtual Research Data Center. Stethos plans to apply as an Innovator; only aggregate, privacy-protected counts can leave that environment."),
               ("Is this enough for sales targeting?", "Often, yes. Shared groups, hospitals and ACOs explain most referral patterns, and they change faster than annual claims files. Stethos also tells your agent when an affiliation changes."),
               ("Is there patient data?", "No. Stethos holds data about clinicians and organizations only.")],
-         related=[("Docs: data sources", "/docs#sources"), ("Physician data API", "/physician-data-api"), ("Medtech and pharma", "/use-cases/medtech-pharma")]),
+         related=[("Docs: data sources", "/docs#sources"), ("Physician data API", "/physician-data-api"), ("Medtech sales", "/use-cases/medtech")]),
     dict(slug="private-equity-healthcare-ownership-data", art="s-pe", color="sp-blue",
          name="Private equity ownership data",
          title="Private Equity Healthcare Ownership Data API | Stethos",
@@ -154,6 +158,7 @@ def seo_page(m):
       <div class="sp-p-side"><p class="sp-k">{m["k2"]}</p><ul class="sp-see">{li(m["l2"])}</ul></div></div></div>
   </div>
 </section>
+{scene(SCENES[m["slug"]], SCENE_ALTS[SCENES[m["slug"]]])}
 <section class="sec" aria-labelledby="kw-call-title">
   <div class="wrap uc-call">
     <div><p class="eyebrow"><span>Example call</span></p><h2 id="kw-call-title">One request, <span class="pop">sourced answers.</span></h2>
