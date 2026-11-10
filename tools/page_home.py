@@ -437,7 +437,7 @@ def how_it_works():
     if not TECH: page()
     h = head("How Stethos Works: MCP Server, Tools and Sources | Stethos",
              "Connect Stethos to Claude, ChatGPT or your own agent in five minutes, try the tools, and see the sources and change events behind every record.",
-             "/how-it-works", image="/og/how-it-works.jpg", image_alt="Clay phone with a map of doctor pins and a small robot, above the line: How Stethos works, under the hood.", crumbs=[("How it works", "/how-it-works")],
+             "/how-it-works", css=("styles", "v2", "site", "home"), image="/og/how-it-works.jpg", image_alt="Clay phone with a map of doctor pins and a small robot, above the line: How Stethos works, under the hood.", crumbs=[("How it works", "/how-it-works")],
              share_title="How Stethos works", share_desc="Connect in five minutes, try the tools, and see the source behind every field.")
     top = f'''<section class="sec sp-top hiw-top" aria-labelledby="hiw-title">
   <div class="wrap">
