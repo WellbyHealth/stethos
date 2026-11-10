@@ -14,18 +14,12 @@ CLIENTS = _clients()
 
 FAQ = [
     ("What is Stethos?", "Current, sourced healthcare data for AI agents, delivered as an MCP server and API. Stethos resolves government, payer and web sources into one record for every US clinician, practice, health system and payer network, puts a source and a checked date on every field, keeps records current with verification agents, and tells your agent when something changes."),
-    ("How does it help sales, marketing and investing?", "Your reps and agents can build target lists by specialty, setting, EHR or territory, enrich accounts and contacts with sourced fields, and get an alert the week a target changes jobs, a practice joins a system or a health system names a new leader. Those changes become your outreach triggers, and the records in your CRM stay current without anyone re-checking lists. Investment teams use the same tools to map a market, size a platform and track portfolio companies."),
     ("Can't my agent just ask a general AI assistant?", "General AI assistants can find some provider data, but they answer from whatever web page or registry copy they come across, often months or years old, with no source and no date. Provider data changes constantly: clinicians move groups, licenses lapse, networks change. Stethos re-checks its sources, shows where every field came from and when it was last checked, and tells your agent when a record changes."),
     ("Does it work with our CRM and AI tools?", "Yes, that's the point. Stethos runs as an MCP server inside Claude, ChatGPT, Microsoft Copilot Studio, Cursor or your own agent, and its REST API and webhooks keep records current in Salesforce, HubSpot, Attio or any CRM or data warehouse. There's no separate dashboard to adopt."),
-    ("Who is it for?", "Anyone who sells into, markets to or invests in healthcare: medtech and pharma commercial teams, health IT, software and services sellers, healthcare marketers, investors and deal teams, startups finding their first customers, home care, hospice and post-acute agencies keeping their referral networks warm, and clinical staffing firms. Stethos gives their people, agents and CRM a current view of who practices where, who buys, and what just changed. Provider directory teams use the same data."),
     ("Where does the data come from?", "Government files first: the NPPES NPI Registry, CMS's Medicare utilization files for clinicians, prescribers, hospitals, home health, hospice and nursing facilities, Care Compare ratings and affiliations, ACO participation, cost reports and Open Payments, plus state licensing boards. Payer directories, price transparency files, practice websites and health system job posts are layered on top. Every field carries its source and the date it was last checked. See the full list in the docs."),
     ("Does Stethos handle patient data?", "No. Stethos indexes healthcare professionals and organizations, not patients. There is no PHI in the API, so you don't need a business associate agreement to use it."),
     ("How fresh is it?", "Sources are re-checked on a rolling schedule, and every change is recorded as an event you can query or subscribe to with a webhook. Each record shows when it was last verified, so your agent can decide how much to trust it."),
     ("How is this different from Definitive Healthcare or IQVIA OneKey?", "Both are established, deep datasets, sold mostly through annual contracts to large commercial teams. Stethos is built for teams that work through AI assistants and CRMs: pay per call, start free, and get change events instead of quarterly refreshes. See Stethos vs Definitive and Stethos vs IQVIA OneKey."),
-    ("How do I connect it?", "Copy the Stethos MCP server URL and add it to your client: as a custom connector in Claude, or in the MCP config of Cursor or your own agent. Sign in, and the tools appear. It takes about five minutes and there's no sales call."),
-    ("Is there a REST API too?", "Yes. The same data is available over REST, with webhooks for change events, for the parts of your stack that aren't agents."),
-    ("How does pricing work?", "Per tool call, in credits. A search costs a fraction of a credit per result, enriching a provider costs more, and you only pay for the fields you ask for. Every account starts with 1,000 free credits, Build is a monthly plan, and Enterprise adds bulk files and volume pricing."),
-    ("Can we get the whole dataset as a file?", "Yes, on Enterprise. We deliver flat files to your warehouse on a schedule, alongside API access for real-time lookups."),
     ("Is it live?", "Stethos is in early access. The tools on this site are a preview, and the results shown are sample data. Start a free trial to claim your 1,000 credits, and we'll email you as soon as your account is ready."),
 ]
 
@@ -60,7 +54,8 @@ def page():
 <main id="main">
 <section class="hero cx" aria-labelledby="hero-title">
   <div class="wrap cx-copy">
-    <h1 id="hero-title">Turn your agent into a world&#8209;class <span class="rot" data-rot data-words="pharma rep|SDR|deal team|marketing team|founder"><span class="rot-w on">medtech rep</span></span></h1>
+    <p class="cx-eyebrow">Healthcare provider data for AI agents</p>
+    <h1 id="hero-title">Turn your agent into a world&#8209;class <span class="rot" data-rot data-words="pharma rep|SDR|deal team|marketing team|recruiter"><span class="rot-w on">medtech rep</span></span></h1>
     <p class="cx-sub">Current, sourced data on every US clinician, practice and health system, inside the CRM and AI tools your team already uses.</p>
     <div class="cx-ctas"><a class="cx-btn dark" href="{TRIAL}">Start free trial<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="cx-btn light" href="/how-it-works">See how it works<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     <div class="cx-meta"><span class="cx-or">Works with</span>{CLIENTS}<span class="cx-fine">1,000 free credits · no card · no sales call</span></div>
@@ -88,7 +83,7 @@ def page():
     <div class="head center">
       <p class="eyebrow"><span>Works where you work</span></p>
       <h2 id="plug-title">No new dashboard. <span class="pop">It plugs into what you use today.</span></h2>
-      <p class="kpi-lede">Stethos isn't another tool to log into. Your team asks for healthcare data in the AI assistant they already use, and the answers land in the CRM they already live in, with sources attached.</p>
+      <p class="kpi-lede">Ask for healthcare data in the AI assistant you already use. The answers land in your CRM, with sources.</p>
     </div>
     <div class="plug-grid">
       <div class="plug-card has-art">
@@ -142,7 +137,7 @@ def page():
     <div class="head center">
       <p class="eyebrow"><span>Data is the difference</span></p>
       <h2 id="familiar-title">Your agent is only as good <span class="pop">as the record it reads.</span></h2>
-      <p class="kpi-lede">Agents now do the prospecting, sourcing and diligence. The same provider, two ways: what a registry lookup hands your agent, and what Stethos does.</p>
+      <p class="kpi-lede">The same provider, two ways: what a registry lookup gives your agent, and what Stethos gives it.</p>
     </div>
     <div class="df-tabs" role="tablist" aria-label="Sample providers"><button type="button" role="tab" id="df-t-maya" aria-controls="df-p-maya" aria-selected="true" tabindex="0"><b>Dr. Maya Example</b><span>Orthopedic surgeon · Phoenix, AZ</span></button><button type="button" role="tab" id="df-t-jordan" aria-controls="df-p-jordan" aria-selected="false" tabindex="-1"><b>Jordan Example, NP</b><span>Family nurse practitioner · Denver, CO</span></button><button type="button" role="tab" id="df-t-org" aria-controls="df-p-org" aria-selected="false" tabindex="-1"><b>Northfield Spine Partners</b><span>Orthopedic and spine group · Arizona</span></button></div>
     <div class="df-panels">
@@ -308,7 +303,7 @@ def page():
     <div>
       <p class="eyebrow"><span>Why Stethos</span></p>
       <h2 id="yours-title">Snapshots, raw files or guesses. <span class="pop">Or a record you can trust.</span></h2>
-      <p class="yours-lede">Whatever your agent reads, it acts on. Today the options are an annual-contract platform built for analysts, free government files that are raw and inconsistently dated, or a general AI assistant answering from old pages. Stethos is the layer in between: current, sourced records your agent can call, priced per call.</p>
+      <p class="yours-lede">Analyst platforms need annual contracts, government files are raw, and general AI assistants guess. Stethos gives your agent current, sourced records, priced per call.</p>
       <p class="cmp-links"><a href="/compare/definitive-healthcare">Stethos vs Definitive Healthcare <span aria-hidden="true">→</span></a><a href="/compare/iqvia-onekey">Stethos vs IQVIA OneKey <span aria-hidden="true">→</span></a></p>
     </div>
     <div class="compare">
@@ -329,35 +324,6 @@ def page():
         <ul><li>One matched record per provider and organization</li><li>A source and checked date on every field</li><li>Verified by agents when sources disagree</li><li>Changes pushed to your agent</li><li>Plugs into your CRM and AI assistant</li><li>Live in five minutes, priced per call</li></ul>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="sec why-now" aria-labelledby="now-title">
-  <div class="wrap">
-    <div class="head center">
-      <p class="eyebrow"><span>Why now</span></p>
-      <h2 id="now-title">Agents became the buyer. <span class="pop">The data didn't keep up.</span></h2>
-    </div>
-    <ol class="now-list">
-      <li class="has-art"><img class="card-art" src="/img/g-spot-r-tools-320.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><b>Agents call tools now</b><p>MCP turned data into something an agent calls on its own. Incumbent platforms were built for analysts clicking through dashboards.</p></li>
-      <li class="has-art"><img class="card-art" src="/img/g-spot-r-pile-320.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><b>Free data got bigger, not fresher</b><p>CMS's new provider directory, EHR data from ONC and Medicare Advantage plan directories are large and free, but they don't tell you how current each record is.</p></li>
-      <li class="has-art"><img class="card-art" src="/img/g-spot-r-call-320.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><b>Verification got cheap</b><p>Voice and web agents can do the research calls data vendors have staffed for years, at a fraction of the cost, whenever a record looks stale.</p></li>
-    </ol>
-  </div>
-</section>
-
-<section class="sec pillars-sec" aria-labelledby="pill-title">
-  <div class="wrap">
-    <div class="head center">
-      <p class="eyebrow"><span>What you get</span></p>
-      <h2 id="pill-title">Data your agent <span class="pop">can act on.</span></h2>
-    </div>
-    <ul class="pillars">
-      <li style="--t:#e4f0fd"><img src="/img/g-cl-stk-watch-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><h3>Fresh</h3><p>Sources are re-checked continuously, and Stethos agents call practices and check websites to confirm what files can't. Changes arrive as events, not quarterly exports.</p></li>
-      <li style="--t:#e8f3d2"><img src="/img/g-cl-tr-read-cut.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><h3>Trustworthy</h3><p>Every field shows where it came from and when it was last checked, matched to the right person or practice. Consistent answers, not a confident guess.</p></li>
-      <li style="--t:#f5efdf"><img src="/img/g-cl-stk-agents-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async"><h3>Built for agents</h3><p>Plugs into the AI assistants and CRM you already use: MCP for agents, REST and webhooks for everything else. Self-serve and priced per call.</p></li>
-    </ul>
-    <ul class="trust-line"><li>No patient data: no PHI, no BAA</li><li>A source and a checked date on every field</li><li>Government registries first, licensed sources on top</li></ul>
   </div>
 </section>
 
@@ -449,7 +415,7 @@ def how_it_works():
     <div class="head center">
       <p class="eyebrow"><span>How it works</span></p>
       <h1 id="hiw-title">Under the hood, <span class="pop">for the technical folks.</span></h1>
-      <p class="kpi-lede">How to connect Stethos to your agent, what its tools return, where every field comes from and which changes you can subscribe to. For setup details per client, see the <a href="/docs">docs</a>.</p>
+      <p class="kpi-lede">How to connect Stethos, what its tools return, where each field comes from and which changes you can subscribe to. Setup steps for each client are in the <a href="/docs">docs</a>.</p>
       <div class="cx-paste hiw-paste">
         <span class="cx-paste-k">Paste in your coding agent</span>
         <code class="cx-paste-v">Add the Stethos MCP server: {MCP_URL}</code>

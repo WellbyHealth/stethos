@@ -30,7 +30,7 @@
 <link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css?v=6c88d771">
 <link rel="stylesheet" href="/v2.css?v=978b51f1">
-<link rel="stylesheet" href="/site.css?v=9352280d">
+<link rel="stylesheet" href="/site.css?v=65438210">
 <link rel="stylesheet" href="/stethos.css?v=2c0729ac">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Isn't there a free NPI registry API?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. CMS runs a free public NPI Registry API for NPPES data, and it's a good fit when you only need what providers reported to the registry. Stethos starts from the same NPI and adds licenses, affiliations, networks and change events from other sources."}}, {"@type": "Question", "name": "Can I look up an NPI by name?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Search by name with a city and state, or by specialty and location, then enrich the NPI you pick."}}, {"@type": "Question", "name": "How current is the data?", "acceptedAnswer": {"@type": "Answer", "text": "Every field carries its source and the date it was last verified, and watchers send a webhook when a record changes."}}, {"@type": "Question", "name": "Does it cover organizations?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Type 2 NPIs for hospitals, groups, pharmacies and agencies are supported, along with organization records that link locations and rostered clinicians."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos-one.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "NPI lookup API", "item": "https://stethos-one.vercel.app/npi-lookup-api"}]}]}</script>
 </head>
@@ -66,7 +66,7 @@
     <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / NPI lookup API</nav>
     <div class="head ph">
       <h1 id="kw-title">An NPI lookup API that tells you <span class="pop">more than the registry.</span></h1>
-      <p class="sp-lede">The NPPES NPI Registry tells you who an NPI belongs to and what they reported to CMS. Stethos is built to take that same NPI and return the rest of the picture: where the clinician practices now, which licenses are active, which groups and hospitals they're affiliated with, and which payer networks list them.</p>
+      <p class="sp-lede">The NPI Registry tells you who an NPI belongs to. Stethos is built to return the rest from that same NPI: where the clinician practices now, active licenses, group and hospital affiliations, and payer networks.</p>
       <div class="kw-ctas"><a class="btn-1" href="/signup">Start free trial</a><a class="btn-2" href="/docs">Read the docs</a></div>
     </div>
     <div class="sp-panels uc-one"><div class="sp-panel sp-lime"><div class="sp-p-main">

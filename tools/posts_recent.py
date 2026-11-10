@@ -2,7 +2,7 @@
 RECENT = [
     dict(slug="who-owns-a-medical-practice", tag="Ownership", art="c-whoowns", date="2026-11-06", nice="November 6, 2026", mins=4,
          title="How to find out who owns a medical practice", seo="How to Find Out Who Owns a Medical Practice", kw="who owns a medical practice, practice ownership, private equity healthcare",
-         desc="A two-doctor office and a practice owned by a private equity platform buy very differently. Here's how to work out who owns a practice, from sources anyone can check.",
+         desc="A solo practice and a PE-owned one buy very differently. How to work out who owns a medical practice, from public sources anyone can check.",
          alt="Illustration: the little clay robot peering with a magnifying glass into a clinic whose roof lifts open to show a briefcase inside.",
          take=["Practice websites and firm portfolio pages are the fastest first check.", "CMS ownership files flag private equity owners for hospitals, nursing homes, home health, hospice, rural health clinics and FQHCs.", "Ownership changes with every add-on deal, so keep the source and date on each link."],
          body='''<p>Before you pitch a practice, it helps to know who really decides. A two-doctor office and a clinic owned by a private equity platform look the same from the street, but they buy very differently. Here's how to work out who owns a practice, using sources anyone can check.</p>
@@ -40,7 +40,7 @@ RECENT = [
 <p>Stethos is built for this. <a href="/private-equity-healthcare-ownership-data">Private equity ownership data</a> maps each firm's platforms and every site they own, and your agent can watch a platform for new add-ons. To check a single practice first, see <a href="/blog/who-owns-a-medical-practice">how to find out who owns a medical practice</a>.</p>'''),
     dict(slug="cms-ownership-data-private-equity", tag="Public data", art="c-cmsowners", date="2026-11-08", nice="November 8, 2026", mins=5,
          title="What CMS ownership files show about private equity in healthcare", seo="CMS Ownership Data and Private Equity in Healthcare", kw="CMS ownership data, All Owners, private equity nursing homes, private equity hospice",
-         desc="CMS publishes who owns every Medicare-enrolled hospital, nursing home, home health agency and hospice, and flags private equity owners. Here's what's in the files and where they stop.",
+         desc="CMS publishes who owns Medicare-enrolled hospitals, nursing homes, home health agencies and hospices, and flags private equity. What the files show.",
          alt="Illustration: the little clay robot reading a long scroll dotted with briefcase stamps, in front of a hospital, a nursing home and a home health house.",
          take=["CMS publishes owners for hospitals, nursing homes, home health, hospice, rural health clinics and FQHCs.", "Owner-type flags include private equity, REITs, holding companies and management companies.", "Physician practices and surgery centers aren't covered, so other sources fill the gap."],
          body='''<p>Most provider data tells you what a provider does. CMS ownership files tell you who owns it. For several kinds of Medicare-enrolled facilities, CMS publishes every reported owner and flags which ones are private equity companies. Here's what's in the files, and where they stop.</p>
@@ -67,7 +67,7 @@ RECENT = [
 <p>For practices and surgery centers, ownership comes from firm portfolio pages, acquisition announcements, practice websites and state filings. Stethos is built to combine those with the CMS files into one map of <a href="/private-equity-healthcare-ownership-data">who owns which clinics, and where</a>, with the source and date on every link. For checking a single practice by hand, see <a href="/blog/who-owns-a-medical-practice">how to find out who owns a medical practice</a>.</p>'''),
     dict(slug="healthcare-buyer-job-changes", tag="Data quality", art="c-jobchange", date="2026-11-09", nice="November 9, 2026", mins=4,
          title="Your buyer changed jobs. Your CRM didn't notice.", seo="Tracking Buyer Job Changes in Healthcare Sales", kw="healthcare job changes, contact data decay, healthcare CRM data",
-         desc="Finding the right buyer in healthcare is hard mostly because people change roles and nobody tracks it. Here's why titles go stale so fast and what keeps contacts current.",
+         desc="Healthcare buyers change roles often and CRMs rarely notice. Why titles go stale so fast, what it costs, and what keeps your contacts current.",
          alt="Illustration: an empty clay desk and chair while a moving box with a plant and a mug heads to another building.",
          take=["Healthcare roles change often, through consolidation, turnover and clinicians holding several roles.", "A new leader is often the best moment to sell, if you notice in time.", "Track the seat as well as the person, and treat changes as events."],
          body='''<p>Ask a healthcare sales team what slows them down and you'll often hear the same thing: the person you need has moved on, and nobody told the CRM. Finding the right buyer is hard mostly because people change roles and the records don't keep up.</p>

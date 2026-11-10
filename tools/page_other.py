@@ -365,7 +365,7 @@ curl https://api.stethos.health/v1/account \\
 
 
 def privacy():
-    h = head("Privacy Notice | Stethos", "How Stethos handles information you share through this website, and what data the Stethos API does and does not hold.", "/privacy", crumbs=[("Privacy", "/privacy")])
+    h = head("Privacy Notice: Website and API Data | Stethos", "How Stethos handles information you share through this website, and what data the Stethos API does and does not hold.", "/privacy", crumbs=[("Privacy", "/privacy")])
     body = f'''{HEADER}
 <main id="main" class="wrap doc">
   <img class="doc-spot" src="/img/g-spot-r-privacy-320.webp" width="160" height="160" alt="" loading="lazy" decoding="async">
