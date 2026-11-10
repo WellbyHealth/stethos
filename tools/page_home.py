@@ -45,7 +45,7 @@ def page():
     def stk(i, cls, pill, title, pop, note, img):
         return (f'<li class="stk-item" style="--i:{i}"><article class="stk {cls}" aria-labelledby="stk-h{i}"><p class="stk-pill">{pill}</p>'
                 f'<h3 class="stk-h" id="stk-h{i}">{title}<span class="pop"> {pop}</span></h3><p class="stk-note">{note}</p>'
-                f'<div class="stk-art" aria-hidden="true"><img src="/img/g-cl-{img}-cut.webp" srcset="/img/g-cl-{img}-cut.webp 480w, /img/g-cl-{img}-960.webp 960w" sizes="(max-width: 900px) 90vw, 560px" width="480" height="480" alt="" loading="lazy" decoding="async"><i></i><i></i><i></i></div></article></li>')
+                f'<div class="stk-art" aria-hidden="true"><img src="/img/g-cl-{img}-robot.webp" srcset="/img/g-cl-{img}-robot.webp 480w, /img/g-cl-{img}-robot-960.webp 960w" sizes="(max-width: 900px) 90vw, 560px" width="480" height="480" alt="" loading="lazy" decoding="async"><i></i><i></i><i></i></div></article></li>')
 
     faq = "\n".join(f'      <details><summary>{q}</summary><p>{a}</p></details>' for q, a in FAQ)
     faq = faq.replace("See Stethos vs Definitive and Stethos vs IQVIA OneKey.", 'See <a href="/compare/definitive-healthcare">Stethos vs Definitive</a> and <a href="/compare/iqvia-onekey">Stethos vs IQVIA OneKey</a>.')
