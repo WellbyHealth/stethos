@@ -261,3 +261,8 @@ p,li,dd,summary{text-wrap:pretty}
 .dd-segs{grid-template-columns:repeat(3,minmax(0,1fr))}
 .dd-uc .dd-jobs{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px 8px}
 @media(max-width:1100px){.dd-segs,.dd-uc .dd-jobs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* docs: keep sidebar inside the screen on phones */
+.doc-wrap>*{min-width:0}
+@media(max-width:900px){.doc-side,.doc-side nav,.doc-side .doc-toc{max-width:100%;min-width:0}}
+/* home: no gap between the hero and the use case panel */
+.hero + .home-ex{margin-top:0;border-top-left-radius:0;border-top-right-radius:0;border-top:0}
