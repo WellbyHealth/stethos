@@ -77,6 +77,40 @@ TODAY = _dt.datetime.now(_Z("America/Los_Angeles")).date().isoformat()
 import os as _os
 TODAY = _os.environ.get("STETHOS_TODAY", TODAY)   # override to preview a later date
 ALL_POSTS = POSTS + SCHEDULED
+COVER = {"what-the-npi-registry-can-and-cant-tell-you": "c-npi", "giving-an-ai-agent-healthcare-data-checklist": "c-checklist",
+         "how-to-look-up-an-npi-number": "c-lookup", "type-1-vs-type-2-npi": "c-type12", "medical-license-verification-across-states": "c-license",
+         "why-physician-affiliations-are-hard-to-track": "c-affil", "healthcare-provider-taxonomy-codes-explained": "c-taxonomy",
+         "webhooks-vs-polling-for-provider-data": "c-webhooks"}
+# Inline illustration per post: (image, the h2 it follows, alt text, caption)
+FIGS = {
+    "what-the-npi-registry-can-and-cant-tell-you": ("i-npi", "Where it falls short", "Clay illustration: a dusty, boarded-up old clinic with a map pin still on it, and a dotted path to a bright new clinic.", "A registry record can keep pointing at an old practice long after the provider has moved."),
+    "why-provider-directories-go-stale": ("i-stale", "Where the errors come from", "Clay illustration: a moving truck carrying boxes and a stethoscope between two clinics, with an address book still pinned to the old one.", "Clinicians move, and the directory keeps the old address until someone updates it."),
+    "giving-an-ai-agent-healthcare-data-checklist": ("i-checklist", "2. Does every field say where it came from?", "Clay illustration: a data card whose rows each carry a source tag and a date stamp, tied to a government building, a clinic and a scroll.", "Every field should carry its source and the date it was last checked."),
+    "how-to-look-up-an-npi-number": ("i-lookup", "Three ways to look up an NPI", "Clay illustration: three pedestals holding a browser search window, a download box and a plug.", "Three ways in: the registry website, the full download, or an API."),
+    "type-1-vs-type-2-npi": ("i-type12", "Putting them together", "Clay illustration: a clinic on a pedestal with three clinician ID badges linked to it by strings.", "Type 1 NPIs belong to people and Type 2 to organizations. Linking them shows who works where."),
+    "medical-license-verification-across-states": ("i-license", "Verification vs monitoring", "Clay illustration: a sealed license scroll with a green checkmark, beside a bell watching licenses on a calendar.", "Verification checks a license once. Monitoring keeps watching for changes after that."),
+    "why-physician-affiliations-are-hard-to-track": ("i-affil", "What a good affiliation record looks like", "Clay illustration: a clinician badge linked to three hospitals, each link tagged with a date; one link is faded and dotted.", "A good record keeps when each link was last seen, so an old affiliation fades out instead of lingering."),
+    "healthcare-provider-taxonomy-codes-explained": ("i-taxonomy", "What the code set is", "Clay illustration: three nested trays, the smallest holding a single heart.", "Each code narrows down in up to three levels: grouping, classification and specialization."),
+    "webhooks-vs-polling-for-provider-data": ("i-webhooks", "Webhooks", "Clay illustration: a tall pile of empty envelopes beside a tired alarm clock, and one bright envelope arriving at a happy bell.", "Polling asks again and again. Webhooks tell you once, when something changes."),
+}
+for _p in ALL_POSTS:
+    _p["art"] = COVER.get(_p["slug"], _p["art"])
+
+
+def with_fig(p):
+    f = FIGS.get(p["slug"])
+    if not f:
+        return p["body"]
+    img, after, alt, cap = f
+    b, h = p["body"], f"<h2>{after}</h2>"
+    i = b.index(h)
+    j = min(x for x in (b.find("</p>", i), b.find("</ul>", i), b.find("</ol>", i)) if x != -1)
+    j = b.index(">", j) + 1
+    fig = (f'\n<figure class="art-fig"><img src="/img/g-art-{img}-900.webp" srcset="/img/g-art-{img}-900.webp 900w, /img/g-art-{img}-1600.webp 1600w" '
+           f'sizes="(max-width: 800px) 100vw, 760px" width="1600" height="1195" alt="{alt}" loading="lazy" decoding="async"><figcaption>{cap}</figcaption></figure>')
+    return b[:j] + fig + b[j:]
+
+
 POSTS = sorted([p for p in ALL_POSTS if p["date"] <= TODAY], key=lambda p: p["date"], reverse=True)
 
 
@@ -115,7 +149,7 @@ def post(p):
   <figure class="art-cover"><img src="/img/g-art-{p["art"]}-1600.webp" srcset="/img/g-art-{p["art"]}-900.webp 900w, /img/g-art-{p["art"]}-1600.webp 1600w" sizes="(max-width: 800px) 100vw, 760px" width="1600" height="1195" alt="{p["alt"]}" fetchpriority="high"></figure>
   <aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul>{tk}</ul></aside>
   <article>
-{p["body"]}
+{with_fig(p)}
   </article>
   <section class="more-posts" aria-labelledby="more-title"><h2 id="more-title">More guides</h2><ul class="blog-grid">{others}</ul></section>
 </main>

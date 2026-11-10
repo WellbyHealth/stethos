@@ -80,3 +80,6 @@ p,li,dd,summary{text-wrap:pretty}
 .ex .ex-h{margin:0 0 8px;font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#1f4f8a}
 .ex p{margin:10px 0 0;font-size:16px;line-height:1.55}
 .ex ul{margin:10px 0 0}
+.art-fig{margin:30px 0 26px}.art-fig img{display:block;width:100%;height:auto;border-radius:24px}.art-fig figcaption{margin-top:10px;font-size:14.5px;line-height:1.45;color:var(--muted);text-align:center}
+.doc h2.h-spot{display:flex;align-items:center;gap:14px}.h-spot img{flex:none;width:56px;height:56px;border-radius:16px;box-shadow:0 8px 18px -12px #0b1b3366}
+@media(max-width:600px){.art-fig img{border-radius:18px}.h-spot img{width:46px;height:46px;border-radius:13px}}

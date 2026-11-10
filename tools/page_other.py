@@ -175,6 +175,10 @@ def pricing():
 
 
 # ---------- compare ----------
+CMP_ART = {"definitive-healthcare": ("cmp-dh", "Illustration: a balance scale with a heavy, padlocked stack of binders on one side and a single light data card with a bell on the other."),
+           "iqvia-onekey": ("cmp-iqvia", "Illustration: a big padlocked chest with a long contract unrolling out of it, next to a small open box where a robot pulls out one data card.")}
+
+
 def compare(slug, them, title_a, title_b, lede, them_list, rows, both_h, both_p, sources, note, other):
     h = head(f"Stethos vs {them} | Provider Data Compared",
              f"How Stethos compares with {them} for healthcare provider data: API access, pricing model, data freshness and who each is built for.",
@@ -193,7 +197,7 @@ def compare(slug, them, title_a, title_b, lede, them_list, rows, both_h, both_p,
       <div class="cmp-card them"><p class="sp-k">With {them}, you typically</p><ul>{"".join(f"<li>{x}</li>" for x in them_list)}</ul></div>
       <div class="cmp-card us"><p class="sp-k">With Stethos, you're built to</p><ul><li>Add it to Claude in five minutes, no sales call</li><li>Pay per tool call and per field, not per seat</li><li>Get change events as they happen</li><li>See the source and verified date on every field</li><li>Use REST and webhooks for the rest of your stack</li></ul></div>
     </div>
-    <figure class="art-wide cmp-art">{art("compare", "Illustration: a dusty stack of sealed boxes and reports on one side, and the clay data machine sending out a stream of alerts on the other.", w=1600, h=893, lazy=False)}</figure>
+    <figure class="art-wide cmp-art">{art(CMP_ART[slug][0], CMP_ART[slug][1], w=1600, h=900, lazy=False)}</figure>
   </div>
 </section>
 <section class="sec cmp-sec" aria-labelledby="cmp-table-title">
@@ -271,7 +275,7 @@ def docs():
   <ul class="doc-toc"><li><a href="#connect">Connect</a></li><li><a href="#tools">Tools</a></li><li><a href="#sources">Data sources</a></li><li><a href="#credits">Credits</a></li><li><a href="#rest">REST API</a></li><li><a href="#watch">Webhooks</a></li><li><a href="#errors">Errors</a></li></ul>
   <p class="note">Stethos is in development. This page shows the MCP server and API we're building so you can plan against it. <a href="{TRIAL}">Join early access</a> to get access when it opens.</p>
 
-  <h2 id="connect">Connect in five minutes</h2>
+  <h2 id="connect" class="h-spot"><img src="/img/g-spot-connect-320.webp" width="160" height="160" alt="" loading="lazy" decoding="async">Connect in five minutes</h2>
   <p>Stethos is a remote MCP server. One URL gives your agent every tool:</p>
 <pre><code>{MCP_URL}</code></pre>
   <h3>Claude</h3>
@@ -285,7 +289,7 @@ def docs():
 }}</code></pre>
   <p>For agents that can't sign in through a browser, create a key in the dashboard and send it as <code>Authorization: Bearer $STETHOS_KEY</code>.</p>
 
-  <h2 id="tools">Tools</h2>
+  <h2 id="tools" class="h-spot"><img src="/img/g-spot-tools-320.webp" width="160" height="160" alt="" loading="lazy" decoding="async">Tools</h2>
   <table><thead><tr><th>Tool</th><th>What it does</th><th>Credits</th></tr></thead><tbody>
     <tr><td><code>search_providers</code></td><td>Find clinicians and organizations by specialty, location, license state, affiliation or network</td><td>0.05 per result</td></tr>
     <tr><td><code>enrich_provider</code></td><td>Full record for an NPI, with optional licenses, practice contact, networks and payments</td><td>1 + fields</td></tr>
@@ -295,7 +299,7 @@ def docs():
   </tbody></table>
   <p>Every result carries a <code>source</code> and <code>verified</code> date on each field. When sources disagree, the result includes <code>alternatives</code> so the agent can choose.</p>
 
-  <h2 id="rest">REST API</h2>
+  <h2 id="rest" class="h-spot"><img src="/img/g-spot-rest-320.webp" width="160" height="160" alt="" loading="lazy" decoding="async">REST API</h2>
   <p>The same data is available over REST for the parts of your stack that aren't agents. Authenticate with your key:</p>
 <pre><code>export STETHOS_KEY="sk_live_..."
 curl https://api.stethos.health/v1/account \\
@@ -320,7 +324,7 @@ curl https://api.stethos.health/v1/account \\
   -H "Authorization: Bearer $STETHOS_KEY" \\
   -d '{{"name": "Example Health System", "state": "AZ"}}'</code></pre>
 
-  <h2 id="watch">Watchers and webhooks</h2>
+  <h2 id="watch" class="h-spot"><img src="/img/g-spot-watch-320.webp" width="160" height="160" alt="" loading="lazy" decoding="async">Watchers and webhooks</h2>
   <p>A watcher follows a set of NPIs or organizations and posts an event to your webhook when something changes. Each delivered event costs 0.5 credits.</p>
   <table><thead><tr><th>Event</th><th>Fires when</th></tr></thead><tbody>
     <tr><td><code>affiliation.changed</code></td><td>A clinician joins or leaves a group, hospital or system</td></tr>
@@ -336,7 +340,7 @@ curl https://api.stethos.health/v1/account \\
        "webhook_url": "https://your-app.example/hooks/stethos"}}'</code></pre>
   <p>Webhooks are signed with your project secret in the <code>Stethos-Signature</code> header. Failed deliveries retry with backoff for 24 hours.</p>
 
-  <h2 id="sources">Data sources</h2>
+  <h2 id="sources" class="h-spot"><img src="/img/g-spot-sources-320.webp" width="160" height="160" alt="" loading="lazy" decoding="async">Data sources</h2>
   <p>Every field Stethos returns names the source it came from and when it was last checked. Stethos is built on CMS and other government files first, resolved to one record per NPI, with licensed and web sources layered on top.</p>
   <table><thead><tr><th>Source</th><th>What it adds</th><th>Refresh</th><th>Access</th></tr></thead><tbody>
     <tr><td>NPPES NPI Registry</td><td>Every clinician and organization NPI, taxonomy, practice address</td><td>Weekly</td><td>Public file</td></tr><tr><td>CMS National Provider Directory</td><td>Practitioners, organizations, locations and digital endpoints, in FHIR bulk files</td><td>Monthly</td><td>Public file</td></tr><tr><td>Medicare Physician &amp; Other Practitioners</td><td>Services and Medicare patients per clinician, by procedure code</td><td>Annual</td><td>Public file</td></tr><tr><td>Medicare Part D Prescribers</td><td>Prescribing volume per clinician, by drug</td><td>Annual</td><td>Public file</td></tr><tr><td>Medicare DMEPOS by Referring Provider</td><td>Durable equipment and supplies ordered per clinician</td><td>Annual</td><td>Public file</td></tr><tr><td>Medicare Inpatient &amp; Outpatient Hospitals</td><td>Discharges and services per hospital, by DRG and APC</td><td>Annual</td><td>Public file</td></tr><tr><td>Medicare Post-Acute Care &amp; Hospice</td><td>Volume, payments and patient mix per home health agency, hospice, SNF, IRF and LTCH</td><td>Annual</td><td>Public file</td></tr><tr><td>Care Compare and Provider Data Catalog</td><td>Star ratings, quality measures, clinician–group and hospital affiliations</td><td>Monthly to quarterly</td><td>Public file</td></tr><tr><td>Medicare Provider of Services file</td><td>Facility type, ownership, beds and certification</td><td>Quarterly</td><td>Public file</td></tr><tr><td>Medicare Shared Savings Program</td><td>Which practices and clinicians participate in each ACO</td><td>Annual</td><td>Public file</td></tr><tr><td>Hospital and SNF cost reports (HCRIS)</td><td>Beds, staffing, revenue and costs per facility</td><td>Quarterly</td><td>Public file</td></tr><tr><td>Medicare Advantage enrollment by county</td><td>MA penetration and plan mix in each market</td><td>Monthly</td><td>Public file</td></tr><tr><td>ONC certified health IT data</td><td>Which certified EHR each hospital and clinician reports using, and EHR vendors' published customer endpoint lists</td><td>Annual and ongoing</td><td>Public file</td></tr><tr><td>Open Payments</td><td>Industry payments to clinicians and teaching hospitals</td><td>Annual</td><td>Public file</td></tr><tr><td>Medicare Part A, B and MA claims, 100%</td><td>Current referral flows, shared patients, sources and destinations of post-acute patients, market share</td><td>Quarterly</td><td>Planned: CMS VRDC Innovator access</td></tr>
@@ -344,7 +348,7 @@ curl https://api.stethos.health/v1/account \\
   <p>CMS's public utilization files summarize 100% of Original Medicare claims but are released yearly, with a lag. Claims-level detail, such as which physicians actually refer to which home health agencies this quarter, requires CMS's Virtual Research Data Center. Stethos plans to apply as an Innovator, and only aggregate, privacy-protected outputs leave that environment. Provider data only: no patient data is ever returned.</p>
 
   <span id="mcp"></span>
-  <h2 id="credits">Credits</h2>
+  <h2 id="credits" class="h-spot"><img src="/img/g-spot-credits-320.webp" width="160" height="160" alt="" loading="lazy" decoding="async">Credits</h2>
   <p>Every tool result shows the credits it used (REST responses carry an <code>X-Credits-Used</code> header), and checking your balance is free. See <a href="/pricing">pricing</a> for the cost of each tool.</p>
 
   <h2 id="errors">Errors and limits</h2>
