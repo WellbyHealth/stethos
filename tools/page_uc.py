@@ -167,7 +167,6 @@ def uc_page(n):
 <section class="sec sp-top ih" aria-labelledby="uc-title">
   <div class="wrap">
     <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/solutions">Solutions</a> / {name}</nav>
-    {seg_tabs(slug)}
     <div class="ih-grid">
       <div class="ih-copy">
         {logo(slug, 72, "ih-logo")}
