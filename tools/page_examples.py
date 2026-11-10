@@ -279,7 +279,7 @@ def examples():
         f'<button type="button" class="lib-chip" data-job="{k}" aria-pressed="false">{name}</button>' for k, name, _, _ in JOBS)
     teams = '<option value="all">All teams</option>' + "".join(f'<option value="{s[0]}">{s[1]}</option>' for s in SEG)
     groups = "".join(
-        f'<section class="lib-group" id="{k}" data-job="{k}" aria-labelledby="h-{k}"><div class="lib-gh"><h2 id="h-{k}">{name}</h2><p>{blurb}</p></div>'
+        f'<section class="lib-group" id="{k}" data-job="{k}" aria-labelledby="h-{k}"><div class="lib-gh"><h2 id="h-{k}"><img class="lib-obj" src="/img/{JOB_ICONS.get(k, "g-cl-stk-search-cut.webp")}" width="64" height="64" alt="" loading="lazy" decoding="async">{name}</h2><p>{blurb}</p></div>'
         f'<div class="lib-grid">{"".join(lib_card(_by[x]) for x in slugs)}</div></section>'
         for k, name, blurb, slugs in JOBS)
     body = f'''{HEADER}

@@ -82,6 +82,9 @@ def dd_spec(href, img, label):
 
 
 from segments import SEG
+JOB_ICONS = {"prospecting": "g-cl-stk-search-cut.webp", "triggers": "g-cl-stk-watch-cut.webp", "referrals": "g-cl-stk-orgs-cut.webp",
+             "markets": "g-cl-stk-markets-cut.webp", "data-quality": "g-cl-stk-enrich-cut.webp"}
+
 JOB_LINKS = [("prospecting", "Prospecting and targeting", "Find accounts and decide who to call."),
              ("triggers", "Timing and triggers", "Reach out the week something changes."),
              ("referrals", "Referrals and networks", "See who works with whom."),
@@ -106,10 +109,10 @@ HEADER = f'''
   }{dd_goal("/license-verification-api", "g-cl-stk-watch-160.webp", "#fcecf6", "License data and alerts", "License status across states, with a webhook when one changes.")
   }{dd_goal("/healthcare-mcp-server", "g-cl-stk-agents-160.webp", "#eff5d6", "MCP server", "Add Stethos to Claude or any MCP client in five minutes.")}</ul></div>
           <div class="dd-col dd-side"><p class="dd-h">Data sets</p><ul class="dd-spec">{
-    dd_spec("/medicare-utilization-data-api", "g-l-pharma-160.webp", "Medicare utilization data")
-  }{dd_spec("/home-health-hospice-data-api", "g-l-postacute-160.webp", "Home health and hospice data")
-  }{dd_spec("/physician-referral-data", "g-l-healthsystems-160.webp", "Physician referral data")
-  }{dd_spec("/private-equity-healthcare-ownership-data", "g-l-investors-160.webp", "Private equity ownership")}</ul><a class="dd-all" href="/docs#sources">All data sources <span aria-hidden="true">→</span></a><img class="dd-art" src="/img/g-cl-stk-search-cut.webp" width="480" height="480" alt="" loading="lazy" decoding="async"></div>
+    dd_spec("/medicare-utilization-data-api", "g-cl-ic-gov-cut.webp", "Medicare utilization data")
+  }{dd_spec("/home-health-hospice-data-api", "g-cl-ic-pin-cut.webp", "Home health and hospice data")
+  }{dd_spec("/physician-referral-data", "g-cl-envelope-cut.webp", "Physician referral data")
+  }{dd_spec("/private-equity-healthcare-ownership-data", "g-cl-stk-markets-cut.webp", "Private equity ownership")}</ul><a class="dd-all" href="/docs#sources">All data sources <span aria-hidden="true">→</span></a><img class="dd-art" src="/img/g-cl-stk-search-cut.webp" width="480" height="480" alt="" loading="lazy" decoding="async"></div>
         </div>
       </div>
       <div class="dd">
@@ -122,7 +125,7 @@ HEADER = f'''
       <div class="dd">
         <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-jobs">Use cases<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="dd-panel dd-teams dd-one dd-uc" id="dd-jobs">
-          <div class="dd-col"><p class="dd-h">By what you're trying to do</p><ul class="dd-jobs">{"".join(f'<li><a href="/use-cases#{k}"><b>{name}</b><span>{blurb}</span></a></li>' for k, name, blurb in JOB_LINKS)}</ul>
+          <div class="dd-col"><p class="dd-h">By what you're trying to do</p><ul class="dd-jobs">{"".join(f'<li><a href="/use-cases#{k}"><img class="dd-obj" src="/img/{JOB_ICONS[k]}" width="52" height="52" alt="" loading="lazy" decoding="async"><span class="dd-t"><b>{name}</b><span>{blurb}</span></span></a></li>' for k, name, blurb in JOB_LINKS)}</ul>
           <a class="dd-all" href="/use-cases">All use cases <span aria-hidden="true">→</span></a></div>
         </div>
       </div>
