@@ -45,7 +45,7 @@ SEO_PAGES = [
          faq=[("How many physicians does it cover?", "Stethos is built to cover every US physician with an NPI, from the NPPES registry, with other sources layered on top. Coverage of each field will be published at launch."),
               ("Can I get contact details?", "Practice contact details, such as phone, fax and practice address, are an optional field with their sources. Stethos does not sell personal home addresses or personal phone numbers."),
               ("Can I sync it to a CRM?", "Yes. Enrich records on demand and subscribe to watchers so your CRM is updated when a physician moves, instead of re-importing lists.")],
-         related=[("Medtech sales", "/use-cases/medtech"), ("NPI lookup API", "/npi-lookup-api"), ("Pricing", "/pricing")]),
+         related=[("Medtech sales", "/solutions/medtech"), ("NPI lookup API", "/npi-lookup-api"), ("Pricing", "/pricing")]),
     dict(slug="license-verification-api", art="s-license", color="sp-butter", name="License data API",
          title="Medical License Lookup API by State | Stethos",
          desc="Check physician and nurse license status across states in one API call, and get a webhook when a license is issued, expires or is restricted.",
@@ -57,7 +57,7 @@ SEO_PAGES = [
          faq=[("Is this primary source verification?", "No. Stethos is not a credentials verification organization. It's built for sourcing, prospecting, directory checks and monitoring. For credentialing, verify with the state board or your verification vendor."),
               ("Which professions are covered?", "Physicians first, then nurses and other licensed clinicians. Coverage will be published by state and profession at launch."),
               ("Can I be told when a license lapses?", "Yes. Watchers fire license.lapsed and license.issued events for the clinicians you follow.")],
-         related=[("Clinical staffing and recruiting", "/use-cases/clinical-staffing"), ("Docs: watchers", "/docs#watch"), ("Physician data API", "/physician-data-api")]),
+         related=[("Clinical staffing and recruiting", "/solutions/clinical-staffing"), ("Docs: watchers", "/docs#watch"), ("Physician data API", "/physician-data-api")]),
     dict(slug="health-system-data-api", art="s-healthsys", color="sp-pink", name="Health system data API",
          title="Health System and Hospital Data API | Stethos",
          desc="Health systems, hospitals, groups and clinics in one API: locations, rostered clinicians, leadership, open roles and ownership, with change alerts.",
@@ -69,7 +69,7 @@ SEO_PAGES = [
          faq=[("Where does organization data come from?", "CMS provider and facility data, organization NPIs, health system websites and job posts, and press releases for leadership changes. Every field shows its source."),
               ("Can I see who works at a hospital?", "Organization records include rostered clinicians drawn from affiliation data, and the list updates as clinicians join or leave."),
               ("Can I track leadership changes?", "Yes. The org.exec_hire event fires when an organization names a new executive or service line leader.")],
-         related=[("Healthcare investors", "/use-cases/investors"), ("Docs: organizations", "/docs#orgs"), ("Pricing", "/pricing")]),
+         related=[("Healthcare investors", "/solutions/investors"), ("Docs: organizations", "/docs#orgs"), ("Pricing", "/pricing")]),
 ]
 
 
@@ -87,7 +87,7 @@ SEO_PAGES += [
               ("How current is it?", "CMS releases these files once a year, covering a past year, so they describe volume and mix rather than this week's activity. Stethos shows the data year on every number and pairs it with fresher signals like affiliation and license changes."),
               ("Does it include Medicare Advantage or commercial claims?", "No. These files cover Original Medicare only. Claims-level data, including Medicare Advantage, requires CMS research access, which Stethos plans to pursue."),
               ("Is there patient data in it?", "No. Every number is aggregated to the provider, and CMS removes counts under 11. Stethos returns provider data only.")],
-         related=[("Docs: data sources", "/docs#sources"), ("Physician data API", "/physician-data-api"), ("Medtech sales", "/use-cases/medtech")]),
+         related=[("Docs: data sources", "/docs#sources"), ("Physician data API", "/physician-data-api"), ("Medtech sales", "/solutions/medtech")]),
     dict(slug="home-health-hospice-data-api", art="s-homehealth", color="sp-butter",
          name="Home health and hospice data API",
          title="Home Health, Hospice and SNF Data API | Stethos",
@@ -101,7 +101,7 @@ SEO_PAGES += [
               ("How current is it?", "Star ratings and quality measures refresh monthly to quarterly. The utilization files are released yearly. Every field shows its source and date."),
               ("Can I see referral sources and destinations?", "Not yet. Which hospitals and physicians send patients to which agencies requires claims-level data from CMS's Virtual Research Data Center, which Stethos plans to apply for. Today you get each provider's volume, mix, quality and ownership."),
               ("Does it include patient data?", "No. Everything is aggregated to the provider, and CMS suppresses small counts.")],
-         related=[("Docs: data sources", "/docs#sources"), ("Health system data API", "/health-system-data-api"), ("Provider directories", "/use-cases/provider-directories")]),
+         related=[("Docs: data sources", "/docs#sources"), ("Health system data API", "/health-system-data-api"), ("Provider directories", "/solutions/provider-directories")]),
     dict(slug="physician-referral-data", art="s-referral", color="sp-pink",
          name="Physician referral data",
          title="Physician Referral Data API for AI Agents | Stethos",
@@ -115,7 +115,7 @@ SEO_PAGES += [
               ("Will Stethos have claims-based referral flows?", "That's the plan. Current referral counts between clinicians require claims-level Medicare data from CMS's Virtual Research Data Center. Stethos plans to apply as an Innovator; only aggregate, privacy-protected counts can leave that environment."),
               ("Is this enough for sales targeting?", "Often, yes. Shared groups, hospitals and ACOs explain most referral patterns, and they change faster than annual claims files. Stethos also tells your agent when an affiliation changes."),
               ("Is there patient data?", "No. Stethos holds data about clinicians and organizations only.")],
-         related=[("Docs: data sources", "/docs#sources"), ("Physician data API", "/physician-data-api"), ("Medtech sales", "/use-cases/medtech")]),
+         related=[("Docs: data sources", "/docs#sources"), ("Physician data API", "/physician-data-api"), ("Medtech sales", "/solutions/medtech")]),
     dict(slug="private-equity-healthcare-ownership-data", art="s-pe", color="sp-blue",
          name="Private equity ownership data",
          title="Private Equity Healthcare Ownership Data API | Stethos",
@@ -131,7 +131,7 @@ SEO_PAGES += [
               ("Can I see the people, not just the companies?", "Yes. Stethos is built to return MSO executives and the firm's healthcare deal and operating partners, with business contact details where they're published."),
               ("How current is it?", "CMS updates its ownership files regularly, and acquisitions are picked up when they're announced. Your agent can watch a firm or a platform and hear about new add-ons as they happen."),
               ("Does it include patient data?", "No. Stethos holds data about organizations, their owners and the people who run them only.")],
-         related=[("Docs: data sources", "/docs#sources"), ("What CMS ownership files show", "/blog/cms-ownership-data-private-equity"), ("Healthcare investors", "/use-cases/investors")]),
+         related=[("Docs: data sources", "/docs#sources"), ("What CMS ownership files show", "/blog/cms-ownership-data-private-equity"), ("Healthcare investors", "/solutions/investors")]),
 ]
 
 def seo_page(m):
@@ -153,7 +153,7 @@ def seo_page(m):
     if not asks_is_l2:
         lists += f'<p class="sp-k">{m["k2"]}</p><ul class="kw-list">{li(m["l2"])}</ul>'
     asks = "".join(f'<li><p class="ask-q">“{q}”</p><p class="ask-a">{a}</p></li>' for q, a in x["asks"])
-    teams = "".join(f'<li><a href="/use-cases/{t}" style="--t:{SEGBY[t][4]}">{logo(t, 64)}<span><b>{SEGBY[t][1]}</b>{SEGBY[t][2]}</span></a></li>' for t in x["teams"])
+    teams = "".join(f'<li><a href="/solutions/{t}" style="--t:{SEGBY[t][4]}">{logo(t, 64)}<span><b>{SEGBY[t][1]}</b>{SEGBY[t][2]}</span></a></li>' for t in x["teams"])
     wf = PX.card(PX._by[x["workflow"]], tab=None, link=True)
     pages = {p2["slug"]: p2 for p2 in SEO_PAGES}
     related = "".join(

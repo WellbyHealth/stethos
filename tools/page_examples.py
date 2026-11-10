@@ -75,6 +75,46 @@ EXAMPLES = [
       "Lists the independent practices left in each metro"],
      ["Ownership", "Organizations", "Locations", "Change events"],
      "A market map in Claude and a spreadsheet for the deal team", "g-cl-ic-pin-96.webp", "#ece6fb"),
+    ("directory-audit", "Network operations", "Audit every listing before members find the errors",
+     "Before each directory refresh, or monthly.",
+     "Check our 12,000 cardiology and orthopedic listings and flag anyone who has moved, lost a license or left the network.",
+     ["Matches each listing to a current record by NPI",
+      "Flags moved clinicians, lapsed licenses and network changes, with sources",
+      "Writes a fix list your team can review and push"],
+     ["NPI records", "Licenses", "Network listings", "Practice locations"],
+     "A review queue and a corrected file", "g-cl-ic-payer-96.webp", "#ece6fb"),
+    ("audience-refresh", "Marketing operations", "Keep a campaign audience current",
+     "Before every send.",
+     "Refresh our 8,000-clinician audience: drop anyone who changed jobs or retired, and add new physicians who match.",
+     ["Rechecks each contact's employer, location and license",
+      "Removes people who left, before the emails bounce",
+      "Adds new matches from the same specialties and markets"],
+     ["Affiliations", "Licenses", "Practice contacts", "Change events"],
+     "Your marketing platform or CRM", "g-cl-ic-pin-96.webp", "#fde8dc"),
+    ("find-a-doctor", "Product", "Power provider search in your app",
+     "Every time a user searches.",
+     "Show in-network dermatologists within 10 miles who are accepting new patients.",
+     ["Searches by specialty, location and network",
+      "Returns current locations and contact details, with sources",
+      "Sends a webhook when a listed provider changes"],
+     ["Provider search", "Network listings", "Practice locations", "Watchers"],
+     "Your app, through the REST API", "g-cl-stk-search-160.webp", "#e4f0fd"),
+    ("license-sourcing", "Recruiting", "Source clinicians licensed where the job is",
+     "When a hard-to-fill role opens.",
+     "Find ICU nurses with an active Arizona license who practice within 50 miles of Phoenix and changed employers in the last two years.",
+     ["Searches clinicians by license state, profession and specialty",
+      "Adds current employer and employment history",
+      "Ranks by fit and builds an outreach list"],
+     ["Licenses", "Affiliations", "Practice locations"],
+     "Your ATS or recruiting CRM", "g-cl-ic-license-96.webp", "#e3f4ec"),
+    ("competitor-watch", "Physician relations", "Know when a physician joins a competitor",
+     "Continuously, across your service area.",
+     "Tell me when a physician in our service area joins a competing group or hospital, or opens a new practice.",
+     ["Watches affiliations for community physicians",
+      "Flags moves to competing systems and new practices",
+      "Sends each liaison a weekly list with next steps"],
+     ["Affiliations", "Change events", "Locations"],
+     "Your physician relations CRM and a weekly email", "g-cl-stk-watch-160.webp", "#fbe4ea"),
     ("startup-first-customers", "First customers", "Find your first ten design partners",
      "A seed-stage team is ready to sell.",
      "Find independent cardiology groups with 10 to 40 clinicians in the Midwest that run athenahealth, with the practice administrator at each.",
@@ -162,12 +202,29 @@ SEGMENTS = [
     ("Medtech", "medtech", ["medtech-targeting", "territory-planning", "abm-list"]),
     ("Pharma", "pharma", ["kol-mapping", "event-invites"]),
     ("Health IT and services", "health-it-sales", ["exec-trigger", "pe-rollup-sell", "ehr-campaign", "crm-hygiene"]),
+    ("Healthcare marketing", "healthcare-marketing", ["audience-refresh"]),
     ("Investors", "investors", ["deal-diligence", "pe-map", "portfolio-watch"]),
-    ("Startups", "digital-health", ["startup-first-customers"]),
-    ("Clinical staffing", "clinical-staffing", ["staffing-sales"]),
-    ("Post-acute care and agencies", "post-acute", ["referrer-nudge", "referral-map", "referral-partners", "discharge-sources"]),
-    ("Health systems", "health-systems", ["physician-liaison"]),
+    ("Startups", "digital-health", ["startup-first-customers", "find-a-doctor"]),
+    ("Clinical staffing", "clinical-staffing", ["staffing-sales", "license-sourcing"]),
+    ("Post-acute care", "post-acute", ["referrer-nudge", "referral-map", "referral-partners", "discharge-sources"]),
+    ("Payers and directories", "provider-directories", ["directory-audit"]),
+    ("Health systems", "health-systems", ["physician-liaison", "competitor-watch"]),
 ]
+# Use cases grouped by the job they do (the use-case library is organized this way)
+JOBS = [
+    ("prospecting", "Prospecting and targeting", "Find the right accounts and people, and decide who to call first.",
+     ["medtech-targeting", "abm-list", "ehr-campaign", "staffing-sales", "license-sourcing", "startup-first-customers", "event-invites"]),
+    ("triggers", "Timing and triggers", "Reach out the week something changes, not a quarter later.",
+     ["exec-trigger", "portfolio-watch", "competitor-watch", "referrer-nudge"]),
+    ("referrals", "Referrals and networks", "See who works with whom, and grow the relationships that send you business.",
+     ["referral-map", "referral-partners", "discharge-sources", "physician-liaison", "kol-mapping"]),
+    ("markets", "Markets and ownership", "Map a market, its owners and its roll-ups before you plan or invest.",
+     ["deal-diligence", "pe-map", "pe-rollup-sell", "territory-planning"]),
+    ("data-quality", "Data quality", "Keep your CRM, directory, audience or app current without manual checks.",
+     ["crm-hygiene", "directory-audit", "audience-refresh", "find-a-doctor"]),
+]
+# Borrowed workflows shown on a team page in addition to its own
+EXTRA_WF = {"healthcare-marketing": ["abm-list", "event-invites"], "provider-directories": ["crm-hygiene"]}
 _by = {e[0]: e for e in EXAMPLES}
 SEG_OF = {slug: (name, page) for name, page, slugs in SEGMENTS for slug in slugs}
 EXAMPLES = [_by[slug] for _, _, slugs in SEGMENTS for slug in slugs]
@@ -184,7 +241,7 @@ def card(e, tab=False, link=True):
     st = "".join(f"<li>{x}</li>" for x in steps)
     dt = "".join(f"<li>{x}</li>" for x in data)
     attrs = f' role="tabpanel" aria-labelledby="tab-{slug}" tabindex="-1"' if tab is not None else ""
-    more = f'<p class="ex-foot"><a href="/use-cases/{page}">More for {seg} <span aria-hidden="true">→</span></a></p>' if (link and page) else ""
+    more = f'<p class="ex-foot"><a href="/solutions/{page}">More for {seg} <span aria-hidden="true">→</span></a></p>' if (link and page) else ""
     return f'''<article class="ex-card{" ex-on" if tab else ""}" id="{slug}"{attrs} style="--t:{tint}">
       <div class="ex-head"><span class="ex-ic"><img src="/img/{ic}" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">{seg} · {team}</p><h2>{title}</h2></div></div>
       <p class="ex-trigger"><b>When</b> {trigger}</p>
@@ -197,57 +254,103 @@ def card(e, tab=False, link=True):
 '''
 
 
+def lib_card(e):
+    slug, team, title, trigger, ask, steps, data, lands, ic, tint = e
+    seg, page = SEG_OF[slug]
+    return (f'<article class="lib-card" id="{slug}" data-team="{page}" style="--t:{tint}">'
+            f'<div class="ex-head"><span class="ex-ic"><img src="/img/{ic}" width="64" height="64" alt="" loading="lazy" decoding="async"></span>'
+            f'<div><p class="ex-team"><a href="/solutions/{page}">{seg}</a> · {team}</p><h3>{title}</h3></div></div>'
+            f'<p class="ex-trigger"><b>When</b> {trigger}</p>'
+            f'<p class="lib-ask">“{ask}”</p>'
+            f'<ul class="ex-data">{"".join(f"<li>{x}</li>" for x in data)}</ul>'
+            f'<details class="lib-more"><summary>How it works</summary><ol class="ex-steps">{"".join(f"<li>{x}</li>" for x in steps)}</ol>'
+            f'<p class="lib-lands"><b>Where the result lands:</b> {lands}</p></details></article>')
+
+
 def examples():
+    """The use-case library: every workflow, grouped by the job it does, filterable by team."""
+    from segments import SEG
     items = [{"@type": "ListItem", "position": i + 1, "name": e[2], "url": f"{SITE}/use-cases#{e[0]}"} for i, e in enumerate(EXAMPLES)]
-    h = head("Solutions: Healthcare Data for Every Team | Stethos",
-             "Healthcare market data for medtech, pharma, health IT, marketing, investors, startups, post-acute, staffing, payers and health systems, with agent workflows.",
-             "/use-cases", image="/og/use-cases.jpg", image_alt="Clay illustration of a sales desk with a laptop map, above the line: What teams do with Stethos.", crumbs=[("Solutions", "/use-cases")],
+    h = head("Use Cases: Healthcare Sales and Market Workflows | Stethos",
+             "Workflows your AI agent can run with Stethos: prospecting, buying triggers, referral networks, market and ownership mapping, and data quality.",
+             "/use-cases", image="/og/use-cases.jpg", image_alt="Clay illustration, above the line: What teams do with Stethos.", crumbs=[("Use cases", "/use-cases")],
              schema=[{"@type": "ItemList", "name": "Stethos use cases", "itemListElement": items}])
-    jump, n = "", 0
-    for name, page, slugs in SEGMENTS:
-        jump += f'<li class="ex-grp" role="presentation">{name}</li>'
-        for slug in slugs:
-            e = _by[slug]
-            jump += (f'<li role="presentation"><a class="ex-tab" href="#{e[0]}" role="tab" id="tab-{e[0]}" aria-controls="{e[0]}" aria-selected="{"true" if n == 0 else "false"}" style="--t:{e[9]}">'
-                     f'<span class="ex-tab-ic"><img src="/img/{e[8]}" width="40" height="40" alt="" loading="lazy" decoding="async"></span>'
-                     f'<span class="ex-tab-t"><b>{e[1]}</b>{e[2]}</span></a></li>')
-            n += 1
-    cards = "".join(card(e, tab=(n == 0)) for n, e in enumerate(EXAMPLES))
+    chips = '<button type="button" class="lib-chip" data-job="all" aria-pressed="true">All</button>' + "".join(
+        f'<button type="button" class="lib-chip" data-job="{k}" aria-pressed="false">{name}</button>' for k, name, _, _ in JOBS)
+    teams = '<option value="all">All teams</option>' + "".join(f'<option value="{s[0]}">{s[1]}</option>' for s in SEG)
+    groups = "".join(
+        f'<section class="lib-group" id="{k}" data-job="{k}" aria-labelledby="h-{k}"><div class="lib-gh"><h2 id="h-{k}">{name}</h2><p>{blurb}</p></div>'
+        f'<div class="lib-grid">{"".join(lib_card(_by[x]) for x in slugs)}</div></section>'
+        for k, name, blurb, slugs in JOBS)
     body = f'''{HEADER}
 <main id="main">
-<section class="sec sp-top ex ih" aria-labelledby="ex-title">
+<section class="sec sp-top ih" aria-labelledby="lib-title">
   <div class="wrap">
-    <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Solutions</nav>
+    <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Use cases</nav>
     <div class="ih-grid">
       <div class="ih-copy">
-        <p class="eyebrow"><span>Solutions</span></p>
-        <h1 id="ex-title">Solutions for every team <span class="pop">that sells into healthcare.</span></h1>
-        <p class="ih-lede">Pick your team for its own page, or try a workflow below.</p>
+        <p class="eyebrow"><span>Use cases</span></p>
+        <h1 id="lib-title">Workflows your agent can run, <span class="pop">by job and by team.</span></h1>
+        <p class="ih-lede">{len(EXAMPLES)} workflows, from finding accounts to mapping referrals. Each one shows what to ask, what the agent does and where the result lands.</p>
+        <div class="kw-ctas"><a class="btn-1" href="{TRIAL}">Start free trial</a><a class="btn-2" href="/solutions">Find your team</a></div>
       </div>
-      {ih_art("usecases", "Illustration: a little clay town with a hospital, a pharma lab, an office tower, a bank and a home-care house, with the robot walking between them.")}
+      {ih_art("home-map", "Illustration: a quilted clay map draped over the hills with pins on hospitals, clinics and homes, and the little robot planting a flag.")}
     </div>
-    {seg_grid()}
   </div>
 </section>
-<section class="sec ex" aria-labelledby="ex-wf-title">
+<section class="sec lib" aria-label="Use case library">
   <div class="wrap">
-    <div class="head center"><p class="eyebrow"><span>Workflows</span></p><h2 id="ex-wf-title">What teams <span class="pop">do with Stethos.</span></h2></div>
-    <div class="ex-split">
-      <div class="ex-navwrap">
-        <ul class="ex-nav" role="tablist" aria-label="Example workflows">{jump}</ul>
-        <button class="ex-morebtn" type="button" tabindex="-1" aria-hidden="true">More workflows <span aria-hidden="true">↓</span></button>
-      </div>
-      <div class="ex-stage">
-      {cards}
-      </div>
-    </div>
-    <p class="cov-note ex-more">Have a workflow in mind? <a href="mailto:{EMAIL}?subject=Stethos%20workflow">Tell us about it</a>, or see the <a href="/docs">docs</a>. Also: <a href="/use-cases/healthcare-marketing">healthcare marketing</a> and <a href="/use-cases/provider-directories">provider directories</a>.</p>
+    <div class="lib-bar"><div class="lib-chips" role="group" aria-label="Filter by job">{chips}</div>
+      <label class="lib-team">Team <select id="lib-team">{teams}</select></label></div>
+    {groups}
+    <p class="lib-empty" hidden>No workflows match yet for that team and job. <a href="mailto:{EMAIL}?subject=Stethos%20workflow">Tell us what you need</a>.</p>
   </div>
 </section>
 {cta_band("Self-serve", "Run your first workflow", "in five minutes.", "1,000 free credits, no card, no sales call. Pay only for the tool calls you make.", "use-cases")}
 </main>
 '''
-    return h + body + tail(("nav", "examples"))
+    return h + body + tail(("nav", "library"))
+
+
+def solutions():
+    """Index of customer profiles: one card per team."""
+    from segments import SEG, ROLES
+    h = head("Solutions: Healthcare Market Data for Every Team | Stethos",
+             "Healthcare market data for medtech, pharma, health IT, marketing, investors, startups, post-acute, staffing, payers and health systems.",
+             "/solutions", image="/og/use-cases.jpg", image_alt="Clay illustration of a little town of healthcare buildings.", crumbs=[("Solutions", "/solutions")],
+             schema=[{"@type": "ItemList", "name": "Stethos solutions", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": t[1], "url": f"{SITE}/solutions/{t[0]}"} for i, t in enumerate(SEG)]}])
+    def team_card(t):
+        wfs = [e for e in EXAMPLES if SEG_OF[e[0]][1] == t[0]][:2]
+        links = "".join(f'<li><a href="/use-cases#{e[0]}">{e[2]}</a></li>' for e in wfs)
+        return (f'<li class="sol-card" style="--t:{t[4]}"><a class="sol-main" href="/solutions/{t[0]}"><img src="/img/g-{t[3]}-320.webp" width="80" height="80" alt="" loading="lazy" decoding="async">'
+                f'<span><b>{t[1]}</b>{t[2]}</span></a><p class="sol-k">Built for {ROLES[t[0]][0].lower()}, {ROLES[t[0]][1].lower()} and more</p>'
+                f'<ul class="sol-wf">{links}</ul><a class="sol-go" href="/solutions/{t[0]}">See {t[1]} <span aria-hidden="true">→</span></a></li>')
+    body = f'''{HEADER}
+<main id="main">
+<section class="sec sp-top ih" aria-labelledby="sol-title">
+  <div class="wrap">
+    <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Solutions</nav>
+    <div class="ih-grid">
+      <div class="ih-copy">
+        <p class="eyebrow"><span>Solutions</span></p>
+        <h1 id="sol-title">Built for every team <span class="pop">that sells into healthcare.</span></h1>
+        <p class="ih-lede">Pick your team to see the workflows, data and signals that matter to you.</p>
+        <div class="kw-ctas"><a class="btn-1" href="{TRIAL}">Start free trial</a><a class="btn-2" href="/use-cases">Browse use cases</a></div>
+      </div>
+      {ih_art("usecases", "Illustration: a little clay town with a hospital, a pharma lab, an office tower, a bank and a home-care house, with the robot walking between them.")}
+    </div>
+  </div>
+</section>
+<section class="sec" aria-labelledby="sol-list-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>By team</span></p><h2 id="sol-list-title">Find your team.</h2></div>
+    <ul class="sol-grid">{"".join(team_card(t) for t in SEG)}</ul>
+  </div>
+</section>
+{cta_band("Self-serve", "Try it on", "your own market.", "1,000 free credits, no card, no sales call. Pay only for the tool calls you make.", "solutions")}
+</main>
+'''
+    return h + body + tail()
 
 
 HOME_PICKS = ["medtech-targeting", "kol-mapping", "exec-trigger", "deal-diligence", "referrer-nudge"]

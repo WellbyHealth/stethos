@@ -71,7 +71,7 @@ def page():
   <div class="wrap">
     <div class="head center">
       <p class="eyebrow"><span>Use cases</span></p>
-      <h2 id="hx-title">What teams <span class="pop">do with Stethos.</span></h2>
+      <h2 id="hx-title">Workflows your agent <span class="pop">can run.</span></h2>
     </div>
     {{HOME_EX}}
     <p class="sp-more"><a href="/use-cases">See every use case <span aria-hidden="true">→</span></a></p>
@@ -284,18 +284,10 @@ def page():
   <div class="wrap">
     <div class="head center">
       <p class="eyebrow"><span>Who it's for</span></p>
-      <h2 id="teams-title">Built for teams <span class="pop">selling into, and investing in, healthcare.</span></h2>
+      <h2 id="teams-title">Built for every team <span class="pop">that sells into healthcare.</span></h2>
     </div>
-    <ul class="roles">
-      <li><figure class="role-art" style="--bg:#d3e6fb">{art("uc-medtech", "Illustration: a clay sales desk with a surgical instrument case, a knee model and a laptop showing a map with pins.")}</figure><h3><a class="role-link" href="/use-cases/medtech">Medtech and pharma</a></h3><p>Find the surgeons and groups that fit your product, and reach out the week a target changes affiliation or opens a new site.</p></li>
-      <li><figure class="role-art" style="--bg:#f6efe2">{art("compare", "Illustration: clay stacks of boxes and binders on a table beside a small machine sending out envelopes and pins.")}</figure><h3><a class="role-link" href="/use-cases/health-it-sales">Health IT and services sales</a></h3><p>Target health systems by EHR, size and service line, and hear the week a new CIO or CMO starts.</p></li>
-      <li><figure class="role-art" style="--bg:#0b1b33">{art("cta", "Illustration: a clay shelf of hospitals, clinics and houses with glowing map pins above them, and a small robot.")}</figure><h3><a class="role-link" href="/use-cases/healthcare-marketing">Healthcare marketing</a></h3><p>Build clinician audiences and ABM account lists, and keep them clean as people change jobs.</p></li>
-      <li><figure class="role-art" style="--bg:#e3dcf7">{art("uc-investors", "Illustration: a clay piggy bank beside a rising bar chart topped with small clinic buildings.")}</figure><h3><a class="role-link" href="/use-cases/investors">Investors and deal teams</a></h3><p>Map a market in an afternoon: every group, its clinicians, owners and volume, and who just added sites.</p></li>
-      <li><figure class="role-art" style="--bg:#f5e9b8">{art("uc-digital", "Illustration: a clay phone showing a map with pins, beside a small friendly robot.")}</figure><h3><a class="role-link" href="/use-cases/digital-health">Healthcare startups</a></h3><p>Find first customers and design partners, size your market, and power provider search in your product.</p></li>
-      <li><figure class="role-art" style="--bg:#dce9f8">{art("notfound", "Illustration: a clay folded map with a dotted path to a map pin, beside a magnifying glass.")}</figure><h3><a class="role-link" href="/use-cases/post-acute">Home care, hospice and post-acute</a></h3><p>Cover more referrers than your marketers can, and get a nudge before a good one goes quiet.</p></li>
-    </ul>
-    <p class="seg-k">Every team gets its own page:</p>
     {seg_grid()}
+    <p class="sp-more"><a href="/solutions">All solutions <span aria-hidden="true">→</span></a></p>
   </div>
 </section>
 

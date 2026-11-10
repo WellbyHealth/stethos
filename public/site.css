@@ -207,3 +207,51 @@ p,li,dd,summary{text-wrap:pretty}
 .doc-wrap .doc>.note:first-child{margin-top:0}
 @media(max-width:900px){.ih-grid{grid-template-columns:1fr}.ih-art{aspect-ratio:16/10;border-radius:24px}.doc-wrap{grid-template-columns:1fr}.doc-side{position:static}.doc-side .doc-toc{display:flex;flex-wrap:wrap;gap:8px}.doc-side .doc-toc a{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px}}
 .hiw-top + .h2-panel,.ih + .h2-panel{margin-top:0}
+/* Roles on team pages */
+.ih-roles{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:18px 0 0;font-size:13.5px}
+.ih-roles span{font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:11.5px;color:var(--muted);margin-right:4px}
+.ih-roles b{font-weight:600;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 11px;color:#2e2d29}
+/* Solutions menu: second column */
+.dd-panel.dd-teams{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:8px;padding:10px}
+.dd-teams .dd-col{padding:8px}
+.dd-jobs{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.bar .dd-jobs a{display:block;padding:9px 10px;border-radius:12px;color:var(--ink);text-decoration:none}
+.bar .dd-jobs a:hover,.bar .dd-jobs a:focus-visible{background:var(--stone)}
+.dd-jobs b{display:block;font-size:14.5px;font-weight:650}.dd-jobs span{display:block;font-size:13px;color:var(--muted)}
+/* Use-case library */
+.lib-bar{position:sticky;top:80px;z-index:5;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:10px;margin:0 0 8px;background:#f8f7f4e6;backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:18px}
+.lib-chips{display:flex;flex-wrap:wrap;gap:6px}
+.lib-chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font:inherit;font-size:14px;font-weight:600;color:var(--ink);cursor:pointer}
+.lib-chip[aria-pressed=true]{background:#0b1b33;border-color:#0b1b33;color:#fff}
+.lib-team{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600}
+.lib-team select{font:inherit;font-weight:500;padding:8px 12px;border-radius:12px;border:1px solid var(--line);background:#fff}
+.lib-group{padding-top:clamp(28px,4vw,44px);scroll-margin-top:150px}
+.lib-group[hidden]{display:none}
+.lib-gh{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 24px;margin-bottom:16px}
+.lib-gh h2{font-size:clamp(1.5rem,2.4vw,2rem);letter-spacing:-.03em;margin:0}.lib-gh p{margin:0;color:var(--muted);font-size:15.5px}
+.lib-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.lib-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:20px 22px;display:flex;flex-direction:column;gap:12px;scroll-margin-top:150px}
+.lib-card[hidden]{display:none}
+.lib-card h3{margin:2px 0 0;font-size:1.2rem;letter-spacing:-.02em}
+.lib-card .ex-team a{color:inherit;text-decoration:none}.lib-card .ex-team a:hover{text-decoration:underline}
+.lib-card .ex-trigger{margin:0}
+.lib-ask{margin:0;background:#0b1b33;color:#fff;border-radius:16px;padding:14px 16px;font-size:15px;line-height:1.45}
+.lib-card .ex-data{margin:0}
+.lib-more summary{cursor:pointer;font-weight:650;font-size:14.5px}
+.lib-more .ex-steps{margin:10px 0 6px}.lib-lands{margin:0;font-size:14.5px;color:#3b4250}
+.lib-card:target{outline:2px solid #4A4FB0;outline-offset:2px}
+.lib-empty{margin:28px 0 0;text-align:center;color:var(--muted)}
+/* Solutions index */
+.sol-grid{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.sol-card{background:var(--t);border-radius:26px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.sol-main{display:flex;align-items:center;gap:16px;color:var(--ink);text-decoration:none}
+.sol-main img{flex:none;width:72px;height:72px;border-radius:20px;box-shadow:0 10px 20px -14px #0b1b3366}
+.sol-main b{display:block;font-size:1.3rem;letter-spacing:-.02em}.sol-main span span,.sol-main>span{color:#3b4250;font-size:15px}
+.sol-main>span b{color:#000;margin-bottom:2px}
+.sol-k{margin:0;font-size:13px;color:#5b6070}
+.sol-wf{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.sol-wf a{display:block;background:#ffffffb3;border-radius:12px;padding:9px 12px;font-size:14.5px;font-weight:600;color:var(--ink);text-decoration:none}
+.sol-wf a:hover{background:#fff}
+.sol-go{margin-top:auto;font-weight:650;font-size:14.5px;color:var(--ink);text-underline-offset:3px}
+@media(max-width:900px){.dd-panel.dd-teams{grid-template-columns:1fr}.lib-grid,.sol-grid{grid-template-columns:1fr}.lib-bar{top:72px}}
+@media(max-width:560px){.lib-bar{position:static}.lib-chip{padding:7px 11px;font-size:13px}}

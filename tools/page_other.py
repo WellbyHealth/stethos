@@ -50,7 +50,7 @@ def use_cases():
     h = head("Use Cases: Healthcare Sales and Marketing Data | Stethos",
              "How medtech, pharma, health IT, post-acute, startup and investment teams use Stethos to find, size and track healthcare markets, accounts and clinicians.",
              "/use-cases", image="/og/use-cases.jpg", crumbs=[("Use cases", "/use-cases")],
-             schema=[{"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": u[4], "url": SITE + "/use-cases/" + u[0]} for i, u in enumerate(UC)]}])
+             schema=[{"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": u[4], "url": SITE + "/solutions/" + u[0]} for i, u in enumerate(UC)]}])
     tabs = "".join(
         f'<a class="sp-tab" href="#{i}" id="tab-{i}" role="tab" aria-controls="{i}" aria-selected="{"true" if n == 0 else "false"}"><img src="/img/{ic}" width="160" height="160" alt="" decoding="async"><span>{t}</span></a>'
         for n, (i, c, ic, a, t, d, s, w) in enumerate(UC))
@@ -60,7 +60,7 @@ def use_cases():
         lazy = ' fetchpriority="high"' if n == 0 else ' loading="lazy"'
         panels += (f'<div class="sp-panel {c}" id="{i}" role="tabpanel" aria-labelledby="tab-{i}" tabindex="-1"><div class="sp-p-main">'
                    f'<figure class="sp-scene"><img{lazy} src="/img/g-art-{a}-900.webp" srcset="/img/g-art-{a}-900.webp 900w, /img/g-art-{a}-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 560px" width="1600" height="1195" alt="Illustration for {t}" decoding="async"></figure>'
-                   f'<h2>{t}</h2><p class="sp-k">Stethos is built to</p><p class="sp-do">{d}</p><p class="uc-read"><a href="/use-cases/{i}">Read more about {t[0].lower() + t[1:]} <span aria-hidden="true">→</span></a></p></div><div class="sp-p-side">'
+                   f'<h2>{t}</h2><p class="sp-k">Stethos is built to</p><p class="sp-do">{d}</p><p class="uc-read"><a href="/solutions/{i}">Read more about {t[0].lower() + t[1:]} <span aria-hidden="true">→</span></a></p></div><div class="sp-p-side">'
                    f'<p class="sp-k">Data you\'d use</p><ul class="sp-src">{"".join(f"<li>{x}</li>" for x in src)}</ul>'
                    f'<p class="sp-k">Signals you\'d watch</p><ul class="sp-see">{"".join(f"<li>{x}</li>" for x in watch)}</ul>'
                    f'<div class="sp-pn"><a href="#{prv[0]}" data-go="{prv[0]}"><span aria-hidden="true">←</span> {prv[4]}</a><a href="#{nxt[0]}" data-go="{nxt[0]}">{nxt[4]} <span aria-hidden="true">→</span></a></div></div></div>')

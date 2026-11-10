@@ -53,7 +53,7 @@ SCHEDULED = [
 </ul>
 <h2>Verification vs monitoring</h2>
 <p>When you credential a clinician, you verify each license at the primary source, or through a credentials verification organization. That's a formal process with its own rules.</p>
-<p>Day-to-day work is different. A staffing platform wants to know who is licensed in Texas right now. A directory team wants to know when a listed clinician's license lapses. That's monitoring, and it's what a <a href="/license-verification-api">license data API</a> with change events is built for. See how it fits <a href="/use-cases/clinical-staffing">clinical staffing and recruiting</a>.</p>'''),
+<p>Day-to-day work is different. A staffing platform wants to know who is licensed in Texas right now. A directory team wants to know when a listed clinician's license lapses. That's monitoring, and it's what a <a href="/license-verification-api">license data API</a> with change events is built for. See how it fits <a href="/solutions/clinical-staffing">clinical staffing and recruiting</a>.</p>'''),
     dict(slug="why-physician-affiliations-are-hard-to-track", tag="Data quality", art="uc-medtech", date="2026-12-01", nice="December 1, 2026", mins=4,
          title="Why physician affiliations are so hard to track", seo="Why Physician Affiliations Are Hard to Track", kw="physician affiliations, physician data, hospital affiliations",
          desc="Knowing which hospitals and groups a physician works with is the most useful fact in provider data, and the hardest to keep current. Here's why.",
@@ -70,7 +70,7 @@ SCHEDULED = [
 <p>The NPI registry lists one primary practice location, and it's self-reported. CMS enrollment data connects clinicians to the organizations they bill through. Hospitals and groups publish their own directories. Each source sees part of the picture, on its own schedule.</p>
 <h2>What a good affiliation record looks like</h2>
 <p>A useful affiliation isn't just "Dr. Example works at Sample Medical Center." It says where that fact came from, when it was first seen and when it was last confirmed. With those dates, you can tell a current relationship from one that ended a year ago.</p>
-<p>That's how the <a href="/physician-data-api">Stethos physician data API</a> is designed, with an <code>affiliation.changed</code> event when a link appears or disappears. Read how sales teams use it in <a href="/use-cases/medtech">medtech and pharma sales</a>.</p>'''),
+<p>That's how the <a href="/physician-data-api">Stethos physician data API</a> is designed, with an <code>affiliation.changed</code> event when a link appears or disappears. Read how sales teams use it in <a href="/solutions/medtech">medtech and pharma sales</a>.</p>'''),
     dict(slug="healthcare-provider-taxonomy-codes-explained", tag="Data sources", art="problem", date="2026-12-08", nice="December 8, 2026", mins=4,
          title="Healthcare provider taxonomy codes, explained", seo="Healthcare Provider Taxonomy Codes Explained", kw="provider taxonomy codes, NUCC taxonomy, specialty codes",
          desc="Taxonomy codes describe a provider's type and specialty. Here's how the code set works, how it shows up in NPI records, and where it falls short.",

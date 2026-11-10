@@ -13,6 +13,20 @@ SEG = [
 ]
 BY = {s[0]: s for s in SEG}
 
+# The roles each team page is written for
+ROLES = {
+    "medtech": ["Sales reps and territory managers", "Sales operations", "Marketing and ABM", "Commercial leaders"],
+    "pharma": ["Medical affairs", "Field and brand marketing", "Commercial operations", "Market access"],
+    "health-it-sales": ["Account executives and SDRs", "Revenue operations", "Product marketing", "Partnerships"],
+    "healthcare-marketing": ["Demand generation", "Marketing operations", "Field and event marketing", "Agencies"],
+    "investors": ["Deal teams", "Corporate development", "Portfolio operations", "Research analysts"],
+    "digital-health": ["Founders", "Product and engineering", "First sales hires", "Growth"],
+    "post-acute": ["Community liaisons", "Intake and admissions", "Executive directors", "Business development"],
+    "clinical-staffing": ["Recruiters", "Business development", "Account managers", "Sourcing teams"],
+    "provider-directories": ["Network management", "Provider data operations", "Compliance", "Member experience"],
+    "health-systems": ["Physician liaisons", "Physician relations leaders", "Strategy and planning", "Service line leaders"],
+}
+
 SCENE_ALT = {
     "w-uc-medtech": "Illustration: the little clay robot riding a delivery van with a device box from a surgery center toward a cluster of clinics.",
     "w-uc-pharma": "Illustration: a clay pharma lab with a flask on its roof, giant pill capsules on the meadow and paths to clinics, with the robot carrying a sample case.",
@@ -40,14 +54,14 @@ def scene(name, alt, eager=False):
 
 def seg_tabs(active=None):
     items = "".join(
-        f'<li><a href="/use-cases/{s[0]}" style="--t:{s[4]}"{" aria-current=\"page\"" if s[0] == active else ""}>{logo(s[0], 40)}<span>{s[1]}</span></a></li>'
+        f'<li><a href="/solutions/{s[0]}" style="--t:{s[4]}"{" aria-current=\"page\"" if s[0] == active else ""}>{logo(s[0], 40)}<span>{s[1]}</span></a></li>'
         for s in SEG)
     return f'<nav class="seg-tabs" aria-label="Solutions by team"><ul>{items}</ul></nav>'
 
 
 def seg_grid():
     return '<ul class="seg-grid">' + "".join(
-        f'<li><a href="/use-cases/{s[0]}" style="--t:{s[4]}">{logo(s[0], 72)}<span class="sg-t"><b>{s[1]}</b><span>{s[2]}</span></span></a></li>'
+        f'<li><a href="/solutions/{s[0]}" style="--t:{s[4]}">{logo(s[0], 72)}<span class="sg-t"><b>{s[1]}</b><span>{s[2]}</span></span></a></li>'
         for s in SEG) + '</ul>'
 
 

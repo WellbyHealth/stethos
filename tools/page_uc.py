@@ -1,5 +1,5 @@
 from parts import *
-from segments import BY as SEGBY, SCENE_ALT, scene, seg_tabs, seg_grid, logo, ih_art
+from segments import BY as SEGBY, SCENE_ALT, ROLES, scene, seg_tabs, seg_grid, logo, ih_art
 from page_other import UC
 import page_examples as PX
 import json
@@ -132,14 +132,14 @@ def ex_art(slug):
 def uc_page(n):
     slug, color, icon, art_key, name, does, src, watch = UC[n]
     m = UC_PAGES[slug]
-    path = f"/use-cases/{slug}"
+    path = f"/solutions/{slug}"
     faqld = {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in m["faq"]]}
     h = head(m["title"], m["desc"], path, image=f"/og/{slug}.jpg", image_alt=f"Illustration for {name}",
-             crumbs=[("Solutions", "/use-cases"), (name, path)], schema=[faqld])
+             crumbs=[("Solutions", "/solutions"), (name, path)], schema=[faqld])
     req = json.dumps(m["req"], indent=2)
     ep = "orgs/enrich" if slug == "investors" else ("providers/enrich" if "npi" in m["req"] else "providers/search")
     faq = "".join(f'<details><summary>{q}</summary><p>{a}</p></details>' for q, a in m["faq"])
-    others = "".join(f'<li><a href="/use-cases/{o[0]}">{logo(o[0], 64)}<span>{o[4]}</span></a></li>' for o in UC if o[0] != slug)
+    others = "".join(f'<li><a href="/solutions/{o[0]}">{logo(o[0], 64)}<span>{o[4]}</span></a></li>' for o in UC if o[0] != slug)
     alt = {"uc-medtech": "Illustration: a clay sales desk with a surgical instrument case, a knee model and a laptop showing a map with pins.",
            "uc-payer": "Illustration: a clay clipboard directory of doctors' offices with check marks, beside an insurance shield and a magnifying glass.",
            "uc-staffing": "Illustration: clay scrubs on a hanger rack, a stethoscope, a calendar and a small state map with glowing pins.",
@@ -148,12 +148,12 @@ def uc_page(n):
            "compare": "Illustration: clay stacks of boxes and binders on a table beside a small machine sending out envelopes and pins.",
            "notfound": "Illustration: a clay folded map with a dotted path leading to a map pin, beside a magnifying glass.",
            "cta": "Illustration: a clay shelf of hospitals, clinics and houses with glowing map pins above them, and a small clay robot."}.get(art_key, f"Illustration for {name}")
-    wfs = PX.for_page(slug) or [PX._by[x] for x in {"healthcare-marketing": ["abm-list", "ehr-campaign", "event-invites"]}.get(slug, [])]
+    wfs = PX.for_page(slug) + [PX._by[x] for x in PX.EXTRA_WF.get(slug, [])]
     wf = (f'''<section class="sec" aria-labelledby="uc-wf-title">
   <div class="wrap">
-    <div class="head"><p class="eyebrow"><span>Workflows</span></p><h2 id="uc-wf-title">What teams <span class="pop">do with it.</span></h2></div>
+    <div class="head"><p class="eyebrow"><span>Use cases</span></p><h2 id="uc-wf-title">Workflows your agent <span class="pop">can run.</span></h2></div>
     <div class="ex-list">{"".join(PX.card(e, tab=None, link=False) for e in wfs)}{ex_art(slug) if len(wfs) % 2 else ""}</div>
-    <p class="cov-note ex-more"><a href="/use-cases">See workflows for every segment <span aria-hidden="true">→</span></a></p>
+    <p class="cov-note ex-more"><a href="/use-cases">See all use cases <span aria-hidden="true">→</span></a></p>
   </div>
 </section>
 ''' if wfs else "")
@@ -166,20 +166,21 @@ def uc_page(n):
 <main id="main">
 <section class="sec sp-top ih" aria-labelledby="uc-title">
   <div class="wrap">
-    <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/use-cases">Solutions</a> / {name}</nav>
+    <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/solutions">Solutions</a> / {name}</nav>
     {seg_tabs(slug)}
     <div class="ih-grid">
       <div class="ih-copy">
         {logo(slug, 72, "ih-logo")}
         <h1 id="uc-title">{m["h1a"]} <span class="pop">{m["h1b"]}</span></h1>
         <p class="ih-lede">{m["intro"]}</p>
+        <p class="ih-roles"><span>Built for</span>{"".join(f"<b>{r}</b>" for r in ROLES[slug])}</p>
         <div class="kw-ctas"><a class="btn-1" href="{TRIAL}">Start free trial</a><a class="btn-2" href="mailto:{EMAIL}?subject=Stethos%20{name.replace(" ", "%20")}">Talk to our team</a></div>
       </div>
       {ih_art(SEGBY[slug][5][2:], SCENE_ALT[SEGBY[slug][5]])}
     </div>
   </div>
 </section>
-<section class="sec" aria-labelledby="uc-get-title">
+{wf}<section class="sec" aria-labelledby="uc-get-title">
   <div class="wrap">
     <div class="head"><p class="eyebrow"><span>What you get</span></p><h2 id="uc-get-title">What Stethos does <span class="pop">for your team.</span></h2></div>
     <div class="uc-get">
@@ -189,9 +190,9 @@ def uc_page(n):
     </div>
   </div>
 </section>
-{wf}<section class="sec" aria-labelledby="uc-rel-title">
+<section class="sec" aria-labelledby="uc-rel-title">
   <div class="wrap">
-    <div class="head"><p class="eyebrow"><span>The data behind it</span></p><h2 id="uc-rel-title">Data sets <span class="pop">you'd use.</span></h2></div>
+    <div class="head"><p class="eyebrow"><span>The data behind it</span></p><h2 id="uc-rel-title">The data sets <span class="pop">it runs on.</span></h2></div>
     <ul class="kw-rel">{data_cards}</ul>
   </div>
 </section>

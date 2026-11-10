@@ -7,13 +7,13 @@
 <title>Clinician and License Data API for Staffing | Stethos</title>
 <meta name="description" content="Source licensed clinicians by state and specialty, and spot health systems that are hiring. A real-time clinician data API for staffing platforms.">
 <meta name="theme-color" content="#D0D2F9">
-<link rel="canonical" href="https://stethos-one.vercel.app/use-cases/clinical-staffing">
+<link rel="canonical" href="https://stethos-one.vercel.app/solutions/clinical-staffing">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Stethos">
 <meta property="og:title" content="Clinician and License Data API for Staffing | Stethos">
 <meta property="og:description" content="Source licensed clinicians by state and specialty, and spot health systems that are hiring. A real-time clinician data API for staffing platforms.">
-<meta property="og:url" content="https://stethos-one.vercel.app/use-cases/clinical-staffing">
+<meta property="og:url" content="https://stethos-one.vercel.app/solutions/clinical-staffing">
 <meta property="og:image" content="https://stethos-one.vercel.app/og/clinical-staffing.jpg?v=4">
 <meta property="og:image:secure_url" content="https://stethos-one.vercel.app/og/clinical-staffing.jpg?v=4">
 <meta property="og:image:type" content="image/jpeg">
@@ -30,9 +30,9 @@
 <link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css?v=6c88d771">
 <link rel="stylesheet" href="/v2.css?v=978b51f1">
-<link rel="stylesheet" href="/site.css?v=1065f646">
+<link rel="stylesheet" href="/site.css?v=e797683b">
 <link rel="stylesheet" href="/stethos.css?v=2c0729ac">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which licenses are covered?", "acceptedAnswer": {"@type": "Answer", "text": "State licenses for physicians, nurses and other clinicians, with status and source, gathered from state licensing boards. Coverage will be published by state and profession at launch."}}, {"@type": "Question", "name": "Can I see which organizations are hiring?", "acceptedAnswer": {"@type": "Answer", "text": "Organization records include open clinical roles, and the org.hiring_spike event fires when an organization's postings rise well above its normal level."}}, {"@type": "Question", "name": "Can I find clinicians who just got a new license?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The license.issued event fires when a new state license appears for a clinician you watch, or you can query recent license events by state."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos-one.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://stethos-one.vercel.app/use-cases"}, {"@type": "ListItem", "position": 3, "name": "Clinical staffing and recruiting", "item": "https://stethos-one.vercel.app/use-cases/clinical-staffing"}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which licenses are covered?", "acceptedAnswer": {"@type": "Answer", "text": "State licenses for physicians, nurses and other clinicians, with status and source, gathered from state licensing boards. Coverage will be published by state and profession at launch."}}, {"@type": "Question", "name": "Can I see which organizations are hiring?", "acceptedAnswer": {"@type": "Answer", "text": "Organization records include open clinical roles, and the org.hiring_spike event fires when an organization's postings rise well above its normal level."}}, {"@type": "Question", "name": "Can I find clinicians who just got a new license?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The license.issued event fires when a new state license appears for a clinician you watch, or you can query recent license events by state."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos-one.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://stethos-one.vercel.app/solutions"}, {"@type": "ListItem", "position": 3, "name": "Clinical staffing and recruiting", "item": "https://stethos-one.vercel.app/solutions/clinical-staffing"}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -54,32 +54,60 @@
       <div class="dd">
         <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-teams">Solutions<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="dd-panel dd-teams" id="dd-teams">
-          <p class="dd-h">By team</p><ul class="dd-segs"><li><a href="/use-cases/medtech"><i class="dd-ic" style="--t:#e4f0fd"><img src="/img/g-l-medtech-160.webp?v=00a46869" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Medtech</b><span>Reach surgeons the week they move.</span></span></a></li><li><a href="/use-cases/pharma"><i class="dd-ic" style="--t:#e3f4ec"><img src="/img/g-l-pharma-160.webp?v=fc1a4bbc" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Pharma and life sciences</b><span>Map prescribers and KOLs for a launch.</span></span></a></li><li><a href="/use-cases/health-it-sales"><i class="dd-ic" style="--t:#ece6fb"><img src="/img/g-l-healthit-160.webp?v=cca03189" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Health IT and services</b><span>Sell to systems by EHR, size and leader.</span></span></a></li><li><a href="/use-cases/healthcare-marketing"><i class="dd-ic" style="--t:#fde8dc"><img src="/img/g-l-marketing-160.webp?v=98b6b71c" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Healthcare marketing</b><span>Clinician audiences that stay current.</span></span></a></li><li><a href="/use-cases/investors"><i class="dd-ic" style="--t:#fbe4ea"><img src="/img/g-l-investors-160.webp?v=bb2097b6" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Investors and PE</b><span>Roll-ups, headcount and new sites.</span></span></a></li><li><a href="/use-cases/digital-health"><i class="dd-ic" style="--t:#e4f0fd"><img src="/img/g-l-startups-160.webp?v=04e78ea2" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Healthcare startups</b><span>First customers and provider search.</span></span></a></li><li><a href="/use-cases/post-acute"><i class="dd-ic" style="--t:#fdf5d2"><img src="/img/g-l-postacute-160.webp?v=f29aae3a" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Post-acute care</b><span>Rank referrers and see who's gone quiet.</span></span></a></li><li><a href="/use-cases/clinical-staffing"><i class="dd-ic" style="--t:#e3f4ec"><img src="/img/g-l-staffing-160.webp?v=04248e76" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Clinical staffing</b><span>Licensed clinicians and who's hiring.</span></span></a></li><li><a href="/use-cases/provider-directories"><i class="dd-ic" style="--t:#ece6fb"><img src="/img/g-l-directories-160.webp?v=ab6768c8" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Payers and directories</b><span>Keep every listing accurate.</span></span></a></li><li><a href="/use-cases/health-systems"><i class="dd-ic" style="--t:#fbe4ea"><img src="/img/g-l-healthsystems-160.webp?v=5beee26b" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Health systems</b><span>Physician relations and network growth.</span></span></a></li></ul>
-          <a class="dd-all" href="/use-cases">All use cases and workflows <span aria-hidden="true">→</span></a>
+          <div class="dd-col"><p class="dd-h">By team</p><ul class="dd-segs"><li><a href="/solutions/medtech"><i class="dd-ic" style="--t:#e4f0fd"><img src="/img/g-l-medtech-160.webp?v=00a46869" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Medtech</b><span>Reach surgeons the week they move.</span></span></a></li><li><a href="/solutions/pharma"><i class="dd-ic" style="--t:#e3f4ec"><img src="/img/g-l-pharma-160.webp?v=fc1a4bbc" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Pharma and life sciences</b><span>Map prescribers and KOLs for a launch.</span></span></a></li><li><a href="/solutions/health-it-sales"><i class="dd-ic" style="--t:#ece6fb"><img src="/img/g-l-healthit-160.webp?v=cca03189" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Health IT and services</b><span>Sell to systems by EHR, size and leader.</span></span></a></li><li><a href="/solutions/healthcare-marketing"><i class="dd-ic" style="--t:#fde8dc"><img src="/img/g-l-marketing-160.webp?v=98b6b71c" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Healthcare marketing</b><span>Clinician audiences that stay current.</span></span></a></li><li><a href="/solutions/investors"><i class="dd-ic" style="--t:#fbe4ea"><img src="/img/g-l-investors-160.webp?v=bb2097b6" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Investors and PE</b><span>Roll-ups, headcount and new sites.</span></span></a></li><li><a href="/solutions/digital-health"><i class="dd-ic" style="--t:#e4f0fd"><img src="/img/g-l-startups-160.webp?v=04e78ea2" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Healthcare startups</b><span>First customers and provider search.</span></span></a></li><li><a href="/solutions/post-acute"><i class="dd-ic" style="--t:#fdf5d2"><img src="/img/g-l-postacute-160.webp?v=f29aae3a" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Post-acute care</b><span>Rank referrers and see who's gone quiet.</span></span></a></li><li><a href="/solutions/clinical-staffing"><i class="dd-ic" style="--t:#e3f4ec"><img src="/img/g-l-staffing-160.webp?v=04248e76" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Clinical staffing</b><span>Licensed clinicians and who's hiring.</span></span></a></li><li><a href="/solutions/provider-directories"><i class="dd-ic" style="--t:#ece6fb"><img src="/img/g-l-directories-160.webp?v=ab6768c8" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Payers and directories</b><span>Keep every listing accurate.</span></span></a></li><li><a href="/solutions/health-systems"><i class="dd-ic" style="--t:#fbe4ea"><img src="/img/g-l-healthsystems-160.webp?v=5beee26b" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Health systems</b><span>Physician relations and network growth.</span></span></a></li></ul>
+          <a class="dd-all" href="/solutions">All solutions <span aria-hidden="true">→</span></a></div>
+          <div class="dd-col dd-side"><p class="dd-h">By use case</p><ul class="dd-jobs"><li><a href="/use-cases#prospecting"><b>Prospecting and targeting</b><span>Find accounts and decide who to call.</span></a></li><li><a href="/use-cases#triggers"><b>Timing and triggers</b><span>Reach out the week something changes.</span></a></li><li><a href="/use-cases#referrals"><b>Referrals and networks</b><span>See who works with whom.</span></a></li><li><a href="/use-cases#markets"><b>Markets and ownership</b><span>Map markets, owners and roll-ups.</span></a></li><li><a href="/use-cases#data-quality"><b>Data quality</b><span>Keep your CRM and directory current.</span></a></li></ul>
+          <a class="dd-all" href="/use-cases">All use cases <span aria-hidden="true">→</span></a></div>
         </div>
       </div>
       <a href="/how-it-works">How it works</a>
       <a href="/docs">Docs</a>
       <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
     </nav>
-    <div class="hdr-act"><a class="btn-2" href="/signup#signin">Sign in</a><a class="btn-1" href="/signup">Start free trial</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/use-cases">Solutions by team</a><a href="/how-it-works">How it works</a><a href="/how-it-works#connect">Connect in 5 minutes</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="/signup#signin">Sign in</a></div>
+    <div class="hdr-act"><a class="btn-2" href="/signup#signin">Sign in</a><a class="btn-1" href="/signup">Start free trial</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/solutions">Solutions by team</a><a href="/use-cases">Use cases</a><a href="/how-it-works">How it works</a><a href="/how-it-works#connect">Connect in 5 minutes</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="/signup#signin">Sign in</a></div>
   </div>
 </header>
 
 <main id="main">
 <section class="sec sp-top ih" aria-labelledby="uc-title">
   <div class="wrap">
-    <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/use-cases">Solutions</a> / Clinical staffing and recruiting</nav>
-    <nav class="seg-tabs" aria-label="Solutions by team"><ul><li><a href="/use-cases/medtech" style="--t:#e4f0fd"><img class="seg-logo" src="/img/g-l-medtech-160.webp?v=00a46869" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Medtech</span></a></li><li><a href="/use-cases/pharma" style="--t:#e3f4ec"><img class="seg-logo" src="/img/g-l-pharma-160.webp?v=fc1a4bbc" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Pharma and life sciences</span></a></li><li><a href="/use-cases/health-it-sales" style="--t:#ece6fb"><img class="seg-logo" src="/img/g-l-healthit-160.webp?v=cca03189" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Health IT and services</span></a></li><li><a href="/use-cases/healthcare-marketing" style="--t:#fde8dc"><img class="seg-logo" src="/img/g-l-marketing-160.webp?v=98b6b71c" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Healthcare marketing</span></a></li><li><a href="/use-cases/investors" style="--t:#fbe4ea"><img class="seg-logo" src="/img/g-l-investors-160.webp?v=bb2097b6" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Investors and PE</span></a></li><li><a href="/use-cases/digital-health" style="--t:#e4f0fd"><img class="seg-logo" src="/img/g-l-startups-160.webp?v=04e78ea2" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Healthcare startups</span></a></li><li><a href="/use-cases/post-acute" style="--t:#fdf5d2"><img class="seg-logo" src="/img/g-l-postacute-160.webp?v=f29aae3a" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Post-acute care</span></a></li><li><a href="/use-cases/clinical-staffing" style="--t:#e3f4ec" aria-current="page"><img class="seg-logo" src="/img/g-l-staffing-160.webp?v=04248e76" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Clinical staffing</span></a></li><li><a href="/use-cases/provider-directories" style="--t:#ece6fb"><img class="seg-logo" src="/img/g-l-directories-160.webp?v=ab6768c8" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Payers and directories</span></a></li><li><a href="/use-cases/health-systems" style="--t:#fbe4ea"><img class="seg-logo" src="/img/g-l-healthsystems-160.webp?v=5beee26b" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Health systems</span></a></li></ul></nav>
+    <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/solutions">Solutions</a> / Clinical staffing and recruiting</nav>
+    <nav class="seg-tabs" aria-label="Solutions by team"><ul><li><a href="/solutions/medtech" style="--t:#e4f0fd"><img class="seg-logo" src="/img/g-l-medtech-160.webp?v=00a46869" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Medtech</span></a></li><li><a href="/solutions/pharma" style="--t:#e3f4ec"><img class="seg-logo" src="/img/g-l-pharma-160.webp?v=fc1a4bbc" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Pharma and life sciences</span></a></li><li><a href="/solutions/health-it-sales" style="--t:#ece6fb"><img class="seg-logo" src="/img/g-l-healthit-160.webp?v=cca03189" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Health IT and services</span></a></li><li><a href="/solutions/healthcare-marketing" style="--t:#fde8dc"><img class="seg-logo" src="/img/g-l-marketing-160.webp?v=98b6b71c" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Healthcare marketing</span></a></li><li><a href="/solutions/investors" style="--t:#fbe4ea"><img class="seg-logo" src="/img/g-l-investors-160.webp?v=bb2097b6" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Investors and PE</span></a></li><li><a href="/solutions/digital-health" style="--t:#e4f0fd"><img class="seg-logo" src="/img/g-l-startups-160.webp?v=04e78ea2" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Healthcare startups</span></a></li><li><a href="/solutions/post-acute" style="--t:#fdf5d2"><img class="seg-logo" src="/img/g-l-postacute-160.webp?v=f29aae3a" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Post-acute care</span></a></li><li><a href="/solutions/clinical-staffing" style="--t:#e3f4ec" aria-current="page"><img class="seg-logo" src="/img/g-l-staffing-160.webp?v=04248e76" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Clinical staffing</span></a></li><li><a href="/solutions/provider-directories" style="--t:#ece6fb"><img class="seg-logo" src="/img/g-l-directories-160.webp?v=ab6768c8" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Payers and directories</span></a></li><li><a href="/solutions/health-systems" style="--t:#fbe4ea"><img class="seg-logo" src="/img/g-l-healthsystems-160.webp?v=5beee26b" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Health systems</span></a></li></ul></nav>
     <div class="ih-grid">
       <div class="ih-copy">
         <img class="ih-logo" src="/img/g-l-staffing-160.webp?v=04248e76" width="72" height="72" alt="" loading="lazy" decoding="async">
         <h1 id="uc-title">Clinician and license data for <span class="pop">staffing and recruiting.</span></h1>
         <p class="ih-lede">Recruiters need two things fast: clinicians who are licensed where the job is, and employers who are hiring now. Stethos is built to give your recruiting platform and agents both, from state boards, employer rosters and health system job posts.</p>
+        <p class="ih-roles"><span>Built for</span><b>Recruiters</b><b>Business development</b><b>Account managers</b><b>Sourcing teams</b></p>
         <div class="kw-ctas"><a class="btn-1" href="/signup">Start free trial</a><a class="btn-2" href="mailto:team@stethos.health?subject=Stethos%20Clinical%20staffing%20and%20recruiting">Talk to our team</a></div>
       </div>
       <figure class="ih-art"><img src="/img/g-wc-uc-staffing-1200.webp?v=4228f660" srcset="/img/g-wc-uc-staffing-700.webp 700w, /img/g-wc-uc-staffing-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="900" alt="Illustration: a hospital with hiring flags in its windows and a line of clinician badges on the path, with the robot holding a clipboard." fetchpriority="high" decoding="async"></figure>
     </div>
+  </div>
+</section>
+<section class="sec" aria-labelledby="uc-wf-title">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow"><span>Use cases</span></p><h2 id="uc-wf-title">Workflows your agent <span class="pop">can run.</span></h2></div>
+    <div class="ex-list"><article class="ex-card" id="staffing-sales" style="--t:#ece6fb">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-ic-license-96.webp?v=5ad39758" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">Clinical staffing · Business development</p><h2>Find the systems that need staff now</h2></div></div>
+      <p class="ex-trigger"><b>When</b> Weekly, for the business development team.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Which hospitals in Arizona are posting the most ICU nursing roles, and who runs nursing there?”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Ranks nearby health systems by recent clinical job posts</li><li>Adds the chief nursing officer and other leaders at each</li><li>Creates the accounts and next steps in your CRM</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Health system job posts</li><li>Organizations</li><li>Leaders</li><li>Change events</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">Your CRM, plus a weekly list in Claude</p></div>
+      </div>
+    </article>
+<article class="ex-card" id="license-sourcing" style="--t:#e3f4ec">
+      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-ic-license-96.webp?v=5ad39758" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">Clinical staffing · Recruiting</p><h2>Source clinicians licensed where the job is</h2></div></div>
+      <p class="ex-trigger"><b>When</b> When a hard-to-fill role opens.</p>
+      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Find ICU nurses with an active Arizona license who practice within 50 miles of Phoenix and changed employers in the last two years.”</p>
+      <div class="ex-cols">
+        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Searches clinicians by license state, profession and specialty</li><li>Adds current employer and employment history</li><li>Ranks by fit and builds an outreach list</li></ol></div>
+        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Licenses</li><li>Affiliations</li><li>Practice locations</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">Your ATS or recruiting CRM</p></div>
+      </div>
+    </article>
+</div>
+    <p class="cov-note ex-more"><a href="/use-cases">See all use cases <span aria-hidden="true">→</span></a></p>
   </div>
 </section>
 <section class="sec" aria-labelledby="uc-get-title">
@@ -92,25 +120,9 @@
     </div>
   </div>
 </section>
-<section class="sec" aria-labelledby="uc-wf-title">
-  <div class="wrap">
-    <div class="head"><p class="eyebrow"><span>Workflows</span></p><h2 id="uc-wf-title">What teams <span class="pop">do with it.</span></h2></div>
-    <div class="ex-list"><article class="ex-card" id="staffing-sales" style="--t:#ece6fb">
-      <div class="ex-head"><span class="ex-ic"><img src="/img/g-cl-ic-license-96.webp?v=5ad39758" width="64" height="64" alt="" loading="lazy" decoding="async"></span><div><p class="ex-team">Clinical staffing · Business development</p><h2>Find the systems that need staff now</h2></div></div>
-      <p class="ex-trigger"><b>When</b> Weekly, for the business development team.</p>
-      <p class="ex-ask"><span class="ex-ask-k">Ask</span>“Which hospitals in Arizona are posting the most ICU nursing roles, and who runs nursing there?”</p>
-      <div class="ex-cols">
-        <div><p class="ex-k">What the agent does</p><ol class="ex-steps"><li>Ranks nearby health systems by recent clinical job posts</li><li>Adds the chief nursing officer and other leaders at each</li><li>Creates the accounts and next steps in your CRM</li></ol></div>
-        <div><p class="ex-k">Stethos data it uses</p><ul class="ex-data"><li>Health system job posts</li><li>Organizations</li><li>Leaders</li><li>Change events</li></ul><p class="ex-k">Where the result lands</p><p class="ex-lands">Your CRM, plus a weekly list in Claude</p></div>
-      </div>
-    </article>
-<figure class="ex-art"><img src="/img/g-art-r-staffing-900.webp?v=42fa05f1" srcset="/img/g-art-r-staffing-900.webp 900w, /img/g-art-r-staffing-1600.webp 1600w" sizes="(max-width: 820px) 100vw, 540px" width="1600" height="1195" alt="Illustration: the little clay robot with a clipboard outside a hospital, beside a calendar and a stack of clinician badges." loading="lazy" decoding="async"></figure></div>
-    <p class="cov-note ex-more"><a href="/use-cases">See workflows for every segment <span aria-hidden="true">→</span></a></p>
-  </div>
-</section>
 <section class="sec" aria-labelledby="uc-rel-title">
   <div class="wrap">
-    <div class="head"><p class="eyebrow"><span>The data behind it</span></p><h2 id="uc-rel-title">Data sets <span class="pop">you'd use.</span></h2></div>
+    <div class="head"><p class="eyebrow"><span>The data behind it</span></p><h2 id="uc-rel-title">The data sets <span class="pop">it runs on.</span></h2></div>
     <ul class="kw-rel"><li><a href="/license-verification-api"><img src="/img/g-art-s-license-900.webp?v=9e184528" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>License data API</b>Check physician and nurse license status across states in one API call, and get a webhook when a license is issued, expires or is restricted.</span></a></li><li><a href="/health-system-data-api"><img src="/img/g-art-s-healthsys-900.webp?v=f3cab129" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Health system data API</b>Health systems, hospitals, groups and clinics in one API: locations, rostered clinicians, leadership, open roles and ownership, with change alerts.</span></a></li><li><a href="/physician-data-api"><img src="/img/g-art-s-physician-900.webp?v=e14bad4d" width="900" height="672" alt="" loading="lazy" decoding="async"><span><b>Physician data API</b>A physician data API with specialties, affiliations, state licenses and practice contacts for every US physician, plus webhooks when physicians move.</span></a></li></ul>
   </div>
 </section>
@@ -157,7 +169,8 @@
     </div>
     <nav class="foot-links" aria-label="Footer">
       <a href="/how-it-works">How it works</a>
-      <a href="/use-cases">Solutions</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/use-cases">Use cases</a>
       
       <a href="/docs">Docs</a>
       <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
@@ -170,11 +183,11 @@
       <a href="/home-health-hospice-data-api">Home health and hospice data</a>
       <a href="/physician-referral-data">Physician referral data</a>
       <a href="/private-equity-healthcare-ownership-data">Private equity ownership</a>
-      <a href="/use-cases/medtech">Medtech</a>
-      <a href="/use-cases/pharma">Pharma</a>
-      <a href="/use-cases/health-systems">Health systems</a>
-      <a href="/use-cases/provider-directories">Provider directories</a>
-      <a href="/use-cases/clinical-staffing">Clinical staffing</a>
+      <a href="/solutions/medtech">Medtech</a>
+      <a href="/solutions/pharma">Pharma</a>
+      <a href="/solutions/health-systems">Health systems</a>
+      <a href="/solutions/provider-directories">Provider directories</a>
+      <a href="/solutions/clinical-staffing">Clinical staffing</a>
       <a href="/compare/definitive-healthcare">vs Definitive</a>
       <a href="/compare/iqvia-onekey">vs IQVIA OneKey</a>
       <a href="/#faq">FAQ</a>

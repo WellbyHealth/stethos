@@ -12,7 +12,7 @@ def target(path):
     base, _, frag = path.partition('#')
     if base == '' : t = 'index.html'
     elif base in pages: t = pages[base]
-    elif base.startswith(('/compare/', '/blog/', '/use-cases/')) and not os.path.splitext(base)[1]: t = base[1:] + '.html'
+    elif base.startswith(('/compare/', '/blog/', '/solutions/')) and not os.path.splitext(base)[1]: t = base[1:] + '.html'
     else: t = base[1:]
     return t + ('#' + frag if frag else '')
 for f in glob.glob(R + '/**/*.html', recursive=True):

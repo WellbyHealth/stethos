@@ -85,5 +85,5 @@ RECENT = [
 <li><strong>Use more than one source.</strong> Organization websites, announcements, job posts and licensing records each catch moves the others miss.</li>
 <li><strong>Act on changes as events.</strong> A new CFO or a departing champion should create a task right away, not wait for the next list refresh.</li>
 </ul>
-<p>Stethos is built to watch the people and seats at your accounts and tell your agent when someone moves, with the source for each change. See how <a href="/use-cases/health-it-sales">health IT and services teams</a> use it, or read <a href="/blog/why-provider-directories-go-stale">why provider directories go stale</a> for the same problem on the clinician side.</p>'''),
+<p>Stethos is built to watch the people and seats at your accounts and tell your agent when someone moves, with the source for each change. See how <a href="/solutions/health-it-sales">health IT and services teams</a> use it, or read <a href="/blog/why-provider-directories-go-stale">why provider directories go stale</a> for the same problem on the clinician side.</p>'''),
 ]

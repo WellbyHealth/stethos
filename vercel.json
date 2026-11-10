@@ -65,8 +65,58 @@
       "permanent": true
     },
     {
+      "source": "/use-cases/medtech",
+      "destination": "/solutions/medtech",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/pharma",
+      "destination": "/solutions/pharma",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/health-it-sales",
+      "destination": "/solutions/health-it-sales",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/healthcare-marketing",
+      "destination": "/solutions/healthcare-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/investors",
+      "destination": "/solutions/investors",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/digital-health",
+      "destination": "/solutions/digital-health",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/post-acute",
+      "destination": "/solutions/post-acute",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/clinical-staffing",
+      "destination": "/solutions/clinical-staffing",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/provider-directories",
+      "destination": "/solutions/provider-directories",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/health-systems",
+      "destination": "/solutions/health-systems",
+      "permanent": true
+    },
+    {
       "source": "/use-cases/medtech-pharma",
-      "destination": "/use-cases/medtech",
+      "destination": "/solutions/medtech",
       "permanent": true
     }
   ]
