@@ -1,5 +1,5 @@
 from parts import *
-from segments import scene, seg_grid, seg_tabs, logo
+from segments import scene, seg_grid, seg_tabs, logo, ih_art
 import page_examples as PX
 import os as _os
 def _clients():
@@ -110,7 +110,7 @@ def page():
   <span id="how" class="anchor" aria-hidden="true"></span>
   <div class="h2-panel-in">
     <div class="h2-day">
-      <p class="eyebrow"><span>How it works</span></p>
+      <p class="eyebrow"><span>The basics</span></p>
       <h2 id="day-title">Connect once. Ask in plain words. <span class="pop">Hear when it changes.</span></h2>
       <p class="td-lede">Your agent gets Stethos as a set of tools. It decides when to search, enrich or watch, and every answer comes back with its sources.</p>
       <ol class="td-steps" role="tablist" aria-label="Search, enrich, watch">
@@ -412,20 +412,22 @@ def how_it_works():
              "Connect Stethos to Claude, ChatGPT or your own agent in five minutes, try the tools, and see the sources and change events behind every record.",
              "/how-it-works", css=("styles", "v2", "site", "home"), image="/og/how-it-works.jpg", image_alt="Clay phone with a map of doctor pins and a small robot, above the line: How Stethos works, under the hood.", crumbs=[("How it works", "/how-it-works")],
              share_title="How Stethos works", share_desc="Connect in five minutes, try the tools, and see the source behind every field.")
-    top = f'''<section class="sec sp-top hiw-top" aria-labelledby="hiw-title">
+    top = f'''<section class="sec sp-top ih hiw-top" aria-labelledby="hiw-title">
   <div class="wrap">
     <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / How it works</nav>
-    <div class="head center">
-      <p class="eyebrow"><span>How it works</span></p>
-      <h1 id="hiw-title">Under the hood, <span class="pop">for the technical folks.</span></h1>
-      <p class="kpi-lede">How to connect Stethos, what its tools return, where each field comes from and which changes you can subscribe to. Setup steps for each client are in the <a href="/docs">docs</a>.</p>
-      <div class="cx-paste hiw-paste">
-        <span class="cx-paste-k">Paste in your coding agent</span>
-        <code class="cx-paste-v">Add the Stethos MCP server: {MCP_URL}</code>
-        <button class="cx-copybtn copy-mcp" type="button" data-copy="Add the Stethos MCP server: {MCP_URL}">Copy</button>
+    <div class="ih-grid">
+      <div class="ih-copy">
+        <p class="eyebrow"><span>How it works</span></p>
+        <h1 id="hiw-title">Under the hood, <span class="pop">for the technical folks.</span></h1>
+        <p class="ih-lede">How to connect Stethos, what its tools return, where each field comes from and which changes you can subscribe to. Setup steps for each client are in the <a href="/docs">docs</a>.</p>
+        <div class="cx-paste hiw-paste">
+          <span class="cx-paste-k">Paste in your coding agent</span>
+          <code class="cx-paste-v">Add the Stethos MCP server: {MCP_URL}</code>
+          <button class="cx-copybtn copy-mcp" type="button" data-copy="Add the Stethos MCP server: {MCP_URL}">Copy</button>
+        </div>
       </div>
+      {ih_art("", "Illustration: the little clay robot on a step stool, shining a flashlight into an open data server full of gears, ID cards and a bell.", src=("/img/g-art-r-hiw-1600.webp", "/img/g-art-r-hiw-900.webp 900w, /img/g-art-r-hiw-1600.webp 1600w", 1600, 900))}
     </div>
-    <figure class="art-wide hiw-art">{art("r-hiw", "Illustration: the little clay robot on a step stool, shining a flashlight into an open data server full of gears, ID cards and a bell.", w=1600, h=900, lazy=False)}</figure>
   </div>
 </section>
 '''

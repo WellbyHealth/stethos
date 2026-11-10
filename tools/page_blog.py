@@ -1,5 +1,5 @@
 from parts import *
-from segments import scene, seg_grid, seg_tabs, logo
+from segments import scene, seg_grid, seg_tabs, logo, ih_art
 import datetime as _dt
 from zoneinfo import ZoneInfo as _Z
 from posts_scheduled import SCHEDULED
@@ -129,8 +129,7 @@ def blog_index():
     h = head("Blog: Guides to Healthcare Provider Data | Stethos", "Plain-English guides to US healthcare provider data: the NPI registry, why provider directories go stale, and how to give AI agents healthcare data safely.", "/blog", crumbs=[("Blog", "/blog")])
     body = f'''{HEADER}
 <main id="main">
-  <div class="wrap blog-head ph-top"><div class="head ph"><h1>Guides for teams <span class="pop">selling into healthcare.</span></h1><p class="sp-lede">Plain-English guides on US healthcare provider data, where it comes from, how it goes wrong and how to put it to work.</p></div></div>
-  {scene("w-blog", "Illustration: the little robot reading under a tree while books and pages drift through the sky.", eager=True)}
+  <section class="sec sp-top ih blog-ih"><div class="wrap"><nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Blog</nav><div class="ih-grid"><div class="ih-copy"><p class="eyebrow"><span>Blog</span></p><h1>Guides for teams <span class="pop">selling into healthcare.</span></h1><p class="ih-lede">Plain-English guides on US healthcare provider data, where it comes from, how it goes wrong and how to put it to work.</p></div>{ih_art("blog", "Illustration: the little robot reading under a tree while books and pages drift through the sky.")}</div></div></section>
   <div class="wrap"><ul class="blog-grid">{"".join(card(p, "h2") for p in POSTS)}</ul></div>
 </main>
 '''

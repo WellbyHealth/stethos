@@ -1,5 +1,5 @@
 from parts import *
-from segments import BY as SEGBY, SCENE_ALT, scene, seg_tabs, seg_grid, logo
+from segments import BY as SEGBY, SCENE_ALT, scene, seg_tabs, seg_grid, logo, ih_art
 from page_other import UC
 import page_examples as PX
 import json
@@ -164,19 +164,21 @@ def uc_page(n):
         f'<span><b>{pages[r]["name"]}</b>{pages[r]["desc"].split(". ")[0].rstrip(".")}.</span></a></li>' for r in UC_DATA[slug])
     body = f'''{HEADER}
 <main id="main">
-<section class="sec sp-top kw-hero" aria-labelledby="uc-title">
+<section class="sec sp-top ih" aria-labelledby="uc-title">
   <div class="wrap">
     <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/use-cases">Solutions</a> / {name}</nav>
     {seg_tabs(slug)}
-    <div class="head center">
-      {logo(slug, 84, "seg-hero-logo")}
-      <h1 id="uc-title">{m["h1a"]} <span class="pop">{m["h1b"]}</span></h1>
-      <p class="kpi-lede">{m["intro"]}</p>
-      <div class="kw-ctas"><a class="btn-1" href="{TRIAL}">Start free trial</a><a class="btn-2" href="mailto:{EMAIL}?subject=Stethos%20{name.replace(" ", "%20")}">Talk to our team</a></div>
+    <div class="ih-grid">
+      <div class="ih-copy">
+        {logo(slug, 72, "ih-logo")}
+        <h1 id="uc-title">{m["h1a"]} <span class="pop">{m["h1b"]}</span></h1>
+        <p class="ih-lede">{m["intro"]}</p>
+        <div class="kw-ctas"><a class="btn-1" href="{TRIAL}">Start free trial</a><a class="btn-2" href="mailto:{EMAIL}?subject=Stethos%20{name.replace(" ", "%20")}">Talk to our team</a></div>
+      </div>
+      {ih_art(SEGBY[slug][5][2:], SCENE_ALT[SEGBY[slug][5]])}
     </div>
   </div>
 </section>
-{scene(SEGBY[slug][5], SCENE_ALT[SEGBY[slug][5]], eager=True)}
 <section class="sec" aria-labelledby="uc-get-title">
   <div class="wrap">
     <div class="head"><p class="eyebrow"><span>What you get</span></p><h2 id="uc-get-title">What Stethos does <span class="pop">for your team.</span></h2></div>

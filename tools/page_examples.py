@@ -1,5 +1,5 @@
 from parts import *
-from segments import scene, seg_grid, seg_tabs, logo
+from segments import scene, seg_grid, seg_tabs, logo, ih_art
 
 # (slug, team, title, trigger, ask, steps, data, lands, art-icon)
 EXAMPLES = [
@@ -215,18 +215,20 @@ def examples():
     cards = "".join(card(e, tab=(n == 0)) for n, e in enumerate(EXAMPLES))
     body = f'''{HEADER}
 <main id="main">
-<section class="sec sp-top ex" aria-labelledby="ex-title">
+<section class="sec sp-top ex ih" aria-labelledby="ex-title">
   <div class="wrap">
     <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Solutions</nav>
-    <div class="head center">
-      <p class="eyebrow"><span>Use cases</span></p>
-      <h1 id="ex-title">Solutions for every team <span class="pop">that sells into healthcare.</span></h1>
-      <p class="kpi-lede">Pick your team for its own page, or try a workflow below.</p>
+    <div class="ih-grid">
+      <div class="ih-copy">
+        <p class="eyebrow"><span>Solutions</span></p>
+        <h1 id="ex-title">Solutions for every team <span class="pop">that sells into healthcare.</span></h1>
+        <p class="ih-lede">Pick your team for its own page, or try a workflow below.</p>
+      </div>
+      {ih_art("usecases", "Illustration: a little clay town with a hospital, a pharma lab, an office tower, a bank and a home-care house, with the robot walking between them.")}
     </div>
     {seg_grid()}
   </div>
 </section>
-{scene("w-usecases", "Illustration: a little clay town with a hospital, a pharma lab, an office tower, a bank and a home-care house, with the robot walking between them.")}
 <section class="sec ex" aria-labelledby="ex-wf-title">
   <div class="wrap">
     <div class="head center"><p class="eyebrow"><span>Workflows</span></p><h2 id="ex-wf-title">What teams <span class="pop">do with Stethos.</span></h2></div>

@@ -1,5 +1,5 @@
 from parts import *
-from segments import scene, seg_grid, seg_tabs, logo
+from segments import scene, seg_grid, seg_tabs, logo, ih_art
 import json
 
 # Landing pages aimed at specific searches. Each: slug, art, tint class, seo title, meta description,
@@ -161,18 +161,20 @@ def seo_page(m):
         f'<span><b>{pages[r]["name"]}</b>{pages[r]["desc"].split(". ")[0].rstrip(".")}.</span></a></li>' for r in x["related"])
     body = f'''{HEADER}
 <main id="main">
-<section class="sec sp-top kw-hero" aria-labelledby="kw-title">
+<section class="sec sp-top ih" aria-labelledby="kw-title">
   <div class="wrap">
     <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / {m["name"]}</nav>
-    <div class="head center">
-      <p class="eyebrow"><span>{m["name"]}</span></p>
-      <h1 id="kw-title">{m["h1a"]} <span class="pop">{m["h1b"]}</span></h1>
-      <p class="kpi-lede">{m["intro"]}</p>
-      <div class="kw-ctas"><a class="btn-1" href="{TRIAL}">Start free trial</a><a class="btn-2" href="/docs">Read the docs</a></div>
+    <div class="ih-grid">
+      <div class="ih-copy">
+        <p class="eyebrow"><span>{m["name"]}</span></p>
+        <h1 id="kw-title">{m["h1a"]} <span class="pop">{m["h1b"]}</span></h1>
+        <p class="ih-lede">{m["intro"]}</p>
+        <div class="kw-ctas"><a class="btn-1" href="{TRIAL}">Start free trial</a><a class="btn-2" href="/docs">Read the docs</a></div>
+      </div>
+      {ih_art(SCENES[m["slug"]][2:], SCENE_ALTS[SCENES[m["slug"]]])}
     </div>
   </div>
 </section>
-{scene(SCENES[m["slug"]], SCENE_ALTS[SCENES[m["slug"]]], eager=True)}
 <section class="sec" aria-labelledby="kw-data-title">
   <div class="wrap">
     <div class="head"><p class="eyebrow"><span>The data</span></p><h2 id="kw-data-title">What it looks like <span class="pop">for your agent.</span></h2></div>

@@ -49,3 +49,12 @@ def seg_grid():
     return '<ul class="seg-grid">' + "".join(
         f'<li><a href="/use-cases/{s[0]}" style="--t:{s[4]}">{logo(s[0], 72)}<span class="sg-t"><b>{s[1]}</b><span>{s[2]}</span></span></a></li>'
         for s in SEG) + '</ul>'
+
+
+def ih_art(name, alt, src=None):
+    """Contained 4:3 scene for the right side of an interior page hero."""
+    if src is None:
+        src = (f'/img/g-wc-{name}-1200.webp', f'/img/g-wc-{name}-700.webp 700w, /img/g-wc-{name}-1200.webp 1200w', 1200, 900)
+    s, ss, w, h = src
+    return (f'<figure class="ih-art"><img src="{s}" srcset="{ss}" sizes="(max-width: 900px) 100vw, 560px" width="{w}" height="{h}" '
+            f'alt="{alt}" fetchpriority="high" decoding="async"></figure>')

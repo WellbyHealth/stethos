@@ -1,5 +1,5 @@
 from parts import *
-from segments import scene, seg_grid, seg_tabs, logo
+from segments import scene, seg_grid, seg_tabs, logo, ih_art
 
 # ---------- use cases (same tabbed layout as Inroad's specialties page) ----------
 UC = [
@@ -171,7 +171,6 @@ def pricing():
     </div>
   </div>
 </section>
-{scene("w-pricing", "Illustration: a pastel vending machine on a hill dispensing tokens, with the little robot catching them in a basket.")}
 <section class="sec" aria-labelledby="pr-faq-title">
   <div class="wrap faq-grid">
     <div class="head"><p class="eyebrow"><span>FAQ</span></p><h2 id="pr-faq-title">Pricing questions</h2><figure class="faq-art"><img src="/img/g-art-pricing-900.webp" srcset="/img/g-art-pricing-900.webp 900w, /img/g-art-pricing-1600.webp 1600w" sizes="(max-width: 820px) 100vw, 480px" width="1600" height="1195" alt="Illustration: a glass jar of clay credit tokens beside a small meter dial." loading="lazy" decoding="async"></figure><p class="faq-more">Something else? <a href="mailto:{EMAIL}?subject=Stethos%20pricing">Email our team</a>.</p></div>
@@ -278,12 +277,24 @@ def docs():
     h = head("Docs: Connect the Stethos MCP Server | Stethos", "Add the Stethos healthcare MCP server to Claude, Cursor or any MCP client in five minutes. Tools, credits, REST API and webhooks.",
              "/docs", crumbs=[("Docs", "/docs")], schema=[tech])
     body = f'''{HEADER}
-<main id="main" class="wrap doc">
-  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Docs</nav>
-  <h1>Quickstart: connect Stethos to your agent</h1>
-  <p class="doc-meta">Preview · tools and prices may change before launch</p>
-  <figure class="scene-inline"><img src="/img/g-w-docs-1600.webp" srcset="/img/g-w-docs-900.webp 900w, /img/g-w-docs-1600.webp 1600w" sizes="(max-width: 800px) 100vw, 760px" width="1600" height="686" alt="Illustration: the little robot at a workbench on a hill, plugging cables into the clay data machine." decoding="async"></figure>
-  <ul class="doc-toc"><li><a href="#connect">Connect</a></li><li><a href="#tools">Tools</a></li><li><a href="#sources">Data sources</a></li><li><a href="#credits">Credits</a></li><li><a href="#rest">REST API</a></li><li><a href="#watch">Webhooks</a></li><li><a href="#errors">Errors</a></li></ul>
+<main id="main">
+<section class="sec sp-top ih doc-ih" aria-labelledby="doc-title">
+  <div class="wrap">
+    <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Docs</nav>
+    <div class="ih-grid">
+      <div class="ih-copy">
+        <p class="eyebrow"><span>Docs</span></p>
+        <h1 id="doc-title">Quickstart: connect Stethos <span class="pop">to your agent.</span></h1>
+        <p class="ih-lede">Add the MCP server, call the tools, and subscribe to changes. Everything here also works over REST.</p>
+        <p class="doc-meta">Preview · tools and prices may change before launch</p>
+      </div>
+      {ih_art("docs", "Illustration: the little robot at a workbench on a hill, plugging cables into the clay data machine.")}
+    </div>
+  </div>
+</section>
+<div class="wrap doc-wrap">
+  <aside class="doc-side"><nav aria-label="On this page"><p class="doc-side-h">On this page</p><ul class="doc-toc"><li><a href="#connect">Connect</a></li><li><a href="#tools">Tools</a></li><li><a href="#rest">REST API</a></li><li><a href="#watch">Watchers and webhooks</a></li><li><a href="#sources">Data sources</a></li><li><a href="#credits">Credits</a></li><li><a href="#errors">Errors and limits</a></li></ul></nav></aside>
+  <div class="doc">
   <p class="note">Stethos is in development. This page shows the MCP server and API we're building so you can plan against it. <a href="{TRIAL}">Join early access</a> to get access when it opens.</p>
 
   <h2 id="connect" class="h-spot"><img src="/img/g-spot-connect-320.webp" width="160" height="160" alt="" loading="lazy" decoding="async">Connect in five minutes</h2>
@@ -370,6 +381,8 @@ curl https://api.stethos.health/v1/account \\
     <tr><td>429</td><td>Rate limit: 600 requests a minute on Build. Retry after the <code>Retry-After</code> header.</td></tr>
   </tbody></table>
   <p>Questions? Email <a href="mailto:{EMAIL}?subject=Stethos%20API">{EMAIL}</a>.</p>
+  </div>
+</div>
 </main>
 '''
     return h + body + tail()
@@ -440,6 +453,7 @@ def signup():
         <li><b>Watchers</b> that tell your agent when a provider moves or changes groups</li>
         <li><b>Works with</b> Claude, Cursor, ChatGPT or any MCP client, plus REST</li>
       </ul>
+      <figure class="su-art"><img src="/img/g-wc-signup-700.webp" srcset="/img/g-wc-signup-700.webp 700w, /img/g-wc-signup-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 480px" width="1200" height="900" alt="Illustration: the little robot waving under a flower arch at the start of a path up the hills to the data machine." loading="lazy" decoding="async"></figure>
       <p class="su-note" id="signin">Stethos is in preview, and we're opening access in small batches. We'll email your key and setup link, usually within one business day. Already signed up? Your access link is in that email.</p>
     </div>
     <div class="su-card">
@@ -466,7 +480,6 @@ def signup():
     </div>
   </div>
 </section>
-{scene("w-signup", "Illustration: the little robot waving under a flower arch at the start of a path up the hills to the data machine.")}
 </main>
 '''
     return h + body + tail(("nav", "signup"))

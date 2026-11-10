@@ -30,7 +30,7 @@
 <link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css?v=6c88d771">
 <link rel="stylesheet" href="/v2.css?v=978b51f1">
-<link rel="stylesheet" href="/site.css?v=b9b21c69">
+<link rel="stylesheet" href="/site.css?v=1065f646">
 <link rel="stylesheet" href="/stethos.css?v=2c0729ac">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I filter physicians by procedure focus?", "acceptedAnswer": {"@type": "Answer", "text": "Search filters include specialty and sub-specialty, practice setting, affiliation and license state. Procedure-focus signals come from sources such as CMS data and practice websites, and each one shows its source."}}, {"@type": "Question", "name": "Does it include Open Payments data?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Enrich can add an Open Payments summary for a physician as an optional field, so your team can see existing industry relationships before reaching out."}}, {"@type": "Question", "name": "Can it update our CRM automatically?", "acceptedAnswer": {"@type": "Answer", "text": "Watchers send a webhook when a target's affiliation, location or license changes, so your CRM or agent can update the record and queue outreach without anyone re-checking lists."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos-one.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://stethos-one.vercel.app/use-cases"}, {"@type": "ListItem", "position": 3, "name": "Medtech sales", "item": "https://stethos-one.vercel.app/use-cases/medtech"}]}]}</script>
 </head>
@@ -67,19 +67,21 @@
 </header>
 
 <main id="main">
-<section class="sec sp-top kw-hero" aria-labelledby="uc-title">
+<section class="sec sp-top ih" aria-labelledby="uc-title">
   <div class="wrap">
     <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/use-cases">Solutions</a> / Medtech sales</nav>
     <nav class="seg-tabs" aria-label="Solutions by team"><ul><li><a href="/use-cases/medtech" style="--t:#e4f0fd" aria-current="page"><img class="seg-logo" src="/img/g-l-medtech-160.webp?v=00a46869" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Medtech</span></a></li><li><a href="/use-cases/pharma" style="--t:#e3f4ec"><img class="seg-logo" src="/img/g-l-pharma-160.webp?v=fc1a4bbc" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Pharma and life sciences</span></a></li><li><a href="/use-cases/health-it-sales" style="--t:#ece6fb"><img class="seg-logo" src="/img/g-l-healthit-160.webp?v=cca03189" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Health IT and services</span></a></li><li><a href="/use-cases/healthcare-marketing" style="--t:#fde8dc"><img class="seg-logo" src="/img/g-l-marketing-160.webp?v=98b6b71c" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Healthcare marketing</span></a></li><li><a href="/use-cases/investors" style="--t:#fbe4ea"><img class="seg-logo" src="/img/g-l-investors-160.webp?v=bb2097b6" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Investors and PE</span></a></li><li><a href="/use-cases/digital-health" style="--t:#e4f0fd"><img class="seg-logo" src="/img/g-l-startups-160.webp?v=04e78ea2" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Healthcare startups</span></a></li><li><a href="/use-cases/post-acute" style="--t:#fdf5d2"><img class="seg-logo" src="/img/g-l-postacute-160.webp?v=f29aae3a" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Post-acute care</span></a></li><li><a href="/use-cases/clinical-staffing" style="--t:#e3f4ec"><img class="seg-logo" src="/img/g-l-staffing-160.webp?v=04248e76" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Clinical staffing</span></a></li><li><a href="/use-cases/provider-directories" style="--t:#ece6fb"><img class="seg-logo" src="/img/g-l-directories-160.webp?v=ab6768c8" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Payers and directories</span></a></li><li><a href="/use-cases/health-systems" style="--t:#fbe4ea"><img class="seg-logo" src="/img/g-l-healthsystems-160.webp?v=5beee26b" width="40" height="40" alt="" loading="lazy" decoding="async"><span>Health systems</span></a></li></ul></nav>
-    <div class="head center">
-      <img class="seg-hero-logo" src="/img/g-l-medtech-320.webp?v=c58c5fc8" width="84" height="84" alt="" loading="lazy" decoding="async">
-      <h1 id="uc-title">Surgeon and physician data <span class="pop">for medtech sales agents.</span></h1>
-      <p class="kpi-lede">Reach the right surgeon at the right moment: when they join a new group, start at a new facility or take over a service line. Stethos is built to keep a current record for every target and tell your agents the week it changes.</p>
-      <div class="kw-ctas"><a class="btn-1" href="/signup">Start free trial</a><a class="btn-2" href="mailto:team@stethos.health?subject=Stethos%20Medtech%20sales">Talk to our team</a></div>
+    <div class="ih-grid">
+      <div class="ih-copy">
+        <img class="ih-logo" src="/img/g-l-medtech-160.webp?v=00a46869" width="72" height="72" alt="" loading="lazy" decoding="async">
+        <h1 id="uc-title">Surgeon and physician data <span class="pop">for medtech sales agents.</span></h1>
+        <p class="ih-lede">Reach the right surgeon at the right moment: when they join a new group, start at a new facility or take over a service line. Stethos is built to keep a current record for every target and tell your agents the week it changes.</p>
+        <div class="kw-ctas"><a class="btn-1" href="/signup">Start free trial</a><a class="btn-2" href="mailto:team@stethos.health?subject=Stethos%20Medtech%20sales">Talk to our team</a></div>
+      </div>
+      <figure class="ih-art"><img src="/img/g-wc-uc-medtech-1200.webp?v=13cc7980" srcset="/img/g-wc-uc-medtech-700.webp 700w, /img/g-wc-uc-medtech-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="900" alt="Illustration: the little clay robot riding a delivery van with a device box from a surgery center toward a cluster of clinics." fetchpriority="high" decoding="async"></figure>
     </div>
   </div>
 </section>
-<figure class="scene-band"><img src="/img/g-w-uc-medtech-1600.webp?v=3beb1e09" srcset="/img/g-w-uc-medtech-900.webp 900w, /img/g-w-uc-medtech-1600.webp 1600w" sizes="100vw" width="1600" height="686" alt="Illustration: the little clay robot riding a delivery van with a device box from a surgery center toward a cluster of clinics." decoding="async"></figure>
 <section class="sec" aria-labelledby="uc-get-title">
   <div class="wrap">
     <div class="head"><p class="eyebrow"><span>What you get</span></p><h2 id="uc-get-title">What Stethos does <span class="pop">for your team.</span></h2></div>

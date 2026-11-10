@@ -30,7 +30,7 @@
 <link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css?v=6c88d771">
 <link rel="stylesheet" href="/v2.css?v=978b51f1">
-<link rel="stylesheet" href="/site.css?v=b9b21c69">
+<link rel="stylesheet" href="/site.css?v=1065f646">
 <link rel="stylesheet" href="/home.css?v=38d801c9">
 <link rel="stylesheet" href="/stethos.css?v=2c0729ac">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos-one.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "How it works", "item": "https://stethos-one.vercel.app/how-it-works"}]}]}</script>
@@ -68,27 +68,29 @@
 </header>
 
 <main id="main">
-<section class="sec sp-top hiw-top" aria-labelledby="hiw-title">
+<section class="sec sp-top ih hiw-top" aria-labelledby="hiw-title">
   <div class="wrap">
     <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / How it works</nav>
-    <div class="head center">
-      <p class="eyebrow"><span>How it works</span></p>
-      <h1 id="hiw-title">Under the hood, <span class="pop">for the technical folks.</span></h1>
-      <p class="kpi-lede">How to connect Stethos, what its tools return, where each field comes from and which changes you can subscribe to. Setup steps for each client are in the <a href="/docs">docs</a>.</p>
-      <div class="cx-paste hiw-paste">
-        <span class="cx-paste-k">Paste in your coding agent</span>
-        <code class="cx-paste-v">Add the Stethos MCP server: https://mcp.stethos.health/v1</code>
-        <button class="cx-copybtn copy-mcp" type="button" data-copy="Add the Stethos MCP server: https://mcp.stethos.health/v1">Copy</button>
+    <div class="ih-grid">
+      <div class="ih-copy">
+        <p class="eyebrow"><span>How it works</span></p>
+        <h1 id="hiw-title">Under the hood, <span class="pop">for the technical folks.</span></h1>
+        <p class="ih-lede">How to connect Stethos, what its tools return, where each field comes from and which changes you can subscribe to. Setup steps for each client are in the <a href="/docs">docs</a>.</p>
+        <div class="cx-paste hiw-paste">
+          <span class="cx-paste-k">Paste in your coding agent</span>
+          <code class="cx-paste-v">Add the Stethos MCP server: https://mcp.stethos.health/v1</code>
+          <button class="cx-copybtn copy-mcp" type="button" data-copy="Add the Stethos MCP server: https://mcp.stethos.health/v1">Copy</button>
+        </div>
       </div>
+      <figure class="ih-art"><img src="/img/g-art-r-hiw-1600.webp?v=c4731325" srcset="/img/g-art-r-hiw-900.webp 900w, /img/g-art-r-hiw-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 560px" width="1600" height="900" alt="Illustration: the little clay robot on a step stool, shining a flashlight into an open data server full of gears, ID cards and a bell." fetchpriority="high" decoding="async"></figure>
     </div>
-    <figure class="art-wide hiw-art"><img class="" src="/img/g-art-r-hiw-900.webp?v=3ee26ec6" srcset="/img/g-art-r-hiw-900.webp 900w, /img/g-art-r-hiw-1600.webp 1600w" sizes="(max-width: 820px) 100vw, 1100px" width="1600" height="900" alt="Illustration: the little clay robot on a step stool, shining a flashlight into an open data server full of gears, ID cards and a bell." decoding="async"></figure>
   </div>
 </section>
 <section class="h2-panel" id="team-day" aria-labelledby="day-title">
   <span id="how" class="anchor" aria-hidden="true"></span>
   <div class="h2-panel-in">
     <div class="h2-day">
-      <p class="eyebrow"><span>How it works</span></p>
+      <p class="eyebrow"><span>The basics</span></p>
       <h2 id="day-title">Connect once. Ask in plain words. <span class="pop">Hear when it changes.</span></h2>
       <p class="td-lede">Your agent gets Stethos as a set of tools. It decides when to search, enrich or watch, and every answer comes back with its sources.</p>
       <ol class="td-steps" role="tablist" aria-label="Search, enrich, watch">

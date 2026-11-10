@@ -30,7 +30,7 @@
 <link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css?v=6c88d771">
 <link rel="stylesheet" href="/v2.css?v=978b51f1">
-<link rel="stylesheet" href="/site.css?v=b9b21c69">
+<link rel="stylesheet" href="/site.css?v=1065f646">
 <link rel="stylesheet" href="/stethos.css?v=2c0729ac">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Stethos API quickstart", "about": "Healthcare market data API", "dateModified": "2026-11-05", "author": {"@type": "Organization", "name": "Stethos"}, "mainEntityOfPage": "https://stethos-one.vercel.app/docs"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos-one.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Docs", "item": "https://stethos-one.vercel.app/docs"}]}]}</script>
 </head>
@@ -66,12 +66,24 @@
   </div>
 </header>
 
-<main id="main" class="wrap doc">
-  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Docs</nav>
-  <h1>Quickstart: connect Stethos to your agent</h1>
-  <p class="doc-meta">Preview · tools and prices may change before launch</p>
-  <figure class="scene-inline"><img src="/img/g-w-docs-1600.webp?v=bbe8405c" srcset="/img/g-w-docs-900.webp 900w, /img/g-w-docs-1600.webp 1600w" sizes="(max-width: 800px) 100vw, 760px" width="1600" height="686" alt="Illustration: the little robot at a workbench on a hill, plugging cables into the clay data machine." decoding="async"></figure>
-  <ul class="doc-toc"><li><a href="#connect">Connect</a></li><li><a href="#tools">Tools</a></li><li><a href="#sources">Data sources</a></li><li><a href="#credits">Credits</a></li><li><a href="#rest">REST API</a></li><li><a href="#watch">Webhooks</a></li><li><a href="#errors">Errors</a></li></ul>
+<main id="main">
+<section class="sec sp-top ih doc-ih" aria-labelledby="doc-title">
+  <div class="wrap">
+    <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Docs</nav>
+    <div class="ih-grid">
+      <div class="ih-copy">
+        <p class="eyebrow"><span>Docs</span></p>
+        <h1 id="doc-title">Quickstart: connect Stethos <span class="pop">to your agent.</span></h1>
+        <p class="ih-lede">Add the MCP server, call the tools, and subscribe to changes. Everything here also works over REST.</p>
+        <p class="doc-meta">Preview · tools and prices may change before launch</p>
+      </div>
+      <figure class="ih-art"><img src="/img/g-wc-docs-1200.webp?v=4f826ef4" srcset="/img/g-wc-docs-700.webp 700w, /img/g-wc-docs-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="900" alt="Illustration: the little robot at a workbench on a hill, plugging cables into the clay data machine." fetchpriority="high" decoding="async"></figure>
+    </div>
+  </div>
+</section>
+<div class="wrap doc-wrap">
+  <aside class="doc-side"><nav aria-label="On this page"><p class="doc-side-h">On this page</p><ul class="doc-toc"><li><a href="#connect">Connect</a></li><li><a href="#tools">Tools</a></li><li><a href="#rest">REST API</a></li><li><a href="#watch">Watchers and webhooks</a></li><li><a href="#sources">Data sources</a></li><li><a href="#credits">Credits</a></li><li><a href="#errors">Errors and limits</a></li></ul></nav></aside>
+  <div class="doc">
   <p class="note">Stethos is in development. This page shows the MCP server and API we're building so you can plan against it. <a href="/signup">Join early access</a> to get access when it opens.</p>
 
   <h2 id="connect" class="h-spot"><img src="/img/g-spot-connect-320.webp?v=81f3c6c0" width="160" height="160" alt="" loading="lazy" decoding="async">Connect in five minutes</h2>
@@ -158,6 +170,8 @@ curl https://api.stethos.health/v1/account \
     <tr><td>429</td><td>Rate limit: 600 requests a minute on Build. Retry after the <code>Retry-After</code> header.</td></tr>
   </tbody></table>
   <p>Questions? Email <a href="mailto:team@stethos.health?subject=Stethos%20API">team@stethos.health</a>.</p>
+  </div>
+</div>
 </main>
 
 <footer class="foot">

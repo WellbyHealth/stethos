@@ -30,7 +30,7 @@
 <link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css?v=6c88d771">
 <link rel="stylesheet" href="/v2.css?v=978b51f1">
-<link rel="stylesheet" href="/site.css?v=b9b21c69">
+<link rel="stylesheet" href="/site.css?v=1065f646">
 <link rel="stylesheet" href="/stethos.css?v=2c0729ac">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is this primary source verification?", "acceptedAnswer": {"@type": "Answer", "text": "No. Stethos is not a credentials verification organization. It's built for sourcing, prospecting, directory checks and monitoring. For credentialing, verify with the state board or your verification vendor."}}, {"@type": "Question", "name": "Which professions are covered?", "acceptedAnswer": {"@type": "Answer", "text": "Physicians first, then nurses and other licensed clinicians. Coverage will be published by state and profession at launch."}}, {"@type": "Question", "name": "Can I be told when a license lapses?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Watchers fire license.lapsed and license.issued events for the clinicians you follow."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos-one.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "License data API", "item": "https://stethos-one.vercel.app/license-verification-api"}]}]}</script>
 </head>
@@ -67,18 +67,20 @@
 </header>
 
 <main id="main">
-<section class="sec sp-top kw-hero" aria-labelledby="kw-title">
+<section class="sec sp-top ih" aria-labelledby="kw-title">
   <div class="wrap">
     <nav class="crumbs uc-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / License data API</nav>
-    <div class="head center">
-      <p class="eyebrow"><span>License data API</span></p>
-      <h1 id="kw-title">Medical license lookups <span class="pop">across every state, in one call.</span></h1>
-      <p class="kpi-lede">Every state runs its own licensing boards, each with its own website and format. Stethos is built to gather license records from state boards into one NPI-keyed record, show each license's status and source, and alert you when one changes.</p>
-      <div class="kw-ctas"><a class="btn-1" href="/signup">Start free trial</a><a class="btn-2" href="/docs">Read the docs</a></div>
+    <div class="ih-grid">
+      <div class="ih-copy">
+        <p class="eyebrow"><span>License data API</span></p>
+        <h1 id="kw-title">Medical license lookups <span class="pop">across every state, in one call.</span></h1>
+        <p class="ih-lede">Every state runs its own licensing boards, each with its own website and format. Stethos is built to gather license records from state boards into one NPI-keyed record, show each license's status and source, and alert you when one changes.</p>
+        <div class="kw-ctas"><a class="btn-1" href="/signup">Start free trial</a><a class="btn-2" href="/docs">Read the docs</a></div>
+      </div>
+      <figure class="ih-art"><img src="/img/g-wc-s-license-1200.webp?v=67ea8e90" srcset="/img/g-wc-s-license-700.webp 700w, /img/g-wc-s-license-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="900" alt="Illustration: hills like a patchwork quilt of states with license scrolls planted on them." fetchpriority="high" decoding="async"></figure>
     </div>
   </div>
 </section>
-<figure class="scene-band"><img src="/img/g-w-s-license-1600.webp?v=6f4b2942" srcset="/img/g-w-s-license-900.webp 900w, /img/g-w-s-license-1600.webp 1600w" sizes="100vw" width="1600" height="686" alt="Illustration: hills like a patchwork quilt of states with license scrolls planted on them." decoding="async"></figure>
 <section class="sec" aria-labelledby="kw-data-title">
   <div class="wrap">
     <div class="head"><p class="eyebrow"><span>The data</span></p><h2 id="kw-data-title">What it looks like <span class="pop">for your agent.</span></h2></div>
