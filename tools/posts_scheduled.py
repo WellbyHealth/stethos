@@ -1,6 +1,6 @@
 # Scheduled guides. The build publishes a post only once its date (US Pacific) has arrived.
 SCHEDULED = [
-    dict(slug="how-to-look-up-an-npi-number", tag="Public data", art="uc-digital", date="2026-11-10", nice="November 10, 2026", mins=4,
+    dict(slug="how-to-look-up-an-npi-number", tag="Data sources", art="uc-digital", date="2026-11-10", nice="November 10, 2026", mins=4,
          title="How to look up an NPI number, and what to do with it", seo="How to Look Up an NPI Number", kw="NPI lookup, NPI number, NPPES",
          desc="Three ways to look up an NPI number, what each result tells you, and how to check that the record is still current before you act on it.",
          alt="Illustration: a clay smartphone showing a map of doctor pins, with a small clay robot leaning on it.",
@@ -8,8 +8,8 @@ SCHEDULED = [
          body='''<p>Every US healthcare provider who bills electronically has a National Provider Identifier, a 10-digit number issued through CMS. Looking one up is easy. Knowing whether what you found is still true takes a little more.</p>
 <h2>Three ways to look up an NPI</h2>
 <ul>
-<li><strong>The NPI Registry website.</strong> CMS runs a free public search of NPPES. You can search by NPI, by name, or by location and taxonomy.</li>
-<li><strong>The NPI Registry API.</strong> The same data is available through a free public API, which is handy for one-off lookups from code.</li>
+<li><strong>The NPI Registry website.</strong> CMS runs a search of NPPES. You can search by NPI, by name, or by location and taxonomy.</li>
+<li><strong>The NPI Registry API.</strong> The same data is available through an API, which is handy for one-off lookups from code.</li>
 <li><strong>The full NPPES download.</strong> CMS publishes the whole registry as a downloadable file, updated regularly, if you want every record in your own database.</li>
 </ul>
 <h2>What a result tells you</h2>
@@ -18,7 +18,7 @@ SCHEDULED = [
 <p>Registry data is self-reported, so look at the last-updated date first. A record untouched for years may still show an old practice. If you're about to call, mail or route a patient, confirm the location against a second source: the practice's own website, a hospital directory, or the state licensing board.</p>
 <h2>Doing this at scale</h2>
 <p>Checking one NPI by hand is fine. Checking thousands every week isn't. That's the job an <a href="/npi-lookup-api">NPI lookup API</a> like Stethos is built for: it starts from the NPI and returns licenses, affiliations and networks, each with a source and verified date. For background on the registry itself, see <a href="/blog/what-the-npi-registry-can-and-cant-tell-you">what the NPI registry can and can't tell you</a>.</p>'''),
-    dict(slug="type-1-vs-type-2-npi", tag="Public data", art="uc-investors", date="2026-11-17", nice="November 17, 2026", mins=4,
+    dict(slug="type-1-vs-type-2-npi", tag="Data sources", art="uc-investors", date="2026-11-17", nice="November 17, 2026", mins=4,
          title="Type 1 vs Type 2 NPI: what's the difference?", seo="Type 1 vs Type 2 NPI: What's the Difference?", kw="Type 1 NPI, Type 2 NPI, organization NPI",
          desc="Type 1 NPIs identify individual clinicians and Type 2 NPIs identify organizations. Here's how they differ and why it matters when you join provider data.",
          alt="Illustration: a clay piggy bank beside a rising bar chart with tiny clinics on top of each bar.",
@@ -43,7 +43,7 @@ SCHEDULED = [
          take=["Licenses are issued state by state, by separate boards.", "Many clinicians hold licenses in several states, and each can change independently.", "For credentialing, verify at the primary source. For monitoring, watch for changes."],
          body='''<p>There is no single national medical license in the US. Each state licenses the clinicians who practice there, through its own boards, and keeps its own records.</p>
 <h2>Where license records live</h2>
-<p>Physicians are licensed by state medical boards, and some states have separate boards for osteopathic physicians. Nurses are licensed by state boards of nursing. Most boards offer a public lookup on their website, though the fields, formats and update schedules vary from state to state.</p>
+<p>Physicians are licensed by state medical boards, and some states have separate boards for osteopathic physicians. Nurses are licensed by state boards of nursing. Most boards offer a lookup on their website, though the fields, formats and update schedules vary from state to state.</p>
 <p>A few national services pull records together for specific professions, such as the Federation of State Medical Boards for physicians and Nursys for nurses, and many organizations use them during credentialing.</p>
 <h2>Why it's hard to track</h2>
 <ul>
@@ -71,7 +71,7 @@ SCHEDULED = [
 <h2>What a good affiliation record looks like</h2>
 <p>A useful affiliation isn't just "Dr. Example works at Sample Medical Center." It says where that fact came from, when it was first seen and when it was last confirmed. With those dates, you can tell a current relationship from one that ended a year ago.</p>
 <p>That's how the <a href="/physician-data-api">Stethos physician data API</a> is designed, with an <code>affiliation.changed</code> event when a link appears or disappears. Read how sales teams use it in <a href="/use-cases/medtech">medtech and pharma sales</a>.</p>'''),
-    dict(slug="healthcare-provider-taxonomy-codes-explained", tag="Public data", art="problem", date="2026-12-08", nice="December 8, 2026", mins=4,
+    dict(slug="healthcare-provider-taxonomy-codes-explained", tag="Data sources", art="problem", date="2026-12-08", nice="December 8, 2026", mins=4,
          title="Healthcare provider taxonomy codes, explained", seo="Healthcare Provider Taxonomy Codes Explained", kw="provider taxonomy codes, NUCC taxonomy, specialty codes",
          desc="Taxonomy codes describe a provider's type and specialty. Here's how the code set works, how it shows up in NPI records, and where it falls short.",
          alt="Illustration: a dusty clay filing cabinet, faded binders, a curling spreadsheet, returned envelopes and a map whose pins have fallen over.",
@@ -88,7 +88,7 @@ SCHEDULED = [
 <li><strong>Not procedures.</strong> A code says "orthopedic surgery", not "mostly spine" or "mostly sports medicine".</li>
 </ul>
 <h2>Using codes well</h2>
-<p>Treat taxonomy as the first filter, then refine with other signals, such as group affiliation, practice website descriptions and public billing data. For more on the registry these codes live in, read <a href="/blog/how-to-look-up-an-npi-number">how to look up an NPI number</a>.</p>'''),
+<p>Treat taxonomy as the first filter, then refine with other signals, such as group affiliation, practice website descriptions and Medicare billing data. For more on the registry these codes live in, read <a href="/blog/how-to-look-up-an-npi-number">how to look up an NPI number</a>.</p>'''),
     dict(slug="webhooks-vs-polling-for-provider-data", tag="Engineering", art="compare", date="2026-12-15", nice="December 15, 2026", mins=4,
          title="Webhooks vs polling for provider data changes", seo="Webhooks vs Polling for Provider Data Changes", kw="webhooks, provider data changes, API polling",
          desc="Should your app poll for provider data changes or subscribe to webhooks? The trade-offs in freshness, cost and complexity, and when each makes sense.",

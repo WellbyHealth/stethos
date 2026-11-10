@@ -37,7 +37,7 @@ for p in page_blog.POSTS:
 from xml.sax.saxutils import escape as _x
 import datetime as _dt
 w("blog/rss.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel>'
-  f'<title>{BRAND} guides</title><link>{SITE}/blog</link><description>Guides to US healthcare provider data.</description>'
+  f'<title>{BRAND} guides</title><link>{SITE}/blog</link><description>Guides to US healthcare market data for go-to-market and deal teams.</description>'
   + "".join(f'<item><title>{_x(p["title"])}</title><link>{SITE}/blog/{p["slug"]}</link><guid>{SITE}/blog/{p["slug"]}</guid><pubDate>{_dt.datetime.strptime(p["date"], "%Y-%m-%d").strftime("%a, %d %b %Y 08:00:00 -0800")}</pubDate><description>{_x(p["desc"])}</description></item>' for p in page_blog.POSTS)
   + '</channel></rss>\n')
 for m in page_seo.SEO_PAGES:
@@ -72,12 +72,12 @@ w("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://
 w("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
 w("llms.txt", f"""# {BRAND}
 
-> Self-serve MCP server (and REST API) for healthcare sales, marketing and investment teams, startups and their AI agents: current, sourced data on every US clinician, practice, health system and payer network, with a source and checked date on every field, verification agents, and change events. Priced per tool call. Tools: search_providers, enrich_provider, enrich_org, watch_providers, recent_changes. Provider data only, no patient data.\n\nMCP endpoint: """ + MCP_URL + f""" (preview)
+> Self-serve MCP server (and REST API) for healthcare sales, marketing and investment teams, startups and their AI agents: current, sourced data on every US clinician, practice, health system and payer network, plus referral patterns, ownership (including private equity) and Medicare utilization, with a source and checked date on every field, verification agents, and change events. Priced per tool call. Tools: search_providers, enrich_provider, enrich_org, watch_providers, recent_changes. No patient data.\n\nMCP endpoint: """ + MCP_URL + f""" (preview)
 
 ## Pages
 - [Home]({SITE}/): what Stethos does and who it's for
 - [How it works]({SITE}/how-it-works): connecting the MCP server, tool results, sources and change events
-- [Use cases]({SITE}/use-cases): medtech and pharma, health IT and services sales, healthcare marketing, investors, startups, post-acute care and agencies, clinical staffing and provider directories
+- [Solutions]({SITE}/use-cases): medtech, pharma, health IT and services sales, healthcare marketing, investors, startups, post-acute care, clinical staffing, payers and directories, and health systems
 """ + "".join(f"- [{u[4]}]({SITE}/use-cases/{u[0]}): {page_uc.UC_PAGES[u[0]]['desc']}\n" for u in page_other.UC) + f"""- [Docs]({SITE}/docs): quickstart for search, enrich, organizations, watchers and MCP (preview)
 """ + "".join(f"- [{m['name']}]({SITE}/{m['slug']}): {m['desc']}\n" for m in page_seo.SEO_PAGES) + f"""- [Use case workflows]({SITE}/use-cases): agent workflows by segment (medtech, pharma, health IT, investors, startups, staffing, post-acute care, health systems): medtech targeting, new-executive triggers, EHR campaign lists, ABM lists, KOL mapping, market diligence, portfolio monitoring, startup design partners, territory planning, event invites, CRM hygiene, staffing sales, post-acute referral development and physician liaison outreach
 - [Data sources]({SITE}/docs#sources): NPPES, CMS Medicare utilization, Part D, post-acute and hospice files, Care Compare, Provider of Services, ACO participation, cost reports, MA enrollment, Open Payments, state licensing boards, payer directories

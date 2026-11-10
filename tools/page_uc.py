@@ -12,7 +12,7 @@ UC_PAGES = {
         h1a="Surgeon and physician data", h1b="for medtech sales agents.",
         intro="Reach the right surgeon at the right moment: when they join a new group, start at a new facility or take over a service line. Stethos is built to keep a current record for every target and tell your agents the week it changes.",
         req={"specialty": "orthopedic surgery", "state": "AZ", "affiliation_type": "independent_group", "fields": ["affiliations", "practice_contact", "industry_payments"]},
-        faq=[("Can I filter physicians by procedure focus?", "Search filters include specialty and sub-specialty, practice setting, affiliation and license state. Procedure-focus signals come from public sources such as CMS data and practice websites, and each one shows its source."),
+        faq=[("Can I filter physicians by procedure focus?", "Search filters include specialty and sub-specialty, practice setting, affiliation and license state. Procedure-focus signals come from sources such as CMS data and practice websites, and each one shows its source."),
              ("Does it include Open Payments data?", "Yes. Enrich can add an Open Payments summary for a physician as an optional field, so your team can see existing industry relationships before reaching out."),
              ("Can it update our CRM automatically?", "Watchers send a webhook when a target's affiliation, location or license changes, so your CRM or agent can update the record and queue outreach without anyone re-checking lists.")]),
     "pharma": dict(
@@ -30,8 +30,8 @@ UC_PAGES = {
         h1a="Health system data for", h1b="health IT and services sales.",
         intro="Know which systems run which EHR, who owns the budget and when a leader changes. Stethos is built to give your reps, agents and CRM a current record for every health system and group, and flag the week something moves.",
         req={"org_type": "health_system", "state": "OH", "fields": ["locations", "health_it", "executives", "affiliates"]},
-        faq=[("Can I filter health systems by EHR?", "Where it's published, yes. Certified health IT use comes from ONC and CMS sources, and each value shows its source and date. Where no public source exists, the field is left empty rather than guessed."),
-             ("Does it include executive contacts?", "Stethos returns named executives and service line leaders from public sources such as organization websites and press releases, with the source for each. It doesn't sell personal emails or phone numbers."),
+        faq=[("Can I filter health systems by EHR?", "Where it's published, yes. Certified health IT use comes from ONC and CMS sources, and each value shows its source and date. Where no source exists, the field is left empty rather than guessed."),
+             ("Does it include executive contacts?", "Stethos returns named executives and service line leaders from sources such as organization websites and press releases, with the source for each. It doesn't sell personal emails or phone numbers."),
              ("Will it work in Salesforce or HubSpot?", "Yes. Your agent calls Stethos tools and writes the results into your CRM, and watchers can send a webhook when an account changes so the record and next step update on their own.")]),
     "healthcare-marketing": dict(
         title="Clinician and Account Data for Healthcare Marketing | Stethos",
@@ -51,7 +51,7 @@ UC_PAGES = {
         faq=[("We don't have a CRM. Does it still work?", "Yes. Upload a spreadsheet of your referrers, or export the list from your EHR or agency software, and Stethos matches each one to a current record. Results come back as a list, a weekly email or a spreadsheet; a CRM is optional."),
              ("We're private pay. Is the referral data still useful?", "The Medicare data shows which physicians order home health and hospice, which is a strong sign they refer patients who need care at home, whoever pays. The rest, such as practices, hospitals, affiliations and contact details, applies to any agency."),
              ("Can it help with big medical centers?", "Yes. Large academic and hospital campuses are broken down by department, practice and location, with who works where, so a marketer can see which parts of a campus they already know and which they haven't reached."),
-             ("Where does referral data come from?", "From CMS public files, such as Medicare home health, hospice and skilled nursing data, and physician utilization files, plus practice and organization records. Each value shows its source and date. No patient-level data is included.")]),
+             ("Where does referral data come from?", "From CMS data, such as Medicare home health, hospice and skilled nursing data, and physician utilization files, plus practice and organization records. Each value shows its source and date. No patient-level data is included.")]),
     "provider-directories": dict(
         title="Provider Directory Data API for Payers | Stethos",
         desc="Check provider directory listings against current sources. Flag stale locations, lapsed licenses and network mismatches with a real-time provider data API.",
@@ -77,7 +77,7 @@ UC_PAGES = {
         intro="In healthcare services, the leading indicators are clinicians and locations: who is joining a platform, where new sites are opening and which groups are losing people. Stethos is built to turn those changes into events you can track across a portfolio or a target list.",
         req={"name": "Example Ortho Partners", "state": "AZ", "fields": ["children", "rostered_clinicians", "locations"]},
         faq=[("Can I track clinician headcount over time?", "Organization records include rostered clinicians, and change history shows who joined and left and when, so you can chart headcount for a group or platform."),
-             ("Does it show ownership?", "Yes. Parent and child organizations are linked where public sources show the relationship, and private equity owners are linked to the practices, clinics and facilities they own, with the source on each link. See <a href=\"/private-equity-healthcare-ownership-data\">private equity ownership data</a>."),
+             ("Does it show ownership?", "Yes. Parent and child organizations are linked where sources show the relationship, and private equity owners are linked to the practices, clinics and facilities they own, with the source on each link. See <a href=\"/private-equity-healthcare-ownership-data\">private equity ownership data</a>."),
              ("Can I get the data as a file?", "Yes. Enterprise includes flat files delivered to your warehouse on a schedule, alongside the API.")]),
     "digital-health": dict(
         title="Healthcare Data for Startups and Digital Health | Stethos",
@@ -122,7 +122,7 @@ def uc_page(n):
     path = f"/use-cases/{slug}"
     faqld = {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in m["faq"]]}
     h = head(m["title"], m["desc"], path, image=f"/og/{slug}.jpg", image_alt=f"Illustration for {name}",
-             crumbs=[("Use cases", "/use-cases"), (name, path)], schema=[faqld])
+             crumbs=[("Solutions", "/use-cases"), (name, path)], schema=[faqld])
     req = json.dumps(m["req"], indent=2)
     ep = "orgs/enrich" if slug == "investors" else ("providers/enrich" if "npi" in m["req"] else "providers/search")
     faq = "".join(f'<details><summary>{q}</summary><p>{a}</p></details>' for q, a in m["faq"])

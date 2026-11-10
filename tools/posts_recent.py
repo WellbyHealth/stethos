@@ -2,13 +2,13 @@
 RECENT = [
     dict(slug="who-owns-a-medical-practice", tag="Ownership", art="c-whoowns", date="2026-11-06", nice="November 6, 2026", mins=4,
          title="How to find out who owns a medical practice", seo="How to Find Out Who Owns a Medical Practice", kw="who owns a medical practice, practice ownership, private equity healthcare",
-         desc="A solo practice and a PE-owned one buy very differently. How to work out who owns a medical practice, from public sources anyone can check.",
+         desc="A solo practice and a PE-owned one buy very differently. How to work out who owns a medical practice, step by step.",
          alt="Illustration: the little clay robot peering with a magnifying glass into a clinic whose roof lifts open to show a briefcase inside.",
          take=["Practice websites and firm portfolio pages are the fastest first check.", "CMS ownership files flag private equity owners for hospitals, nursing homes, home health, hospice, rural health clinics and FQHCs.", "Ownership changes with every add-on deal, so keep the source and date on each link."],
-         body='''<p>Before you pitch a practice, it helps to know who really decides. A two-doctor office and a clinic owned by a private equity platform look the same from the street, but they buy very differently. Here's how to work out who owns a practice, using sources anyone can check.</p>
+         body='''<p>Before you pitch a practice, it helps to know who really decides. A two-doctor office and a clinic owned by a private equity platform look the same from the street, but they buy very differently. Here's how to work out who owns a practice, step by step.</p>
 <h2>Start with the practice itself</h2>
 <p>Practices that have joined a larger group usually say so somewhere. Check the website footer, the About page and the privacy policy, which often names the legal entity. Phrases like "a member of" or "in partnership with" are strong hints. Then search the group's name: platform companies list their practices and locations, and private equity firms list their platforms on their portfolio pages.</p>
-<h2>Check the public records</h2>
+<h2>Check the records</h2>
 <ul>
 <li><strong>CMS ownership files.</strong> For hospitals, nursing homes, home health agencies, hospices, rural health clinics and FQHCs, CMS publishes the reported owners of each Medicare-enrolled provider, including anyone with a 5% or greater stake, and flags owner types such as private equity.</li>
 <li><strong>NPI records.</strong> An organization NPI and its authorized official can point to a parent entity, especially when several practices share them.</li>
@@ -38,7 +38,7 @@ RECENT = [
 <h2>How to work an MSO as an account</h2>
 <p>Treat the platform as the account and each practice as a site under it. Map every practice the MSO manages by state and metro, and find the people who decide for all of them: the MSO's CEO, CFO and heads of revenue cycle and operations, plus the firm's healthcare operating partners. Then watch for add-ons, because each new practice is a new site on a deal you already have.</p>
 <p>Stethos is built for this. <a href="/private-equity-healthcare-ownership-data">Private equity ownership data</a> maps each firm's platforms and every site they own, and your agent can watch a platform for new add-ons. To check a single practice first, see <a href="/blog/who-owns-a-medical-practice">how to find out who owns a medical practice</a>.</p>'''),
-    dict(slug="cms-ownership-data-private-equity", tag="Public data", art="c-cmsowners", date="2026-11-08", nice="November 8, 2026", mins=5,
+    dict(slug="cms-ownership-data-private-equity", tag="Data sources", art="c-cmsowners", date="2026-11-08", nice="November 8, 2026", mins=5,
          title="What CMS ownership files show about private equity in healthcare", seo="CMS Ownership Data and Private Equity in Healthcare", kw="CMS ownership data, All Owners, private equity nursing homes, private equity hospice",
          desc="CMS publishes who owns Medicare-enrolled hospitals, nursing homes, home health agencies and hospices, and flags private equity. What the files show.",
          alt="Illustration: the little clay robot reading a long scroll dotted with briefcase stamps, in front of a hospital, a nursing home and a home health house.",

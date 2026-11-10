@@ -133,3 +133,7 @@ p,li,dd,summary{text-wrap:pretty}
 @media(max-width:600px){.seg-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.seg-grid a{padding:12px}.seg-grid .sg-t span{display:none}.seg-head{grid-template-columns:1fr}.seg-head .seg-hero-logo{grid-row:auto;width:64px;height:64px;border-radius:18px;margin-bottom:12px}.seg-head h1,.seg-head .sp-lede{grid-column:1}}
 @media(max-width:700px){.cta-scene{margin:-44px -18px 0}}
 .seg-tabs li{flex:none}
+.stk-markets{--stk-bg:#fde8dc;--stk-ink:#8a3d12;--stk-stage:#f8d6c4}
+.stack{--n:6}
+.stk-item:nth-child(5) .stk-pill{margin-left:40px;box-shadow:-10px 0 0 0 var(--t1),10px 0 0 0 var(--t1),-20px 0 0 0 var(--t2),-30px 0 0 0 var(--t3)}
+.stk-item:nth-child(6) .stk-pill{margin-left:50px;box-shadow:-10px 0 0 0 var(--t1),-20px 0 0 0 var(--t2),-30px 0 0 0 var(--t3),-40px 0 0 0 var(--t3)}

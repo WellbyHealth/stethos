@@ -1,13 +1,13 @@
 # Stethos
 
-> Self-serve MCP server (and REST API) for healthcare sales, marketing and investment teams, startups and their AI agents: current, sourced data on every US clinician, practice, health system and payer network, with a source and checked date on every field, verification agents, and change events. Priced per tool call. Tools: search_providers, enrich_provider, enrich_org, watch_providers, recent_changes. Provider data only, no patient data.
+> Self-serve MCP server (and REST API) for healthcare sales, marketing and investment teams, startups and their AI agents: current, sourced data on every US clinician, practice, health system and payer network, plus referral patterns, ownership (including private equity) and Medicare utilization, with a source and checked date on every field, verification agents, and change events. Priced per tool call. Tools: search_providers, enrich_provider, enrich_org, watch_providers, recent_changes. No patient data.
 
 MCP endpoint: https://mcp.stethos.health/v1 (preview)
 
 ## Pages
 - [Home](https://stethos-one.vercel.app/): what Stethos does and who it's for
 - [How it works](https://stethos-one.vercel.app/how-it-works): connecting the MCP server, tool results, sources and change events
-- [Use cases](https://stethos-one.vercel.app/use-cases): medtech and pharma, health IT and services sales, healthcare marketing, investors, startups, post-acute care and agencies, clinical staffing and provider directories
+- [Solutions](https://stethos-one.vercel.app/use-cases): medtech, pharma, health IT and services sales, healthcare marketing, investors, startups, post-acute care, clinical staffing, payers and directories, and health systems
 - [Medtech sales](https://stethos-one.vercel.app/use-cases/medtech): Find surgeons by specialty, procedure focus, affiliation and license, and get alerts when targets move. Provider data for medtech sales teams and agents.
 - [Pharma and life sciences](https://stethos-one.vercel.app/use-cases/pharma): Find prescribers by drug class and volume, map key opinion leaders, and get alerts when they move. Provider data for pharma commercial and medical teams.
 - [Health IT and services sales](https://stethos-one.vercel.app/use-cases/health-it-sales): Target health systems and practices by EHR, size and service line, find the right buyer, and get alerts on new leaders and new sites, for AI sales agents.
@@ -24,7 +24,7 @@ MCP endpoint: https://mcp.stethos.health/v1 (preview)
 - [Physician data API](https://stethos-one.vercel.app/physician-data-api): A physician data API with specialties, affiliations, state licenses and practice contacts for every US physician, plus webhooks when physicians move.
 - [License data API](https://stethos-one.vercel.app/license-verification-api): Check physician and nurse license status across states in one API call, and get a webhook when a license is issued, expires or is restricted.
 - [Health system data API](https://stethos-one.vercel.app/health-system-data-api): Health systems, hospitals, groups and clinics in one API: locations, rostered clinicians, leadership, open roles and ownership, with change alerts.
-- [Medicare utilization data API](https://stethos-one.vercel.app/medicare-utilization-data-api): Procedure volumes, Medicare patients and Part D prescribing for every US clinician, from CMS public files, resolved to one NPI record. MCP and REST.
+- [Medicare utilization data API](https://stethos-one.vercel.app/medicare-utilization-data-api): Procedure volumes, Medicare patients and Part D prescribing for every US clinician, from CMS data, resolved to one NPI record. MCP and REST.
 - [Home health and hospice data API](https://stethos-one.vercel.app/home-health-hospice-data-api): Volume, payments, patient mix, star ratings and ownership for every Medicare home health agency, hospice and nursing facility, via MCP or REST.
 - [Physician referral data](https://stethos-one.vercel.app/physician-referral-data): Map who works with whom: group rosters, hospital affiliations, ACO membership and shared practice sites for every US clinician. Referral flows planned.
 - [Private equity ownership data](https://stethos-one.vercel.app/private-equity-healthcare-ownership-data): Which private equity firms own which practices, clinics, MSOs and facilities, in which markets. Owner, platform and add-on links with sources, via MCP or REST.
@@ -38,7 +38,7 @@ MCP endpoint: https://mcp.stethos.health/v1 (preview)
 - [Your buyer changed jobs. Your CRM didn't notice.](https://stethos-one.vercel.app/blog/healthcare-buyer-job-changes): Healthcare buyers change roles often and CRMs rarely notice. Why titles go stale so fast, what it costs, and what keeps your contacts current.
 - [What CMS ownership files show about private equity in healthcare](https://stethos-one.vercel.app/blog/cms-ownership-data-private-equity): CMS publishes who owns Medicare-enrolled hospitals, nursing homes, home health agencies and hospices, and flags private equity. What the files show.
 - [What an MSO is, and why it changes how you sell to practices](https://stethos-one.vercel.app/blog/what-is-an-mso): More practices now sit under a management services organization. Here's what an MSO is, how private equity roll-ups use them, and how to work one as an account.
-- [How to find out who owns a medical practice](https://stethos-one.vercel.app/blog/who-owns-a-medical-practice): A solo practice and a PE-owned one buy very differently. How to work out who owns a medical practice, from public sources anyone can check.
+- [How to find out who owns a medical practice](https://stethos-one.vercel.app/blog/who-owns-a-medical-practice): A solo practice and a PE-owned one buy very differently. How to work out who owns a medical practice, step by step.
 - [What the NPI registry can and can't tell you](https://stethos-one.vercel.app/blog/what-the-npi-registry-can-and-cant-tell-you): The NPPES NPI Registry is the backbone of US provider data. Here's what it reliably tells you, where it falls short, and what to pair it with.
 - [Why provider directories go stale, and what keeps them current](https://stethos-one.vercel.app/blog/why-provider-directories-go-stale): Provider directories drift out of date because clinicians move faster than the systems that track them. Here's where the errors come from and what helps.
 - [Giving an AI agent healthcare data: a checklist](https://stethos-one.vercel.app/blog/giving-an-ai-agent-healthcare-data-checklist): Before an AI agent acts on healthcare provider data, check freshness, provenance, identifiers, cost controls and patient privacy. A short checklist.

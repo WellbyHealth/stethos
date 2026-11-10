@@ -200,8 +200,8 @@ def card(e, tab=False, link=True):
 def examples():
     items = [{"@type": "ListItem", "position": i + 1, "name": e[2], "url": f"{SITE}/use-cases#{e[0]}"} for i, e in enumerate(EXAMPLES)]
     h = head("Solutions: Healthcare Data for Every Team | Stethos",
-             "Healthcare provider data for medtech, pharma, health IT, marketing, investors, startups, post-acute, staffing, payers and health systems, with agent workflows.",
-             "/use-cases", image="/og/use-cases.jpg", image_alt="Clay illustration of a sales desk with a laptop map, above the line: What teams do with Stethos.", crumbs=[("Use cases", "/use-cases")],
+             "Healthcare market data for medtech, pharma, health IT, marketing, investors, startups, post-acute, staffing, payers and health systems, with agent workflows.",
+             "/use-cases", image="/og/use-cases.jpg", image_alt="Clay illustration of a sales desk with a laptop map, above the line: What teams do with Stethos.", crumbs=[("Solutions", "/use-cases")],
              schema=[{"@type": "ItemList", "name": "Stethos use cases", "itemListElement": items}])
     jump, n = "", 0
     for name, page, slugs in SEGMENTS:

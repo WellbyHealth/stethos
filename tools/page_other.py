@@ -190,8 +190,8 @@ CMP_ART = {"definitive-healthcare": ("cmp-dh", "Illustration: a balance scale wi
 
 
 def compare(slug, them, title_a, title_b, lede, them_list, rows, both_h, both_p, sources, note, other):
-    h = head(f"Stethos vs {them} | Provider Data Compared",
-             f"How Stethos compares with {them} for healthcare provider data: API access, pricing model, data freshness and who each is built for.",
+    h = head(f"Stethos vs {them} | Healthcare Data Compared",
+             f"How Stethos compares with {them} for healthcare market data: API access, pricing model, data freshness and who each is built for.",
              f"/compare/{slug}", image="/og/compare.jpg", crumbs=[(f"Stethos vs {them}", f"/compare/{slug}")])
     tr = "".join(f'<tr><th scope="row">{a}</th><td>{b}</td><td>{c}</td></tr>' for a, b, c in rows)
     src = "".join(f'<li><a href="{u}" rel="noopener" target="_blank">{t}</a></li>' for t, u in sources)
@@ -273,7 +273,7 @@ def compare_onekey():
 
 # ---------- docs ----------
 def docs():
-    tech = {"@type": "TechArticle", "headline": "Stethos API quickstart", "about": "Healthcare provider data API", "dateModified": "2026-11-05",
+    tech = {"@type": "TechArticle", "headline": "Stethos API quickstart", "about": "Healthcare market data API", "dateModified": "2026-11-05",
             "author": {"@type": "Organization", "name": BRAND}, "mainEntityOfPage": SITE + "/docs"}
     h = head("Docs: Connect the Stethos MCP Server | Stethos", "Add the Stethos healthcare MCP server to Claude, Cursor or any MCP client in five minutes. Tools, credits, REST API and webhooks.",
              "/docs", crumbs=[("Docs", "/docs")], schema=[tech])
@@ -353,10 +353,10 @@ curl https://api.stethos.health/v1/account \\
 
   <h2 id="sources" class="h-spot"><img src="/img/g-spot-sources-320.webp" width="160" height="160" alt="" loading="lazy" decoding="async">Data sources</h2>
   <p>Every field Stethos returns names the source it came from and when it was last checked. Stethos is built on CMS and other government files first, resolved to one record per NPI, with licensed and web sources layered on top.</p>
-  <table><thead><tr><th>Source</th><th>What it adds</th><th>Refresh</th><th>Access</th></tr></thead><tbody>
-    <tr><td>CMS All Owners files</td><td>Owners of Medicare-enrolled hospitals, nursing homes, home health agencies, hospices, rural health clinics and FQHCs, with owner types such as private equity</td><td>Periodic</td><td>Public file</td></tr><tr><td>NPPES NPI Registry</td><td>Every clinician and organization NPI, taxonomy, practice address</td><td>Weekly</td><td>Public file</td></tr><tr><td>CMS National Provider Directory</td><td>Practitioners, organizations, locations and digital endpoints, in FHIR bulk files</td><td>Monthly</td><td>Public file</td></tr><tr><td>Medicare Physician &amp; Other Practitioners</td><td>Services and Medicare patients per clinician, by procedure code</td><td>Annual</td><td>Public file</td></tr><tr><td>Medicare Part D Prescribers</td><td>Prescribing volume per clinician, by drug</td><td>Annual</td><td>Public file</td></tr><tr><td>Medicare DMEPOS by Referring Provider</td><td>Durable equipment and supplies ordered per clinician</td><td>Annual</td><td>Public file</td></tr><tr><td>Medicare Inpatient &amp; Outpatient Hospitals</td><td>Discharges and services per hospital, by DRG and APC</td><td>Annual</td><td>Public file</td></tr><tr><td>Medicare Post-Acute Care &amp; Hospice</td><td>Volume, payments and patient mix per home health agency, hospice, SNF, IRF and LTCH</td><td>Annual</td><td>Public file</td></tr><tr><td>Care Compare and Provider Data Catalog</td><td>Star ratings, quality measures, clinician–group and hospital affiliations</td><td>Monthly to quarterly</td><td>Public file</td></tr><tr><td>Medicare Provider of Services file</td><td>Facility type, ownership, beds and certification</td><td>Quarterly</td><td>Public file</td></tr><tr><td>Medicare Shared Savings Program</td><td>Which practices and clinicians participate in each ACO</td><td>Annual</td><td>Public file</td></tr><tr><td>Hospital and SNF cost reports (HCRIS)</td><td>Beds, staffing, revenue and costs per facility</td><td>Quarterly</td><td>Public file</td></tr><tr><td>Medicare Advantage enrollment by county</td><td>MA penetration and plan mix in each market</td><td>Monthly</td><td>Public file</td></tr><tr><td>ONC certified health IT data</td><td>Which certified EHR each hospital and clinician reports using, and EHR vendors' published customer endpoint lists</td><td>Annual and ongoing</td><td>Public file</td></tr><tr><td>Open Payments</td><td>Industry payments to clinicians and teaching hospitals</td><td>Annual</td><td>Public file</td></tr><tr><td>Medicare Part A, B and MA claims, 100%</td><td>Current referral flows, shared patients, sources and destinations of post-acute patients, market share</td><td>Quarterly</td><td>Planned: CMS VRDC Innovator access</td></tr>
+  <table><thead><tr><th>Source</th><th>What it adds</th><th>Refresh</th><th>Status</th></tr></thead><tbody>
+    <tr><td>CMS All Owners files</td><td>Owners of Medicare-enrolled hospitals, nursing homes, home health agencies, hospices, rural health clinics and FQHCs, with owner types such as private equity</td><td>Periodic</td><td>Live</td></tr><tr><td>NPPES NPI Registry</td><td>Every clinician and organization NPI, taxonomy, practice address</td><td>Weekly</td><td>Live</td></tr><tr><td>CMS National Provider Directory</td><td>Practitioners, organizations, locations and digital endpoints, in FHIR bulk files</td><td>Monthly</td><td>Live</td></tr><tr><td>Medicare Physician &amp; Other Practitioners</td><td>Services and Medicare patients per clinician, by procedure code</td><td>Annual</td><td>Live</td></tr><tr><td>Medicare Part D Prescribers</td><td>Prescribing volume per clinician, by drug</td><td>Annual</td><td>Live</td></tr><tr><td>Medicare DMEPOS by Referring Provider</td><td>Durable equipment and supplies ordered per clinician</td><td>Annual</td><td>Live</td></tr><tr><td>Medicare Inpatient &amp; Outpatient Hospitals</td><td>Discharges and services per hospital, by DRG and APC</td><td>Annual</td><td>Live</td></tr><tr><td>Medicare Post-Acute Care &amp; Hospice</td><td>Volume, payments and patient mix per home health agency, hospice, SNF, IRF and LTCH</td><td>Annual</td><td>Live</td></tr><tr><td>Care Compare and Provider Data Catalog</td><td>Star ratings, quality measures, clinician–group and hospital affiliations</td><td>Monthly to quarterly</td><td>Live</td></tr><tr><td>Medicare Provider of Services file</td><td>Facility type, ownership, beds and certification</td><td>Quarterly</td><td>Live</td></tr><tr><td>Medicare Shared Savings Program</td><td>Which practices and clinicians participate in each ACO</td><td>Annual</td><td>Live</td></tr><tr><td>Hospital and SNF cost reports (HCRIS)</td><td>Beds, staffing, revenue and costs per facility</td><td>Quarterly</td><td>Live</td></tr><tr><td>Medicare Advantage enrollment by county</td><td>MA penetration and plan mix in each market</td><td>Monthly</td><td>Live</td></tr><tr><td>ONC certified health IT data</td><td>Which certified EHR each hospital and clinician reports using, and EHR vendors' published customer endpoint lists</td><td>Annual and ongoing</td><td>Live</td></tr><tr><td>Open Payments</td><td>Industry payments to clinicians and teaching hospitals</td><td>Annual</td><td>Live</td></tr><tr><td>Medicare Part A, B and MA claims, 100%</td><td>Current referral flows, shared patients, sources and destinations of post-acute patients, market share</td><td>Quarterly</td><td>Planned: CMS VRDC Innovator access</td></tr>
   </tbody></table>
-  <p>CMS's public utilization files summarize 100% of Original Medicare claims but are released yearly, with a lag. Claims-level detail, such as which physicians actually refer to which home health agencies this quarter, requires CMS's Virtual Research Data Center. Stethos plans to apply as an Innovator, and only aggregate, privacy-protected outputs leave that environment. Provider data only: no patient data is ever returned.</p>
+  <p>CMS's utilization files summarize 100% of Original Medicare claims but are released yearly, with a lag. Claims-level detail, such as which physicians actually refer to which home health agencies this quarter, requires CMS's Virtual Research Data Center. Stethos plans to apply as an Innovator, and only aggregate, privacy-protected outputs leave that environment. No patient data is ever returned.</p>
 
   <span id="mcp"></span>
   <h2 id="credits" class="h-spot"><img src="/img/g-spot-credits-320.webp" width="160" height="160" alt="" loading="lazy" decoding="async">Credits</h2>
@@ -389,7 +389,7 @@ def privacy():
   <h2>How we use it</h2>
   <p>Only to contact you about Stethos, including early access, research conversations and product updates. We do not sell your information or share it for others' marketing.</p>
   <h2>About the data in the API</h2>
-  <p>The Stethos API is built to hold information about healthcare professionals and organizations in their professional capacity, drawn from public registries and licensed sources. It does not hold patient information. Clinicians who want to correct or ask about their record can email us.</p>
+  <p>The Stethos API is built to hold information about healthcare professionals and organizations in their professional capacity, drawn from government registries, licensed sources and organization websites. It does not hold patient information. Clinicians who want to correct or ask about their record can email us.</p>
   <h2>Your choices</h2>
   <p>You can ask us to update or delete your information, or to stop contacting you, at any time by emailing <a href="mailto:{EMAIL}?subject=Stethos%20privacy%20request">{EMAIL}</a>.</p>
   <h2>Contact</h2>
@@ -421,10 +421,10 @@ def notfound():
 
 def signup():
     h = head("Start your free trial | Stethos",
-             "Get 1,000 free credits for the Stethos healthcare provider data MCP server. No card, no sales call. Works with Claude, Cursor and ChatGPT.",
+             "Get 1,000 free credits for the Stethos healthcare market data MCP server. No card, no sales call. Works with Claude, Cursor and ChatGPT.",
              "/signup", crumbs=[("Free trial", "/signup")],
              share_title="Stethos | Start your free trial",
-             share_desc="1,000 free credits for US healthcare provider data in Claude, Cursor or ChatGPT. No card, no sales call.")
+             share_desc="1,000 free credits for US provider, referral and ownership data in Claude, Cursor or ChatGPT. No card, no sales call.")
     opts = lambda pairs: "".join(f'<option value="{v}">{t}</option>' for v, t in pairs)
     body = f'''{HEADER}
 <main id="main">

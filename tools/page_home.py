@@ -14,8 +14,8 @@ import re
 CLIENTS = _clients()
 
 FAQ = [
-    ("What is Stethos?", "Current, sourced healthcare data for AI agents, delivered as an MCP server and API. Stethos resolves government, payer and web sources into one record for every US clinician, practice, health system and payer network, puts a source and a checked date on every field, keeps records current with verification agents, and tells your agent when something changes."),
-    ("Can't my agent just ask a general AI assistant?", "General AI assistants can find some provider data, but they answer from whatever web page or registry copy they come across, often months or years old, with no source and no date. Provider data changes constantly: clinicians move groups, licenses lapse, networks change. Stethos re-checks its sources, shows where every field came from and when it was last checked, and tells your agent when a record changes."),
+    ("What is Stethos?", "Current, sourced healthcare data for AI agents, delivered as an MCP server and API. Stethos resolves government, payer and web sources into one record for every US clinician, practice, health system and payer network, maps the referral patterns, ownership and Medicare volume around them, puts a source and a checked date on every field, keeps records current with verification agents, and tells your agent when something changes."),
+    ("Can't my agent just ask a general AI assistant?", "General AI assistants can find some healthcare data, but they answer from whatever web page or registry copy they come across, often months or years old, with no source and no date. Provider data changes constantly: clinicians move groups, licenses lapse, networks change. Stethos re-checks its sources, shows where every field came from and when it was last checked, and tells your agent when a record changes."),
     ("Does it work with our CRM and AI tools?", "Yes, that's the point. Stethos runs as an MCP server inside Claude, ChatGPT, Microsoft Copilot Studio, Cursor or your own agent, and its REST API and webhooks keep records current in Salesforce, HubSpot, Attio or any CRM or data warehouse. There's no separate dashboard to adopt."),
     ("Where does the data come from?", "Government files first: the NPPES NPI Registry, CMS's Medicare utilization files for clinicians, prescribers, hospitals, home health, hospice and nursing facilities, Care Compare ratings and affiliations, ACO participation, cost reports and Open Payments, plus state licensing boards. Payer directories, price transparency files, practice websites and health system job posts are layered on top. Every field carries its source and the date it was last checked. See the full list in the docs."),
     ("Does Stethos handle patient data?", "No. Stethos indexes healthcare professionals and organizations, not patients. There is no PHI in the API, so you don't need a business associate agreement to use it."),
@@ -30,16 +30,16 @@ def page():
         {"@type": "Organization", "name": BRAND, "url": SITE + "/", "logo": SITE + "/icon-512.png", "email": EMAIL, "@id": SITE + "/#org"},
         {"@type": "WebSite", "@id": SITE + "/#site", "name": BRAND, "url": SITE + "/", "publisher": {"@id": SITE + "/#org"}},
         {"@type": "SoftwareApplication", "name": BRAND, "applicationCategory": "DeveloperApplication", "operatingSystem": "Web", "url": SITE + "/",
-         "description": "An MCP server and API for US healthcare provider and organization data, built for AI agents and priced per tool call.", "publisher": {"@id": SITE + "/#org"},
+         "description": "An MCP server and API for US healthcare market data: providers, organizations, referral patterns, ownership and Medicare volume, built for AI agents and priced per tool call.", "publisher": {"@id": SITE + "/#org"},
          "offers": [{"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Build", "price": "149", "priceCurrency": "USD", "url": SITE + "/pricing"}]},
         {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ]}]}
     pre = ('<link rel="preload" as="image" href="/img/g-hero-1600.webp" imagesrcset="/img/g-hero-1600.webp 1600w, /img/g-hero-2400.webp 2400w, /img/g-hero-3200.webp 3200w" imagesizes="100vw" media="(min-width: 761px)" fetchpriority="high">\n'
            '<link rel="preload" as="image" href="/img/g-hero-m-800.webp" imagesrcset="/img/g-hero-m-800.webp 800w, /img/g-hero-m-1200.webp 1200w" imagesizes="100vw" media="(max-width: 760px)" fetchpriority="high">\n')
     h = head("Stethos: Healthcare Sales and Marketing Data for AI Agents",
-             "Current, sourced data on every US clinician, practice and health system, for healthcare sales, marketing and investment teams and their AI agents.",
+             "Current, sourced data on US clinicians, practices, health systems, referral patterns and ownership, for healthcare sales, marketing and investing teams and their agents.",
              "/", css=("styles", "v2", "site", "home"), extra=pre,
              share_title="Stethos | Healthcare sales and marketing data for your AI agents",
-             share_desc="Find, enrich and track every US clinician, practice and health system you sell to, from Claude, ChatGPT, your CRM or any MCP client. Start free with 1,000 credits.",
+             share_desc="Find and track the clinicians, practices, health systems, referral patterns and owners in your market, from Claude, ChatGPT, your CRM or any MCP client. Start free with 1,000 credits.",
              ld=f'<script type="application/ld+json">{json.dumps(ld)}</script>\n')
 
     def stk(i, cls, pill, title, pop, note, img):
@@ -55,9 +55,9 @@ def page():
 <main id="main">
 <section class="hero cx" aria-labelledby="hero-title">
   <div class="wrap cx-copy">
-    <p class="cx-eyebrow">Healthcare provider data for AI agents</p>
+    <p class="cx-eyebrow">Healthcare market data for AI agents</p>
     <h1 id="hero-title">Turn your agent into a world&#8209;class <span class="rot" data-rot data-words="pharma rep|SDR|deal team|marketing team|recruiter"><span class="rot-w on">medtech rep</span></span></h1>
-    <p class="cx-sub">Current, sourced data on every US clinician, practice and health system, inside the CRM and AI tools your team already uses.</p>
+    <p class="cx-sub">Providers, organizations, referral patterns, ownership and Medicare volume across the US, current and sourced, inside the CRM and AI tools your team already uses.</p>
     <div class="cx-ctas"><a class="cx-btn dark" href="{TRIAL}">Start free trial<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="cx-btn light" href="/how-it-works">See how it works<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     <div class="cx-meta"><span class="cx-or">Works with</span>{CLIENTS}<span class="cx-fine">1,000 free credits · no card · no sales call</span></div>
   </div>
@@ -160,11 +160,11 @@ def page():
   <div class="wrap">
     <div class="head center">
       <p class="eyebrow"><span>The platform</span></p>
-      <h2 id="platform-title">One clean record for every provider, <span class="pop">and every change to it.</span></h2>
+      <h2 id="platform-title">One map of US healthcare: <span class="pop">providers, referrals, owners and every change.</span></h2>
     </div>
     <ul class="stats">
-      <li><b><span class="cnt" data-to="51">51</span></b><span>licensing boards in scope: every state plus DC</span></li>
-      <li><b><span class="cnt" data-to="18">18</span></b><span>government, payer and web sources, 12 of them from CMS, resolved into one record</span></li>
+      <li><b><span class="cnt" data-to="51">51</span></b><span>licensing jurisdictions in scope: every state plus DC</span></li>
+      <li><b><span class="cnt" data-to="15">15</span></b><span>data sets from CMS and other agencies, plus state boards, payer directories and websites</span></li>
       <li><b><span class="cnt" data-to="5">5</span></b><span>tools your agent gets: search, enrich, orgs, watch, changes</span></li>
       <li><b><span class="cnt" data-to="100">100</span>%</b><span>of fields carry a source and the date it was checked</span></li>
     </ul>
@@ -173,7 +173,8 @@ def page():
 {stk(1, "stk-understand", "Enrich", "Built to turn an NPI into a full record", "with licenses, affiliations, networks and contacts.", "Additive pricing: the base record first, then only the extra fields you ask for.", "stk-enrich")}
 {stk(2, "stk-plan", "Organizations", "Built to map health systems, groups and clinics", "and who works at each one.", "Locations, rostered clinicians, leadership, open roles, parent–child links and private equity owners.", "stk-orgs")}
 {stk(3, "stk-reconnect", "Watch", "Built to tell your agent when a record changes,", "so it moves first.", "Affiliation changes, new licenses, network moves, executive hires and hiring spikes.", "stk-watch")}
-{stk(4, "stk-grow", "MCP first", "Built to plug straight into your agents", "as an MCP server, in five minutes.", "REST and webhooks are there too, for the parts of your stack that aren't agents.", "stk-agents")}
+{stk(4, "stk-markets", "Markets", "Built to show how a market really works:", "referrals, owners and volume.", "Referral patterns from shared groups, hospitals and ACOs, private equity and other owners, and Medicare volume for every provider.", "stk-markets")}
+{stk(5, "stk-grow", "MCP first", "Built to plug straight into your agents", "as an MCP server, in five minutes.", "REST and webhooks are there too, for the parts of your stack that aren't agents.", "stk-agents")}
 </ul>
     <p class="sp-more">Explore: <a href="/healthcare-mcp-server">Healthcare MCP server</a> · <a href="/npi-lookup-api">NPI lookup API</a> · <a href="/physician-data-api">Physician data API</a> · <a href="/license-verification-api">License data API</a> · <a href="/health-system-data-api">Health system data API</a> · <a href="/medicare-utilization-data-api">Medicare utilization data</a> · <a href="/home-health-hospice-data-api">Home health and hospice data</a> · <a href="/physician-referral-data">Physician referral data</a> · <a href="/private-equity-healthcare-ownership-data">Private equity ownership</a></p>
   </div>
@@ -236,7 +237,7 @@ def page():
       <h2 id="acct-title">Every field shows <span class="pop">where it came from.</span></h2>
       <p class="acct-lede">An agent that acts on healthcare data needs to know how far to trust it. Stethos is built to keep the source and the last-verified date on every single field, not just on the record.</p>
       <ul class="acct-pts">
-        <li><h3>Public registries first</h3><p>NPPES, CMS utilization, post-acute and Care Compare files, Open Payments and state licensing boards are the backbone.</p></li>
+        <li><h3>Government sources first</h3><p>NPPES, CMS utilization, post-acute and Care Compare files, Open Payments and state licensing boards are the backbone.</p></li>
         <li><h3>Licensed and web sources on top</h3><p>Payer directories, price transparency files, practice websites and health system job posts fill the gaps.</p></li>
         <li><h3>Conflicts kept, not hidden</h3><p>When two sources disagree, you see both and which one we picked, so your agent can decide.</p></li>
         <li><h3>NPI as the key</h3><p>Join cleanly to the claims, CRM and EHR data you already have.</p></li>
@@ -314,8 +315,8 @@ def page():
         <ul><li>Annual contracts, sold by sales</li><li>Priced per seat or module</li><li>Dashboards first, API often extra</li><li>Periodic refreshes and exports</li><li>You find out what changed later</li><li>Built for analysts</li></ul>
       </div>
       <div class="col them">
-        <h3>Free government files</h3>
-        <ul><li>NPPES, CMS's provider directory, Medicare files</li><li>Free and comprehensive</li><li>Raw, in dozens of formats</li><li>No reliable per-record freshness date</li><li>Not matched across sources</li><li>You build and maintain the pipeline</li></ul>
+        <h3>Do-it-yourself data</h3>
+        <ul><li>Raw registry and government data sets</li><li>Wide coverage, little context</li><li>Raw, in dozens of formats</li><li>No reliable per-record freshness date</li><li>Not matched across sources</li><li>You build and maintain the pipeline</li></ul>
       </div>
       <div class="col them ai">
         <h3>General AI assistants</h3>

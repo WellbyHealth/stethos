@@ -6,12 +6,12 @@ from posts_scheduled import SCHEDULED
 from posts_recent import RECENT
 
 POSTS = [
-    dict(slug="what-the-npi-registry-can-and-cant-tell-you", tag="Public data", art="uc-payer", date="2026-11-05", nice="November 5, 2026", mins=5,
+    dict(slug="what-the-npi-registry-can-and-cant-tell-you", tag="Data sources", art="uc-payer", date="2026-11-05", nice="November 5, 2026", mins=5,
          title="What the NPI registry can and can't tell you", seo="What the NPI Registry Can and Can't Tell You", kw="NPI registry, NPPES, NPI lookup",
          desc="The NPPES NPI Registry is the backbone of US provider data. Here's what it reliably tells you, where it falls short, and what to pair it with.",
          alt="Illustration: a clay clipboard directory of doctors' offices with check marks, beside an insurance shield and a magnifying glass.",
          take=["The NPI is the one identifier almost every US provider record shares, so build on it.", "NPPES is self-reported and only as current as the provider's last update.", "Pair it with licensing, affiliation and network sources before an agent acts on it."],
-         body='''<p>If you're building anything on US healthcare provider data, you'll meet the National Plan and Provider Enumeration System, or NPPES, on day one. It's the federal registry that issues National Provider Identifiers, and it's free to search and download. It's also easy to over-trust.</p>
+         body='''<p>If you're building anything on US healthcare provider data, you'll meet the National Plan and Provider Enumeration System, or NPPES, on day one. It's the federal registry that issues National Provider Identifiers. It's also easy to over-trust.</p>
 <h2>What an NPI is</h2>
 <p>An NPI is a 10-digit number that identifies a healthcare provider in standard transactions like claims. There are two kinds. Type 1 NPIs belong to individuals, such as physicians, nurse practitioners and therapists. Type 2 NPIs belong to organizations, such as hospitals, group practices, pharmacies and home health agencies. The number itself carries no meaning, and it's meant to stay with a provider for life.</p>
 <p>That permanence is what makes it useful. Claims data, CRM records, credentialing files and payer directories can all be joined on the NPI, which is why it should be the key in your own data model too.</p>
@@ -93,7 +93,7 @@ FIGS = {
     "medical-license-verification-across-states": ("i-license", "Verification vs monitoring", "Clay illustration: a sealed license scroll with a green checkmark, beside a bell watching licenses on a calendar.", "Verification checks a license once. Monitoring keeps watching for changes after that."),
     "why-physician-affiliations-are-hard-to-track": ("i-affil", "What a good affiliation record looks like", "Clay illustration: a clinician badge linked to three hospitals, each link tagged with a date; one link is faded and dotted.", "A good record keeps when each link was last seen, so an old affiliation fades out instead of lingering."),
     "healthcare-provider-taxonomy-codes-explained": ("i-taxonomy", "What the code set is", "Clay illustration: three nested trays, the smallest holding a single heart.", "Each code narrows down in up to three levels: grouping, classification and specialization."),
-    "who-owns-a-medical-practice": ("i-whoowns", "Check the public records", "Clay illustration: a government building, a rolled newspaper and a filing cabinet on pedestals, linked by a dotted path to a clinic.", "CMS files, announcements and state filings each show part of the ownership picture."),
+    "who-owns-a-medical-practice": ("i-whoowns", "Check the records", "Clay illustration: a government building, a rolled newspaper and a filing cabinet on pedestals, linked by a dotted path to a clinic.", "CMS files, announcements and state filings each show part of the ownership picture."),
     "what-is-an-mso": ("i-mso", "What an MSO is", "Clay illustration: one golden key linked by strings to five clinic doors.", "In a roll-up, one MSO can manage the back office for every practice on the platform."),
     "cms-ownership-data-private-equity": ("i-cmsowners", "The flags that matter", "Clay illustration: a nursing home linked up through a holding company to a briefcase at the top, like a small family tree.", "Owner-type flags let you trace a facility up through holding companies to the firm behind it."),
     "healthcare-buyer-job-changes": ("i-jobchange", "Why healthcare titles go stale so fast", "Clay illustration: the little robot swapping a faded contact card for a fresh one while a bell rings.", "When the person in a seat changes, the record should change with it."),
