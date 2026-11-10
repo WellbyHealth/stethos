@@ -35,6 +35,7 @@ MCP endpoint: https://mcp.stethos.health/v1 (preview)
 - [Stethos vs IQVIA OneKey](https://stethos-one.vercel.app/compare/iqvia-onekey)
 
 ## Guides
+- [How to look up an NPI number, and what to do with it](https://stethos-one.vercel.app/blog/how-to-look-up-an-npi-number): Three ways to look up an NPI number, what each result tells you, and how to check that the record is still current before you act on it.
 - [Your buyer changed jobs. Your CRM didn't notice.](https://stethos-one.vercel.app/blog/healthcare-buyer-job-changes): Healthcare buyers change roles often and CRMs rarely notice. Why titles go stale so fast, what it costs, and what keeps your contacts current.
 - [What CMS ownership files show about private equity in healthcare](https://stethos-one.vercel.app/blog/cms-ownership-data-private-equity): CMS publishes who owns Medicare-enrolled hospitals, nursing homes, home health agencies and hospices, and flags private equity. What the files show.
 - [What an MSO is, and why it changes how you sell to practices](https://stethos-one.vercel.app/blog/what-is-an-mso): More practices now sit under a management services organization. Here's what an MSO is, how private equity roll-ups use them, and how to work one as an account.

@@ -114,10 +114,15 @@ HEADER = f'''
       </div>
       <div class="dd">
         <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-teams">Solutions<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <div class="dd-panel dd-teams" id="dd-teams">
+        <div class="dd-panel dd-teams dd-one" id="dd-teams">
           <div class="dd-col"><p class="dd-h">By team</p><ul class="dd-segs">{"".join(f'<li><a href="/solutions/{s[0]}"><i class="dd-ic" style="--t:{s[4]}"><img src="/img/g-{s[3]}-160.webp" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>{s[1]}</b><span>{s[2]}</span></span></a></li>' for s in SEG)}</ul>
           <a class="dd-all" href="/solutions">All solutions <span aria-hidden="true">→</span></a></div>
-          <div class="dd-col dd-side"><p class="dd-h">By use case</p><ul class="dd-jobs">{"".join(f'<li><a href="/use-cases#{k}"><b>{name}</b><span>{blurb}</span></a></li>' for k, name, blurb in JOB_LINKS)}</ul>
+        </div>
+      </div>
+      <div class="dd">
+        <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-jobs">Use cases<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dd-panel dd-teams dd-one dd-uc" id="dd-jobs">
+          <div class="dd-col"><p class="dd-h">By what you're trying to do</p><ul class="dd-jobs">{"".join(f'<li><a href="/use-cases#{k}"><b>{name}</b><span>{blurb}</span></a></li>' for k, name, blurb in JOB_LINKS)}</ul>
           <a class="dd-all" href="/use-cases">All use cases <span aria-hidden="true">→</span></a></div>
         </div>
       </div>
@@ -125,7 +130,7 @@ HEADER = f'''
       <a href="/docs">Docs</a>
       <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
     </nav>
-    <div class="hdr-act"><a class="btn-2" href="{TRIAL}#signin">Sign in</a><a class="btn-1" href="{TRIAL}">Start free trial</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/solutions">Solutions by team</a><a href="/use-cases">Use cases</a><a href="/how-it-works">How it works</a><a href="/how-it-works#connect">Connect in 5 minutes</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="{TRIAL}#signin">Sign in</a></div>
+    <div class="hdr-act"><a class="btn-2" href="{TRIAL}#signin">Sign in</a><a class="btn-1" href="{TRIAL}">Start free trial</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/solutions">Solutions by team</a><a href="/use-cases">Use cases by goal</a><a href="/how-it-works">How it works</a><a href="/how-it-works#connect">Connect in 5 minutes</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="{TRIAL}#signin">Sign in</a></div>
   </div>
 </header>
 '''

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Look Up an NPI Number | Stethos</title>
+<meta name="description" content="Three ways to look up an NPI number, what each result tells you, and how to check that the record is still current before you act on it.">
+<meta name="theme-color" content="#D0D2F9">
+<link rel="canonical" href="https://stethos-one.vercel.app/blog/how-to-look-up-an-npi-number">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Stethos">
+<meta property="og:title" content="How to Look Up an NPI Number | Stethos">
+<meta property="og:description" content="Three ways to look up an NPI number, what each result tells you, and how to check that the record is still current before you act on it.">
+<meta property="og:url" content="https://stethos-one.vercel.app/blog/how-to-look-up-an-npi-number">
+<meta property="og:image" content="https://stethos-one.vercel.app/og/how-to-look-up-an-npi-number.jpg?v=4">
+<meta property="og:image:secure_url" content="https://stethos-one.vercel.app/og/how-to-look-up-an-npi-number.jpg?v=4">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Illustration: a clay smartphone showing a map of doctor pins, with a small clay robot leaning on it.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Look Up an NPI Number | Stethos">
+<meta name="twitter:description" content="Three ways to look up an NPI number, what each result tells you, and how to check that the record is still current before you act on it.">
+<meta name="twitter:image" content="https://stethos-one.vercel.app/og/how-to-look-up-an-npi-number.jpg?v=4">
+<meta name="twitter:image:alt" content="Illustration: a clay smartphone showing a map of doctor pins, with a small clay robot leaning on it.">
+<link rel="icon" href="/favicon-32.png?v=cf8c8908" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=d0d2cf04">
+<link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="article:published_time" content="2026-11-10">
+<meta property="article:section" content="Data sources">
+<link rel="stylesheet" href="/styles.css?v=6c88d771">
+<link rel="stylesheet" href="/v2.css?v=978b51f1">
+<link rel="stylesheet" href="/site.css?v=fa51f89d">
+<link rel="stylesheet" href="/stethos.css?v=2c0729ac">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to look up an NPI number, and what to do with it", "description": "Three ways to look up an NPI number, what each result tells you, and how to check that the record is still current before you act on it.", "datePublished": "2026-11-10", "dateModified": "2026-11-10", "keywords": "NPI lookup, NPI number, NPPES", "author": {"@type": "Organization", "name": "Stethos"}, "publisher": {"@type": "Organization", "name": "Stethos", "logo": {"@type": "ImageObject", "url": "https://stethos-one.vercel.app/icon-512.png"}}, "image": "https://stethos-one.vercel.app/og/how-to-look-up-an-npi-number.jpg", "mainEntityOfPage": "https://stethos-one.vercel.app/blog/how-to-look-up-an-npi-number"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://stethos-one.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://stethos-one.vercel.app/blog"}, {"@type": "ListItem", "position": 3, "name": "How to look up an NPI number, and what to do with it", "item": "https://stethos-one.vercel.app/blog/how-to-look-up-an-npi-number"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr">
+  <div class="bar">
+    <a class="logo" href="/" aria-label="Stethos home">
+      <img class="mark" src="/img/g-cl-logo-96.webp?v=a9b0c3f6" width="30" height="30" alt="">
+      <span>Stethos</span>
+    </a>
+    <nav aria-label="Primary">
+      <div class="dd">
+        <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-solutions">Product<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dd-panel" id="dd-solutions">
+          <div class="dd-col"><p class="dd-h">The API</p><ul class="dd-goals"><li><a href="/physician-data-api"><i class="dd-ic" style="--t:#ddf2ee"><img src="/img/g-cl-stk-search-160.webp?v=0f948a37" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Provider search</b><span>Every clinician and organization in the US, filtered your way.</span></span></a></li><li><a href="/npi-lookup-api"><i class="dd-ic" style="--t:#e4f0fd"><img src="/img/g-cl-stk-enrich-160.webp?v=a160c1b7" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>NPI lookup and enrich</b><span>Licenses, affiliations, networks and contact info from an NPI.</span></span></a></li><li><a href="/health-system-data-api"><i class="dd-ic" style="--t:#fdf5d2"><img src="/img/g-cl-stk-orgs-160.webp?v=6843bd5a" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Health system data</b><span>Health systems, groups and clinics, with who works where.</span></span></a></li><li><a href="/license-verification-api"><i class="dd-ic" style="--t:#fcecf6"><img src="/img/g-cl-stk-watch-160.webp?v=b44cee5a" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>License data and alerts</b><span>License status across states, with a webhook when one changes.</span></span></a></li><li><a href="/healthcare-mcp-server"><i class="dd-ic" style="--t:#eff5d6"><img src="/img/g-cl-stk-agents-160.webp?v=a082bcf3" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>MCP server</b><span>Add Stethos to Claude or any MCP client in five minutes.</span></span></a></li></ul></div>
+          <div class="dd-col dd-side"><p class="dd-h">Data sets</p><ul class="dd-spec"><li><a href="/medicare-utilization-data-api"><img src="/img/g-l-pharma-160.webp?v=fc1a4bbc" width="96" height="96" alt="" loading="lazy" decoding="async">Medicare utilization data</a></li><li><a href="/home-health-hospice-data-api"><img src="/img/g-l-postacute-160.webp?v=f29aae3a" width="96" height="96" alt="" loading="lazy" decoding="async">Home health and hospice data</a></li><li><a href="/physician-referral-data"><img src="/img/g-l-healthsystems-160.webp?v=5beee26b" width="96" height="96" alt="" loading="lazy" decoding="async">Physician referral data</a></li><li><a href="/private-equity-healthcare-ownership-data"><img src="/img/g-l-investors-160.webp?v=bb2097b6" width="96" height="96" alt="" loading="lazy" decoding="async">Private equity ownership</a></li></ul><a class="dd-all" href="/docs#sources">All data sources <span aria-hidden="true">→</span></a><img class="dd-art" src="/img/g-cl-stk-search-cut.webp?v=98a13010" width="480" height="480" alt="" loading="lazy" decoding="async"></div>
+        </div>
+      </div>
+      <div class="dd">
+        <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-teams">Solutions<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dd-panel dd-teams dd-one" id="dd-teams">
+          <div class="dd-col"><p class="dd-h">By team</p><ul class="dd-segs"><li><a href="/solutions/medtech"><i class="dd-ic" style="--t:#e4f0fd"><img src="/img/g-l-medtech-160.webp?v=00a46869" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Medtech</b><span>Reach surgeons the week they move.</span></span></a></li><li><a href="/solutions/pharma"><i class="dd-ic" style="--t:#e3f4ec"><img src="/img/g-l-pharma-160.webp?v=fc1a4bbc" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Pharma and life sciences</b><span>Map prescribers and KOLs for a launch.</span></span></a></li><li><a href="/solutions/health-it-sales"><i class="dd-ic" style="--t:#ece6fb"><img src="/img/g-l-healthit-160.webp?v=cca03189" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Health IT and services</b><span>Sell to systems by EHR, size and leader.</span></span></a></li><li><a href="/solutions/healthcare-marketing"><i class="dd-ic" style="--t:#fde8dc"><img src="/img/g-l-marketing-160.webp?v=98b6b71c" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Healthcare marketing</b><span>Clinician audiences that stay current.</span></span></a></li><li><a href="/solutions/investors"><i class="dd-ic" style="--t:#fbe4ea"><img src="/img/g-l-investors-160.webp?v=bb2097b6" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Investors and PE</b><span>Roll-ups, headcount and new sites.</span></span></a></li><li><a href="/solutions/digital-health"><i class="dd-ic" style="--t:#e4f0fd"><img src="/img/g-l-startups-160.webp?v=04e78ea2" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Healthcare startups</b><span>First customers and provider search.</span></span></a></li><li><a href="/solutions/post-acute"><i class="dd-ic" style="--t:#fdf5d2"><img src="/img/g-l-postacute-160.webp?v=f29aae3a" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Post-acute care</b><span>Rank referrers and see who's gone quiet.</span></span></a></li><li><a href="/solutions/clinical-staffing"><i class="dd-ic" style="--t:#e3f4ec"><img src="/img/g-l-staffing-160.webp?v=04248e76" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Clinical staffing</b><span>Licensed clinicians and who's hiring.</span></span></a></li><li><a href="/solutions/provider-directories"><i class="dd-ic" style="--t:#ece6fb"><img src="/img/g-l-directories-160.webp?v=ab6768c8" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Payers and directories</b><span>Keep every listing accurate.</span></span></a></li><li><a href="/solutions/health-systems"><i class="dd-ic" style="--t:#fbe4ea"><img src="/img/g-l-healthsystems-160.webp?v=5beee26b" width="96" height="96" alt="" loading="lazy" decoding="async"></i><span class="dd-t"><b>Health systems</b><span>Physician relations and network growth.</span></span></a></li></ul>
+          <a class="dd-all" href="/solutions">All solutions <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+      <div class="dd">
+        <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-jobs">Use cases<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dd-panel dd-teams dd-one dd-uc" id="dd-jobs">
+          <div class="dd-col"><p class="dd-h">By what you're trying to do</p><ul class="dd-jobs"><li><a href="/use-cases#prospecting"><b>Prospecting and targeting</b><span>Find accounts and decide who to call.</span></a></li><li><a href="/use-cases#triggers"><b>Timing and triggers</b><span>Reach out the week something changes.</span></a></li><li><a href="/use-cases#referrals"><b>Referrals and networks</b><span>See who works with whom.</span></a></li><li><a href="/use-cases#markets"><b>Markets and ownership</b><span>Map markets, owners and roll-ups.</span></a></li><li><a href="/use-cases#data-quality"><b>Data quality</b><span>Keep your CRM and directory current.</span></a></li></ul>
+          <a class="dd-all" href="/use-cases">All use cases <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+      <a href="/how-it-works">How it works</a>
+      <a href="/docs">Docs</a>
+      <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
+    </nav>
+    <div class="hdr-act"><a class="btn-2" href="/signup#signin">Sign in</a><a class="btn-1" href="/signup">Start free trial</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><div class="mnav" id="mnav" hidden><a href="/solutions">Solutions by team</a><a href="/use-cases">Use cases by goal</a><a href="/how-it-works">How it works</a><a href="/how-it-works#connect">Connect in 5 minutes</a><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a><a href="/compare/definitive-healthcare">Stethos vs Definitive</a><a href="/signup#signin">Sign in</a></div>
+  </div>
+</header>
+
+<main id="main" class="wrap doc">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/blog">Blog</a></nav>
+  <p class="art-tag">Data sources</p>
+  <h1>How to look up an NPI number, and what to do with it</h1>
+  <p class="doc-meta">By the Stethos team · <time datetime="2026-11-10">November 10, 2026</time> · 4 min read</p>
+  <figure class="art-cover"><img src="/img/g-art-c-lookup-1600.webp?v=21d59fbe" srcset="/img/g-art-c-lookup-900.webp 900w, /img/g-art-c-lookup-1600.webp 1600w" sizes="(max-width: 800px) 100vw, 760px" width="1600" height="1195" alt="Illustration: a clay smartphone showing a map of doctor pins, with a small clay robot leaning on it." fetchpriority="high"></figure>
+  <aside class="takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul><li>The NPPES NPI Registry is free to search by name, NPI or location.</li><li>A registry match confirms identity, not where someone practices today.</li><li>Check the last-updated date and confirm with a second source before acting.</li></ul></aside>
+  <article>
+<p>Every US healthcare provider who bills electronically has a National Provider Identifier, a 10-digit number issued through CMS. Looking one up is easy. Knowing whether what you found is still true takes a little more.</p>
+<h2>Three ways to look up an NPI</h2>
+<ul>
+<li><strong>The NPI Registry website.</strong> CMS runs a search of NPPES. You can search by NPI, by name, or by location and taxonomy.</li>
+<li><strong>The NPI Registry API.</strong> The same data is available through an API, which is handy for one-off lookups from code.</li>
+<li><strong>The full NPPES download.</strong> CMS publishes the whole registry as a downloadable file, updated regularly, if you want every record in your own database.</li>
+</ul>
+<figure class="art-fig"><img src="/img/g-art-i-lookup-900.webp?v=022c420e" srcset="/img/g-art-i-lookup-900.webp 900w, /img/g-art-i-lookup-1600.webp 1600w" sizes="(max-width: 800px) 100vw, 760px" width="1600" height="1195" alt="Clay illustration: three pedestals holding a browser search window, a download box and a plug." loading="lazy" decoding="async"><figcaption>Three ways in: the registry website, the full download, or an API.</figcaption></figure>
+<h2>What a result tells you</h2>
+<p>A registry record gives you the provider's name and credential, whether the NPI belongs to an individual or an organization, their taxonomy codes, a mailing address, a primary practice location and phone number, and the dates the record was created and last updated.</p>
+<h2>What to check before you act on it</h2>
+<p>Registry data is self-reported, so look at the last-updated date first. A record untouched for years may still show an old practice. If you're about to call, mail or route a patient, confirm the location against a second source: the practice's own website, a hospital directory, or the state licensing board.</p>
+<h2>Doing this at scale</h2>
+<p>Checking one NPI by hand is fine. Checking thousands every week isn't. That's the job an <a href="/npi-lookup-api">NPI lookup API</a> like Stethos is built for: it starts from the NPI and returns licenses, affiliations and networks, each with a source and verified date. For background on the registry itself, see <a href="/blog/what-the-npi-registry-can-and-cant-tell-you">what the NPI registry can and can't tell you</a>.</p>
+  </article>
+  <section class="more-posts" aria-labelledby="more-title"><h2 id="more-title">More guides</h2><ul class="blog-grid"><li class="post-card"><a href="/blog/healthcare-buyer-job-changes"><img src="/img/g-art-c-jobchange-900.webp?v=e1a7cb01" srcset="/img/g-art-c-jobchange-900.webp 900w, /img/g-art-c-jobchange-1600.webp 1600w" sizes="(max-width: 700px) 100vw, 400px" width="1600" height="1195" alt="" loading="lazy" decoding="async"><span class="pc-b"><span class="pc-tag">Data quality</span><h3>Your buyer changed jobs. Your CRM didn't notice.</h3><span class="pc-p">Healthcare buyers change roles often and CRMs rarely notice. Why titles go stale so fast, what it costs, and what keeps your contacts current.</span><span class="pc-meta">November 9, 2026 · 4 min read</span></span></a></li><li class="post-card"><a href="/blog/cms-ownership-data-private-equity"><img src="/img/g-art-c-cmsowners-900.webp?v=818293fd" srcset="/img/g-art-c-cmsowners-900.webp 900w, /img/g-art-c-cmsowners-1600.webp 1600w" sizes="(max-width: 700px) 100vw, 400px" width="1600" height="1195" alt="" loading="lazy" decoding="async"><span class="pc-b"><span class="pc-tag">Data sources</span><h3>What CMS ownership files show about private equity in healthcare</h3><span class="pc-p">CMS publishes who owns Medicare-enrolled hospitals, nursing homes, home health agencies and hospices, and flags private equity. What the files show.</span><span class="pc-meta">November 8, 2026 · 5 min read</span></span></a></li><li class="post-card"><a href="/blog/what-is-an-mso"><img src="/img/g-art-c-mso-900.webp?v=d14f9d1d" srcset="/img/g-art-c-mso-900.webp 900w, /img/g-art-c-mso-1600.webp 1600w" sizes="(max-width: 700px) 100vw, 400px" width="1600" height="1195" alt="" loading="lazy" decoding="async"><span class="pc-b"><span class="pc-tag">Go-to-market</span><h3>What an MSO is, and why it changes how you sell to practices</h3><span class="pc-p">More practices now sit under a management services organization. Here's what an MSO is, how private equity roll-ups use them, and how to work one as an account.</span><span class="pc-meta">November 7, 2026 · 4 min read</span></span></a></li></ul></section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="logo" href="/"><img class="mark" src="/img/g-cl-logo-96.webp?v=a9b0c3f6" width="30" height="30" alt=""><span>Stethos</span></a>
+      <p>Current, sourced healthcare data for sales, marketing and investment teams and their AI agents, as an MCP server. Product views and tool results on this site use illustrative sample data.</p>
+    </div>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="/how-it-works">How it works</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/use-cases">Use cases</a>
+      
+      <a href="/docs">Docs</a>
+      <a href="/pricing">Pricing</a><a href="/blog">Blog</a>
+      <a href="/healthcare-mcp-server">Healthcare MCP server</a>
+      <a href="/npi-lookup-api">NPI lookup API</a>
+      <a href="/physician-data-api">Physician data API</a>
+      <a href="/license-verification-api">License data API</a>
+      <a href="/health-system-data-api">Health system data API</a>
+      <a href="/medicare-utilization-data-api">Medicare utilization data</a>
+      <a href="/home-health-hospice-data-api">Home health and hospice data</a>
+      <a href="/physician-referral-data">Physician referral data</a>
+      <a href="/private-equity-healthcare-ownership-data">Private equity ownership</a>
+      <a href="/solutions/medtech">Medtech</a>
+      <a href="/solutions/pharma">Pharma</a>
+      <a href="/solutions/health-systems">Health systems</a>
+      <a href="/solutions/provider-directories">Payers and directories</a>
+      <a href="/solutions/clinical-staffing">Clinical staffing</a>
+      <a href="/compare/definitive-healthcare">vs Definitive</a>
+      <a href="/compare/iqvia-onekey">vs IQVIA OneKey</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/privacy">Privacy</a>
+      <a href="mailto:team@stethos.health?subject=Stethos">Contact</a>
+    </nav>
+    <p class="foot-copy">© 2026 Stethos</p>
+  </div>
+</footer>
+<script src="/nav.js?v=81514c99" defer></script>
+</body>
+</html>
